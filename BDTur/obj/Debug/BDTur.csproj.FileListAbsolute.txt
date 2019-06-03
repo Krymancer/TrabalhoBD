@@ -12,3 +12,5 @@ C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.csproj.CopyComplete
 C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.exe
 C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.pdb
 C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.Forms.FormLogin.resources
+C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.Forms.FormMain.resources
+C:\Users\junio\source\repos\BDTur\BDTur\obj\Debug\BDTur.Forms.FormUserLogin.resources

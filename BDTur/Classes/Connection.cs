@@ -26,5 +26,31 @@ namespace BDTur.Classes
             return new MySqlConnection(myConnection);
         }
 
+        public MySqlDataAdapter cidadesAdapter()
+        {
+            try
+            {
+                MySqlConnection con = getConnection();
+                con.Open();
+                MySqlCommand cmd = 
+                    new MySqlCommand(
+                        "SELECT `cidade`.`idCidade`," +
+                        "`cidade`.`nome`,`cidade`.`estado`," +
+                        "`cidade`.`populacao` FROM `equipe431447`.`cidade`;", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                con.Close();
+                return adapter;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return null;
+            }
+        }
+
+
+
+
     }
 }
