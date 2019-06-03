@@ -56,6 +56,7 @@
             // 
             // textBoxUser
             // 
+            this.textBoxUser.AcceptsReturn = true;
             this.textBoxUser.Location = new System.Drawing.Point(74, 24);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(100, 20);
@@ -63,6 +64,7 @@
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.AcceptsReturn = true;
             this.textBoxPassword.Location = new System.Drawing.Point(74, 73);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '●';
@@ -91,8 +93,10 @@
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(286, 118);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);

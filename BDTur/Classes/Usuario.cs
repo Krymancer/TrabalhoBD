@@ -40,13 +40,16 @@ namespace BDTur.Classes
             cmd.Parameters.Add(new MySqlParameter("password", this.password));
 
             MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows == true)
+            if (reader.HasRows)
             {
                 Console.WriteLine(reader);
+                //con.Close();
                 return true;
             }
             else
             {
+                Console.WriteLine(reader);
+                //con.Close();
                 return false;
             }
         }

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cidade.cs" />
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\Hotel.cs" />
     <Compile Include="Classes\PontoTuristico.cs" />

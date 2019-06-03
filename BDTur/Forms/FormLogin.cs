@@ -37,8 +37,11 @@ namespace BDTur.Forms
             catch (MySqlException ex)
             {
 
-                if(ex.Code == 0x80004005)
+                if(ex.Code == 0x0)
                 MessageBox.Show("Ocorreu um erro \n Usuário ou Senha incoretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                MessageBox.Show("Ocorreu um erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 Console.WriteLine(ex); // Provavélmente o Usuario e/ou a senha estão incorretos
             }
         }

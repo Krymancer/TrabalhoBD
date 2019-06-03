@@ -38,6 +38,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(193, 74);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -48,6 +49,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogin.Location = new System.Drawing.Point(193, 23);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +93,7 @@
             // 
             // FormUserLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 118);
@@ -101,6 +104,7 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUser);
             this.Name = "FormUserLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - BDTur";
             this.ResumeLayout(false);
             this.PerformLayout();

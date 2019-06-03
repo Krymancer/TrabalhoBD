@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,45 @@ namespace BDTur.Forms
             InitializeComponent();
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Classes.Connection con = new Classes.Connection(Program.databaseUser, Program.databasePassword);
+            MySqlDataAdapter da = con.allAdapter();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewCidade.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
+
+            populateComboBox();
+        }
+
+        private void populateComboBox()
+        {
+            Classes.Connection con = new Classes.Connection(Program.databaseUser, Program.databasePassword);
+            MySqlDataAdapter da = con.cidadesAdapter();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                comboBox1.ValueMember = "idCidade";
+                comboBox1.DisplayMember = "nome";
+                comboBox1.DataSource = dt;       
+                foreach (DataRow dr in dt.Rows) {
+                    //comboBox1.Items.Add(dr[1].ToString());                   
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
+        }
     }
 }

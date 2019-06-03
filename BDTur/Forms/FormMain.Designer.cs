@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TabControl tabControl1;
+            System.Windows.Forms.TabControl tabControl;
             this.Cidades = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
@@ -48,8 +48,8 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelCidadeTabTudo = new System.Windows.Forms.Label();
+            this.dataGridViewCidade = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -145,6 +145,9 @@
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.comboBox16 = new System.Windows.Forms.ComboBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -163,15 +166,14 @@
             this.museuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            tabControl1 = new System.Windows.Forms.TabControl();
-            tabControl1.SuspendLayout();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            tabControl = new System.Windows.Forms.TabControl();
+            tabControl.SuspendLayout();
             this.Cidades.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -199,25 +201,27 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            tabControl1.Controls.Add(this.Cidades);
-            tabControl1.Controls.Add(this.tabPage2);
-            tabControl1.Controls.Add(this.tabPage1);
-            tabControl1.Controls.Add(this.tabPage3);
-            tabControl1.Controls.Add(this.tabPage4);
-            tabControl1.Controls.Add(this.tabPage5);
-            tabControl1.Controls.Add(this.tabPage6);
-            tabControl1.Controls.Add(this.tabPage7);
-            tabControl1.Location = new System.Drawing.Point(0, 27);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(923, 430);
-            tabControl1.TabIndex = 1;
+            tabControl.Controls.Add(this.Cidades);
+            tabControl.Controls.Add(this.tabPage2);
+            tabControl.Controls.Add(this.tabPage1);
+            tabControl.Controls.Add(this.tabPage3);
+            tabControl.Controls.Add(this.tabPage4);
+            tabControl.Controls.Add(this.tabPage5);
+            tabControl.Controls.Add(this.tabPage6);
+            tabControl.Controls.Add(this.tabPage7);
+            tabControl.Location = new System.Drawing.Point(0, 27);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new System.Drawing.Size(923, 430);
+            tabControl.TabIndex = 1;
             // 
             // Cidades
             // 
             this.Cidades.BackColor = System.Drawing.Color.Transparent;
+            this.Cidades.Controls.Add(this.textBox23);
+            this.Cidades.Controls.Add(this.label1);
             this.Cidades.Controls.Add(this.panel2);
             this.Cidades.Controls.Add(this.textBox2);
             this.Cidades.Controls.Add(this.label6);
@@ -225,14 +229,14 @@
             this.Cidades.Controls.Add(this.label5);
             this.Cidades.Controls.Add(this.panel1);
             this.Cidades.Controls.Add(this.comboBox1);
-            this.Cidades.Controls.Add(this.label1);
-            this.Cidades.Controls.Add(this.dataGridView1);
+            this.Cidades.Controls.Add(this.labelCidadeTabTudo);
+            this.Cidades.Controls.Add(this.dataGridViewCidade);
             this.Cidades.Location = new System.Drawing.Point(4, 22);
             this.Cidades.Name = "Cidades";
             this.Cidades.Padding = new System.Windows.Forms.Padding(3);
             this.Cidades.Size = new System.Drawing.Size(915, 404);
             this.Cidades.TabIndex = 0;
-            this.Cidades.Text = "Cidades";
+            this.Cidades.Text = "Tudo";
             // 
             // panel2
             // 
@@ -405,27 +409,27 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(478, 371);
+            this.comboBox1.Location = new System.Drawing.Point(468, 371);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
             // 
-            // label1
+            // labelCidadeTabTudo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(434, 375);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome:";
+            this.labelCidadeTabTudo.AutoSize = true;
+            this.labelCidadeTabTudo.Location = new System.Drawing.Point(424, 375);
+            this.labelCidadeTabTudo.Name = "labelCidadeTabTudo";
+            this.labelCidadeTabTudo.Size = new System.Drawing.Size(43, 13);
+            this.labelCidadeTabTudo.TabIndex = 1;
+            this.labelCidadeTabTudo.Text = "Cidade:";
             // 
-            // dataGridView1
+            // dataGridViewCidade
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(766, 350);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCidade.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewCidade.Name = "dataGridViewCidade";
+            this.dataGridViewCidade.Size = new System.Drawing.Size(766, 350);
+            this.dataGridViewCidade.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -1349,6 +1353,31 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Igreja";
             // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(6, 79);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(109, 20);
+            this.textBox22.TabIndex = 63;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(8, 63);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(35, 13);
+            this.label35.TabIndex = 64;
+            this.label35.Text = "Estilo:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(8, 23);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(46, 13);
+            this.label34.TabIndex = 63;
+            this.label34.Text = "Periodo:";
+            // 
             // comboBox16
             // 
             this.comboBox16.FormattingEnabled = true;
@@ -1488,49 +1517,41 @@
             this.usariosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.usariosToolStripMenuItem.Text = "Usarios";
             // 
-            // textBox22
+            // textBox23
             // 
-            this.textBox22.Location = new System.Drawing.Point(6, 79);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(109, 20);
-            this.textBox22.TabIndex = 63;
+            this.textBox23.Location = new System.Drawing.Point(308, 372);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(109, 20);
+            this.textBox23.TabIndex = 9;
             // 
-            // label34
+            // label1
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(8, 23);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 13);
-            this.label34.TabIndex = 63;
-            this.label34.Text = "Periodo:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(8, 63);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(35, 13);
-            this.label35.TabIndex = 64;
-            this.label35.Text = "Estilo:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(264, 375);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nome:";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 450);
-            this.Controls.Add(tabControl1);
+            this.Controls.Add(tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "BDTur";
-            tabControl1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            tabControl.ResumeLayout(false);
             this.Cidades.ResumeLayout(false);
             this.Cidades.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1598,8 +1619,8 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelCidadeTabTudo;
+        private System.Windows.Forms.DataGridView dataGridViewCidade;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -1715,5 +1736,7 @@
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Label label1;
     }
 }

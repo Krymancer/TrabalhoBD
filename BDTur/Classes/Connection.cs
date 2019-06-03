@@ -36,7 +36,7 @@ namespace BDTur.Classes
                     new MySqlCommand(
                         "SELECT `cidade`.`idCidade`," +
                         "`cidade`.`nome`,`cidade`.`estado`," +
-                        "`cidade`.`populacao` FROM `equipe431447`.`cidade`;", con);
+                        "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;", con);
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 con.Close();
@@ -47,6 +47,36 @@ namespace BDTur.Classes
                 Console.Write(ex.Message);
                 return null;
             }
+        }
+
+        public MySqlDataAdapter allAdapter() {  
+            
+            string query = "use equipe431447;" +
+            "SELECT* from pontoturistico " +
+            "LEFT JOIN casa_de_show ON " +
+            "pontoturistico.idPontoTuristico = casa_de_show.PontoTuristico_idPontoTuristico " +
+            "LEFT JOIN igreja ON " +
+            "pontoturistico.idPontoTuristico = igreja.PontoTuristico_idPontoTuristico " +
+            "LEFT JOIN museu ON " +
+            "pontoturistico.idPontoTuristico = museu.PontoTuristico_idPontoTuristico;";
+
+            try
+            {
+                MySqlConnection con = getConnection();
+                con.Open();
+                MySqlCommand cmd =
+                    new MySqlCommand(query, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                con.Close();
+                return adapter;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return null;
+            }
+
         }
 
 
