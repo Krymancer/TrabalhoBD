@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BDTur.Classes
 {
-    public class PontoTuristico
+    class PontoTuristico
     {
         private int idPontoTuristico;
         private int cidadeIdCidade;
