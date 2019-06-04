@@ -13,14 +13,22 @@ namespace BDTur.Classes
 
         private string user;
         private string password;
-        
+
+        /// <summary>
+        /// Construtor da calsse Connection.
+        /// </summary>
+        /// <param name="user"> Usuario do Banco de dados</param>
+        /// <param name="password"> Senha do Banco de dados</param>
         public Connection(string user, string password)
         {
             this.user = user;
             this.password = password;
         }
 
-        public MySqlConnection getConnection()
+        /// <summary>
+        /// Retorna uma conexão MySQL
+        /// </summary>
+        public MySqlConnection GetConnection()
         {
             string myConnection = "datasource=localhost;port=3306;username=" + this.user + ";password=" + this.password;
             return new MySqlConnection(myConnection);
@@ -30,7 +38,7 @@ namespace BDTur.Classes
         {
             try
             {
-                MySqlConnection con = getConnection();
+                MySqlConnection con = GetConnection();
                 con.Open();
                 MySqlCommand cmd = 
                     new MySqlCommand(
@@ -48,39 +56,5 @@ namespace BDTur.Classes
                 return null;
             }
         }
-
-        public MySqlDataAdapter allAdapter() {  
-            
-            string query = "use equipe431447;" +
-            "SELECT* from pontoturistico " +
-            "LEFT JOIN casa_de_show ON " +
-            "pontoturistico.idPontoTuristico = casa_de_show.PontoTuristico_idPontoTuristico " +
-            "LEFT JOIN igreja ON " +
-            "pontoturistico.idPontoTuristico = igreja.PontoTuristico_idPontoTuristico " +
-            "LEFT JOIN museu ON " +
-            "pontoturistico.idPontoTuristico = museu.PontoTuristico_idPontoTuristico;";
-
-            try
-            {
-                MySqlConnection con = getConnection();
-                con.Open();
-                MySqlCommand cmd =
-                    new MySqlCommand(query, con);
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                con.Close();
-                return adapter;
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-                return null;
-            }
-
-        }
-
-
-
-
     }
 }

@@ -103,6 +103,8 @@
             this.Controls.Add(this.textBoxUser);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUser);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormUserLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - BDTur";

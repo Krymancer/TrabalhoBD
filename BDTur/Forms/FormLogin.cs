@@ -25,7 +25,7 @@ namespace BDTur.Forms
             Program.databasePassword = textBoxPassword.Text;
             
             Classes.Connection connection = new Classes.Connection(Program.databaseUser, Program.databasePassword);
-            MySqlConnection c = connection.getConnection();
+            MySqlConnection c = connection.GetConnection();
             try
             {
                 c.Open();

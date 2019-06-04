@@ -28,7 +28,7 @@ namespace BDTur.Classes
 
         public bool autenticate()
         {
-            MySqlConnection con = userCon.getConnection();
+            MySqlConnection con = userCon.GetConnection();
             con.Open();
             string query = "SELECT `usuario`.`idUsuario`," +
                            "`usuario`.`username`," +
@@ -42,14 +42,17 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                Console.WriteLine(reader);
-                //con.Close();
+                reader.Read();
+                //Console.WriteLine(reader.GetInt32(0));
+                this.idUser = reader.GetInt32(0);
+                this.acessLevel = reader.GetInt32(3);
+                con.Close();
                 return true;
             }
             else
             {
                 Console.WriteLine(reader);
-                //con.Close();
+                con.Close();
                 return false;
             }
         }

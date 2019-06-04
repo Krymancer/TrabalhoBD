@@ -26,21 +26,11 @@ namespace BDTur.Forms
             populateDataGridViews();
         }
 
-        private void populateDataGridViews()
-        {
-            populateHotelDataGridView();
-            populateRestauranteDataGridView();
-            populatePontoTuristicoDataGridView();
-            populateIgrejaDataGridView();
-            populateCasaDeShowDataGridView();
-            populateMuseuDataGridView();
-            populateFundadorDataGridView();
-        }
-
+        
         private void populateComboBox()
         {
-            Classes.Connection con = new Classes.Connection(Program.databaseUser, Program.databasePassword);
-            MySqlDataAdapter da = con.cidadesAdapter();
+           
+            MySqlDataAdapter da = adapter.cidadeAdapter();
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -64,6 +54,20 @@ namespace BDTur.Forms
             }
         }
 
+        /// <summary>
+        /// Popula os DataGridViews com os dados do BD.
+        /// </summary>
+        private void populateDataGridViews()
+        {
+            populateHotelDataGridView();
+            populateRestauranteDataGridView();
+            populatePontoTuristicoDataGridView();
+            populateIgrejaDataGridView();
+            populateCasaDeShowDataGridView();
+            populateMuseuDataGridView();
+            populateFundadorDataGridView();
+        }
+        /* Metodos para popular e alterar o cabeçario dos DataGridViews individualmente */
         private void populateHotelDataGridView()
         {
             
@@ -120,10 +124,21 @@ namespace BDTur.Forms
             MySqlDataAdapter da = adapter.pontoTuristicoAdapter();
             if (da != null)
             {
-                DataTable dt = new DataTable();                
+
+                DataTable dt = new DataTable();
+                
                 da.Fill(dt);
                 
                 dataGridViewPontosTuristico.DataSource = dt;
+
+                DataTable dtCloned = dt.Clone();
+                dtCloned.Columns[4].DataType = typeof(Int64);
+                foreach (DataRow row in dt.Rows)
+                {
+                    dtCloned.ImportRow(row);
+                }
+
+                dataGridViewPontosTuristico.DataSource = dtCloned;
             }
             else
             {
@@ -146,20 +161,61 @@ namespace BDTur.Forms
         }
         private void populateIgrejaDataGridView()
         {
-
+            MySqlDataAdapter da = adapter.igrejaAdapater();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewIgreja.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
         }
         private void populateCasaDeShowDataGridView()
         {
-
+            MySqlDataAdapter da = adapter.casadeShowAdapater();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewCasadeShow.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
         }
         private void populateMuseuDataGridView()
         {
-
+            MySqlDataAdapter da = adapter.museuAdapater();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewMuseu.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
         }
         private void populateFundadorDataGridView()
         {
-
+            MySqlDataAdapter da = adapter.fundadorAdapter();
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewFundadores.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
         }
+        /* ---------------------------------------------------------------------------- */
 
         private void dataGridViewPontosTuristico_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

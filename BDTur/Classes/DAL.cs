@@ -9,13 +9,16 @@ namespace BDTur.Classes
 {
     class DAL
     {
-
+        /// <summary>
+        /// Retorna o resultado de uma consulta paa o banco de dados em um DataAdapter.
+        /// </summary>
+        /// <param name="query"> Consulta que sera feita ao Banco de Dados</param>
         private MySqlDataAdapter fetchResultFromQuery(string query)
         {
             try
             {
                 Classes.Connection connection = new Classes.Connection(Program.databaseUser, Program.databasePassword);
-                MySqlConnection con = connection.getConnection();
+                MySqlConnection con = connection.GetConnection();
                 con.Open();
                 MySqlCommand cmd =
                     new MySqlCommand(query, con);
@@ -31,6 +34,13 @@ namespace BDTur.Classes
             }
         }
 
+        public MySqlDataAdapter cidadeAdapter()
+        {
+            string query = "SELECT `cidade`.`idCidade`," +
+                             "`cidade`.`nome`,`cidade`.`estado`," +
+                             "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;";
+            return fetchResultFromQuery(query);
+        }
         public  MySqlDataAdapter hotelAdapter()
         {
 
@@ -127,7 +137,7 @@ namespace BDTur.Classes
         public  MySqlDataAdapter museuAdapater()
         {
             string query = "SELECT " +
-                                "`pontoturistico`.`idPontoTuristico`" +
+                                "`pontoturistico`.`idPontoTuristico`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`contatoPontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
