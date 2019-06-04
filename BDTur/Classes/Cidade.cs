@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace BDTur.Classes
 {
     class Cidade
-    {
-
-        Classes.Connection userCon = new Classes.Connection(Program.databaseUser, Program.databasePassword);
+    {     
 
         int id        { get; set; }
         string nome   { get; set; }
