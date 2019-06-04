@@ -10,17 +10,23 @@ namespace BDTur.Classes
     {
         private int idPontoTuristico;
         private string tipoPontoTuristico;
-        private string endTipoPontoTuristico;
+        private string nomePontoTuristico;
+        private string contatoPontoTuristico;
+        private string descricaoPontoTuristico;
         private string endLogradouroPontoTuristico;
+        private string endTipoPontoTuristico;
         private string endNumeroPontoTuristico;
         private string endComplementoPontoTuristico;
         private string endBairroPontoTuristico;
         private string endCepPontoTuristico;
         private int cidade_idCidade;
 
-        public PontoTuristico(int idPontoTuristico, string tipoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidade_idCidade)
+        public PontoTuristico(int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidade_idCidade)
         {
             this.idPontoTuristico = idPontoTuristico;
+            this.nomePontoTuristico = nomePontoTuristico;
+            this.contatoPontoTuristico = contatoPontoTuristico;
+            this.descricaoPontoTuristico = descricaoPontoTuristico;
             this.tipoPontoTuristico = tipoPontoTuristico;
             this.endTipoPontoTuristico = endTipoPontoTuristico;
             this.endLogradouroPontoTuristico = endLogradouroPontoTuristico;
@@ -33,6 +39,9 @@ namespace BDTur.Classes
 
         public int IdPontoTuristico { get; set; }
         public string TipoPontoTuristico { get; set; }
+        public string NomePontoTuristico { get; set; }
+        public string ContatoPontoTuristico { get; set; }
+        public string DescricaoPontoTuristico { get; set; }
         public string EndTipoPontoTuristico { get; set; }
         public string EndLogradouroPontoTuristico { get; set; }
         public string EndNumeroPontoTuristico { get; set; }
