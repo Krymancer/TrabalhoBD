@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace BDTur.Classes
 {
-    class PontoTuristico
+    public class PontoTuristico
     {
         private int idPontoTuristico;
+        private int cidadeIdCidade;
         private string tipoPontoTuristico;
         private string nomePontoTuristico;
         private string contatoPontoTuristico;
@@ -19,7 +20,7 @@ namespace BDTur.Classes
         private string endComplementoPontoTuristico;
         private string endBairroPontoTuristico;
         private string endCepPontoTuristico;
-        private int cidadeIdCidade;
+        
 
         public PontoTuristico(int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
         {
