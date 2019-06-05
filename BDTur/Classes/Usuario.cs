@@ -1,16 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BDTur.Classes
 {
     class Usuario
     {
 
-        Classes.Connection userCon =  new Classes.Connection(Program.databaseUser,Program.databasePassword); 
+        Connection userCon =  new Connection(Program.databaseUser,Program.databasePassword); 
 
         int idUser   { get; set; }
         string username { get; set; }
@@ -28,7 +24,7 @@ namespace BDTur.Classes
 
         public bool autenticate()
         {
-            MySqlConnection con = userCon.getConnection();
+            MySqlConnection con = userCon.GetConnection();
             con.Open();
             string query = "SELECT `usuario`.`idUsuario`," +
                            "`usuario`.`username`," +
