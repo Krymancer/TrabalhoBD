@@ -2,3 +2,11 @@
 *.exe
 *.pdb
 *.cache
+*.exe
+*.pdb
+BDTur/obj/Debug/BDTur.csproj.FileListAbsolute.txt
+BDTur/obj/Debug/BDTur.csproj.GenerateResource.cache
+BDTur/obj/Debug/BDTur.csprojAssemblyReference.cache
+BDTur/obj/Debug/BDTur.exe
+BDTur/obj/Debug/BDTur.pdb
+BDTur/obj/Debug/DesignTimeResolveAssemblyReferences.cache
