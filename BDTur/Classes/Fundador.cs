@@ -8,5 +8,28 @@ namespace BDTur.Classes
 {
     class Fundador
     {
+        private int idFundador;
+        private string nomeFundador;
+        private string atividadeProfissionalFundador;
+        private DateTime nascimentoFundador;
+        private DateTime morteFundador;
+        private string nacionalidadeFundador;
+
+        public Fundador(int idFundador, string nomeFundador, string atividadeProfissionalFundador, DateTime nascimentoFundador, DateTime morteFundador, string nacionalidadeFundador)
+        {
+            this.idFundador = idFundador;
+            this.nomeFundador = nomeFundador;
+            this.atividadeProfissionalFundador = atividadeProfissionalFundador;
+            this.nascimentoFundador = nascimentoFundador;
+            this.morteFundador = morteFundador;
+            this.nacionalidadeFundador = nacionalidadeFundador;
+        }
+
+        public int IdFundador { get; set; }
+        public string NomeFundador { get; set; }
+        public string AtividadeProfissionalFundador { get; set; }
+        public DateTime NascimentoFundador { get; set; }
+        public DateTime MorteFundador { get; set; }
+        public string NacionalidadeFundador { get; set; }
     }
 }
