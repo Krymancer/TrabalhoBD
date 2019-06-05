@@ -20,6 +20,7 @@ namespace BDTur.Classes
         private string endComplementoPontoTuristico;
         private string endBairroPontoTuristico;
         private string endCepPontoTuristico;
+
         
 
         public PontoTuristico(int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
