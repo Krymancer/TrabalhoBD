@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.TabControl tabControl;
             this.tabPageHoteis = new System.Windows.Forms.TabPage();
+            this.dataGridViewHotel = new System.Windows.Forms.DataGridView();
             this.groupBoxClassificaoHotel = new System.Windows.Forms.GroupBox();
             this.checkBox1StarHotel = new System.Windows.Forms.CheckBox();
             this.checkBox5StarHotel = new System.Windows.Forms.CheckBox();
@@ -37,6 +38,7 @@
             this.checkBox4StarHotel = new System.Windows.Forms.CheckBox();
             this.checkBox3StarHotel = new System.Windows.Forms.CheckBox();
             this.tabPageRestaurantes = new System.Windows.Forms.TabPage();
+            this.dataGridViewRestaurante = new System.Windows.Forms.DataGridView();
             this.groupBoxEspecialidadeRestaurante = new System.Windows.Forms.GroupBox();
             this.textBoxEspecialidadeRestaurante = new System.Windows.Forms.TextBox();
             this.groupBoxClassificacaoRestaurante = new System.Windows.Forms.GroupBox();
@@ -59,6 +61,7 @@
             this.checkBox3StarPontoTuristico = new System.Windows.Forms.CheckBox();
             this.dataGridViewPontosTuristico = new System.Windows.Forms.DataGridView();
             this.tabPageIgrejas = new System.Windows.Forms.TabPage();
+            this.dataGridViewIgreja = new System.Windows.Forms.DataGridView();
             this.groupBoxPeriodoIgreja = new System.Windows.Forms.GroupBox();
             this.comboBoxPeriodoIgreja = new System.Windows.Forms.ComboBox();
             this.groupBoxFundadorIgreja = new System.Windows.Forms.GroupBox();
@@ -67,6 +70,7 @@
             this.textBoxNomeFundadorIgreja = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPageMuseus = new System.Windows.Forms.TabPage();
+            this.dataGridViewMuseu = new System.Windows.Forms.DataGridView();
             this.groupBoxDataFundacaoMuseu = new System.Windows.Forms.GroupBox();
             this.DataFundacao = new System.Windows.Forms.TextBox();
             this.groupBoxFundadorMuseu = new System.Windows.Forms.GroupBox();
@@ -75,6 +79,7 @@
             this.textBoxNomeFundadorMuseu = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPageCasasdeShow = new System.Windows.Forms.TabPage();
+            this.dataGridViewCasadeShow = new System.Windows.Forms.DataGridView();
             this.groupBoxFuncionamentoCasadeShow = new System.Windows.Forms.GroupBox();
             this.textBoxHorarioFuncionamentoCasadeShow = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,6 +94,7 @@
             this.groupBoxDiaFechamentoCasadeShow = new System.Windows.Forms.GroupBox();
             this.comboBoxDiaFechamentoCasadeShow = new System.Windows.Forms.ComboBox();
             this.tabPageFundadores = new System.Windows.Forms.TabPage();
+            this.dataGridViewFundadores = new System.Windows.Forms.DataGridView();
             this.groupBoxNacioonalidadeFundador = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -109,17 +115,13 @@
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridViewRestaurante = new System.Windows.Forms.DataGridView();
-            this.dataGridViewIgreja = new System.Windows.Forms.DataGridView();
-            this.dataGridViewMuseu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCasadeShow = new System.Windows.Forms.DataGridView();
-            this.dataGridViewFundadores = new System.Windows.Forms.DataGridView();
-            this.dataGridViewHotel = new System.Windows.Forms.DataGridView();
             tabControl = new System.Windows.Forms.TabControl();
             tabControl.SuspendLayout();
             this.tabPageHoteis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).BeginInit();
             this.groupBoxClassificaoHotel.SuspendLayout();
             this.tabPageRestaurantes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).BeginInit();
             this.groupBoxEspecialidadeRestaurante.SuspendLayout();
             this.groupBoxClassificacaoRestaurante.SuspendLayout();
             this.tabPagePontosTuristicos.SuspendLayout();
@@ -127,24 +129,22 @@
             this.groupBoxClassificacaoPontoTuristico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPontosTuristico)).BeginInit();
             this.tabPageIgrejas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).BeginInit();
             this.groupBoxPeriodoIgreja.SuspendLayout();
             this.groupBoxFundadorIgreja.SuspendLayout();
             this.tabPageMuseus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMuseu)).BeginInit();
             this.groupBoxDataFundacaoMuseu.SuspendLayout();
             this.groupBoxFundadorMuseu.SuspendLayout();
             this.tabPageCasasdeShow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).BeginInit();
             this.groupBoxFuncionamentoCasadeShow.SuspendLayout();
             this.groupBoxClassificacao.SuspendLayout();
             this.groupBoxDiaFechamentoCasadeShow.SuspendLayout();
             this.tabPageFundadores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).BeginInit();
             this.groupBoxNacioonalidadeFundador.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMuseu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -177,8 +177,26 @@
             this.tabPageHoteis.TabIndex = 1;
             this.tabPageHoteis.Text = "Hoteis";
             // 
+            // dataGridViewHotel
+            // 
+            this.dataGridViewHotel.AllowUserToAddRows = false;
+            this.dataGridViewHotel.AllowUserToDeleteRows = false;
+            this.dataGridViewHotel.AllowUserToOrderColumns = true;
+            this.dataGridViewHotel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHotel.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHotel.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewHotel.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewHotel.Name = "dataGridViewHotel";
+            this.dataGridViewHotel.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewHotel.TabIndex = 33;
+            // 
             // groupBoxClassificaoHotel
             // 
+            this.groupBoxClassificaoHotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxClassificaoHotel.Controls.Add(this.checkBox1StarHotel);
             this.groupBoxClassificaoHotel.Controls.Add(this.checkBox5StarHotel);
             this.groupBoxClassificaoHotel.Controls.Add(this.checkBox2StarHotel);
@@ -253,6 +271,23 @@
             this.tabPageRestaurantes.Size = new System.Drawing.Size(915, 363);
             this.tabPageRestaurantes.TabIndex = 2;
             this.tabPageRestaurantes.Text = "Restaurantes";
+            // 
+            // dataGridViewRestaurante
+            // 
+            this.dataGridViewRestaurante.AllowUserToAddRows = false;
+            this.dataGridViewRestaurante.AllowUserToDeleteRows = false;
+            this.dataGridViewRestaurante.AllowUserToOrderColumns = true;
+            this.dataGridViewRestaurante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewRestaurante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRestaurante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRestaurante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRestaurante.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewRestaurante.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewRestaurante.Name = "dataGridViewRestaurante";
+            this.dataGridViewRestaurante.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewRestaurante.TabIndex = 58;
             // 
             // groupBoxEspecialidadeRestaurante
             // 
@@ -493,6 +528,23 @@
             this.tabPageIgrejas.TabIndex = 4;
             this.tabPageIgrejas.Text = "Igrejas";
             // 
+            // dataGridViewIgreja
+            // 
+            this.dataGridViewIgreja.AllowUserToAddRows = false;
+            this.dataGridViewIgreja.AllowUserToDeleteRows = false;
+            this.dataGridViewIgreja.AllowUserToOrderColumns = true;
+            this.dataGridViewIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewIgreja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewIgreja.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewIgreja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIgreja.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewIgreja.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewIgreja.Name = "dataGridViewIgreja";
+            this.dataGridViewIgreja.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewIgreja.TabIndex = 45;
+            // 
             // groupBoxPeriodoIgreja
             // 
             this.groupBoxPeriodoIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -572,6 +624,23 @@
             this.tabPageMuseus.TabIndex = 5;
             this.tabPageMuseus.Text = "Museus";
             // 
+            // dataGridViewMuseu
+            // 
+            this.dataGridViewMuseu.AllowUserToAddRows = false;
+            this.dataGridViewMuseu.AllowUserToDeleteRows = false;
+            this.dataGridViewMuseu.AllowUserToOrderColumns = true;
+            this.dataGridViewMuseu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewMuseu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMuseu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewMuseu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMuseu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewMuseu.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewMuseu.Name = "dataGridViewMuseu";
+            this.dataGridViewMuseu.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewMuseu.TabIndex = 45;
+            // 
             // groupBoxDataFundacaoMuseu
             // 
             this.groupBoxDataFundacaoMuseu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -649,6 +718,23 @@
             this.tabPageCasasdeShow.Size = new System.Drawing.Size(915, 363);
             this.tabPageCasasdeShow.TabIndex = 6;
             this.tabPageCasasdeShow.Text = "Casas de Show";
+            // 
+            // dataGridViewCasadeShow
+            // 
+            this.dataGridViewCasadeShow.AllowUserToAddRows = false;
+            this.dataGridViewCasadeShow.AllowUserToDeleteRows = false;
+            this.dataGridViewCasadeShow.AllowUserToOrderColumns = true;
+            this.dataGridViewCasadeShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCasadeShow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCasadeShow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewCasadeShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCasadeShow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewCasadeShow.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewCasadeShow.Name = "dataGridViewCasadeShow";
+            this.dataGridViewCasadeShow.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewCasadeShow.TabIndex = 45;
             // 
             // groupBoxFuncionamentoCasadeShow
             // 
@@ -793,6 +879,23 @@
             this.tabPageFundadores.TabIndex = 7;
             this.tabPageFundadores.Text = "Fundadores";
             // 
+            // dataGridViewFundadores
+            // 
+            this.dataGridViewFundadores.AllowUserToAddRows = false;
+            this.dataGridViewFundadores.AllowUserToDeleteRows = false;
+            this.dataGridViewFundadores.AllowUserToOrderColumns = true;
+            this.dataGridViewFundadores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewFundadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewFundadores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewFundadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFundadores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewFundadores.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewFundadores.Name = "dataGridViewFundadores";
+            this.dataGridViewFundadores.Size = new System.Drawing.Size(767, 357);
+            this.dataGridViewFundadores.TabIndex = 62;
+            // 
             // groupBoxNacioonalidadeFundador
             // 
             this.groupBoxNacioonalidadeFundador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -871,6 +974,7 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(109, 20);
             this.textBoxNome.TabIndex = 3;
+            this.textBoxNome.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // labelNome
             // 
@@ -963,108 +1067,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem1.Text = " ";
             // 
-            // dataGridViewRestaurante
-            // 
-            this.dataGridViewRestaurante.AllowUserToAddRows = false;
-            this.dataGridViewRestaurante.AllowUserToDeleteRows = false;
-            this.dataGridViewRestaurante.AllowUserToOrderColumns = true;
-            this.dataGridViewRestaurante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewRestaurante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRestaurante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewRestaurante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRestaurante.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewRestaurante.Location = new System.Drawing.Point(6, 6);
-            this.dataGridViewRestaurante.Name = "dataGridViewRestaurante";
-            this.dataGridViewRestaurante.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewRestaurante.TabIndex = 58;
-            // 
-            // dataGridViewIgreja
-            // 
-            this.dataGridViewIgreja.AllowUserToAddRows = false;
-            this.dataGridViewIgreja.AllowUserToDeleteRows = false;
-            this.dataGridViewIgreja.AllowUserToOrderColumns = true;
-            this.dataGridViewIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewIgreja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewIgreja.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewIgreja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIgreja.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewIgreja.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewIgreja.Name = "dataGridViewIgreja";
-            this.dataGridViewIgreja.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewIgreja.TabIndex = 45;
-            // 
-            // dataGridViewMuseu
-            // 
-            this.dataGridViewMuseu.AllowUserToAddRows = false;
-            this.dataGridViewMuseu.AllowUserToDeleteRows = false;
-            this.dataGridViewMuseu.AllowUserToOrderColumns = true;
-            this.dataGridViewMuseu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewMuseu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewMuseu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewMuseu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMuseu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewMuseu.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewMuseu.Name = "dataGridViewMuseu";
-            this.dataGridViewMuseu.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewMuseu.TabIndex = 45;
-            // 
-            // dataGridViewCasadeShow
-            // 
-            this.dataGridViewCasadeShow.AllowUserToAddRows = false;
-            this.dataGridViewCasadeShow.AllowUserToDeleteRows = false;
-            this.dataGridViewCasadeShow.AllowUserToOrderColumns = true;
-            this.dataGridViewCasadeShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewCasadeShow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCasadeShow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewCasadeShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCasadeShow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewCasadeShow.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewCasadeShow.Name = "dataGridViewCasadeShow";
-            this.dataGridViewCasadeShow.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewCasadeShow.TabIndex = 45;
-            // 
-            // dataGridViewFundadores
-            // 
-            this.dataGridViewFundadores.AllowUserToAddRows = false;
-            this.dataGridViewFundadores.AllowUserToDeleteRows = false;
-            this.dataGridViewFundadores.AllowUserToOrderColumns = true;
-            this.dataGridViewFundadores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewFundadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewFundadores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewFundadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFundadores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewFundadores.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewFundadores.Name = "dataGridViewFundadores";
-            this.dataGridViewFundadores.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewFundadores.TabIndex = 62;
-            // 
-            // dataGridViewHotel
-            // 
-            this.dataGridViewHotel.AllowUserToAddRows = false;
-            this.dataGridViewHotel.AllowUserToDeleteRows = false;
-            this.dataGridViewHotel.AllowUserToOrderColumns = true;
-            this.dataGridViewHotel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewHotel.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHotel.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewHotel.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewHotel.Name = "dataGridViewHotel";
-            this.dataGridViewHotel.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewHotel.TabIndex = 33;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,9 +1084,11 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             tabControl.ResumeLayout(false);
             this.tabPageHoteis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).EndInit();
             this.groupBoxClassificaoHotel.ResumeLayout(false);
             this.groupBoxClassificaoHotel.PerformLayout();
             this.tabPageRestaurantes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).EndInit();
             this.groupBoxEspecialidadeRestaurante.ResumeLayout(false);
             this.groupBoxEspecialidadeRestaurante.PerformLayout();
             this.groupBoxClassificacaoRestaurante.ResumeLayout(false);
@@ -1096,31 +1100,29 @@
             this.groupBoxClassificacaoPontoTuristico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPontosTuristico)).EndInit();
             this.tabPageIgrejas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).EndInit();
             this.groupBoxPeriodoIgreja.ResumeLayout(false);
             this.groupBoxFundadorIgreja.ResumeLayout(false);
             this.groupBoxFundadorIgreja.PerformLayout();
             this.tabPageMuseus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMuseu)).EndInit();
             this.groupBoxDataFundacaoMuseu.ResumeLayout(false);
             this.groupBoxDataFundacaoMuseu.PerformLayout();
             this.groupBoxFundadorMuseu.ResumeLayout(false);
             this.groupBoxFundadorMuseu.PerformLayout();
             this.tabPageCasasdeShow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).EndInit();
             this.groupBoxFuncionamentoCasadeShow.ResumeLayout(false);
             this.groupBoxFuncionamentoCasadeShow.PerformLayout();
             this.groupBoxClassificacao.ResumeLayout(false);
             this.groupBoxClassificacao.PerformLayout();
             this.groupBoxDiaFechamentoCasadeShow.ResumeLayout(false);
             this.tabPageFundadores.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).EndInit();
             this.groupBoxNacioonalidadeFundador.ResumeLayout(false);
             this.groupBoxNacioonalidadeFundador.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMuseu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
