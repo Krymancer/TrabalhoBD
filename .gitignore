@@ -1,9 +1,4 @@
 .vs/
 *.exe
-BDTur/bin/Debug/BDTur.exe
-BDTur/obj/Debug/BDTur.pdb
-*.cache
-BDTur/bin/Debug/BDTur.pdb
 *.pdb
-*.exe
-BDTur/bin/Debug/BDTur.exe
+*.cache
