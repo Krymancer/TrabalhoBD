@@ -41,7 +41,7 @@ namespace BDTur.Classes
                              "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;";
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter hotelAdapter(string where,string cidade)
+        public  MySqlDataAdapter hotelAdapter(string where,string cidade,int[] categoria, bool[] restaurante)
         {
 
             string query = "SELECT " +
@@ -56,12 +56,31 @@ namespace BDTur.Classes
                                 "`hotel`.`endBairroHotel` " +
                             "FROM " +
                                 "`equipe431447`.`hotel` " +
-                            "WHERE `hotel`.`nomeHotel` LIKE '%" + where + "%'";
+                            $"WHERE `hotel`.`nomeHotel` LIKE '%{where}%'";
 
             if (cidade != null && cidade != "0")
             {
-                query += "AND `hotel`.`cidadeIdCidade` =" + cidade + ";"; 
+                query += $"AND `hotel`.`cidadeIdCidade` = {cidade} "; 
             }
+            query += $"AND  (`hotel`.`categoriaHotel` = {categoria[0]} OR `hotel`.`categoriaHotel` = {categoria[1]} OR `hotel`.`categoriaHotel` = {categoria[2]} OR `hotel`.`categoriaHotel` = {categoria[3]} OR `hotel`.`categoriaHotel` = {categoria[4]}) ";
+
+            if (restaurante[0] && restaurante[1])
+            {
+                query += "AND (`hotel`.`restauranteIdRestaurante` IS NOT NULL OR `hotel`.`restauranteIdRestaurante` IS NULL) ";
+            }
+            else if (restaurante[0])
+            {
+                query += "AND `hotel`.`restauranteIdRestaurante` IS NOT NULL";
+            }
+            else if (restaurante[1])
+            {
+                query += "AND `hotel`.`restauranteIdRestaurante` IS NULL";
+            }
+            else
+            {
+                query += "AND (`hotel`.`restauranteIdRestaurante` IS NOT NULL AND `hotel`.`restauranteIdRestaurante` IS NULL)";
+            }
+
             return fetchResultFromQuery(query);
 
         }

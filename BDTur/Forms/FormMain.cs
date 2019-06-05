@@ -14,6 +14,9 @@ namespace BDTur.Forms
     public partial class FormMain : Form
     {
         Classes.DAL adapter = new Classes.DAL();
+        int[] CategoriaHotel = new int[] {1, 2, 3, 4, 5};
+        int[] CategoriaRestaurante = new int[] { 1, 2, 3, 4, 5 };
+        bool[] RestauranteHotel = new bool[] { true, true };
 
         public FormMain()
         {
@@ -23,7 +26,7 @@ namespace BDTur.Forms
         private void FormMain_Load(object sender, EventArgs e)
         {
             populateComboBox();
-            populateDataGridViews("",null);
+            populateDataGridViews("",null,CategoriaHotel,CategoriaRestaurante,RestauranteHotel);
         }
 
         
@@ -57,20 +60,20 @@ namespace BDTur.Forms
         /// <summary>
         /// Popula os DataGridViews com os dados do BD.
         /// </summary>
-        private void populateDataGridViews(string where, string cidade)
+        /// <param name="where"> Texto para filtragem dos resultados pelo Nome </param>
+        private void populateDataGridViews(string where, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel)
         {
-            populateHotelDataGridView(where, cidade);
-            populateRestauranteDataGridView(where);
-            populatePontoTuristicoDataGridView(where);
+            populateHotelDataGridView(where, cidade,categoriaHotel,restauranteHotel);
+            populateRestauranteDataGridView(where);            
             populateIgrejaDataGridView(where);
             populateCasaDeShowDataGridView(where);
             populateMuseuDataGridView(where);
             populateFundadorDataGridView(where);
         }
         /* Metodos para popular e alterar o cabeçario dos DataGridViews individualmente */
-        private void populateHotelDataGridView(string where, string cidade)
+        private void populateHotelDataGridView(string where, string cidade, int[] categoria,bool[] restaurante)
         {
-            MySqlDataAdapter da = adapter.hotelAdapter(where,cidade);
+            MySqlDataAdapter da = adapter.hotelAdapter(where,cidade, categoria, restaurante);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -81,6 +84,7 @@ namespace BDTur.Forms
                 {
                     dtCloned.ImportRow(row);
                 }
+
                 dataGridViewHotel.DataSource = dtCloned;
 
                 dataGridViewHotel.Columns[3].DefaultCellStyle.Format = "(##) # ####-####";
@@ -138,40 +142,6 @@ namespace BDTur.Forms
             }
 
            
-        }
-        private void populatePontoTuristicoDataGridView(string where)
-        {
-            MySqlDataAdapter da = adapter.pontoTuristicoAdapter(where);
-            if (da != null)
-            {            
-                DataTable dt = new DataTable();                
-                da.Fill(dt);                             
-                DataTable dtCloned = dt.Clone();
-                dtCloned.Columns[4].DataType = typeof(Int64);
-                foreach (DataRow row in dt.Rows)
-                {
-                    dtCloned.ImportRow(row);
-                }
-
-                dataGridViewPontosTuristico.DataSource = dtCloned;
-
-                dataGridViewPontosTuristico.Columns[4].DefaultCellStyle.Format = "(##) # ####-####";
-
-                dataGridViewPontosTuristico.Columns[0].HeaderText = "ID";
-                dataGridViewPontosTuristico.Columns[1].HeaderText = "Tipo";
-                dataGridViewPontosTuristico.Columns[2].HeaderText = "Nome";
-                dataGridViewPontosTuristico.Columns[3].HeaderText = "Descrição";
-                dataGridViewPontosTuristico.Columns[4].HeaderText = "Contato";
-                dataGridViewPontosTuristico.Columns[5].HeaderText = "Tipo Endereço";
-                dataGridViewPontosTuristico.Columns[6].HeaderText = "Logadouro";
-                dataGridViewPontosTuristico.Columns[7].HeaderText = "Numero";
-                dataGridViewPontosTuristico.Columns[8].HeaderText = "Complemento";
-                dataGridViewPontosTuristico.Columns[9].HeaderText = "Bairro";
-            }
-            else
-            {
-                MessageBox.Show("Falha");
-            }             
         }
         private void populateIgrejaDataGridView(string where)
         {
@@ -306,7 +276,14 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        /* ---------------------------------------------------------------------------- */        
+        /* ---------------------------------------------------------------------------- */
+
+        private void refreshDataGridViews()
+        {
+            string where = textBoxNome.Text;
+            string cidade = comboBoxCidade.SelectedValue.ToString();
+            populateDataGridViews(where, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel);
+        }
         private void dataGridViewPontosTuristico_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -314,10 +291,139 @@ namespace BDTur.Forms
 
         private void textBoxNome_TextChanged(object sender, EventArgs e)
         {
-            string where = textBoxNome.Text;
-            string cidade = comboBoxCidade.SelectedValue.ToString();
+            refreshDataGridViews();
+        }
+
+        private void comboBoxCidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+
+        private void checkBox5StarRestaurante_CheckedChanged(object sender, EventArgs e)
+        {                      
             
-            populateDataGridViews(where,cidade);
+        }
+
+        private void checkBox4StarRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox3StarRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBox2StarRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void checkBox1StarRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBox5StarHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[4] = 5;
+            }
+            if (checkBox5StarHotel.CheckState == CheckState.Unchecked)
+            {
+                CategoriaHotel[4] = 0;
+            }
+
+            refreshDataGridViews();
+        }
+
+        private void checkBox4StarHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[3] = 4;
+            }
+            if (checkBox4StarHotel.CheckState == CheckState.Unchecked)
+            {
+                CategoriaHotel[3] = 0;
+            }
+
+            refreshDataGridViews();
+        }
+
+        private void checkBox3StarHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[2] = 3;
+            }
+            if (checkBox3StarHotel.CheckState == CheckState.Unchecked)
+            {
+                CategoriaHotel[2] = 0;
+            }
+
+            refreshDataGridViews();
+        }
+
+        private void checkBox2StarHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[1] = 2;
+            }
+
+            if (checkBox2StarHotel.CheckState == CheckState.Unchecked)
+            {
+                CategoriaHotel[1] = 0;
+            }
+
+            refreshDataGridViews();
+        }
+
+        private void checkBox1StarHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[0] = 1;                                                
+            }
+            if (checkBox1StarHotel.CheckState == CheckState.Unchecked)
+            {                           
+                CategoriaHotel[0] = 0;
+            }
+
+            refreshDataGridViews();
+        }
+
+        private void checkBoxPossuiRestauranteHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxPossuiRestauranteHotel.CheckState == CheckState.Checked)
+            {
+                RestauranteHotel[0] = true;
+            }
+
+            if (checkBoxPossuiRestauranteHotel.CheckState == CheckState.Unchecked)
+            {
+                RestauranteHotel[0] = false;
+            }
+
+            refreshDataGridViews();
+
+        }
+
+        private void checkBoxNãoPossuiRestauranteHotel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNaoPossuiRestauranteHotel.CheckState == CheckState.Checked)
+            {
+                RestauranteHotel[1] = true;
+            }
+
+            if (checkBoxNaoPossuiRestauranteHotel.CheckState == CheckState.Unchecked)
+            {
+                RestauranteHotel[1] = false;
+            }
+
+            refreshDataGridViews();
         }
     }
 }

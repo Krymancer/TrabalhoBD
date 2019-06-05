@@ -47,19 +47,6 @@
             this.checkBox2StarRestaurante = new System.Windows.Forms.CheckBox();
             this.checkBox4StarRestaurante = new System.Windows.Forms.CheckBox();
             this.checkBox3StarRestaurante = new System.Windows.Forms.CheckBox();
-            this.tabPagePontosTuristicos = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.groupBoxClassificacaoPontoTuristico = new System.Windows.Forms.GroupBox();
-            this.checkBox1StarPontoTuristico = new System.Windows.Forms.CheckBox();
-            this.checkBox5StarPontoTuristico = new System.Windows.Forms.CheckBox();
-            this.checkBox2StarPontoTuristico = new System.Windows.Forms.CheckBox();
-            this.checkBox4StarPontoTuristico = new System.Windows.Forms.CheckBox();
-            this.checkBox3StarPontoTuristico = new System.Windows.Forms.CheckBox();
-            this.dataGridViewPontosTuristico = new System.Windows.Forms.DataGridView();
             this.tabPageIgrejas = new System.Windows.Forms.TabPage();
             this.dataGridViewIgreja = new System.Windows.Forms.DataGridView();
             this.groupBoxPeriodoIgreja = new System.Windows.Forms.GroupBox();
@@ -85,12 +72,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxDiadaSemanaFuncionamentoCasadeShow = new System.Windows.Forms.ComboBox();
-            this.groupBoxClassificacao = new System.Windows.Forms.GroupBox();
-            this.checkBox1StarCasadeShow = new System.Windows.Forms.CheckBox();
-            this.checkBox5StarCasadeShow = new System.Windows.Forms.CheckBox();
-            this.checkBox2StarCasadeShow = new System.Windows.Forms.CheckBox();
-            this.checkBox4StarCasadeShow = new System.Windows.Forms.CheckBox();
-            this.checkBox3StarCasadeShow = new System.Windows.Forms.CheckBox();
+            this.groupBoxRestaurannte = new System.Windows.Forms.GroupBox();
+            this.checkBoxPossuiRestauranteCasadeShow = new System.Windows.Forms.CheckBox();
             this.groupBoxDiaFechamentoCasadeShow = new System.Windows.Forms.GroupBox();
             this.comboBoxDiaFechamentoCasadeShow = new System.Windows.Forms.ComboBox();
             this.tabPageFundadores = new System.Windows.Forms.TabPage();
@@ -115,6 +98,10 @@
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxRestauranteHotel = new System.Windows.Forms.GroupBox();
+            this.checkBoxPossuiRestauranteHotel = new System.Windows.Forms.CheckBox();
+            this.checkBoxNaoPossuiRestauranteHotel = new System.Windows.Forms.CheckBox();
+            this.checkBoxNaoPossuiRestauranteCasadeShow = new System.Windows.Forms.CheckBox();
             tabControl = new System.Windows.Forms.TabControl();
             tabControl.SuspendLayout();
             this.tabPageHoteis.SuspendLayout();
@@ -124,10 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).BeginInit();
             this.groupBoxEspecialidadeRestaurante.SuspendLayout();
             this.groupBoxClassificacaoRestaurante.SuspendLayout();
-            this.tabPagePontosTuristicos.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBoxClassificacaoPontoTuristico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPontosTuristico)).BeginInit();
             this.tabPageIgrejas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).BeginInit();
             this.groupBoxPeriodoIgreja.SuspendLayout();
@@ -139,12 +122,13 @@
             this.tabPageCasasdeShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).BeginInit();
             this.groupBoxFuncionamentoCasadeShow.SuspendLayout();
-            this.groupBoxClassificacao.SuspendLayout();
+            this.groupBoxRestaurannte.SuspendLayout();
             this.groupBoxDiaFechamentoCasadeShow.SuspendLayout();
             this.tabPageFundadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).BeginInit();
             this.groupBoxNacioonalidadeFundador.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBoxRestauranteHotel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -154,7 +138,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             tabControl.Controls.Add(this.tabPageHoteis);
             tabControl.Controls.Add(this.tabPageRestaurantes);
-            tabControl.Controls.Add(this.tabPagePontosTuristicos);
             tabControl.Controls.Add(this.tabPageIgrejas);
             tabControl.Controls.Add(this.tabPageMuseus);
             tabControl.Controls.Add(this.tabPageCasasdeShow);
@@ -168,6 +151,7 @@
             // tabPageHoteis
             // 
             this.tabPageHoteis.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageHoteis.Controls.Add(this.groupBoxRestauranteHotel);
             this.tabPageHoteis.Controls.Add(this.dataGridViewHotel);
             this.tabPageHoteis.Controls.Add(this.groupBoxClassificaoHotel);
             this.tabPageHoteis.Location = new System.Drawing.Point(4, 22);
@@ -212,52 +196,67 @@
             // checkBox1StarHotel
             // 
             this.checkBox1StarHotel.AutoSize = true;
+            this.checkBox1StarHotel.Checked = true;
+            this.checkBox1StarHotel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1StarHotel.Location = new System.Drawing.Point(10, 111);
             this.checkBox1StarHotel.Name = "checkBox1StarHotel";
             this.checkBox1StarHotel.Size = new System.Drawing.Size(67, 17);
             this.checkBox1StarHotel.TabIndex = 4;
             this.checkBox1StarHotel.Text = "1 Estrela";
             this.checkBox1StarHotel.UseVisualStyleBackColor = true;
+            this.checkBox1StarHotel.CheckedChanged += new System.EventHandler(this.checkBox1StarHotel_CheckedChanged);
             // 
             // checkBox5StarHotel
             // 
             this.checkBox5StarHotel.AutoSize = true;
+            this.checkBox5StarHotel.Checked = true;
+            this.checkBox5StarHotel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5StarHotel.Location = new System.Drawing.Point(10, 19);
             this.checkBox5StarHotel.Name = "checkBox5StarHotel";
             this.checkBox5StarHotel.Size = new System.Drawing.Size(72, 17);
             this.checkBox5StarHotel.TabIndex = 0;
             this.checkBox5StarHotel.Text = "5 Estrelas";
             this.checkBox5StarHotel.UseVisualStyleBackColor = true;
+            this.checkBox5StarHotel.CheckedChanged += new System.EventHandler(this.checkBox5StarHotel_CheckedChanged);
             // 
             // checkBox2StarHotel
             // 
             this.checkBox2StarHotel.AutoSize = true;
+            this.checkBox2StarHotel.Checked = true;
+            this.checkBox2StarHotel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2StarHotel.Location = new System.Drawing.Point(10, 88);
             this.checkBox2StarHotel.Name = "checkBox2StarHotel";
             this.checkBox2StarHotel.Size = new System.Drawing.Size(72, 17);
             this.checkBox2StarHotel.TabIndex = 3;
             this.checkBox2StarHotel.Text = "2 Estrelas";
             this.checkBox2StarHotel.UseVisualStyleBackColor = true;
+            this.checkBox2StarHotel.CheckedChanged += new System.EventHandler(this.checkBox2StarHotel_CheckedChanged);
             // 
             // checkBox4StarHotel
             // 
             this.checkBox4StarHotel.AutoSize = true;
+            this.checkBox4StarHotel.Checked = true;
+            this.checkBox4StarHotel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4StarHotel.Location = new System.Drawing.Point(10, 42);
             this.checkBox4StarHotel.Name = "checkBox4StarHotel";
             this.checkBox4StarHotel.Size = new System.Drawing.Size(72, 17);
             this.checkBox4StarHotel.TabIndex = 1;
             this.checkBox4StarHotel.Text = "4 Estrelas";
             this.checkBox4StarHotel.UseVisualStyleBackColor = true;
+            this.checkBox4StarHotel.CheckedChanged += new System.EventHandler(this.checkBox4StarHotel_CheckedChanged);
             // 
             // checkBox3StarHotel
             // 
             this.checkBox3StarHotel.AutoSize = true;
+            this.checkBox3StarHotel.Checked = true;
+            this.checkBox3StarHotel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3StarHotel.Location = new System.Drawing.Point(10, 65);
             this.checkBox3StarHotel.Name = "checkBox3StarHotel";
             this.checkBox3StarHotel.Size = new System.Drawing.Size(72, 17);
             this.checkBox3StarHotel.TabIndex = 2;
             this.checkBox3StarHotel.Text = "3 Estrelas";
             this.checkBox3StarHotel.UseVisualStyleBackColor = true;
+            this.checkBox3StarHotel.CheckedChanged += new System.EventHandler(this.checkBox3StarHotel_CheckedChanged);
             // 
             // tabPageRestaurantes
             // 
@@ -326,194 +325,67 @@
             // checkBox1StarRestaurante
             // 
             this.checkBox1StarRestaurante.AutoSize = true;
+            this.checkBox1StarRestaurante.Checked = true;
+            this.checkBox1StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1StarRestaurante.Location = new System.Drawing.Point(10, 111);
             this.checkBox1StarRestaurante.Name = "checkBox1StarRestaurante";
             this.checkBox1StarRestaurante.Size = new System.Drawing.Size(67, 17);
             this.checkBox1StarRestaurante.TabIndex = 4;
             this.checkBox1StarRestaurante.Text = "1 Estrela";
             this.checkBox1StarRestaurante.UseVisualStyleBackColor = true;
+            this.checkBox1StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox1StarRestaurante_CheckedChanged);
             // 
             // checkBox5StarRestaurante
             // 
             this.checkBox5StarRestaurante.AutoSize = true;
+            this.checkBox5StarRestaurante.Checked = true;
+            this.checkBox5StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5StarRestaurante.Location = new System.Drawing.Point(10, 19);
             this.checkBox5StarRestaurante.Name = "checkBox5StarRestaurante";
             this.checkBox5StarRestaurante.Size = new System.Drawing.Size(72, 17);
             this.checkBox5StarRestaurante.TabIndex = 0;
             this.checkBox5StarRestaurante.Text = "5 Estrelas";
             this.checkBox5StarRestaurante.UseVisualStyleBackColor = true;
+            this.checkBox5StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox5StarRestaurante_CheckedChanged);
             // 
             // checkBox2StarRestaurante
             // 
             this.checkBox2StarRestaurante.AutoSize = true;
+            this.checkBox2StarRestaurante.Checked = true;
+            this.checkBox2StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2StarRestaurante.Location = new System.Drawing.Point(10, 88);
             this.checkBox2StarRestaurante.Name = "checkBox2StarRestaurante";
             this.checkBox2StarRestaurante.Size = new System.Drawing.Size(72, 17);
             this.checkBox2StarRestaurante.TabIndex = 3;
             this.checkBox2StarRestaurante.Text = "2 Estrelas";
             this.checkBox2StarRestaurante.UseVisualStyleBackColor = true;
+            this.checkBox2StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox2StarRestaurante_CheckedChanged);
             // 
             // checkBox4StarRestaurante
             // 
             this.checkBox4StarRestaurante.AutoSize = true;
+            this.checkBox4StarRestaurante.Checked = true;
+            this.checkBox4StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4StarRestaurante.Location = new System.Drawing.Point(10, 42);
             this.checkBox4StarRestaurante.Name = "checkBox4StarRestaurante";
             this.checkBox4StarRestaurante.Size = new System.Drawing.Size(72, 17);
             this.checkBox4StarRestaurante.TabIndex = 1;
             this.checkBox4StarRestaurante.Text = "4 Estrelas";
             this.checkBox4StarRestaurante.UseVisualStyleBackColor = true;
+            this.checkBox4StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox4StarRestaurante_CheckedChanged);
             // 
             // checkBox3StarRestaurante
             // 
             this.checkBox3StarRestaurante.AutoSize = true;
+            this.checkBox3StarRestaurante.Checked = true;
+            this.checkBox3StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3StarRestaurante.Location = new System.Drawing.Point(10, 65);
             this.checkBox3StarRestaurante.Name = "checkBox3StarRestaurante";
             this.checkBox3StarRestaurante.Size = new System.Drawing.Size(72, 17);
             this.checkBox3StarRestaurante.TabIndex = 2;
             this.checkBox3StarRestaurante.Text = "3 Estrelas";
             this.checkBox3StarRestaurante.UseVisualStyleBackColor = true;
-            // 
-            // tabPagePontosTuristicos
-            // 
-            this.tabPagePontosTuristicos.BackColor = System.Drawing.Color.Transparent;
-            this.tabPagePontosTuristicos.Controls.Add(this.groupBox6);
-            this.tabPagePontosTuristicos.Controls.Add(this.groupBoxClassificacaoPontoTuristico);
-            this.tabPagePontosTuristicos.Controls.Add(this.dataGridViewPontosTuristico);
-            this.tabPagePontosTuristicos.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePontosTuristicos.Name = "tabPagePontosTuristicos";
-            this.tabPagePontosTuristicos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePontosTuristicos.Size = new System.Drawing.Size(915, 363);
-            this.tabPagePontosTuristicos.TabIndex = 3;
-            this.tabPagePontosTuristicos.Text = "Pontos Turisticos";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.textBox17);
-            this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Controls.Add(this.textBox18);
-            this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Location = new System.Drawing.Point(783, 148);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(120, 112);
-            this.groupBox6.TabIndex = 41;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Fundador";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(5, 74);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(109, 20);
-            this.textBox17.TabIndex = 43;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 58);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 13);
-            this.label28.TabIndex = 42;
-            this.label28.Text = "Nacionalidade:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(5, 35);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(109, 20);
-            this.textBox18.TabIndex = 41;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 19);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(38, 13);
-            this.label29.TabIndex = 40;
-            this.label29.Text = "Nome:";
-            // 
-            // groupBoxClassificacaoPontoTuristico
-            // 
-            this.groupBoxClassificacaoPontoTuristico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClassificacaoPontoTuristico.Controls.Add(this.checkBox1StarPontoTuristico);
-            this.groupBoxClassificacaoPontoTuristico.Controls.Add(this.checkBox5StarPontoTuristico);
-            this.groupBoxClassificacaoPontoTuristico.Controls.Add(this.checkBox2StarPontoTuristico);
-            this.groupBoxClassificacaoPontoTuristico.Controls.Add(this.checkBox4StarPontoTuristico);
-            this.groupBoxClassificacaoPontoTuristico.Controls.Add(this.checkBox3StarPontoTuristico);
-            this.groupBoxClassificacaoPontoTuristico.Location = new System.Drawing.Point(783, 6);
-            this.groupBoxClassificacaoPontoTuristico.Name = "groupBoxClassificacaoPontoTuristico";
-            this.groupBoxClassificacaoPontoTuristico.Size = new System.Drawing.Size(120, 136);
-            this.groupBoxClassificacaoPontoTuristico.TabIndex = 34;
-            this.groupBoxClassificacaoPontoTuristico.TabStop = false;
-            this.groupBoxClassificacaoPontoTuristico.Text = "Classficação";
-            // 
-            // checkBox1StarPontoTuristico
-            // 
-            this.checkBox1StarPontoTuristico.AutoSize = true;
-            this.checkBox1StarPontoTuristico.Location = new System.Drawing.Point(10, 111);
-            this.checkBox1StarPontoTuristico.Name = "checkBox1StarPontoTuristico";
-            this.checkBox1StarPontoTuristico.Size = new System.Drawing.Size(67, 17);
-            this.checkBox1StarPontoTuristico.TabIndex = 4;
-            this.checkBox1StarPontoTuristico.Text = "1 Estrela";
-            this.checkBox1StarPontoTuristico.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5StarPontoTuristico
-            // 
-            this.checkBox5StarPontoTuristico.AutoSize = true;
-            this.checkBox5StarPontoTuristico.Location = new System.Drawing.Point(10, 19);
-            this.checkBox5StarPontoTuristico.Name = "checkBox5StarPontoTuristico";
-            this.checkBox5StarPontoTuristico.Size = new System.Drawing.Size(72, 17);
-            this.checkBox5StarPontoTuristico.TabIndex = 0;
-            this.checkBox5StarPontoTuristico.Text = "5 Estrelas";
-            this.checkBox5StarPontoTuristico.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2StarPontoTuristico
-            // 
-            this.checkBox2StarPontoTuristico.AutoSize = true;
-            this.checkBox2StarPontoTuristico.Location = new System.Drawing.Point(10, 88);
-            this.checkBox2StarPontoTuristico.Name = "checkBox2StarPontoTuristico";
-            this.checkBox2StarPontoTuristico.Size = new System.Drawing.Size(72, 17);
-            this.checkBox2StarPontoTuristico.TabIndex = 3;
-            this.checkBox2StarPontoTuristico.Text = "2 Estrelas";
-            this.checkBox2StarPontoTuristico.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4StarPontoTuristico
-            // 
-            this.checkBox4StarPontoTuristico.AutoSize = true;
-            this.checkBox4StarPontoTuristico.Location = new System.Drawing.Point(10, 42);
-            this.checkBox4StarPontoTuristico.Name = "checkBox4StarPontoTuristico";
-            this.checkBox4StarPontoTuristico.Size = new System.Drawing.Size(72, 17);
-            this.checkBox4StarPontoTuristico.TabIndex = 1;
-            this.checkBox4StarPontoTuristico.Text = "4 Estrelas";
-            this.checkBox4StarPontoTuristico.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3StarPontoTuristico
-            // 
-            this.checkBox3StarPontoTuristico.AutoSize = true;
-            this.checkBox3StarPontoTuristico.Location = new System.Drawing.Point(10, 65);
-            this.checkBox3StarPontoTuristico.Name = "checkBox3StarPontoTuristico";
-            this.checkBox3StarPontoTuristico.Size = new System.Drawing.Size(72, 17);
-            this.checkBox3StarPontoTuristico.TabIndex = 2;
-            this.checkBox3StarPontoTuristico.Text = "3 Estrelas";
-            this.checkBox3StarPontoTuristico.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewPontosTuristico
-            // 
-            this.dataGridViewPontosTuristico.AllowUserToAddRows = false;
-            this.dataGridViewPontosTuristico.AllowUserToDeleteRows = false;
-            this.dataGridViewPontosTuristico.AllowUserToOrderColumns = true;
-            this.dataGridViewPontosTuristico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewPontosTuristico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPontosTuristico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewPontosTuristico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPontosTuristico.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewPontosTuristico.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewPontosTuristico.Name = "dataGridViewPontosTuristico";
-            this.dataGridViewPontosTuristico.Size = new System.Drawing.Size(767, 357);
-            this.dataGridViewPontosTuristico.TabIndex = 32;
-            this.dataGridViewPontosTuristico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPontosTuristico_CellContentClick);
+            this.checkBox3StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox3StarRestaurante_CheckedChanged);
             // 
             // tabPageIgrejas
             // 
@@ -710,7 +582,7 @@
             this.tabPageCasasdeShow.BackColor = System.Drawing.Color.Transparent;
             this.tabPageCasasdeShow.Controls.Add(this.dataGridViewCasadeShow);
             this.tabPageCasasdeShow.Controls.Add(this.groupBoxFuncionamentoCasadeShow);
-            this.tabPageCasasdeShow.Controls.Add(this.groupBoxClassificacao);
+            this.tabPageCasasdeShow.Controls.Add(this.groupBoxRestaurannte);
             this.tabPageCasasdeShow.Controls.Add(this.groupBoxDiaFechamentoCasadeShow);
             this.tabPageCasasdeShow.Location = new System.Drawing.Point(4, 22);
             this.tabPageCasasdeShow.Name = "tabPageCasasdeShow";
@@ -743,7 +615,7 @@
             this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.label5);
             this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.label1);
             this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.comboBoxDiadaSemanaFuncionamentoCasadeShow);
-            this.groupBoxFuncionamentoCasadeShow.Location = new System.Drawing.Point(783, 211);
+            this.groupBoxFuncionamentoCasadeShow.Location = new System.Drawing.Point(782, 145);
             this.groupBoxFuncionamentoCasadeShow.Name = "groupBoxFuncionamentoCasadeShow";
             this.groupBoxFuncionamentoCasadeShow.Size = new System.Drawing.Size(120, 105);
             this.groupBoxFuncionamentoCasadeShow.TabIndex = 56;
@@ -783,70 +655,27 @@
             this.comboBoxDiadaSemanaFuncionamentoCasadeShow.Size = new System.Drawing.Size(105, 21);
             this.comboBoxDiadaSemanaFuncionamentoCasadeShow.TabIndex = 42;
             // 
-            // groupBoxClassificacao
+            // groupBoxRestaurannte
             // 
-            this.groupBoxClassificacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClassificacao.Controls.Add(this.checkBox1StarCasadeShow);
-            this.groupBoxClassificacao.Controls.Add(this.checkBox5StarCasadeShow);
-            this.groupBoxClassificacao.Controls.Add(this.checkBox2StarCasadeShow);
-            this.groupBoxClassificacao.Controls.Add(this.checkBox4StarCasadeShow);
-            this.groupBoxClassificacao.Controls.Add(this.checkBox3StarCasadeShow);
-            this.groupBoxClassificacao.Location = new System.Drawing.Point(780, 69);
-            this.groupBoxClassificacao.Name = "groupBoxClassificacao";
-            this.groupBoxClassificacao.Size = new System.Drawing.Size(120, 136);
-            this.groupBoxClassificacao.TabIndex = 56;
-            this.groupBoxClassificacao.TabStop = false;
-            this.groupBoxClassificacao.Text = "Classficação";
+            this.groupBoxRestaurannte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxRestaurannte.Controls.Add(this.checkBoxNaoPossuiRestauranteCasadeShow);
+            this.groupBoxRestaurannte.Controls.Add(this.checkBoxPossuiRestauranteCasadeShow);
+            this.groupBoxRestaurannte.Location = new System.Drawing.Point(780, 69);
+            this.groupBoxRestaurannte.Name = "groupBoxRestaurannte";
+            this.groupBoxRestaurannte.Size = new System.Drawing.Size(120, 70);
+            this.groupBoxRestaurannte.TabIndex = 56;
+            this.groupBoxRestaurannte.TabStop = false;
+            this.groupBoxRestaurannte.Text = "Restaurante";
             // 
-            // checkBox1StarCasadeShow
+            // checkBoxPossuiRestauranteCasadeShow
             // 
-            this.checkBox1StarCasadeShow.AutoSize = true;
-            this.checkBox1StarCasadeShow.Location = new System.Drawing.Point(10, 111);
-            this.checkBox1StarCasadeShow.Name = "checkBox1StarCasadeShow";
-            this.checkBox1StarCasadeShow.Size = new System.Drawing.Size(67, 17);
-            this.checkBox1StarCasadeShow.TabIndex = 4;
-            this.checkBox1StarCasadeShow.Text = "1 Estrela";
-            this.checkBox1StarCasadeShow.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5StarCasadeShow
-            // 
-            this.checkBox5StarCasadeShow.AutoSize = true;
-            this.checkBox5StarCasadeShow.Location = new System.Drawing.Point(10, 19);
-            this.checkBox5StarCasadeShow.Name = "checkBox5StarCasadeShow";
-            this.checkBox5StarCasadeShow.Size = new System.Drawing.Size(72, 17);
-            this.checkBox5StarCasadeShow.TabIndex = 0;
-            this.checkBox5StarCasadeShow.Text = "5 Estrelas";
-            this.checkBox5StarCasadeShow.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2StarCasadeShow
-            // 
-            this.checkBox2StarCasadeShow.AutoSize = true;
-            this.checkBox2StarCasadeShow.Location = new System.Drawing.Point(10, 88);
-            this.checkBox2StarCasadeShow.Name = "checkBox2StarCasadeShow";
-            this.checkBox2StarCasadeShow.Size = new System.Drawing.Size(72, 17);
-            this.checkBox2StarCasadeShow.TabIndex = 3;
-            this.checkBox2StarCasadeShow.Text = "2 Estrelas";
-            this.checkBox2StarCasadeShow.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4StarCasadeShow
-            // 
-            this.checkBox4StarCasadeShow.AutoSize = true;
-            this.checkBox4StarCasadeShow.Location = new System.Drawing.Point(10, 42);
-            this.checkBox4StarCasadeShow.Name = "checkBox4StarCasadeShow";
-            this.checkBox4StarCasadeShow.Size = new System.Drawing.Size(72, 17);
-            this.checkBox4StarCasadeShow.TabIndex = 1;
-            this.checkBox4StarCasadeShow.Text = "4 Estrelas";
-            this.checkBox4StarCasadeShow.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3StarCasadeShow
-            // 
-            this.checkBox3StarCasadeShow.AutoSize = true;
-            this.checkBox3StarCasadeShow.Location = new System.Drawing.Point(10, 65);
-            this.checkBox3StarCasadeShow.Name = "checkBox3StarCasadeShow";
-            this.checkBox3StarCasadeShow.Size = new System.Drawing.Size(72, 17);
-            this.checkBox3StarCasadeShow.TabIndex = 2;
-            this.checkBox3StarCasadeShow.Text = "3 Estrelas";
-            this.checkBox3StarCasadeShow.UseVisualStyleBackColor = true;
+            this.checkBoxPossuiRestauranteCasadeShow.AutoSize = true;
+            this.checkBoxPossuiRestauranteCasadeShow.Location = new System.Drawing.Point(7, 19);
+            this.checkBoxPossuiRestauranteCasadeShow.Name = "checkBoxPossuiRestauranteCasadeShow";
+            this.checkBoxPossuiRestauranteCasadeShow.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxPossuiRestauranteCasadeShow.TabIndex = 0;
+            this.checkBoxPossuiRestauranteCasadeShow.Text = "Possui";
+            this.checkBoxPossuiRestauranteCasadeShow.UseVisualStyleBackColor = true;
             // 
             // groupBoxDiaFechamentoCasadeShow
             // 
@@ -956,6 +785,7 @@
             this.comboBoxCidade.Name = "comboBoxCidade";
             this.comboBoxCidade.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCidade.TabIndex = 5;
+            this.comboBoxCidade.SelectedIndexChanged += new System.EventHandler(this.comboBoxCidade_SelectedIndexChanged);
             // 
             // labelCidade
             // 
@@ -1067,6 +897,54 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem1.Text = " ";
             // 
+            // groupBoxRestauranteHotel
+            // 
+            this.groupBoxRestauranteHotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxRestauranteHotel.Controls.Add(this.checkBoxNaoPossuiRestauranteHotel);
+            this.groupBoxRestauranteHotel.Controls.Add(this.checkBoxPossuiRestauranteHotel);
+            this.groupBoxRestauranteHotel.Location = new System.Drawing.Point(783, 148);
+            this.groupBoxRestauranteHotel.Name = "groupBoxRestauranteHotel";
+            this.groupBoxRestauranteHotel.Size = new System.Drawing.Size(120, 64);
+            this.groupBoxRestauranteHotel.TabIndex = 57;
+            this.groupBoxRestauranteHotel.TabStop = false;
+            this.groupBoxRestauranteHotel.Text = "Restaurante";
+            // 
+            // checkBoxPossuiRestauranteHotel
+            // 
+            this.checkBoxPossuiRestauranteHotel.AutoSize = true;
+            this.checkBoxPossuiRestauranteHotel.Checked = true;
+            this.checkBoxPossuiRestauranteHotel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPossuiRestauranteHotel.Location = new System.Drawing.Point(7, 19);
+            this.checkBoxPossuiRestauranteHotel.Name = "checkBoxPossuiRestauranteHotel";
+            this.checkBoxPossuiRestauranteHotel.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxPossuiRestauranteHotel.TabIndex = 0;
+            this.checkBoxPossuiRestauranteHotel.Text = "Possui";
+            this.checkBoxPossuiRestauranteHotel.UseVisualStyleBackColor = true;
+            this.checkBoxPossuiRestauranteHotel.CheckedChanged += new System.EventHandler(this.checkBoxPossuiRestauranteHotel_CheckedChanged);
+            // 
+            // checkBoxNaoPossuiRestauranteHotel
+            // 
+            this.checkBoxNaoPossuiRestauranteHotel.AutoSize = true;
+            this.checkBoxNaoPossuiRestauranteHotel.Checked = true;
+            this.checkBoxNaoPossuiRestauranteHotel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxNaoPossuiRestauranteHotel.Location = new System.Drawing.Point(7, 41);
+            this.checkBoxNaoPossuiRestauranteHotel.Name = "checkBoxNaoPossuiRestauranteHotel";
+            this.checkBoxNaoPossuiRestauranteHotel.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxNaoPossuiRestauranteHotel.TabIndex = 1;
+            this.checkBoxNaoPossuiRestauranteHotel.Text = "Não Possui";
+            this.checkBoxNaoPossuiRestauranteHotel.UseVisualStyleBackColor = true;
+            this.checkBoxNaoPossuiRestauranteHotel.CheckedChanged += new System.EventHandler(this.checkBoxNãoPossuiRestauranteHotel_CheckedChanged);
+            // 
+            // checkBoxNaoPossuiRestauranteCasadeShow
+            // 
+            this.checkBoxNaoPossuiRestauranteCasadeShow.AutoSize = true;
+            this.checkBoxNaoPossuiRestauranteCasadeShow.Location = new System.Drawing.Point(7, 42);
+            this.checkBoxNaoPossuiRestauranteCasadeShow.Name = "checkBoxNaoPossuiRestauranteCasadeShow";
+            this.checkBoxNaoPossuiRestauranteCasadeShow.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxNaoPossuiRestauranteCasadeShow.TabIndex = 1;
+            this.checkBoxNaoPossuiRestauranteCasadeShow.Text = "Não Possui";
+            this.checkBoxNaoPossuiRestauranteCasadeShow.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1093,12 +971,6 @@
             this.groupBoxEspecialidadeRestaurante.PerformLayout();
             this.groupBoxClassificacaoRestaurante.ResumeLayout(false);
             this.groupBoxClassificacaoRestaurante.PerformLayout();
-            this.tabPagePontosTuristicos.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBoxClassificacaoPontoTuristico.ResumeLayout(false);
-            this.groupBoxClassificacaoPontoTuristico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPontosTuristico)).EndInit();
             this.tabPageIgrejas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).EndInit();
             this.groupBoxPeriodoIgreja.ResumeLayout(false);
@@ -1114,8 +986,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCasadeShow)).EndInit();
             this.groupBoxFuncionamentoCasadeShow.ResumeLayout(false);
             this.groupBoxFuncionamentoCasadeShow.PerformLayout();
-            this.groupBoxClassificacao.ResumeLayout(false);
-            this.groupBoxClassificacao.PerformLayout();
+            this.groupBoxRestaurannte.ResumeLayout(false);
+            this.groupBoxRestaurannte.PerformLayout();
             this.groupBoxDiaFechamentoCasadeShow.ResumeLayout(false);
             this.tabPageFundadores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).EndInit();
@@ -1123,6 +995,8 @@
             this.groupBoxNacioonalidadeFundador.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBoxRestauranteHotel.ResumeLayout(false);
+            this.groupBoxRestauranteHotel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1146,13 +1020,11 @@
         private System.Windows.Forms.ComboBox comboBoxCidade;
         private System.Windows.Forms.Label labelCidade;
         private System.Windows.Forms.TabPage tabPageRestaurantes;
-        private System.Windows.Forms.TabPage tabPagePontosTuristicos;
         private System.Windows.Forms.CheckBox checkBox1StarRestaurante;
         private System.Windows.Forms.CheckBox checkBox2StarRestaurante;
         private System.Windows.Forms.CheckBox checkBox3StarRestaurante;
         private System.Windows.Forms.CheckBox checkBox4StarRestaurante;
         private System.Windows.Forms.CheckBox checkBox5StarRestaurante;
-        private System.Windows.Forms.DataGridView dataGridViewPontosTuristico;
         private System.Windows.Forms.TabPage tabPageIgrejas;
         private System.Windows.Forms.TabPage tabPageMuseus;
         private System.Windows.Forms.TabPage tabPageCasasdeShow;
@@ -1164,17 +1036,6 @@
         private System.Windows.Forms.CheckBox checkBox4StarHotel;
         private System.Windows.Forms.CheckBox checkBox3StarHotel;
         private System.Windows.Forms.GroupBox groupBoxClassificacaoRestaurante;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.GroupBox groupBoxClassificacaoPontoTuristico;
-        private System.Windows.Forms.CheckBox checkBox1StarPontoTuristico;
-        private System.Windows.Forms.CheckBox checkBox5StarPontoTuristico;
-        private System.Windows.Forms.CheckBox checkBox2StarPontoTuristico;
-        private System.Windows.Forms.CheckBox checkBox4StarPontoTuristico;
-        private System.Windows.Forms.CheckBox checkBox3StarPontoTuristico;
         private System.Windows.Forms.ComboBox comboBoxPeriodoIgreja;
         private System.Windows.Forms.GroupBox groupBoxPeriodoIgreja;
         private System.Windows.Forms.GroupBox groupBoxFundadorIgreja;
@@ -1194,12 +1055,8 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBoxNacioonalidadeFundador;
-        private System.Windows.Forms.GroupBox groupBoxClassificacao;
-        private System.Windows.Forms.CheckBox checkBox1StarCasadeShow;
-        private System.Windows.Forms.CheckBox checkBox5StarCasadeShow;
-        private System.Windows.Forms.CheckBox checkBox2StarCasadeShow;
-        private System.Windows.Forms.CheckBox checkBox4StarCasadeShow;
-        private System.Windows.Forms.CheckBox checkBox3StarCasadeShow;
+        private System.Windows.Forms.GroupBox groupBoxRestaurannte;
+        private System.Windows.Forms.CheckBox checkBoxPossuiRestauranteCasadeShow;
         private System.Windows.Forms.GroupBox groupBoxEspecialidadeRestaurante;
         private System.Windows.Forms.TextBox textBoxEspecialidadeRestaurante;
         private System.Windows.Forms.GroupBox groupBoxFuncionamentoCasadeShow;
@@ -1216,5 +1073,9 @@
         private System.Windows.Forms.DataGridView dataGridViewCasadeShow;
         private System.Windows.Forms.DataGridView dataGridViewFundadores;
         private System.Windows.Forms.DataGridView dataGridViewHotel;
+        private System.Windows.Forms.GroupBox groupBoxRestauranteHotel;
+        private System.Windows.Forms.CheckBox checkBoxNaoPossuiRestauranteHotel;
+        private System.Windows.Forms.CheckBox checkBoxPossuiRestauranteHotel;
+        private System.Windows.Forms.CheckBox checkBoxNaoPossuiRestauranteCasadeShow;
     }
 }
