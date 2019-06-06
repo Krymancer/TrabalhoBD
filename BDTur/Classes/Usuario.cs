@@ -28,7 +28,7 @@ namespace BDTur.Classes
 
         public bool autenticate()
         {
-            MySqlConnection con = userCon.getConnection();
+            MySqlConnection con = userCon.GetConnection();
             con.Open();
             string query = "SELECT `usuario`.`idUsuario`," +
                            "`usuario`.`username`," +

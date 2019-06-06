@@ -60,20 +60,20 @@ namespace BDTur.Forms
         /// <summary>
         /// Popula os DataGridViews com os dados do BD.
         /// </summary>
-        /// <param name="where"> Texto para filtragem dos resultados pelo Nome </param>
-        private void populateDataGridViews(string where, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel)
+        /// <param name="name"> Texto para filtragem dos resultados pelo Nome </param>
+        private void populateDataGridViews(string name, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel)
         {
-            populateHotelDataGridView(where, cidade,categoriaHotel,restauranteHotel);
-            populateRestauranteDataGridView(where);            
-            populateIgrejaDataGridView(where);
-            populateCasaDeShowDataGridView(where);
-            populateMuseuDataGridView(where);
-            populateFundadorDataGridView(where);
+            populateHotelDataGridView(name, cidade,categoriaHotel,restauranteHotel);
+            populateRestauranteDataGridView(name);            
+            populateIgrejaDataGridView(name);
+            populateCasaDeShowDataGridView(name);
+            populateMuseuDataGridView(name);
+            populateFundadorDataGridView(name);
         }
         /* Metodos para popular e alterar o cabeçario dos DataGridViews individualmente */
-        private void populateHotelDataGridView(string where, string cidade, int[] categoria,bool[] restaurante)
+        private void populateHotelDataGridView(string name, string cidade, int[] categoria,bool[] restaurante)
         {
-            MySqlDataAdapter da = adapter.hotelAdapter(where,cidade, categoria, restaurante);
+            MySqlDataAdapter da = adapter.hotelAdapter(name,cidade, categoria, restaurante);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -104,10 +104,10 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }          
         }
-        private void populateRestauranteDataGridView(string where)
+        private void populateRestauranteDataGridView(string name)
         {
             
-            MySqlDataAdapter da = adapter.restauranteAdapter(where);
+            MySqlDataAdapter da = adapter.restauranteAdapter(name);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -143,9 +143,9 @@ namespace BDTur.Forms
 
            
         }
-        private void populateIgrejaDataGridView(string where)
+        private void populateIgrejaDataGridView(string name)
         {
-            MySqlDataAdapter da = adapter.igrejaAdapater(where);
+            MySqlDataAdapter da = adapter.igrejaAdapater(name);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -180,9 +180,9 @@ namespace BDTur.Forms
             }           
 
         }
-        private void populateCasaDeShowDataGridView(string where)
+        private void populateCasaDeShowDataGridView(string name)
         {
-            MySqlDataAdapter da = adapter.casadeShowAdapater(where);
+            MySqlDataAdapter da = adapter.casadeShowAdapater(name);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -215,9 +215,9 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        private void populateMuseuDataGridView(string where)
+        private void populateMuseuDataGridView(string name)
         {
-            MySqlDataAdapter da = adapter.museuAdapater(where);
+            MySqlDataAdapter da = adapter.museuAdapater(name);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -252,9 +252,9 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        private void populateFundadorDataGridView(string where)
+        private void populateFundadorDataGridView(string name)
         {
-            MySqlDataAdapter da = adapter.fundadorAdapter(where);
+            MySqlDataAdapter da = adapter.fundadorAdapter(name);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -280,10 +280,11 @@ namespace BDTur.Forms
 
         private void refreshDataGridViews()
         {
-            string where = textBoxNome.Text;
+            string name = textBoxNome.Text;
             string cidade = comboBoxCidade.SelectedValue.ToString();
-            populateDataGridViews(where, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel);
+            populateDataGridViews(name, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel);
         }
+
         private void dataGridViewPontosTuristico_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -300,8 +301,17 @@ namespace BDTur.Forms
         }
 
         private void checkBox5StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {                      
-            
+        {
+            if (checkBox5StarRestaurante.CheckState == CheckState.Checked)
+            {
+                CategoriaHotel[4] = 5;
+            }
+            if (checkBox5StarHotel.CheckState == CheckState.Unchecked)
+            {
+                CategoriaHotel[4] = 0;
+            }
+
+            refreshDataGridViews();
         }
 
         private void checkBox4StarRestaurante_CheckedChanged(object sender, EventArgs e)
@@ -326,7 +336,7 @@ namespace BDTur.Forms
 
         private void checkBox5StarHotel_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox5StarRestaurante.CheckState == CheckState.Checked)
+            if (checkBox5StarHotel.CheckState == CheckState.Checked)
             {
                 CategoriaHotel[4] = 5;
             }
@@ -340,7 +350,7 @@ namespace BDTur.Forms
 
         private void checkBox4StarHotel_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4StarRestaurante.CheckState == CheckState.Checked)
+            if (checkBox4StarHotel.CheckState == CheckState.Checked)
             {
                 CategoriaHotel[3] = 4;
             }
@@ -354,7 +364,7 @@ namespace BDTur.Forms
 
         private void checkBox3StarHotel_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3StarRestaurante.CheckState == CheckState.Checked)
+            if (checkBox3StarHotel.CheckState == CheckState.Checked)
             {
                 CategoriaHotel[2] = 3;
             }
@@ -368,7 +378,7 @@ namespace BDTur.Forms
 
         private void checkBox2StarHotel_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2StarRestaurante.CheckState == CheckState.Checked)
+            if (checkBox2StarHotel.CheckState == CheckState.Checked)
             {
                 CategoriaHotel[1] = 2;
             }
@@ -383,7 +393,7 @@ namespace BDTur.Forms
 
         private void checkBox1StarHotel_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1StarRestaurante.CheckState == CheckState.Checked)
+            if (checkBox1StarHotel.CheckState == CheckState.Checked)
             {
                 CategoriaHotel[0] = 1;                                                
             }
