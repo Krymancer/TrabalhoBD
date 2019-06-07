@@ -40,12 +40,12 @@
             this.textBoxNomeHotel = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxCategoriaHotel = new System.Windows.Forms.ComboBox();
-            this.maskedTextBoxContaoHotel = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxContatoHotel = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBoxEndCidadeHotel = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxEndBairroCep = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxEndCepHotel = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEndBairroHotel = new System.Windows.Forms.TextBox();
             this.textBoxEndComplementoHotel = new System.Windows.Forms.TextBox();
             this.textBoxEndNumeroHotel = new System.Windows.Forms.TextBox();
             this.textBoxEndLogradouroHotel = new System.Windows.Forms.TextBox();
@@ -147,7 +147,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxCategoriaHotel);
-            this.groupBox1.Controls.Add(this.maskedTextBoxContaoHotel);
+            this.groupBox1.Controls.Add(this.maskedTextBoxContatoHotel);
             this.groupBox1.Controls.Add(this.textBoxNomeHotel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -169,20 +169,20 @@
             this.comboBoxCategoriaHotel.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCategoriaHotel.TabIndex = 11;
             // 
-            // maskedTextBoxContaoHotel
+            // maskedTextBoxContatoHotel
             // 
-            this.maskedTextBoxContaoHotel.Location = new System.Drawing.Point(137, 111);
-            this.maskedTextBoxContaoHotel.Mask = "(99) 00000-0000";
-            this.maskedTextBoxContaoHotel.Name = "maskedTextBoxContaoHotel";
-            this.maskedTextBoxContaoHotel.Size = new System.Drawing.Size(92, 20);
-            this.maskedTextBoxContaoHotel.TabIndex = 10;
+            this.maskedTextBoxContatoHotel.Location = new System.Drawing.Point(137, 111);
+            this.maskedTextBoxContatoHotel.Mask = "(99) 00000-0000";
+            this.maskedTextBoxContatoHotel.Name = "maskedTextBoxContatoHotel";
+            this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(92, 20);
+            this.maskedTextBoxContatoHotel.TabIndex = 10;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBoxEndCidadeHotel);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
-            this.groupBox2.Controls.Add(this.textBoxEndBairroCep);
+            this.groupBox2.Controls.Add(this.maskedTextBoxEndCepHotel);
+            this.groupBox2.Controls.Add(this.textBoxEndBairroHotel);
             this.groupBox2.Controls.Add(this.textBoxEndComplementoHotel);
             this.groupBox2.Controls.Add(this.textBoxEndNumeroHotel);
             this.groupBox2.Controls.Add(this.label9);
@@ -217,20 +217,20 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Cidade:";
             // 
-            // maskedTextBox1
+            // maskedTextBoxEndCepHotel
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(233, 165);
-            this.maskedTextBox1.Mask = "00000-999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 10;
+            this.maskedTextBoxEndCepHotel.Location = new System.Drawing.Point(233, 165);
+            this.maskedTextBoxEndCepHotel.Mask = "00000-999";
+            this.maskedTextBoxEndCepHotel.Name = "maskedTextBoxEndCepHotel";
+            this.maskedTextBoxEndCepHotel.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxEndCepHotel.TabIndex = 10;
             // 
-            // textBoxEndBairroCep
+            // textBoxEndBairroHotel
             // 
-            this.textBoxEndBairroCep.Location = new System.Drawing.Point(127, 165);
-            this.textBoxEndBairroCep.Name = "textBoxEndBairroCep";
-            this.textBoxEndBairroCep.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroCep.TabIndex = 9;
+            this.textBoxEndBairroHotel.Location = new System.Drawing.Point(127, 165);
+            this.textBoxEndBairroHotel.Name = "textBoxEndBairroHotel";
+            this.textBoxEndBairroHotel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEndBairroHotel.TabIndex = 9;
             // 
             // textBoxEndComplementoHotel
             // 
@@ -317,14 +317,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxNomeHotel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxContaoHotel;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoHotel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBoxEndTipoHotel;
         private System.Windows.Forms.TextBox textBoxEndLogradouroHotel;
         private System.Windows.Forms.TextBox textBoxEndNumeroHotel;
         private System.Windows.Forms.TextBox textBoxEndComplementoHotel;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBoxEndBairroCep;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxEndCepHotel;
+        private System.Windows.Forms.TextBox textBoxEndBairroHotel;
         private System.Windows.Forms.ComboBox comboBoxEndCidadeHotel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxCategoriaHotel;

@@ -23,6 +23,10 @@ namespace BDTur.Forms
             comboBoxEndTipoHotel.Items.Add("Avenida");
             comboBoxEndTipoHotel.Items.Add("Travessa");
             comboBoxEndTipoHotel.Items.Add("Praça");
+            comboBoxEndTipoHotel.Items.Add("Estação");
+            comboBoxEndTipoHotel.Items.Add("Alameda");
+            comboBoxEndTipoHotel.Items.Add("Balneário");
+            comboBoxEndTipoHotel.Items.Add("Beco");
 
 
             comboBoxCategoriaHotel.Items.Add("1 Estrela");
