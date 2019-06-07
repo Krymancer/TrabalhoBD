@@ -116,25 +116,7 @@ namespace BDTur.Classes
 
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter pontoTuristicoAdapter(string name)
-        {
-            string query = "SELECT " +
-                        "`pontoturistico`.`idPontoTuristico`," +
-                                "`pontoturistico`.`tipoPontoTuristico`," +
-                                "`pontoturistico`.`nomePontoTuristico`," +
-                                "`pontoturistico`.`descricaoPontoTuristico`," +
-                                "`pontoturistico`.`contatoPontoTuristico`," +
-                                "`pontoturistico`.`endLogradouroPontoTuristico`," +
-                                "`pontoturistico`.`endTipoPontoTuristico`," +
-                                "`pontoturistico`.`endNumeroPontoTuristico`," +
-                                "`pontoturistico`.`endComplementoPontoTuristico`," +
-                                "`pontoturistico`.`endBairroPontoTuristico` " +
-                            "FROM " +
-                                "`equipe431447`.`pontoturistico` " +
-                                $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
-            return fetchResultFromQuery(query);
-        }
-        public  MySqlDataAdapter igrejaAdapater(string name, string nomeFundador, string nacionalidadeFundador, string estiloIgreja)
+        public  MySqlDataAdapter igrejaAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string estilo, int periodo)
         {
             string query = "SELECT " +
                                 "`pontoturistico`.`idPontoTuristico`," +
@@ -151,39 +133,74 @@ namespace BDTur.Classes
                             "FROM" +
                                 "`fundadapor` " +
                             "INNER JOIN igreja " +
-                                "ON igreja.idIgreja = fundadapor.Igreja_idIgreja " +
+                                "ON igreja.idIgreja = fundadapor.igrejaIdIgreja " +
                             "INNER JOIN pontoturistico " +
-                                "ON igreja.PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                                "ON igreja.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
                             "INNER JOIN fundador " +
-                                "ON fundador.idFundador = fundadapor.Fundador_idFundador " +
+                                "ON fundador.idFundador = fundadapor.fundadorIdFundador " +
                             $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
                             $"AND fundador.nomeFundador LIKE '%{nomeFundador}%' " +
                             $"AND fundador.nacionalidadeFundador LIKE '%{nacionalidadeFundador}%' " +
-                            $"AND igreja.estiloIgreja LIKE '%{estiloIgreja}%'";
+                            $"AND igreja.estiloIgreja LIKE '%{estilo}%' ";
+            if (cidade != null && cidade != "0")
+            {
+                query += $"AND `pontoturistico`.`cidadeIdCidade` = {cidade} ";
+            }
+            if (periodo > 0) {
+                query += $"AND (year(igreja.dataIgreja) > {periodo-1}01 AND year(igreja.dataIgreja) <= {periodo}00 )";
+            }
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter casadeShowAdapater(string name)
+        public  MySqlDataAdapter casadeShowAdapater(string name, string cidade, string horario, string fechamento, bool[] restaurante)
         {
             string query = "SELECT " +
                                 "`pontoturistico`.`idPontoTuristico`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`contatoPontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
-                                "`casa_de_show`.`diaFechamentoCasadeShow`," +
-                                "`casa_de_show`.`horaInicioCasadeShow`," +
+                                "`casadeshow`.`diaFechamentoCasadeShow`," +
+                                "`casadeshow`.`horaInicioCasadeShow`," +
                                 "`pontoturistico`.`endTipoPontoTuristico`," +
-                                "`pontoturistico`.`endLogradouroPontoTuristico`," +                                
+                                "`pontoturistico`.`endLogradouroPontoTuristico`," +
                                 "`pontoturistico`.`endNumeroPontoTuristico`," +
                                 "`pontoturistico`.`endComplementoPontoTuristico`," +
                                 "`pontoturistico`.`endBairroPontoTuristico` " +
                             "FROM " +
-                                "`equipe431447`.`pontoturistico` " +
-                            "INNER JOIN `equipe431447`.`casa_de_show` " +
-                            "ON `equipe431447`.`casa_de_show`.`PontoTuristico_idPontoTuristico` =  `equipe431447`.`pontoturistico`.`idPontoTuristico` " +
-                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
+                                "`pontoturistico` " +
+                            "INNER JOIN `casadeshow` " +
+                            "ON `casadeshow`.`pontoTuristicoIdPontoTuristico` =  `pontoturistico`.`idPontoTuristico` " +
+                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
+                            $"AND casadeshow.horaInicioCasadeShow LIKE '%{horario}%' ";
+            if (cidade != null && cidade != "0")
+            {
+                query += $"AND `pontoturistico`.`cidadeIdCidade` = {cidade} ";
+            }
+
+            if (restaurante[0] && restaurante[1])
+            {
+                query += "AND (`casadeshow`.`restauranteIdRestaurante` IS NOT NULL OR `casadeshow`.`restauranteIdRestaurante` IS NULL) ";
+            }
+            else if (restaurante[0])
+            {
+                query += "AND `casadeshow`.`restauranteIdRestaurante` IS NOT NULL";
+            }
+            else if (restaurante[1])
+            {
+                query += "AND `casadeshow`.`restauranteIdRestaurante` IS NULL";
+            }
+            else
+            {
+                query += "AND (`casadeshow`.`restauranteIdRestaurante` IS NOT NULL AND `casadeshow`.`restauranteIdRestaurante` IS NULL)";
+            }
+
+            if (!fechamento.Equals("Selecione..."))
+            {
+                query += $"AND casadeshow.diaFechamentoCasadeShow = '{fechamento}' ";
+            }
+            Console.WriteLine($"Casa de show query: \n{query}");
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter museuAdapater(string name, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
+        public  MySqlDataAdapter museuAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
         {
             string query = "SELECT " +
                                 "`pontoturistico`.`idPontoTuristico`," +
@@ -202,13 +219,17 @@ namespace BDTur.Classes
                             "INNER JOIN museu " +
                             "ON museu.idMuseu = fundadopor.Museu_idMuseu " +
                             "INNER JOIN pontoturistico " +
-                            "ON museu.PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                            "ON museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
                             "INNER JOIN fundador " +
                             "ON fundador.idFundador = fundadopor.Fundador_idFundador " +                           
                             $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
                             $"AND fundador.nomeFundador LIKE '%{nomeFundador}%' " +
                             $"AND fundador.nacionalidadeFundador LIKE '%{nacionalidadeFundador}%' " +
                             $"AND museu.dataFundacaoMuseu like '%{fundacao[0]}-{((fundacao[1].Equals("")) ? "%" : fundacao[1])}-{((fundacao[2].Equals("")) ? "%" : fundacao[2])}'";
+            if (cidade != null && cidade != "0")
+            {
+                query += $"AND `pontoturistico`.`cidadeIdCidade` = {cidade} ";
+            }
             return fetchResultFromQuery(query);
         }
         public  MySqlDataAdapter fundadorAdapter(string name)
