@@ -9,6 +9,12 @@ namespace BDTur.Classes
 {
     class DAL
     {
+        private MySqlConnection createConnection()
+        {
+            Classes.Connection connection = new Classes.Connection(Program.databaseUser, Program.databasePassword);
+            MySqlConnection con = connection.GetConnection();
+            return con;
+        }
         /// <summary>
         /// Retorna o resultado de uma consulta paa o banco de dados em um DataAdapter.
         /// </summary>
@@ -17,8 +23,7 @@ namespace BDTur.Classes
         {
             try
             {
-                Classes.Connection connection = new Classes.Connection(Program.databaseUser, Program.databasePassword);
-                MySqlConnection con = connection.GetConnection();
+                MySqlConnection con = createConnection();
                 con.Open();
                 MySqlCommand cmd =
                     new MySqlCommand(query, con);
@@ -34,7 +39,7 @@ namespace BDTur.Classes
             }
         }
         /* Adapters para popular os DataGridViews */
-        public MySqlDataAdapter  cidadeAdapter()
+        public  MySqlDataAdapter cidadeAdapter()
         {
             string query = "SELECT `cidade`.`idCidade`," +
                              "`cidade`.`nome`,`cidade`.`estado`," +
@@ -84,7 +89,7 @@ namespace BDTur.Classes
             return fetchResultFromQuery(query);
 
         }
-        public  MySqlDataAdapter restauranteAdapter(string name)
+        public  MySqlDataAdapter restauranteAdapter(string name, string cidade, int[] categoria, string especialidade)
         {
             string query = "SELECT " +
                                 "`restaurante`.`idRestaurante`," +
@@ -100,7 +105,14 @@ namespace BDTur.Classes
                                 "`restaurante`.`endBairroRestaurante` " +
                             "FROM " +
                                 "`equipe431447`.`restaurante` " +
-                            $"WHERE `restaurante`.`nomeRestaurante` LIKE '%{name}%';";
+                            $"WHERE `restaurante`.`nomeRestaurante` LIKE '%{name}%'";
+
+            if (cidade != null && cidade != "0")
+            {
+                query += $"AND `restaurante`.`cidadeIdCidade` = {cidade} ";
+            }
+            query += $"AND  (`restaurante`.`categoriaRestaurante` = {categoria[0]} OR `restaurante`.`categoriaRestaurante` = {categoria[1]} OR `restaurante`.`categoriaRestaurante` = {categoria[2]} OR `restaurante`.`categoriaRestaurante` = {categoria[3]} OR `restaurante`.`categoriaRestaurante` = {categoria[4]}) ";
+            query += $"AND `restaurante`.`especialidadeRestaurante` LIKE '%{especialidade}%'";
 
             return fetchResultFromQuery(query);
         }
@@ -122,7 +134,7 @@ namespace BDTur.Classes
                                 $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter igrejaAdapater(string name)
+        public  MySqlDataAdapter igrejaAdapater(string name, string nomeFundador, string nacionalidadeFundador, string estiloIgreja)
         {
             string query = "SELECT " +
                                 "`pontoturistico`.`idPontoTuristico`," +
@@ -137,10 +149,17 @@ namespace BDTur.Classes
                                 "`pontoturistico`.`endComplementoPontoTuristico`," +
                                 "`pontoturistico`.`endBairroPontoTuristico`" +
                             "FROM" +
-                                "`equipe431447`.`pontoturistico` " +
-                                "INNER JOIN `equipe431447`.`igreja` " +
-                            "ON `equipe431447`.`igreja`.`PontoTuristico_idPontoTuristico` =  `equipe431447`.`pontoturistico`.`idPontoTuristico` " +
-                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
+                                "`fundadapor` " +
+                            "INNER JOIN igreja " +
+                                "ON igreja.idIgreja = fundadapor.Igreja_idIgreja " +
+                            "INNER JOIN pontoturistico " +
+                                "ON igreja.PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                            "INNER JOIN fundador " +
+                                "ON fundador.idFundador = fundadapor.Fundador_idFundador " +
+                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
+                            $"AND fundador.nomeFundador LIKE '%{nomeFundador}%' " +
+                            $"AND fundador.nacionalidadeFundador LIKE '%{nacionalidadeFundador}%' " +
+                            $"AND igreja.estiloIgreja LIKE '%{estiloIgreja}%'";
             return fetchResultFromQuery(query);
         }
         public  MySqlDataAdapter casadeShowAdapater(string name)
@@ -164,7 +183,7 @@ namespace BDTur.Classes
                             $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter museuAdapater(string name)
+        public  MySqlDataAdapter museuAdapater(string name, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
         {
             string query = "SELECT " +
                                 "`pontoturistico`.`idPontoTuristico`," +
@@ -179,10 +198,17 @@ namespace BDTur.Classes
                                 "`pontoturistico`.`endComplementoPontoTuristico`," +
                                 "`pontoturistico`.`endBairroPontoTuristico`" +
                             "FROM" +
-                                "`equipe431447`.`pontoturistico` " +
-                            "INNER JOIN `equipe431447`.`museu` " +
-                            "ON `equipe431447`.`museu`.`PontoTuristico_idPontoTuristico` =  `equipe431447`.`pontoturistico`.`idPontoTuristico` " +
-                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%';";
+                                "`fundadopor` " +
+                            "INNER JOIN museu " +
+                            "ON museu.idMuseu = fundadopor.Museu_idMuseu " +
+                            "INNER JOIN pontoturistico " +
+                            "ON museu.PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                            "INNER JOIN fundador " +
+                            "ON fundador.idFundador = fundadopor.Fundador_idFundador " +                           
+                            $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
+                            $"AND fundador.nomeFundador LIKE '%{nomeFundador}%' " +
+                            $"AND fundador.nacionalidadeFundador LIKE '%{nacionalidadeFundador}%' " +
+                            $"AND museu.dataFundacaoMuseu like '%{fundacao[0]}-{((fundacao[1].Equals("")) ? "%" : fundacao[1])}-{((fundacao[2].Equals("")) ? "%" : fundacao[2])}'";
             return fetchResultFromQuery(query);
         }
         public  MySqlDataAdapter fundadorAdapter(string name)
@@ -199,5 +225,15 @@ namespace BDTur.Classes
 
         }
         /* ------------------------------------- */
+        public MySqlDataReader   periodoReader()
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT dataIgreja FROM igreja";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
     }
 }

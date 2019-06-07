@@ -30,31 +30,10 @@ namespace BDTur.Classes
         /// </summary>
         public MySqlConnection GetConnection()
         {
-            string myConnection = "datasource=localhost;port=3306;username=" + this.user + ";password=" + this.password;
+            string database = "equipe431447";
+            string myConnection = $"datasource=localhost;port=3306;database={database};username={this.user};password={this.password}";
             return new MySqlConnection(myConnection);
         }
-
-        public MySqlDataAdapter cidadesAdapter()
-        {
-            try
-            {
-                MySqlConnection con = GetConnection();
-                con.Open();
-                MySqlCommand cmd = 
-                    new MySqlCommand(
-                        "SELECT `cidade`.`idCidade`," +
-                        "`cidade`.`nome`,`cidade`.`estado`," +
-                        "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;", con);
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                con.Close();
-                return adapter;
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-                return null;
-            }
-        }
+     
     }
 }

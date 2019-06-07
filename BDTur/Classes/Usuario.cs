@@ -38,7 +38,10 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows == true)
             {
-                Console.WriteLine(reader);
+                reader.Read();
+                this.idUser = reader.GetInt32(0);
+                this.acessLevel = reader.GetInt32(3);
+                //Console.WriteLine(reader);
                 return true;
             }
             else
