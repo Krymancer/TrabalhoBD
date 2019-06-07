@@ -16,5 +16,20 @@ namespace BDTur.Forms
         {
             InitializeComponent();
         }
-    }
+
+        private void FormCadastrarHotel_Load(object sender, EventArgs e)
+        {
+            comboBoxEndTipoHotel.Items.Add("Rua");
+            comboBoxEndTipoHotel.Items.Add("Avenida");
+            comboBoxEndTipoHotel.Items.Add("Travessa");
+            comboBoxEndTipoHotel.Items.Add("Praça");
+
+
+            comboBoxCategoriaHotel.Items.Add("1 Estrela");
+            comboBoxCategoriaHotel.Items.Add("2 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("3 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("4 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("5 Estrelas");
+        }
+        }
 }
