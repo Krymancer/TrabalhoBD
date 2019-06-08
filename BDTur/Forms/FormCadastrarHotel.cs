@@ -34,6 +34,24 @@ namespace BDTur.Forms
             comboBoxCategoriaHotel.Items.Add("3 Estrelas");
             comboBoxCategoriaHotel.Items.Add("4 Estrelas");
             comboBoxCategoriaHotel.Items.Add("5 Estrelas");
+
+            labelRestaurante.Visible = false;
+            comboBoxIdRestauranteHotel.Visible = false;
         }
+
+        private void checkBoxContemRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContemRestaurante.Checked)
+            {
+                labelRestaurante.Visible = true;
+                comboBoxIdRestauranteHotel.Visible = true;
+            }
+            else
+            {
+                labelRestaurante.Visible = false;
+                comboBoxIdRestauranteHotel.Visible = false;
+            }
+
         }
+    }
 }

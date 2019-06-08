@@ -16,5 +16,17 @@ namespace BDTur.Forms
         {
             InitializeComponent();
         }
+
+        private void FormCadastrarMuseu_Load(object sender, EventArgs e)
+        {
+            comboBoxEndTipoMuseu.Items.Add("Rua");
+            comboBoxEndTipoMuseu.Items.Add("Avenida");
+            comboBoxEndTipoMuseu.Items.Add("Travessa");
+            comboBoxEndTipoMuseu.Items.Add("Praça");
+            comboBoxEndTipoMuseu.Items.Add("Estação");
+            comboBoxEndTipoMuseu.Items.Add("Alameda");
+            comboBoxEndTipoMuseu.Items.Add("Balneário");
+            comboBoxEndTipoMuseu.Items.Add("Beco");
+        }
     }
 }

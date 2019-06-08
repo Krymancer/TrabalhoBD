@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label labelCidade;
+            System.Windows.Forms.Label labelNome;
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageHoteis = new System.Windows.Forms.TabPage();
             this.groupBoxRestauranteHotel = new System.Windows.Forms.GroupBox();
@@ -93,9 +95,7 @@
             this.textBoxNaturalidadeFundador = new System.Windows.Forms.TextBox();
             this.labelNaturalidadeFundador = new System.Windows.Forms.Label();
             this.comboBoxCidade = new System.Windows.Forms.ComboBox();
-            this.labelCidade = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.labelNome = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,6 +107,8 @@
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            labelCidade = new System.Windows.Forms.Label();
+            labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageHoteis.SuspendLayout();
             this.groupBoxRestauranteHotel.SuspendLayout();
@@ -914,13 +916,13 @@
             // 
             // labelCidade
             // 
-            this.labelCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCidade.AutoSize = true;
-            this.labelCidade.Location = new System.Drawing.Point(737, 445);
-            this.labelCidade.Name = "labelCidade";
-            this.labelCidade.Size = new System.Drawing.Size(43, 13);
-            this.labelCidade.TabIndex = 4;
-            this.labelCidade.Text = "Cidade:";
+            labelCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            labelCidade.AutoSize = true;
+            labelCidade.Location = new System.Drawing.Point(737, 445);
+            labelCidade.Name = "labelCidade";
+            labelCidade.Size = new System.Drawing.Size(43, 13);
+            labelCidade.TabIndex = 4;
+            labelCidade.Text = "Cidade:";
             // 
             // textBoxNome
             // 
@@ -933,13 +935,13 @@
             // 
             // labelNome
             // 
-            this.labelNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(578, 445);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(38, 13);
-            this.labelNome.TabIndex = 2;
-            this.labelNome.Text = "Nome:";
+            labelNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            labelNome.AutoSize = true;
+            labelNome.Location = new System.Drawing.Point(578, 445);
+            labelNome.Name = "labelNome";
+            labelNome.Size = new System.Drawing.Size(38, 13);
+            labelNome.TabIndex = 2;
+            labelNome.Text = "Nome:";
             // 
             // menuStrip1
             // 
@@ -1029,10 +1031,10 @@
             this.ClientSize = new System.Drawing.Size(919, 479);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.labelNome);
+            this.Controls.Add(labelNome);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.comboBoxCidade);
-            this.Controls.Add(this.labelCidade);
+            this.Controls.Add(labelCidade);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "BDTur";
@@ -1095,9 +1097,7 @@
         private System.Windows.Forms.ToolStripMenuItem usariosToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPageHoteis;
         private System.Windows.Forms.TextBox textBoxNome;
-        private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.ComboBox comboBoxCidade;
-        private System.Windows.Forms.Label labelCidade;
         private System.Windows.Forms.TabPage tabPageRestaurantes;
         private System.Windows.Forms.CheckBox checkBox1StarRestaurante;
         private System.Windows.Forms.CheckBox checkBox2StarRestaurante;
