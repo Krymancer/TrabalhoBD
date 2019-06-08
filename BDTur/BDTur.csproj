@@ -125,6 +125,12 @@
     <EmbeddedResource Include="Forms\FormCadastrarHotel.resx">
       <DependentUpon>FormCadastrarHotel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarIgreja.resx">
+      <DependentUpon>FormCadastrarIgreja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
+      <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

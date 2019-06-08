@@ -16,5 +16,17 @@ namespace BDTur.Forms
         {
             InitializeComponent();
         }
+
+        private void FormCadastrarIgreja_Load(object sender, EventArgs e)
+        {
+            comboBoxEndTipoIgreja.Items.Add("Rua");
+            comboBoxEndTipoIgreja.Items.Add("Avenida");
+            comboBoxEndTipoIgreja.Items.Add("Travessa");
+            comboBoxEndTipoIgreja.Items.Add("Praça");
+            comboBoxEndTipoIgreja.Items.Add("Estação");
+            comboBoxEndTipoIgreja.Items.Add("Alameda");
+            comboBoxEndTipoIgreja.Items.Add("Balneário");
+            comboBoxEndTipoIgreja.Items.Add("Beco");
+        }
     }
 }
