@@ -51,6 +51,8 @@
             this.checkBox4StarRestaurante = new System.Windows.Forms.CheckBox();
             this.checkBox3StarRestaurante = new System.Windows.Forms.CheckBox();
             this.tabPageIgrejas = new System.Windows.Forms.TabPage();
+            this.groupBoxEstiloIgreja = new System.Windows.Forms.GroupBox();
+            this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
             this.dataGridViewIgreja = new System.Windows.Forms.DataGridView();
             this.groupBoxPeriodoIgreja = new System.Windows.Forms.GroupBox();
             this.comboBoxPeriodoIgreja = new System.Windows.Forms.ComboBox();
@@ -62,6 +64,12 @@
             this.tabPageMuseus = new System.Windows.Forms.TabPage();
             this.dataGridViewMuseu = new System.Windows.Forms.DataGridView();
             this.groupBoxDataFundacaoMuseu = new System.Windows.Forms.GroupBox();
+            this.textBoxAnoFundacaoMuseu = new System.Windows.Forms.TextBox();
+            this.labelAnoFundacaoMuseu = new System.Windows.Forms.Label();
+            this.textBoxMesFundacaoMuseu = new System.Windows.Forms.TextBox();
+            this.labelMesFundacaoMuseu = new System.Windows.Forms.Label();
+            this.textBoxDiaFundacaoMuseu = new System.Windows.Forms.TextBox();
+            this.labelDiaFundacaoMuseu = new System.Windows.Forms.Label();
             this.groupBoxFundadorMuseu = new System.Windows.Forms.GroupBox();
             this.textBoxNacionalidadeFundadorMuseu = new System.Windows.Forms.TextBox();
             this.labelNacionalidadeFundadorMuseu = new System.Windows.Forms.Label();
@@ -72,8 +80,6 @@
             this.groupBoxFuncionamentoCasadeShow = new System.Windows.Forms.GroupBox();
             this.textBoxHorarioFuncionamentoCasadeShow = new System.Windows.Forms.TextBox();
             this.labelHorarioFuncionamentoCasadeShow = new System.Windows.Forms.Label();
-            this.labelDiadaSemanaFuncionamentoCasadeShow = new System.Windows.Forms.Label();
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow = new System.Windows.Forms.ComboBox();
             this.groupBoxRestaurannte = new System.Windows.Forms.GroupBox();
             this.checkBoxNaoPossuiRestauranteCasadeShow = new System.Windows.Forms.CheckBox();
             this.checkBoxPossuiRestauranteCasadeShow = new System.Windows.Forms.CheckBox();
@@ -101,14 +107,6 @@
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxEstiloIgreja = new System.Windows.Forms.GroupBox();
-            this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
-            this.textBoxDiaFundacaoMuseu = new System.Windows.Forms.TextBox();
-            this.labelDiaFundacaoMuseu = new System.Windows.Forms.Label();
-            this.textBoxMesFundacaoMuseu = new System.Windows.Forms.TextBox();
-            this.labelMesFundacaoMuseu = new System.Windows.Forms.Label();
-            this.textBoxAnoFundacaoMuseu = new System.Windows.Forms.TextBox();
-            this.labelAnoFundacaoMuseu = new System.Windows.Forms.Label();
             tabControl = new System.Windows.Forms.TabControl();
             tabControl.SuspendLayout();
             this.tabPageHoteis.SuspendLayout();
@@ -120,6 +118,7 @@
             this.groupBoxEspecialidadeRestaurante.SuspendLayout();
             this.groupBoxClassificacaoRestaurante.SuspendLayout();
             this.tabPageIgrejas.SuspendLayout();
+            this.groupBoxEstiloIgreja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).BeginInit();
             this.groupBoxPeriodoIgreja.SuspendLayout();
             this.groupBoxFundadorIgreja.SuspendLayout();
@@ -136,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFundadores)).BeginInit();
             this.groupBoxFundador.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBoxEstiloIgreja.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -448,6 +446,26 @@
             this.tabPageIgrejas.TabIndex = 4;
             this.tabPageIgrejas.Text = "Igrejas";
             // 
+            // groupBoxEstiloIgreja
+            // 
+            this.groupBoxEstiloIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxEstiloIgreja.Controls.Add(this.textBoxEstiloIgreja);
+            this.groupBoxEstiloIgreja.Location = new System.Drawing.Point(780, 178);
+            this.groupBoxEstiloIgreja.Name = "groupBoxEstiloIgreja";
+            this.groupBoxEstiloIgreja.Size = new System.Drawing.Size(121, 50);
+            this.groupBoxEstiloIgreja.TabIndex = 45;
+            this.groupBoxEstiloIgreja.TabStop = false;
+            this.groupBoxEstiloIgreja.Text = "Estilo";
+            // 
+            // textBoxEstiloIgreja
+            // 
+            this.textBoxEstiloIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEstiloIgreja.Location = new System.Drawing.Point(6, 19);
+            this.textBoxEstiloIgreja.Name = "textBoxEstiloIgreja";
+            this.textBoxEstiloIgreja.Size = new System.Drawing.Size(109, 20);
+            this.textBoxEstiloIgreja.TabIndex = 44;
+            this.textBoxEstiloIgreja.TextChanged += new System.EventHandler(this.textBoxEstiloIgreja_TextChanged);
+            // 
             // dataGridViewIgreja
             // 
             this.dataGridViewIgreja.AllowUserToAddRows = false;
@@ -479,10 +497,11 @@
             // comboBoxPeriodoIgreja
             // 
             this.comboBoxPeriodoIgreja.FormattingEnabled = true;
-            this.comboBoxPeriodoIgreja.Location = new System.Drawing.Point(4, 19);
+            this.comboBoxPeriodoIgreja.Location = new System.Drawing.Point(10, 19);
             this.comboBoxPeriodoIgreja.Name = "comboBoxPeriodoIgreja";
             this.comboBoxPeriodoIgreja.Size = new System.Drawing.Size(105, 21);
             this.comboBoxPeriodoIgreja.TabIndex = 42;
+            this.comboBoxPeriodoIgreja.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriodoIgreja_SelectedIndexChanged);
             // 
             // groupBoxFundadorIgreja
             // 
@@ -579,6 +598,57 @@
             this.groupBoxDataFundacaoMuseu.TabStop = false;
             this.groupBoxDataFundacaoMuseu.Text = "Data Fundação";
             // 
+            // textBoxAnoFundacaoMuseu
+            // 
+            this.textBoxAnoFundacaoMuseu.Location = new System.Drawing.Point(5, 110);
+            this.textBoxAnoFundacaoMuseu.Name = "textBoxAnoFundacaoMuseu";
+            this.textBoxAnoFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
+            this.textBoxAnoFundacaoMuseu.TabIndex = 47;
+            this.textBoxAnoFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxAnoFundacaoMuseu_TextChanged);
+            // 
+            // labelAnoFundacaoMuseu
+            // 
+            this.labelAnoFundacaoMuseu.AutoSize = true;
+            this.labelAnoFundacaoMuseu.Location = new System.Drawing.Point(6, 94);
+            this.labelAnoFundacaoMuseu.Name = "labelAnoFundacaoMuseu";
+            this.labelAnoFundacaoMuseu.Size = new System.Drawing.Size(29, 13);
+            this.labelAnoFundacaoMuseu.TabIndex = 46;
+            this.labelAnoFundacaoMuseu.Text = "Ano:";
+            // 
+            // textBoxMesFundacaoMuseu
+            // 
+            this.textBoxMesFundacaoMuseu.Location = new System.Drawing.Point(5, 71);
+            this.textBoxMesFundacaoMuseu.Name = "textBoxMesFundacaoMuseu";
+            this.textBoxMesFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
+            this.textBoxMesFundacaoMuseu.TabIndex = 45;
+            this.textBoxMesFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxMesFundacaoMuseu_TextChanged);
+            // 
+            // labelMesFundacaoMuseu
+            // 
+            this.labelMesFundacaoMuseu.AutoSize = true;
+            this.labelMesFundacaoMuseu.Location = new System.Drawing.Point(6, 55);
+            this.labelMesFundacaoMuseu.Name = "labelMesFundacaoMuseu";
+            this.labelMesFundacaoMuseu.Size = new System.Drawing.Size(30, 13);
+            this.labelMesFundacaoMuseu.TabIndex = 44;
+            this.labelMesFundacaoMuseu.Text = "Mes:";
+            // 
+            // textBoxDiaFundacaoMuseu
+            // 
+            this.textBoxDiaFundacaoMuseu.Location = new System.Drawing.Point(5, 32);
+            this.textBoxDiaFundacaoMuseu.Name = "textBoxDiaFundacaoMuseu";
+            this.textBoxDiaFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
+            this.textBoxDiaFundacaoMuseu.TabIndex = 43;
+            this.textBoxDiaFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxDiaFundacaoMuseu_TextChanged);
+            // 
+            // labelDiaFundacaoMuseu
+            // 
+            this.labelDiaFundacaoMuseu.AutoSize = true;
+            this.labelDiaFundacaoMuseu.Location = new System.Drawing.Point(6, 16);
+            this.labelDiaFundacaoMuseu.Name = "labelDiaFundacaoMuseu";
+            this.labelDiaFundacaoMuseu.Size = new System.Drawing.Size(26, 13);
+            this.labelDiaFundacaoMuseu.TabIndex = 42;
+            this.labelDiaFundacaoMuseu.Text = "Dia:";
+            // 
             // groupBoxFundadorMuseu
             // 
             this.groupBoxFundadorMuseu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -663,47 +733,29 @@
             this.groupBoxFuncionamentoCasadeShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.textBoxHorarioFuncionamentoCasadeShow);
             this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.labelHorarioFuncionamentoCasadeShow);
-            this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.labelDiadaSemanaFuncionamentoCasadeShow);
-            this.groupBoxFuncionamentoCasadeShow.Controls.Add(this.comboBoxDiadaSemanaFuncionamentoCasadeShow);
             this.groupBoxFuncionamentoCasadeShow.Location = new System.Drawing.Point(782, 145);
             this.groupBoxFuncionamentoCasadeShow.Name = "groupBoxFuncionamentoCasadeShow";
-            this.groupBoxFuncionamentoCasadeShow.Size = new System.Drawing.Size(120, 105);
+            this.groupBoxFuncionamentoCasadeShow.Size = new System.Drawing.Size(120, 76);
             this.groupBoxFuncionamentoCasadeShow.TabIndex = 56;
             this.groupBoxFuncionamentoCasadeShow.TabStop = false;
             this.groupBoxFuncionamentoCasadeShow.Text = "Funcionamento";
             // 
             // textBoxHorarioFuncionamentoCasadeShow
             // 
-            this.textBoxHorarioFuncionamentoCasadeShow.Location = new System.Drawing.Point(4, 77);
+            this.textBoxHorarioFuncionamentoCasadeShow.Location = new System.Drawing.Point(4, 44);
             this.textBoxHorarioFuncionamentoCasadeShow.Name = "textBoxHorarioFuncionamentoCasadeShow";
             this.textBoxHorarioFuncionamentoCasadeShow.Size = new System.Drawing.Size(109, 20);
             this.textBoxHorarioFuncionamentoCasadeShow.TabIndex = 6;
+            this.textBoxHorarioFuncionamentoCasadeShow.TextChanged += new System.EventHandler(this.textBoxHorarioFuncionamentoCasadeShow_TextChanged);
             // 
             // labelHorarioFuncionamentoCasadeShow
             // 
             this.labelHorarioFuncionamentoCasadeShow.AutoSize = true;
-            this.labelHorarioFuncionamentoCasadeShow.Location = new System.Drawing.Point(6, 61);
+            this.labelHorarioFuncionamentoCasadeShow.Location = new System.Drawing.Point(6, 28);
             this.labelHorarioFuncionamentoCasadeShow.Name = "labelHorarioFuncionamentoCasadeShow";
-            this.labelHorarioFuncionamentoCasadeShow.Size = new System.Drawing.Size(44, 13);
+            this.labelHorarioFuncionamentoCasadeShow.Size = new System.Drawing.Size(89, 13);
             this.labelHorarioFuncionamentoCasadeShow.TabIndex = 44;
-            this.labelHorarioFuncionamentoCasadeShow.Text = "Horario:";
-            // 
-            // labelDiadaSemanaFuncionamentoCasadeShow
-            // 
-            this.labelDiadaSemanaFuncionamentoCasadeShow.AutoSize = true;
-            this.labelDiadaSemanaFuncionamentoCasadeShow.Location = new System.Drawing.Point(6, 21);
-            this.labelDiadaSemanaFuncionamentoCasadeShow.Name = "labelDiadaSemanaFuncionamentoCasadeShow";
-            this.labelDiadaSemanaFuncionamentoCasadeShow.Size = new System.Drawing.Size(83, 13);
-            this.labelDiadaSemanaFuncionamentoCasadeShow.TabIndex = 43;
-            this.labelDiadaSemanaFuncionamentoCasadeShow.Text = "Dia da Semana:";
-            // 
-            // comboBoxDiadaSemanaFuncionamentoCasadeShow
-            // 
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow.FormattingEnabled = true;
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow.Location = new System.Drawing.Point(4, 37);
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow.Name = "comboBoxDiadaSemanaFuncionamentoCasadeShow";
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow.Size = new System.Drawing.Size(105, 21);
-            this.comboBoxDiadaSemanaFuncionamentoCasadeShow.TabIndex = 42;
+            this.labelHorarioFuncionamentoCasadeShow.Text = "Horario do Show:";
             // 
             // groupBoxRestaurannte
             // 
@@ -720,22 +772,28 @@
             // checkBoxNaoPossuiRestauranteCasadeShow
             // 
             this.checkBoxNaoPossuiRestauranteCasadeShow.AutoSize = true;
+            this.checkBoxNaoPossuiRestauranteCasadeShow.Checked = true;
+            this.checkBoxNaoPossuiRestauranteCasadeShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxNaoPossuiRestauranteCasadeShow.Location = new System.Drawing.Point(7, 42);
             this.checkBoxNaoPossuiRestauranteCasadeShow.Name = "checkBoxNaoPossuiRestauranteCasadeShow";
             this.checkBoxNaoPossuiRestauranteCasadeShow.Size = new System.Drawing.Size(80, 17);
             this.checkBoxNaoPossuiRestauranteCasadeShow.TabIndex = 1;
             this.checkBoxNaoPossuiRestauranteCasadeShow.Text = "Não Possui";
             this.checkBoxNaoPossuiRestauranteCasadeShow.UseVisualStyleBackColor = true;
+            this.checkBoxNaoPossuiRestauranteCasadeShow.CheckedChanged += new System.EventHandler(this.checkBoxNaoPossuiRestauranteCasadeShow_CheckedChanged);
             // 
             // checkBoxPossuiRestauranteCasadeShow
             // 
             this.checkBoxPossuiRestauranteCasadeShow.AutoSize = true;
+            this.checkBoxPossuiRestauranteCasadeShow.Checked = true;
+            this.checkBoxPossuiRestauranteCasadeShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxPossuiRestauranteCasadeShow.Location = new System.Drawing.Point(7, 19);
             this.checkBoxPossuiRestauranteCasadeShow.Name = "checkBoxPossuiRestauranteCasadeShow";
             this.checkBoxPossuiRestauranteCasadeShow.Size = new System.Drawing.Size(57, 17);
             this.checkBoxPossuiRestauranteCasadeShow.TabIndex = 0;
             this.checkBoxPossuiRestauranteCasadeShow.Text = "Possui";
             this.checkBoxPossuiRestauranteCasadeShow.UseVisualStyleBackColor = true;
+            this.checkBoxPossuiRestauranteCasadeShow.CheckedChanged += new System.EventHandler(this.checkBoxPossuiRestauranteCasadeShow_CheckedChanged);
             // 
             // groupBoxDiaFechamentoCasadeShow
             // 
@@ -755,6 +813,7 @@
             this.comboBoxDiaFechamentoCasadeShow.Name = "comboBoxDiaFechamentoCasadeShow";
             this.comboBoxDiaFechamentoCasadeShow.Size = new System.Drawing.Size(105, 21);
             this.comboBoxDiaFechamentoCasadeShow.TabIndex = 42;
+            this.comboBoxDiaFechamentoCasadeShow.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiaFechamentoCasadeShow_SelectedIndexChanged);
             // 
             // tabPageFundadores
             // 
@@ -957,77 +1016,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem1.Text = " ";
             // 
-            // groupBoxEstiloIgreja
-            // 
-            this.groupBoxEstiloIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxEstiloIgreja.Controls.Add(this.textBoxEstiloIgreja);
-            this.groupBoxEstiloIgreja.Location = new System.Drawing.Point(780, 178);
-            this.groupBoxEstiloIgreja.Name = "groupBoxEstiloIgreja";
-            this.groupBoxEstiloIgreja.Size = new System.Drawing.Size(121, 50);
-            this.groupBoxEstiloIgreja.TabIndex = 45;
-            this.groupBoxEstiloIgreja.TabStop = false;
-            this.groupBoxEstiloIgreja.Text = "Estilo";
-            // 
-            // textBoxEstiloIgreja
-            // 
-            this.textBoxEstiloIgreja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEstiloIgreja.Location = new System.Drawing.Point(6, 19);
-            this.textBoxEstiloIgreja.Name = "textBoxEstiloIgreja";
-            this.textBoxEstiloIgreja.Size = new System.Drawing.Size(109, 20);
-            this.textBoxEstiloIgreja.TabIndex = 44;
-            this.textBoxEstiloIgreja.TextChanged += new System.EventHandler(this.textBoxEstiloIgreja_TextChanged);
-            // 
-            // textBoxDiaFundacaoMuseu
-            // 
-            this.textBoxDiaFundacaoMuseu.Location = new System.Drawing.Point(5, 32);
-            this.textBoxDiaFundacaoMuseu.Name = "textBoxDiaFundacaoMuseu";
-            this.textBoxDiaFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
-            this.textBoxDiaFundacaoMuseu.TabIndex = 43;
-            this.textBoxDiaFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxDiaFundacaoMuseu_TextChanged);
-            // 
-            // labelDiaFundacaoMuseu
-            // 
-            this.labelDiaFundacaoMuseu.AutoSize = true;
-            this.labelDiaFundacaoMuseu.Location = new System.Drawing.Point(6, 16);
-            this.labelDiaFundacaoMuseu.Name = "labelDiaFundacaoMuseu";
-            this.labelDiaFundacaoMuseu.Size = new System.Drawing.Size(26, 13);
-            this.labelDiaFundacaoMuseu.TabIndex = 42;
-            this.labelDiaFundacaoMuseu.Text = "Dia:";
-            // 
-            // textBoxMesFundacaoMuseu
-            // 
-            this.textBoxMesFundacaoMuseu.Location = new System.Drawing.Point(5, 71);
-            this.textBoxMesFundacaoMuseu.Name = "textBoxMesFundacaoMuseu";
-            this.textBoxMesFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
-            this.textBoxMesFundacaoMuseu.TabIndex = 45;
-            this.textBoxMesFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxMesFundacaoMuseu_TextChanged);
-            // 
-            // labelMesFundacaoMuseu
-            // 
-            this.labelMesFundacaoMuseu.AutoSize = true;
-            this.labelMesFundacaoMuseu.Location = new System.Drawing.Point(6, 55);
-            this.labelMesFundacaoMuseu.Name = "labelMesFundacaoMuseu";
-            this.labelMesFundacaoMuseu.Size = new System.Drawing.Size(30, 13);
-            this.labelMesFundacaoMuseu.TabIndex = 44;
-            this.labelMesFundacaoMuseu.Text = "Mes:";
-            // 
-            // textBoxAnoFundacaoMuseu
-            // 
-            this.textBoxAnoFundacaoMuseu.Location = new System.Drawing.Point(5, 110);
-            this.textBoxAnoFundacaoMuseu.Name = "textBoxAnoFundacaoMuseu";
-            this.textBoxAnoFundacaoMuseu.Size = new System.Drawing.Size(109, 20);
-            this.textBoxAnoFundacaoMuseu.TabIndex = 47;
-            this.textBoxAnoFundacaoMuseu.TextChanged += new System.EventHandler(this.textBoxAnoFundacaoMuseu_TextChanged);
-            // 
-            // labelAnoFundacaoMuseu
-            // 
-            this.labelAnoFundacaoMuseu.AutoSize = true;
-            this.labelAnoFundacaoMuseu.Location = new System.Drawing.Point(6, 94);
-            this.labelAnoFundacaoMuseu.Name = "labelAnoFundacaoMuseu";
-            this.labelAnoFundacaoMuseu.Size = new System.Drawing.Size(29, 13);
-            this.labelAnoFundacaoMuseu.TabIndex = 46;
-            this.labelAnoFundacaoMuseu.Text = "Ano:";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1057,6 +1045,8 @@
             this.groupBoxClassificacaoRestaurante.ResumeLayout(false);
             this.groupBoxClassificacaoRestaurante.PerformLayout();
             this.tabPageIgrejas.ResumeLayout(false);
+            this.groupBoxEstiloIgreja.ResumeLayout(false);
+            this.groupBoxEstiloIgreja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).EndInit();
             this.groupBoxPeriodoIgreja.ResumeLayout(false);
             this.groupBoxFundadorIgreja.ResumeLayout(false);
@@ -1080,8 +1070,6 @@
             this.groupBoxFundador.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBoxEstiloIgreja.ResumeLayout(false);
-            this.groupBoxEstiloIgreja.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1147,8 +1135,6 @@
         private System.Windows.Forms.GroupBox groupBoxFuncionamentoCasadeShow;
         private System.Windows.Forms.TextBox textBoxHorarioFuncionamentoCasadeShow;
         private System.Windows.Forms.Label labelHorarioFuncionamentoCasadeShow;
-        private System.Windows.Forms.Label labelDiadaSemanaFuncionamentoCasadeShow;
-        private System.Windows.Forms.ComboBox comboBoxDiadaSemanaFuncionamentoCasadeShow;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.TextBox textBoxAtuacaoFundador;
         private System.Windows.Forms.DataGridView dataGridViewRestaurante;

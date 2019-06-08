@@ -17,6 +17,7 @@ namespace BDTur.Forms
         int[] CategoriaHotel = new int[] {1, 2, 3, 4, 5};
         int[] CategoriaRestaurante = new int[] { 1, 2, 3, 4, 5 };
         bool[] RestauranteHotel = new bool[] { true, true };
+        bool[] RestauranteCasaDeShow = new bool[] { true, true };
         string[] MuseuData = new string[] { "", "", "" };
 
         public FormMain()
@@ -34,6 +35,7 @@ namespace BDTur.Forms
         {
             populateCidadesComboBox();
             populatePeriodoComboBox();
+            populateFechamentoCasadeShowComboBox();
         }
         private void populateCidadesComboBox()
         {
@@ -132,18 +134,37 @@ namespace BDTur.Forms
             comboBoxPeriodoIgreja.DisplayMember = "secRom";
             comboBoxPeriodoIgreja.DataSource = dt;
         }
+        private void populateFechamentoCasadeShowComboBox()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("dia");          
+            string[] semana = new string[] {"Selecione...","domingo","segunda","terça","quarta","quinta","sexta","sábado" };
+
+
+            for (int i = 0; i < semana.Length; i++)
+            {
+                DataRow drow;
+                drow = dt.NewRow();
+                drow.ItemArray = new object[1] { semana[i] };
+                dt.Rows.InsertAt(drow, i);
+            }          
+
+            comboBoxDiaFechamentoCasadeShow.ValueMember = "dia";
+            comboBoxDiaFechamentoCasadeShow.DisplayMember = "dia";
+            comboBoxDiaFechamentoCasadeShow.DataSource = dt;
+        }        
 
         /// <summary>
         /// Popula os DataGridViews com os dados do BD.
         /// </summary>
         /// <param name="name"> Texto para filtragem dos resultados pelo Nome </param>
-        private void populateDataGridViews(string name, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel, string especialidadeRestaurante, string nomeFundadorIgreja, string nacionalidadeFundadorIgreja, string estiloIgreja, string nomeFundadorMuseu, string nacionalidadeFundadorMuseu, string[] museuFundacao)
+        private void populateDataGridViews(string name, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel, string especialidadeRestaurante, string nomeFundadorIgreja, string nacionalidadeFundadorIgreja, string estiloIgreja, int periodoIgreja, string nomeFundadorMuseu, string nacionalidadeFundadorMuseu, string[] museuFundacao, string horarioCasaDeShow, string fechamentoCasadeShow, bool[] restauranteCasadeShow)
         {
             populateHotelDataGridView(name, cidade,categoriaHotel,restauranteHotel);
             populateRestauranteDataGridView(name,cidade,CategoriaRestaurante,especialidadeRestaurante);            
-            populateIgrejaDataGridView(name,nomeFundadorIgreja,nacionalidadeFundadorIgreja,estiloIgreja);
-            populateCasaDeShowDataGridView(name);
-            populateMuseuDataGridView(name,nomeFundadorMuseu, nacionalidadeFundadorMuseu, museuFundacao);
+            populateIgrejaDataGridView(name,cidade,nomeFundadorIgreja,nacionalidadeFundadorIgreja,estiloIgreja,periodoIgreja);
+            populateCasaDeShowDataGridView(name,cidade, horarioCasaDeShow, fechamentoCasadeShow, restauranteCasadeShow);
+            populateMuseuDataGridView(name,cidade, nomeFundadorMuseu, nacionalidadeFundadorMuseu, museuFundacao);
             populateFundadorDataGridView(name);
         }
         
@@ -154,7 +175,15 @@ namespace BDTur.Forms
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Hotel Erro: \n{ex.Message}\n");
+                }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[3].DataType = typeof(Int64);
                 foreach (DataRow row in dt.Rows)
@@ -188,7 +217,15 @@ namespace BDTur.Forms
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Restaurante Erro: \n{ex.Message}\n");
+                }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[5].DataType = typeof(Int64);
                 foreach (DataRow row in dt.Rows)
@@ -220,13 +257,21 @@ namespace BDTur.Forms
 
            
         }
-        private void populateIgrejaDataGridView(string name, string nomeFundador, string nacionalidadeFundador, string estiloIgreja)
+        private void populateIgrejaDataGridView(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string estilo, int periodo)
         {
-            MySqlDataAdapter da = adapter.igrejaAdapater(name,nomeFundador,nacionalidadeFundador,estiloIgreja);
+            MySqlDataAdapter da = adapter.igrejaAdapater(name,cidade,nomeFundador,nacionalidadeFundador,estilo, periodo);
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Igreja Erro: \n{ex.Message}\n");
+                }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[3].DataType = typeof(Int64);                
                 foreach (DataRow row in dt.Rows)
@@ -257,13 +302,21 @@ namespace BDTur.Forms
             }           
 
         }
-        private void populateCasaDeShowDataGridView(string name)
+        private void populateCasaDeShowDataGridView(string name, string cidade, string horario, string fechamento, bool[] restaurante)
         {
-            MySqlDataAdapter da = adapter.casadeShowAdapater(name);
+            MySqlDataAdapter da = adapter.casadeShowAdapater(name, cidade, horario, fechamento, restaurante);
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch(MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"CasaDeShow Erro: \n{ex.Message}\n");
+                }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[2].DataType = typeof(Int64);
                 foreach (DataRow row in dt.Rows)
@@ -292,13 +345,21 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        private void populateMuseuDataGridView(string name, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
+        private void populateMuseuDataGridView(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
         {
-            MySqlDataAdapter da = adapter.museuAdapater(name, nomeFundador, nacionalidadeFundador, fundacao);
+            MySqlDataAdapter da = adapter.museuAdapater(name, cidade, nomeFundador, nacionalidadeFundador, fundacao);
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Museu Erro: \n{ex.Message}\n");
+                }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[2].DataType = typeof(Int64);
                 foreach (DataRow row in dt.Rows)
@@ -335,7 +396,15 @@ namespace BDTur.Forms
             if (da != null)
             {
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Fundador Erro: \n{ex.Message}\n");
+                }
                 dataGridViewFundadores.DataSource = dt;
 
                 dataGridViewFundadores.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
@@ -367,8 +436,13 @@ namespace BDTur.Forms
             string nacionalidadeFundadorIgreja = textBoxNacionalidadeFundadorIgreja.Text;
             string estiloIgreja = textBoxEstiloIgreja.Text;
             string nomeFundadorMuseu = textBoxNomeFundadorMuseu.Text;
-            string nacionalidadeFundadorMuseu = textBoxNacionalidadeFundadorMuseu.Text;              
-            populateDataGridViews(name, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel, especialidadeRestaurante, nomeFundadorIgreja, nacionalidadeFundadorIgreja, estiloIgreja, nomeFundadorMuseu, nacionalidadeFundadorMuseu, MuseuData);
+            string nacionalidadeFundadorMuseu = textBoxNacionalidadeFundadorMuseu.Text;
+            int periodoIgreja = 0;
+            string horarioCasadeShow = textBoxHorarioFuncionamentoCasadeShow.Text;
+            string diaFechamentoCasadeShow = "Selecione...";
+            if(comboBoxDiaFechamentoCasadeShow.SelectedValue != null) diaFechamentoCasadeShow = comboBoxDiaFechamentoCasadeShow.SelectedValue.ToString();
+            if (comboBoxPeriodoIgreja.SelectedValue != null) periodoIgreja = int.Parse(comboBoxPeriodoIgreja.SelectedValue.ToString());
+            populateDataGridViews(name, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel, especialidadeRestaurante, nomeFundadorIgreja, nacionalidadeFundadorIgreja, estiloIgreja, periodoIgreja, nomeFundadorMuseu, nacionalidadeFundadorMuseu, MuseuData, horarioCasadeShow, diaFechamentoCasadeShow, RestauranteCasaDeShow);
         }
 
         private void dataGridViewPontosTuristico_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -582,6 +656,46 @@ namespace BDTur.Forms
         }
         private void textBoxNacionalidadeFundadorMuseu_TextChanged(object sender, EventArgs e)
         {
+            refreshDataGridViews();
+        }
+        private void comboBoxPeriodoIgreja_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+        private void comboBoxDiaFechamentoCasadeShow_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+        private void textBoxHorarioFuncionamentoCasadeShow_TextChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+        private void checkBoxPossuiRestauranteCasadeShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPossuiRestauranteCasadeShow.CheckState == CheckState.Checked)
+            {
+                RestauranteCasaDeShow[0] = true;
+            }
+
+            if (checkBoxPossuiRestauranteCasadeShow.CheckState == CheckState.Unchecked)
+            {
+                RestauranteCasaDeShow[0] = false;
+            }
+
+            refreshDataGridViews();
+        }
+        private void checkBoxNaoPossuiRestauranteCasadeShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNaoPossuiRestauranteCasadeShow.CheckState == CheckState.Checked)
+            {
+                RestauranteCasaDeShow[1] = true;
+            }
+
+            if (checkBoxNaoPossuiRestauranteCasadeShow.CheckState == CheckState.Unchecked)
+            {
+                RestauranteCasaDeShow[1] = false;
+            }
+
             refreshDataGridViews();
         }
         /* ##################################################### */
