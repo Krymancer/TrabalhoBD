@@ -424,7 +424,7 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        /* ########################################################### */
+        #endregion
 
         /// <summary>
         /// Atualiza os DataGridViews com os dados do BD devido a novos parametros nas requsições.
@@ -444,15 +444,12 @@ namespace BDTur.Forms
             string diaFechamentoCasadeShow = "Selecione...";
             if(comboBoxDiaFechamentoCasadeShow.SelectedValue != null) diaFechamentoCasadeShow = comboBoxDiaFechamentoCasadeShow.SelectedValue.ToString();
             if (comboBoxPeriodoIgreja.SelectedValue != null) periodoIgreja = int.Parse(comboBoxPeriodoIgreja.SelectedValue.ToString());
-            populateDataGridViews(name, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel, especialidadeRestaurante, nomeFundadorIgreja, nacionalidadeFundadorIgreja, estiloIgreja, periodoIgreja, nomeFundadorMuseu, nacionalidadeFundadorMuseu, MuseuData, horarioCasadeShow, diaFechamentoCasadeShow, RestauranteCasaDeShow);
+            string atuacaoFundador = textBoxAtuacaoFundador.Text;
+            string naturaliadeFundador = textBoxNaturalidadeFundador.Text;
+            populateDataGridViews(name, cidade, CategoriaHotel, CategoriaRestaurante, RestauranteHotel, especialidadeRestaurante, nomeFundadorIgreja, nacionalidadeFundadorIgreja, estiloIgreja, periodoIgreja, nomeFundadorMuseu, nacionalidadeFundadorMuseu, MuseuData, horarioCasadeShow, diaFechamentoCasadeShow, RestauranteCasaDeShow,  atuacaoFundador, naturaliadeFundador);
         }
 
-        private void dataGridViewPontosTuristico_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        /* Eventos da UI que Mudam Parametros das Consultas SQL */
+        #region UIEvents
         private void textBoxNome_TextChanged(object sender, EventArgs e)
         {
             refreshDataGridViews();
