@@ -60,6 +60,12 @@
     <Compile Include="Classes\PontoTuristico.cs" />
     <Compile Include="Classes\Restaurante.cs" />
     <Compile Include="Classes\Usuario.cs" />
+    <Compile Include="Forms\FormCadastrarCasaDeShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarCasaDeShow.Designer.cs">
+      <DependentUpon>FormCadastrarCasaDeShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCadastrarCidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +122,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormCadastrarCasaDeShow.resx">
+      <DependentUpon>FormCadastrarCasaDeShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarCidade.resx">
+      <DependentUpon>FormCadastrarCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarFundador.resx">
+      <DependentUpon>FormCadastrarFundador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastrarHotel.resx">
       <DependentUpon>FormCadastrarHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastrarIgreja.resx">
       <DependentUpon>FormCadastrarIgreja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarMuseu.resx">
+      <DependentUpon>FormCadastrarMuseu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
