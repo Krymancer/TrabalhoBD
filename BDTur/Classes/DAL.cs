@@ -196,8 +196,7 @@ namespace BDTur.Classes
             if (!fechamento.Equals("Selecione..."))
             {
                 query += $"AND casadeshow.diaFechamentoCasadeShow = '{fechamento}' ";
-            }
-            Console.WriteLine($"Casa de show query: \n{query}");
+            }            
             return fetchResultFromQuery(query);
         }
         public  MySqlDataAdapter museuAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
@@ -232,7 +231,7 @@ namespace BDTur.Classes
             }
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter fundadorAdapter(string name)
+        public  MySqlDataAdapter fundadorAdapter(string name, string atuacao, string naturalidade)
         {
             string query = "SELECT `fundador`.`idFundador`," +
                                 "`fundador`.`nomeFundador`," +
@@ -241,7 +240,9 @@ namespace BDTur.Classes
                                 "`fundador`.`morteFundador`," +
                                 "`fundador`.`nacionalidadeFundador`" +
                             "FROM `equipe431447`.`fundador` " +
-                            $"WHERE `fundador`.`nomeFundador` LIKE '%{name}%'; ";
+                            $"WHERE `fundador`.`nomeFundador` LIKE '%{name}%' " +
+                            $"AND `fundador`.`atividadeProfissionalFundador`  LIKE '%{atuacao}%' " +
+                            $"AND `fundador`.`nacionalidadeFundador` LIKE '%{naturalidade}%' ";
             return fetchResultFromQuery(query);
 
         }

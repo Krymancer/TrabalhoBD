@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TabControl tabControl;
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageHoteis = new System.Windows.Forms.TabPage();
             this.groupBoxRestauranteHotel = new System.Windows.Forms.GroupBox();
             this.checkBoxNaoPossuiRestauranteHotel = new System.Windows.Forms.CheckBox();
@@ -107,8 +107,7 @@
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            tabControl = new System.Windows.Forms.TabControl();
-            tabControl.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tabPageHoteis.SuspendLayout();
             this.groupBoxRestauranteHotel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).BeginInit();
@@ -139,20 +138,21 @@
             // 
             // tabControl
             // 
-            tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            tabControl.Controls.Add(this.tabPageHoteis);
-            tabControl.Controls.Add(this.tabPageRestaurantes);
-            tabControl.Controls.Add(this.tabPageIgrejas);
-            tabControl.Controls.Add(this.tabPageMuseus);
-            tabControl.Controls.Add(this.tabPageCasasdeShow);
-            tabControl.Controls.Add(this.tabPageFundadores);
-            tabControl.Location = new System.Drawing.Point(0, 27);
-            tabControl.Name = "tabControl";
-            tabControl.SelectedIndex = 0;
-            tabControl.Size = new System.Drawing.Size(923, 389);
-            tabControl.TabIndex = 1;
+            this.tabControl.Controls.Add(this.tabPageHoteis);
+            this.tabControl.Controls.Add(this.tabPageRestaurantes);
+            this.tabControl.Controls.Add(this.tabPageIgrejas);
+            this.tabControl.Controls.Add(this.tabPageMuseus);
+            this.tabControl.Controls.Add(this.tabPageCasasdeShow);
+            this.tabControl.Controls.Add(this.tabPageFundadores);
+            this.tabControl.Location = new System.Drawing.Point(0, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(923, 389);
+            this.tabControl.TabIndex = 1;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageHoteis
             // 
@@ -221,6 +221,7 @@
             this.dataGridViewHotel.Name = "dataGridViewHotel";
             this.dataGridViewHotel.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewHotel.TabIndex = 33;
+            this.dataGridViewHotel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHotel_CellDoubleClick);
             // 
             // groupBoxClassificaoHotel
             // 
@@ -331,6 +332,7 @@
             this.dataGridViewRestaurante.Name = "dataGridViewRestaurante";
             this.dataGridViewRestaurante.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewRestaurante.TabIndex = 58;
+            this.dataGridViewRestaurante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRestaurante_CellDoubleClick);
             // 
             // groupBoxEspecialidadeRestaurante
             // 
@@ -482,6 +484,7 @@
             this.dataGridViewIgreja.Name = "dataGridViewIgreja";
             this.dataGridViewIgreja.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewIgreja.TabIndex = 45;
+            this.dataGridViewIgreja.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIgreja_CellDoubleClick);
             // 
             // groupBoxPeriodoIgreja
             // 
@@ -581,6 +584,7 @@
             this.dataGridViewMuseu.Name = "dataGridViewMuseu";
             this.dataGridViewMuseu.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewMuseu.TabIndex = 45;
+            this.dataGridViewMuseu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMuseu_CellDoubleClick);
             // 
             // groupBoxDataFundacaoMuseu
             // 
@@ -727,6 +731,7 @@
             this.dataGridViewCasadeShow.Name = "dataGridViewCasadeShow";
             this.dataGridViewCasadeShow.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewCasadeShow.TabIndex = 45;
+            this.dataGridViewCasadeShow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCasadeShow_CellDoubleClick);
             // 
             // groupBoxFuncionamentoCasadeShow
             // 
@@ -843,6 +848,7 @@
             this.dataGridViewFundadores.Name = "dataGridViewFundadores";
             this.dataGridViewFundadores.Size = new System.Drawing.Size(767, 357);
             this.dataGridViewFundadores.TabIndex = 62;
+            this.dataGridViewFundadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFundadores_CellDoubleClick);
             // 
             // groupBoxFundador
             // 
@@ -1021,7 +1027,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 479);
-            this.Controls.Add(tabControl);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelNome);
             this.Controls.Add(this.textBoxNome);
@@ -1031,7 +1037,7 @@
             this.Name = "FormMain";
             this.Text = "BDTur";
             this.Load += new System.EventHandler(this.FormMain_Load);
-            tabControl.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPageHoteis.ResumeLayout(false);
             this.groupBoxRestauranteHotel.ResumeLayout(false);
             this.groupBoxRestauranteHotel.PerformLayout();
@@ -1155,5 +1161,6 @@
         private System.Windows.Forms.Label labelMesFundacaoMuseu;
         private System.Windows.Forms.TextBox textBoxDiaFundacaoMuseu;
         private System.Windows.Forms.Label labelDiaFundacaoMuseu;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }

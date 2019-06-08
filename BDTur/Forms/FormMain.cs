@@ -37,6 +37,8 @@ namespace BDTur.Forms
             populatePeriodoComboBox();
             populateFechamentoCasadeShowComboBox();
         }
+
+        #region Popular ComboBoxes
         private void populateCidadesComboBox()
         {
            
@@ -152,23 +154,23 @@ namespace BDTur.Forms
             comboBoxDiaFechamentoCasadeShow.ValueMember = "dia";
             comboBoxDiaFechamentoCasadeShow.DisplayMember = "dia";
             comboBoxDiaFechamentoCasadeShow.DataSource = dt;
-        }        
-
+        }
+        #endregion
         /// <summary>
         /// Popula os DataGridViews com os dados do BD.
         /// </summary>
         /// <param name="name"> Texto para filtragem dos resultados pelo Nome </param>
-        private void populateDataGridViews(string name, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel, string especialidadeRestaurante, string nomeFundadorIgreja, string nacionalidadeFundadorIgreja, string estiloIgreja, int periodoIgreja, string nomeFundadorMuseu, string nacionalidadeFundadorMuseu, string[] museuFundacao, string horarioCasaDeShow, string fechamentoCasadeShow, bool[] restauranteCasadeShow)
+        private void populateDataGridViews(string name, string cidade,int[] categoriaHotel, int[] categoriaRestaurante,bool[] restauranteHotel, string especialidadeRestaurante, string nomeFundadorIgreja, string nacionalidadeFundadorIgreja, string estiloIgreja, int periodoIgreja, string nomeFundadorMuseu, string nacionalidadeFundadorMuseu, string[] museuFundacao, string horarioCasaDeShow, string fechamentoCasadeShow, bool[] restauranteCasadeShow,string fundadorAtuacao, string fundadorNaturalidade)
         {
             populateHotelDataGridView(name, cidade,categoriaHotel,restauranteHotel);
             populateRestauranteDataGridView(name,cidade,CategoriaRestaurante,especialidadeRestaurante);            
             populateIgrejaDataGridView(name,cidade,nomeFundadorIgreja,nacionalidadeFundadorIgreja,estiloIgreja,periodoIgreja);
             populateCasaDeShowDataGridView(name,cidade, horarioCasaDeShow, fechamentoCasadeShow, restauranteCasadeShow);
             populateMuseuDataGridView(name,cidade, nomeFundadorMuseu, nacionalidadeFundadorMuseu, museuFundacao);
-            populateFundadorDataGridView(name);
+            populateFundadorDataGridView(name,fundadorAtuacao,fundadorNaturalidade);
         }
-        
-        /* Popular os DataGridViews e Renomear os Cabeçarios de Acordo */
+
+        #region Popular DataGridViews
         private void populateHotelDataGridView(string name, string cidade, int[] categoria,bool[] restaurante)
         {
             MySqlDataAdapter da = adapter.hotelAdapter(name,cidade, categoria, restaurante);
@@ -390,9 +392,9 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-        private void populateFundadorDataGridView(string name)
+        private void populateFundadorDataGridView(string name, string atuacao, string naturalidade)
         {
-            MySqlDataAdapter da = adapter.fundadorAdapter(name);
+            MySqlDataAdapter da = adapter.fundadorAdapter(name,atuacao,naturalidade);
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -697,7 +699,76 @@ namespace BDTur.Forms
             }
 
             refreshDataGridViews();
+        }    
+        private void textBoxAtuacaoFundador_TextChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
         }
-        /* ##################################################### */
+        private void textBoxNaturalidadeFundador_TextChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ( tabControl.SelectedIndex == tabControl.TabPages.Count - 1)
+            {
+                comboBoxCidade.Enabled = false;                
+            }
+            else
+            {
+                comboBoxCidade.Enabled = true;
+            }
+        }
+        private void dataGridViewHotel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }            
+        }
+        private void dataGridViewRestaurante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)                  
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }
+        }
+        private void dataGridViewIgreja_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }
+        }
+        private void dataGridViewMuseu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }
+        }
+        private void dataGridViewCasadeShow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }
+        }
+        private void dataGridViewFundadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+            }
+        }
+        #endregion
+
+       
     }
 }
