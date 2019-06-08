@@ -60,6 +60,48 @@
     <Compile Include="Classes\PontoTuristico.cs" />
     <Compile Include="Classes\Restaurante.cs" />
     <Compile Include="Classes\Usuario.cs" />
+    <Compile Include="Forms\FormCadastrarCasaDeShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarCasaDeShow.Designer.cs">
+      <DependentUpon>FormCadastrarCasaDeShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarCidade.Designer.cs">
+      <DependentUpon>FormCadastrarCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarFundador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarFundador.Designer.cs">
+      <DependentUpon>FormCadastrarFundador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarHotel.Designer.cs">
+      <DependentUpon>FormCadastrarHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarIgreja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarIgreja.Designer.cs">
+      <DependentUpon>FormCadastrarIgreja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarMuseu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarMuseu.Designer.cs">
+      <DependentUpon>FormCadastrarMuseu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarRestaurante.Designer.cs">
+      <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +122,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormCadastrarHotel.resx">
+      <DependentUpon>FormCadastrarHotel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
