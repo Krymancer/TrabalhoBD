@@ -54,11 +54,11 @@
             this.comboBoxCategoriaHotel = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoHotel = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxIdHotel = new System.Windows.Forms.TextBox();
             this.textBoxNomeHotel = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxIdHotel = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -73,6 +73,105 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(15, 181);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(43, 13);
+            label10.TabIndex = 11;
+            label10.Text = "Cidade:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(233, 131);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(29, 13);
+            label9.TabIndex = 8;
+            label9.Text = "Cep:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(127, 131);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(37, 13);
+            label8.TabIndex = 7;
+            label8.Text = "Bairro:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(15, 27);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 3;
+            label4.Text = "Tipo:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(15, 78);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(64, 13);
+            label5.TabIndex = 4;
+            label5.Text = "Logradouro:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(15, 131);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(74, 13);
+            label7.TabIndex = 6;
+            label7.Text = "Complemento:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(233, 78);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 13);
+            label6.TabIndex = 5;
+            label6.Text = "Número:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 68);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(81, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Nome do Hotel:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(6, 118);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(55, 13);
+            label2.TabIndex = 1;
+            label2.Text = "Categoria:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(137, 117);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(47, 13);
+            label3.TabIndex = 2;
+            label3.Text = "Contato:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(6, 27);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(21, 13);
+            label11.TabIndex = 4;
+            label11.Text = "ID:";
             // 
             // buttonCancelarCadastroHotel
             // 
@@ -201,15 +300,6 @@
             this.comboBoxCategoriaHotel.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCategoriaHotel.TabIndex = 1;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(15, 181);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(43, 13);
-            label10.TabIndex = 11;
-            label10.Text = "Cidade:";
-            // 
             // maskedTextBoxContatoHotel
             // 
             this.maskedTextBoxContatoHotel.Enabled = false;
@@ -218,87 +308,6 @@
             this.maskedTextBoxContatoHotel.Name = "maskedTextBoxContatoHotel";
             this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(92, 20);
             this.maskedTextBoxContatoHotel.TabIndex = 2;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(233, 131);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(29, 13);
-            label9.TabIndex = 8;
-            label9.Text = "Cep:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(127, 131);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(37, 13);
-            label8.TabIndex = 7;
-            label8.Text = "Bairro:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(15, 27);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(31, 13);
-            label4.TabIndex = 3;
-            label4.Text = "Tipo:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(15, 78);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 13);
-            label5.TabIndex = 4;
-            label5.Text = "Logradouro:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(15, 131);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(74, 13);
-            label7.TabIndex = 6;
-            label7.Text = "Complemento:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(233, 78);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(47, 13);
-            label6.TabIndex = 5;
-            label6.Text = "Número:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 68);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(81, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Nome do Hotel:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 118);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 13);
-            label2.TabIndex = 1;
-            label2.Text = "Categoria:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(137, 117);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(47, 13);
-            label3.TabIndex = 2;
-            label3.Text = "Contato:";
             // 
             // groupBox1
             // 
@@ -316,6 +325,14 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
+            // 
+            // textBoxIdHotel
+            // 
+            this.textBoxIdHotel.Enabled = false;
+            this.textBoxIdHotel.Location = new System.Drawing.Point(9, 44);
+            this.textBoxIdHotel.Name = "textBoxIdHotel";
+            this.textBoxIdHotel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdHotel.TabIndex = 18;
             // 
             // textBoxNomeHotel
             // 
@@ -352,33 +369,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(372, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(6, 27);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(21, 13);
-            label11.TabIndex = 4;
-            label11.Text = "ID:";
-            // 
-            // textBoxIdHotel
-            // 
-            this.textBoxIdHotel.Enabled = false;
-            this.textBoxIdHotel.Location = new System.Drawing.Point(9, 44);
-            this.textBoxIdHotel.Name = "textBoxIdHotel";
-            this.textBoxIdHotel.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIdHotel.TabIndex = 18;
-            // 
             // button2
             // 
             this.button2.Enabled = false;
@@ -388,6 +378,16 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "Detalhes Restaurante";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(372, 298);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormDetalhesHotel
             // 
@@ -400,7 +400,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "FormDetalhesHotel";
-            this.Text = "FormDetalhesHotel";
+            this.Text = "Detalhes Hotel";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

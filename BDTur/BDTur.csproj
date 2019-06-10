@@ -194,8 +194,20 @@
     <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesCasadeShow.resx">
+      <DependentUpon>FormDetalhesCasadeShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesFundador.resx">
+      <DependentUpon>FormDetalhesFundador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesHotel.resx">
       <DependentUpon>FormDetalhesHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesIgreja.resx">
+      <DependentUpon>FormDetalhesIgreja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesMuseu.resx">
+      <DependentUpon>FormDetalhesMuseu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesRestaurante.resx">
       <DependentUpon>FormDetalhesRestaurante.cs</DependentUpon>

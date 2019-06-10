@@ -448,7 +448,7 @@
             this.Controls.Add(this.buttonCadastrarIgreja);
             this.Controls.Add(this.groupBox2);
             this.Name = "FormDetalhesIgreja";
-            this.Text = "FormDetalhesIgreja";
+            this.Text = "Detalhes Igreja";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

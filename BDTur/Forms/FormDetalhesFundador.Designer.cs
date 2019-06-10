@@ -33,7 +33,6 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label15;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxNacionalidadeFundador = new System.Windows.Forms.TextBox();
             this.maskedTextBoxDataMorteFundador = new System.Windows.Forms.MaskedTextBox();
@@ -41,7 +40,7 @@
             this.textBoxAtividadeProfissionalFundador = new System.Windows.Forms.TextBox();
             this.textBoxNomeFundador = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
+            this.listBoxPontosTuristicosFundados = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCancelarCadastroHotel = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
@@ -50,7 +49,6 @@
             label11 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -160,8 +158,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.listBoxFundadoresDisponiveis);
-            this.groupBox3.Controls.Add(label15);
+            this.groupBox3.Controls.Add(this.listBoxPontosTuristicosFundados);
             this.groupBox3.Location = new System.Drawing.Point(279, 20);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(183, 181);
@@ -169,24 +166,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pontos Turisticos Fundados";
             // 
-            // listBoxFundadoresDisponiveis
+            // listBoxPontosTuristicosFundados
             // 
-            this.listBoxFundadoresDisponiveis.DisplayMember = "nomeFundador";
-            this.listBoxFundadoresDisponiveis.Enabled = false;
-            this.listBoxFundadoresDisponiveis.FormattingEnabled = true;
-            this.listBoxFundadoresDisponiveis.Location = new System.Drawing.Point(6, 35);
-            this.listBoxFundadoresDisponiveis.Name = "listBoxFundadoresDisponiveis";
-            this.listBoxFundadoresDisponiveis.Size = new System.Drawing.Size(169, 134);
-            this.listBoxFundadoresDisponiveis.TabIndex = 22;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(6, 19);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(123, 13);
-            label15.TabIndex = 16;
-            label15.Text = "Fundadores Disponivéis:";
+            this.listBoxPontosTuristicosFundados.DisplayMember = "nomeFundador";
+            this.listBoxPontosTuristicosFundados.Enabled = false;
+            this.listBoxPontosTuristicosFundados.FormattingEnabled = true;
+            this.listBoxPontosTuristicosFundados.Location = new System.Drawing.Point(6, 22);
+            this.listBoxPontosTuristicosFundados.Name = "listBoxPontosTuristicosFundados";
+            this.listBoxPontosTuristicosFundados.Size = new System.Drawing.Size(169, 147);
+            this.listBoxPontosTuristicosFundados.TabIndex = 22;
             // 
             // button1
             // 
@@ -227,11 +215,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDetalhesFundador";
-            this.Text = "FormDetalhesFundador";
+            this.Text = "Detalhes Fundador";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,7 +232,7 @@
         private System.Windows.Forms.TextBox textBoxAtividadeProfissionalFundador;
         private System.Windows.Forms.TextBox textBoxNomeFundador;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBoxFundadoresDisponiveis;
+        private System.Windows.Forms.ListBox listBoxPontosTuristicosFundados;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonCancelarCadastroHotel;
         private System.Windows.Forms.Button buttonCadastrarHotel;

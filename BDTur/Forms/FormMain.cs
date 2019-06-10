@@ -849,6 +849,14 @@ namespace BDTur.Forms
         {
             
         }
+        private void textBoxAtuacaoFundador_TextChanged_1(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
+        private void textBoxNaturalidadeFundador_TextChanged_1(object sender, EventArgs e)
+        {
+            refreshDataGridViews();
+        }
 
         #endregion
 

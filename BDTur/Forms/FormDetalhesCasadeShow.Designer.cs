@@ -75,6 +75,105 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(9, 133);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(100, 13);
+            label13.TabIndex = 19;
+            label13.Text = "Dia de fechamento:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(115, 133);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(76, 13);
+            label12.TabIndex = 16;
+            label12.Text = "Hora de Ínicio:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 29);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(125, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Nome da Casa de Show:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(9, 79);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(47, 13);
+            label3.TabIndex = 2;
+            label3.Text = "Contato:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(6, 183);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(43, 13);
+            label10.TabIndex = 11;
+            label10.Text = "Cidade:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(224, 133);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(29, 13);
+            label9.TabIndex = 8;
+            label9.Text = "Cep:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(115, 133);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(37, 13);
+            label8.TabIndex = 7;
+            label8.Text = "Bairro:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(6, 29);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 3;
+            label4.Text = "Tipo:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 80);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(64, 13);
+            label5.TabIndex = 4;
+            label5.Text = "Logradouro:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(6, 133);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(74, 13);
+            label7.TabIndex = 6;
+            label7.Text = "Complemento:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(224, 80);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 13);
+            label6.TabIndex = 5;
+            label6.Text = "Número:";
+            // 
             // textBoxHoraInicioCasaDeShow
             // 
             this.textBoxHoraInicioCasaDeShow.Enabled = false;
@@ -136,24 +235,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(9, 133);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(100, 13);
-            label13.TabIndex = 19;
-            label13.Text = "Dia de fechamento:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(115, 133);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(76, 13);
-            label12.TabIndex = 16;
-            label12.Text = "Hora de Ínicio:";
-            // 
             // maskedTextBoxContatoCasaDeShow
             // 
             this.maskedTextBoxContatoCasaDeShow.Enabled = false;
@@ -162,24 +243,6 @@
             this.maskedTextBoxContatoCasaDeShow.Name = "maskedTextBoxContatoCasaDeShow";
             this.maskedTextBoxContatoCasaDeShow.Size = new System.Drawing.Size(92, 20);
             this.maskedTextBoxContatoCasaDeShow.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 29);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(125, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Nome da Casa de Show:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(9, 79);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(47, 13);
-            label3.TabIndex = 2;
-            label3.Text = "Contato:";
             // 
             // comboBoxIdRestauranteCasaDeShow
             // 
@@ -257,15 +320,6 @@
             this.comboBoxEndCidadeCasaDeShow.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEndCidadeCasaDeShow.TabIndex = 11;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(6, 183);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(43, 13);
-            label10.TabIndex = 11;
-            label10.Text = "Cidade:";
-            // 
             // maskedTextBoxEndCepCasaDeShow
             // 
             this.maskedTextBoxEndCepCasaDeShow.Enabled = false;
@@ -299,15 +353,6 @@
             this.textBoxEndNumeroCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroCasaDeShow.TabIndex = 7;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(224, 133);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(29, 13);
-            label9.TabIndex = 8;
-            label9.Text = "Cep:";
-            // 
             // textBoxEndLogradouroCasaDeShow
             // 
             this.textBoxEndLogradouroCasaDeShow.Enabled = false;
@@ -315,15 +360,6 @@
             this.textBoxEndLogradouroCasaDeShow.Name = "textBoxEndLogradouroCasaDeShow";
             this.textBoxEndLogradouroCasaDeShow.Size = new System.Drawing.Size(212, 20);
             this.textBoxEndLogradouroCasaDeShow.TabIndex = 6;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(115, 133);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(37, 13);
-            label8.TabIndex = 7;
-            label8.Text = "Bairro:";
             // 
             // comboBoxEndTipoCasaDeShow
             // 
@@ -334,42 +370,6 @@
             this.comboBoxEndTipoCasaDeShow.Name = "comboBoxEndTipoCasaDeShow";
             this.comboBoxEndTipoCasaDeShow.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEndTipoCasaDeShow.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(6, 29);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(31, 13);
-            label4.TabIndex = 3;
-            label4.Text = "Tipo:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 80);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 13);
-            label5.TabIndex = 4;
-            label5.Text = "Logradouro:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 133);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(74, 13);
-            label7.TabIndex = 6;
-            label7.Text = "Complemento:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(224, 80);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(47, 13);
-            label6.TabIndex = 5;
-            label6.Text = "Número:";
             // 
             // button1
             // 
@@ -399,7 +399,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCancelarCadastroCasaDeShow);
             this.Controls.Add(this.groupBox2);
-            this.Enabled = false;
             this.Name = "FormDetalhesCasadeShow";
             this.Text = "FormDetalhesCasadeShow";
             this.groupBox1.ResumeLayout(false);

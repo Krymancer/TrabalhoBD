@@ -86,6 +86,141 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(201, 19);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(127, 13);
+            label14.TabIndex = 17;
+            label14.Text = "Fundadores Seleciondos:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(6, 19);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(123, 13);
+            label15.TabIndex = 16;
+            label15.Text = "Fundadores Disponivéis:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(9, 133);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(64, 13);
+            label13.TabIndex = 19;
+            label13.Text = "Nº de salas:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(110, 80);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(89, 13);
+            label12.TabIndex = 16;
+            label12.Text = "Valor da Entrada:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(9, 174);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(96, 13);
+            label2.TabIndex = 14;
+            label2.Text = "Data de fundação:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(12, 360);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(58, 13);
+            label11.TabIndex = 12;
+            label11.Text = "Descrição:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 29);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(88, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Nome do Museu:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(9, 79);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(47, 13);
+            label3.TabIndex = 2;
+            label3.Text = "Contato:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(6, 183);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(43, 13);
+            label10.TabIndex = 11;
+            label10.Text = "Cidade:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(224, 133);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(29, 13);
+            label9.TabIndex = 8;
+            label9.Text = "Cep:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(118, 133);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(37, 13);
+            label8.TabIndex = 7;
+            label8.Text = "Bairro:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(6, 29);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 3;
+            label4.Text = "Tipo:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 80);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(64, 13);
+            label5.TabIndex = 4;
+            label5.Text = "Logradouro:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(6, 133);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(74, 13);
+            label7.TabIndex = 6;
+            label7.Text = "Complemento:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(224, 80);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 13);
+            label6.TabIndex = 5;
+            label6.Text = "Número:";
+            // 
             // listBoxFundadoresSelecionados
             // 
             this.listBoxFundadoresSelecionados.DisplayMember = "nomeFundador";
@@ -138,24 +273,6 @@
             this.buttonRemoveFundador.TabIndex = 21;
             this.buttonRemoveFundador.Text = "<";
             this.buttonRemoveFundador.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(201, 19);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(127, 13);
-            label14.TabIndex = 17;
-            label14.Text = "Fundadores Seleciondos:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(6, 19);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(123, 13);
-            label15.TabIndex = 16;
-            label15.Text = "Fundadores Disponivéis:";
             // 
             // textBoxNumeroDeSalasMuseu
             // 
@@ -228,60 +345,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(9, 133);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(64, 13);
-            label13.TabIndex = 19;
-            label13.Text = "Nº de salas:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(110, 80);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(89, 13);
-            label12.TabIndex = 16;
-            label12.Text = "Valor da Entrada:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(9, 174);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(96, 13);
-            label2.TabIndex = 14;
-            label2.Text = "Data de fundação:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(12, 360);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(58, 13);
-            label11.TabIndex = 12;
-            label11.Text = "Descrição:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 29);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(88, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Nome do Museu:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(9, 79);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(47, 13);
-            label3.TabIndex = 2;
-            label3.Text = "Contato:";
-            // 
             // buttonCancelarCadastroMuseu
             // 
             this.buttonCancelarCadastroMuseu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -334,15 +397,6 @@
             this.comboBoxEndCidadeMuseu.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEndCidadeMuseu.TabIndex = 12;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(6, 183);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(43, 13);
-            label10.TabIndex = 11;
-            label10.Text = "Cidade:";
-            // 
             // maskedTextBoxEndCepMuseu
             // 
             this.maskedTextBoxEndCepMuseu.Enabled = false;
@@ -376,15 +430,6 @@
             this.textBoxEndNumeroMuseu.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroMuseu.TabIndex = 6;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(224, 133);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(29, 13);
-            label9.TabIndex = 8;
-            label9.Text = "Cep:";
-            // 
             // textBoxEndLogradouroMuseu
             // 
             this.textBoxEndLogradouroMuseu.Enabled = false;
@@ -392,15 +437,6 @@
             this.textBoxEndLogradouroMuseu.Name = "textBoxEndLogradouroMuseu";
             this.textBoxEndLogradouroMuseu.Size = new System.Drawing.Size(212, 20);
             this.textBoxEndLogradouroMuseu.TabIndex = 5;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(118, 133);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(37, 13);
-            label8.TabIndex = 7;
-            label8.Text = "Bairro:";
             // 
             // comboBoxEndTipoMuseu
             // 
@@ -411,42 +447,6 @@
             this.comboBoxEndTipoMuseu.Name = "comboBoxEndTipoMuseu";
             this.comboBoxEndTipoMuseu.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEndTipoMuseu.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(6, 29);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(31, 13);
-            label4.TabIndex = 3;
-            label4.Text = "Tipo:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 80);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 13);
-            label5.TabIndex = 4;
-            label5.Text = "Logradouro:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 133);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(74, 13);
-            label7.TabIndex = 6;
-            label7.Text = "Complemento:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(224, 80);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(47, 13);
-            label6.TabIndex = 5;
-            label6.Text = "Número:";
             // 
             // button1
             // 
@@ -469,7 +469,7 @@
             this.Controls.Add(this.buttonCadastrarMuseu);
             this.Controls.Add(this.groupBox2);
             this.Name = "FormDetalhesMuseu";
-            this.Text = "FormDetalhesMuseu";
+            this.Text = "Detalhes Museu";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
