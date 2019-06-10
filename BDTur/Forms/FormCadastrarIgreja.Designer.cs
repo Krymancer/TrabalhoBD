@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label labelFundador;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label8;
@@ -41,10 +40,16 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label13;
+            System.Windows.Forms.Label label14;
             this.buttonCancelarCadastroIgreja = new System.Windows.Forms.Button();
             this.buttonCadastrarIgreja = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxIdFundadorIgreja = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
+            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
+            this.buttonRemoveFundador = new System.Windows.Forms.Button();
+            this.buttonAddFundador = new System.Windows.Forms.Button();
             this.comboBoxEndCidadeIgreja = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxEndCepIgreja = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEndBairroIgreja = new System.Windows.Forms.TextBox();
@@ -58,7 +63,6 @@
             this.textBoxDescricaoIgreja = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoIgreja = new System.Windows.Forms.MaskedTextBox();
             this.textBoxNomeIgreja = new System.Windows.Forms.TextBox();
-            labelFundador = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -71,18 +75,12 @@
             label11 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            label13 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelFundador
-            // 
-            labelFundador.AutoSize = true;
-            labelFundador.Location = new System.Drawing.Point(143, 183);
-            labelFundador.Name = "labelFundador";
-            labelFundador.Size = new System.Drawing.Size(55, 13);
-            labelFundador.TabIndex = 14;
-            labelFundador.Text = "Fundador:";
             // 
             // label10
             // 
@@ -192,6 +190,24 @@
             label3.TabIndex = 2;
             label3.Text = "Contato:";
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(6, 19);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(123, 13);
+            label13.TabIndex = 16;
+            label13.Text = "Fundadores Disponivéis:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(201, 19);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(127, 13);
+            label14.TabIndex = 17;
+            label14.Text = "Fundadores Seleciondos:";
+            // 
             // buttonCancelarCadastroIgreja
             // 
             this.buttonCancelarCadastroIgreja.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -213,8 +229,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBoxIdFundadorIgreja);
-            this.groupBox2.Controls.Add(labelFundador);
             this.groupBox2.Controls.Add(this.comboBoxEndCidadeIgreja);
             this.groupBox2.Controls.Add(label10);
             this.groupBox2.Controls.Add(this.maskedTextBoxEndCepIgreja);
@@ -231,19 +245,63 @@
             this.groupBox2.Controls.Add(label6);
             this.groupBox2.Location = new System.Drawing.Point(285, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 429);
+            this.groupBox2.Size = new System.Drawing.Size(360, 237);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
-            // comboBoxIdFundadorIgreja
+            // groupBox3
             // 
-            this.comboBoxIdFundadorIgreja.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxIdFundadorIgreja.FormattingEnabled = true;
-            this.comboBoxIdFundadorIgreja.Location = new System.Drawing.Point(146, 199);
-            this.comboBoxIdFundadorIgreja.Name = "comboBoxIdFundadorIgreja";
-            this.comboBoxIdFundadorIgreja.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxIdFundadorIgreja.TabIndex = 12;
+            this.groupBox3.Controls.Add(this.listBoxFundadoresSelecionados);
+            this.groupBox3.Controls.Add(this.listBoxFundadoresDisponiveis);
+            this.groupBox3.Controls.Add(this.buttonRemoveFundador);
+            this.groupBox3.Controls.Add(this.buttonAddFundador);
+            this.groupBox3.Controls.Add(label14);
+            this.groupBox3.Controls.Add(label13);
+            this.groupBox3.Location = new System.Drawing.Point(285, 255);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(360, 181);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fundador";
+            // 
+            // listBoxFundadoresSelecionados
+            // 
+            this.listBoxFundadoresSelecionados.DisplayMember = "nomeFundador";
+            this.listBoxFundadoresSelecionados.FormattingEnabled = true;
+            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(192, 35);
+            this.listBoxFundadoresSelecionados.Name = "listBoxFundadoresSelecionados";
+            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresSelecionados.TabIndex = 23;
+            // 
+            // listBoxFundadoresDisponiveis
+            // 
+            this.listBoxFundadoresDisponiveis.DisplayMember = "nomeFundador";
+            this.listBoxFundadoresDisponiveis.FormattingEnabled = true;
+            this.listBoxFundadoresDisponiveis.Location = new System.Drawing.Point(6, 35);
+            this.listBoxFundadoresDisponiveis.Name = "listBoxFundadoresDisponiveis";
+            this.listBoxFundadoresDisponiveis.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresDisponiveis.TabIndex = 22;
+            // 
+            // buttonRemoveFundador
+            // 
+            this.buttonRemoveFundador.Location = new System.Drawing.Point(164, 102);
+            this.buttonRemoveFundador.Name = "buttonRemoveFundador";
+            this.buttonRemoveFundador.Size = new System.Drawing.Size(25, 23);
+            this.buttonRemoveFundador.TabIndex = 21;
+            this.buttonRemoveFundador.Text = "<";
+            this.buttonRemoveFundador.UseVisualStyleBackColor = true;
+            this.buttonRemoveFundador.Click += new System.EventHandler(this.buttonRemoveFundador_Click);
+            // 
+            // buttonAddFundador
+            // 
+            this.buttonAddFundador.Location = new System.Drawing.Point(164, 73);
+            this.buttonAddFundador.Name = "buttonAddFundador";
+            this.buttonAddFundador.Size = new System.Drawing.Size(25, 23);
+            this.buttonAddFundador.TabIndex = 20;
+            this.buttonAddFundador.Text = ">";
+            this.buttonAddFundador.UseVisualStyleBackColor = true;
+            this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
             // 
             // comboBoxEndCidadeIgreja
             // 
@@ -359,6 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 483);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonCancelarCadastroIgreja);
             this.Controls.Add(this.buttonCadastrarIgreja);
             this.Controls.Add(this.groupBox2);
@@ -371,6 +430,8 @@
             this.Load += new System.EventHandler(this.FormCadastrarIgreja_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -382,7 +443,6 @@
         private System.Windows.Forms.Button buttonCancelarCadastroIgreja;
         private System.Windows.Forms.Button buttonCadastrarIgreja;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBoxIdFundadorIgreja;
         private System.Windows.Forms.ComboBox comboBoxEndCidadeIgreja;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEndCepIgreja;
         private System.Windows.Forms.TextBox textBoxEndBairroIgreja;
@@ -396,5 +456,10 @@
         private System.Windows.Forms.TextBox textBoxNomeIgreja;
         private System.Windows.Forms.MonthCalendar monthCalendarFundacaoIgreja;
         private System.Windows.Forms.TextBox textBoxEstiloIgreja;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonRemoveFundador;
+        private System.Windows.Forms.Button buttonAddFundador;
+        private System.Windows.Forms.ListBox listBoxFundadoresSelecionados;
+        private System.Windows.Forms.ListBox listBoxFundadoresDisponiveis;
     }
 }

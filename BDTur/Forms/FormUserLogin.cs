@@ -36,12 +36,17 @@ namespace BDTur.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um erro \n Usuário ou Senha incoretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Ocorreu um erro \n Usuário ou Senha incoretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new InvalidLoginException("invalid combination of user and password");
                 }
             }
-            catch (MySqlException ex) {
+            catch (MySqlException ex)
+            {
                 MessageBox.Show("Ocorreu um erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex);                
+                Console.WriteLine(ex);
+            }
+            catch (InvalidLoginException) {
+                MessageBox.Show("Usuário ou Senha invalidos\n Tente Novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,4 +55,12 @@ namespace BDTur.Forms
             Application.Exit();
         }
     }
+
+    public class InvalidLoginException : Exception {
+        public InvalidLoginException() : base() { }
+        public InvalidLoginException(string message) : base(message) { }
+        public InvalidLoginException(string message, System.Exception inner) : base(message, inner) { }
+    }
 }
+
+

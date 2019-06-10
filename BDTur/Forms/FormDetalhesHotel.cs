@@ -11,17 +11,22 @@ using System.Windows.Forms;
 
 namespace BDTur.Forms
 {
-    public partial class FormCadastrarHotel : Form
+    public partial class FormDetalhesHotel : Form
     {
+
         Classes.DAL adapter = new Classes.DAL();
 
-        public FormCadastrarHotel()
+
+        public FormDetalhesHotel(int id)
         {
             InitializeComponent();
-        }
 
-        private void FormCadastrarHotel_Load(object sender, EventArgs e)
-        {
+            comboBoxCategoriaHotel.Items.Add("1 Estrela");
+            comboBoxCategoriaHotel.Items.Add("2 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("3 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("4 Estrelas");
+            comboBoxCategoriaHotel.Items.Add("5 Estrelas");
+
             comboBoxEndTipoHotel.Items.Add("Rua");
             comboBoxEndTipoHotel.Items.Add("Avenida");
             comboBoxEndTipoHotel.Items.Add("Travessa");
@@ -31,15 +36,8 @@ namespace BDTur.Forms
             comboBoxEndTipoHotel.Items.Add("Balneário");
             comboBoxEndTipoHotel.Items.Add("Beco");
 
-
-            comboBoxCategoriaHotel.Items.Add("1 Estrela");
-            comboBoxCategoriaHotel.Items.Add("2 Estrelas");
-            comboBoxCategoriaHotel.Items.Add("3 Estrelas");
-            comboBoxCategoriaHotel.Items.Add("4 Estrelas");
-            comboBoxCategoriaHotel.Items.Add("5 Estrelas");
-
-            labelRestaurante.Visible = false;
-            comboBoxIdRestauranteHotel.Visible = false;
+            populateComboBoxes();
+            getDetails(id);           
         }
 
         private void populateComboBoxes()
@@ -85,12 +83,18 @@ namespace BDTur.Forms
                 dt.Columns.Add("idRestaurante");
                 dt.Columns.Add("nomeRestaurante");
 
+                DataRow dr;
+                dr = dt.NewRow();
+                dr.ItemArray = new object[2] { 0 , "Selecione..." };
+                dt.Rows.InsertAt(dr, 0);
+
+                int i = 1;
                 while (reader.Read())
-                {
-                    DataRow dr;
+                {                    
                     dr = dt.NewRow();
                     dr.ItemArray = new object[2] { reader.GetInt32(0), reader.GetString(1) };
-                    dt.Rows.InsertAt(dr, 0);
+                    dt.Rows.InsertAt(dr, i);
+                    i++;
                 }
 
 
@@ -106,6 +110,45 @@ namespace BDTur.Forms
             }
         }
 
+        private void getDetails(int id)
+        {
+            MySqlDataReader reader = adapter.hotelDetailsReader(id);
+            if (reader != null)
+            {
+                while (reader.Read())
+                {
+                    textBoxIdHotel.Text = reader.GetString(0);
+                    try
+                    {
+                        comboBoxIdRestauranteHotel.SelectedItem = comboBoxIdRestauranteHotel.Items[reader.GetInt32(1)];                        
+                        checkBoxContemRestaurante.Checked = true;
+                    }
+                    catch(System.Data.SqlTypes.SqlNullValueException e){
+                       checkBoxContemRestaurante.Checked = false;
+                    }
+                    textBoxNomeHotel.Text = reader.GetString(2);
+                    comboBoxCategoriaHotel.SelectedItem = comboBoxCategoriaHotel.Items[reader.GetInt32(3)-1];
+                    maskedTextBoxContatoHotel.Text = reader.GetString(4);
+                    int index = comboBoxEndTipoHotel.Items.IndexOf(reader.GetString(5));                    
+                    comboBoxEndTipoHotel.SelectedItem = comboBoxEndTipoHotel.Items[index];
+                    textBoxEndLogradouroHotel.Text = reader.GetString(6);
+                    textBoxEndNumeroHotel.Text = reader.GetString(7);                    
+                    try
+                    {
+                        textBoxEndComplementoHotel.Text = reader.GetString(8);
+                    }
+                    catch (System.Data.SqlTypes.SqlNullValueException e)
+                    {
+                        textBoxEndComplementoHotel.Text = "";
+                    }
+                    textBoxEndBairroHotel.Text = reader.GetString(9);
+                    maskedTextBoxEndCepHotel.Text = reader.GetString(10);                                                            
+                    comboBoxEndCidadeHotel.SelectedValue = reader.GetInt32(11);
+
+                }
+            }
+        }
+
         private void checkBoxContemRestaurante_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxContemRestaurante.Checked)
@@ -118,12 +161,6 @@ namespace BDTur.Forms
                 labelRestaurante.Visible = false;
                 comboBoxIdRestauranteHotel.Visible = false;
             }
-
-        }
-
-        private void buttonCadastrarHotel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

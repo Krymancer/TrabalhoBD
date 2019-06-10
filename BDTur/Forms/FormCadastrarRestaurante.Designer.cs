@@ -43,9 +43,6 @@
             this.buttonCancelarCadastroRestaurante = new System.Windows.Forms.Button();
             this.buttonCadastrarRestaurante = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxIdHotelRestaurante = new System.Windows.Forms.ComboBox();
-            this.labelHotel = new System.Windows.Forms.Label();
-            this.checkBoxPertenceAHotel = new System.Windows.Forms.CheckBox();
             this.comboBoxEndCidadeRestaurante = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxEndCepRestaurante = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEndBairroRestaurante = new System.Windows.Forms.TextBox();
@@ -204,9 +201,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBoxIdHotelRestaurante);
-            this.groupBox2.Controls.Add(this.labelHotel);
-            this.groupBox2.Controls.Add(this.checkBoxPertenceAHotel);
             this.groupBox2.Controls.Add(this.comboBoxEndCidadeRestaurante);
             this.groupBox2.Controls.Add(label10);
             this.groupBox2.Controls.Add(this.maskedTextBoxEndCepRestaurante);
@@ -227,34 +221,6 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
-            // 
-            // comboBoxIdHotelRestaurante
-            // 
-            this.comboBoxIdHotelRestaurante.FormattingEnabled = true;
-            this.comboBoxIdHotelRestaurante.Location = new System.Drawing.Point(146, 199);
-            this.comboBoxIdHotelRestaurante.Name = "comboBoxIdHotelRestaurante";
-            this.comboBoxIdHotelRestaurante.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxIdHotelRestaurante.TabIndex = 13;
-            // 
-            // labelHotel
-            // 
-            this.labelHotel.AutoSize = true;
-            this.labelHotel.Location = new System.Drawing.Point(143, 183);
-            this.labelHotel.Name = "labelHotel";
-            this.labelHotel.Size = new System.Drawing.Size(35, 13);
-            this.labelHotel.TabIndex = 14;
-            this.labelHotel.Text = "Hotel:";
-            // 
-            // checkBoxPertenceAHotel
-            // 
-            this.checkBoxPertenceAHotel.AutoSize = true;
-            this.checkBoxPertenceAHotel.Location = new System.Drawing.Point(9, 234);
-            this.checkBoxPertenceAHotel.Name = "checkBoxPertenceAHotel";
-            this.checkBoxPertenceAHotel.Size = new System.Drawing.Size(127, 17);
-            this.checkBoxPertenceAHotel.TabIndex = 12;
-            this.checkBoxPertenceAHotel.Text = "Pertence a um hotel?";
-            this.checkBoxPertenceAHotel.UseVisualStyleBackColor = true;
-            this.checkBoxPertenceAHotel.CheckedChanged += new System.EventHandler(this.checkBoxPertenceAHotel_CheckedChanged);
             // 
             // comboBoxEndCidadeRestaurante
             // 
@@ -410,8 +376,5 @@
         private System.Windows.Forms.TextBox textBoxNomeHotel;
         private System.Windows.Forms.TextBox textBoxEspecialidadeRestaurante;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.ComboBox comboBoxIdHotelRestaurante;
-        private System.Windows.Forms.Label labelHotel;
-        private System.Windows.Forms.CheckBox checkBoxPertenceAHotel;
     }
 }

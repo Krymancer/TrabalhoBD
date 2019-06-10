@@ -43,7 +43,7 @@ namespace BDTur.Forms
                 MessageBox.Show("Ocorreu um erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 Console.WriteLine(ex); // Provavélmente o Usuario e/ou a senha estão incorretos
-            }
+            }            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

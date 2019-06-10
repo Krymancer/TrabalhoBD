@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label labelFundador;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label8;
@@ -42,10 +41,11 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label14;
+            System.Windows.Forms.Label label15;
             this.buttonCancelarCadastroMuseu = new System.Windows.Forms.Button();
             this.buttonCadastrarMuseu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxIdFundadorMuseu = new System.Windows.Forms.ComboBox();
             this.comboBoxEndCidadeMuseu = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxEndCepMuseu = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEndBairroMuseu = new System.Windows.Forms.TextBox();
@@ -60,7 +60,11 @@
             this.textBoxDescricaoMuseu = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoMuseu = new System.Windows.Forms.MaskedTextBox();
             this.textBoxNomeMuseu = new System.Windows.Forms.TextBox();
-            labelFundador = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
+            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
+            this.buttonRemoveFundador = new System.Windows.Forms.Button();
+            this.buttonAddFundador = new System.Windows.Forms.Button();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -74,18 +78,12 @@
             label11 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelFundador
-            // 
-            labelFundador.AutoSize = true;
-            labelFundador.Location = new System.Drawing.Point(143, 183);
-            labelFundador.Name = "labelFundador";
-            labelFundador.Size = new System.Drawing.Size(55, 13);
-            labelFundador.TabIndex = 14;
-            labelFundador.Text = "Fundador:";
             // 
             // label10
             // 
@@ -225,8 +223,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBoxIdFundadorMuseu);
-            this.groupBox2.Controls.Add(labelFundador);
             this.groupBox2.Controls.Add(this.comboBoxEndCidadeMuseu);
             this.groupBox2.Controls.Add(label10);
             this.groupBox2.Controls.Add(this.maskedTextBoxEndCepMuseu);
@@ -243,19 +239,10 @@
             this.groupBox2.Controls.Add(label6);
             this.groupBox2.Location = new System.Drawing.Point(288, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 472);
+            this.groupBox2.Size = new System.Drawing.Size(360, 237);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
-            // 
-            // comboBoxIdFundadorMuseu
-            // 
-            this.comboBoxIdFundadorMuseu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxIdFundadorMuseu.FormattingEnabled = true;
-            this.comboBoxIdFundadorMuseu.Location = new System.Drawing.Point(146, 199);
-            this.comboBoxIdFundadorMuseu.Name = "comboBoxIdFundadorMuseu";
-            this.comboBoxIdFundadorMuseu.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxIdFundadorMuseu.TabIndex = 15;
             // 
             // comboBoxEndCidadeMuseu
             // 
@@ -376,11 +363,83 @@
             this.textBoxNomeMuseu.Size = new System.Drawing.Size(223, 20);
             this.textBoxNomeMuseu.TabIndex = 9;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBoxFundadoresSelecionados);
+            this.groupBox3.Controls.Add(this.listBoxFundadoresDisponiveis);
+            this.groupBox3.Controls.Add(this.buttonRemoveFundador);
+            this.groupBox3.Controls.Add(this.buttonAddFundador);
+            this.groupBox3.Controls.Add(label14);
+            this.groupBox3.Controls.Add(label15);
+            this.groupBox3.Location = new System.Drawing.Point(288, 255);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(345, 181);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fundador";
+            // 
+            // listBoxFundadoresSelecionados
+            // 
+            this.listBoxFundadoresSelecionados.DisplayMember = "nomeFundador";
+            this.listBoxFundadoresSelecionados.FormattingEnabled = true;
+            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(193, 35);
+            this.listBoxFundadoresSelecionados.Name = "listBoxFundadoresSelecionados";
+            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresSelecionados.TabIndex = 23;
+            // 
+            // listBoxFundadoresDisponiveis
+            // 
+            this.listBoxFundadoresDisponiveis.DisplayMember = "nomeFundador";
+            this.listBoxFundadoresDisponiveis.FormattingEnabled = true;
+            this.listBoxFundadoresDisponiveis.Location = new System.Drawing.Point(6, 35);
+            this.listBoxFundadoresDisponiveis.Name = "listBoxFundadoresDisponiveis";
+            this.listBoxFundadoresDisponiveis.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresDisponiveis.TabIndex = 22;
+            // 
+            // buttonRemoveFundador
+            // 
+            this.buttonRemoveFundador.Location = new System.Drawing.Point(164, 102);
+            this.buttonRemoveFundador.Name = "buttonRemoveFundador";
+            this.buttonRemoveFundador.Size = new System.Drawing.Size(25, 23);
+            this.buttonRemoveFundador.TabIndex = 21;
+            this.buttonRemoveFundador.Text = "<";
+            this.buttonRemoveFundador.UseVisualStyleBackColor = true;
+            this.buttonRemoveFundador.Click += new System.EventHandler(this.buttonRemoveFundador_Click);
+            // 
+            // buttonAddFundador
+            // 
+            this.buttonAddFundador.Location = new System.Drawing.Point(164, 73);
+            this.buttonAddFundador.Name = "buttonAddFundador";
+            this.buttonAddFundador.Size = new System.Drawing.Size(25, 23);
+            this.buttonAddFundador.TabIndex = 20;
+            this.buttonAddFundador.Text = ">";
+            this.buttonAddFundador.UseVisualStyleBackColor = true;
+            this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(201, 19);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(127, 13);
+            label14.TabIndex = 17;
+            label14.Text = "Fundadores Seleciondos:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(6, 19);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(123, 13);
+            label15.TabIndex = 16;
+            label15.Text = "Fundadores Disponivéis:";
+            // 
             // FormCadastrarMuseu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 528);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonCancelarCadastroMuseu);
             this.Controls.Add(this.buttonCadastrarMuseu);
             this.Controls.Add(this.groupBox2);
@@ -395,6 +454,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +465,6 @@
         private System.Windows.Forms.Button buttonCancelarCadastroMuseu;
         private System.Windows.Forms.Button buttonCadastrarMuseu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBoxIdFundadorMuseu;
         private System.Windows.Forms.ComboBox comboBoxEndCidadeMuseu;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEndCepMuseu;
         private System.Windows.Forms.TextBox textBoxEndBairroMuseu;
@@ -419,5 +479,10 @@
         private System.Windows.Forms.TextBox textBoxNomeMuseu;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorEntradaMuseu;
         private System.Windows.Forms.TextBox textBoxNumeroDeSalasMuseu;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox listBoxFundadoresSelecionados;
+        private System.Windows.Forms.ListBox listBoxFundadoresDisponiveis;
+        private System.Windows.Forms.Button buttonRemoveFundador;
+        private System.Windows.Forms.Button buttonAddFundador;
     }
 }

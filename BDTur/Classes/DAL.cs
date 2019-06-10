@@ -38,10 +38,11 @@ namespace BDTur.Classes
                 return null;
             }
         }
-        /* Adapters para popular os DataGridViews */
+        #region Adapters para os DataGridViews
         public  MySqlDataAdapter cidadeAdapter()
         {
-            string query = "SELECT `cidade`.`idCidade`," +
+            string query = "SELECT `cidade`.`i" +
+                "dCidade`," +
                              "`cidade`.`nome`,`cidade`.`estado`," +
                              "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;";
             return fetchResultFromQuery(query);
@@ -246,12 +247,47 @@ namespace BDTur.Classes
             return fetchResultFromQuery(query);
 
         }
-        /* ------------------------------------- */
+        #endregion
+
         public MySqlDataReader   periodoReader()
         {
             MySqlConnection con = createConnection();
             con.Open();
             string query = "SELECT dataIgreja FROM igreja";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+        public MySqlDataReader fundadoresReader()
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT idFundador, nomeFundador FROM fundador";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+        public MySqlDataReader restaunrateReader()
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT idRestaurante, nomeRestaurante FROM restaurante";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader hotelDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT hotel.*, restaurante.idRestaurante, restaurante.nomeRestaurante " +
+                "FROM hotel " +
+                "INNER JOIN restaurante ON restaurante.idRestaurante = (hotel.restauranteIdRestaurante OR (hotel.restauranteIdRestaurante IS NULL)) " +
+                $"WHERE hotel.idHotel = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -274,8 +275,28 @@ namespace BDTur.Forms
                     MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine($"Igreja Erro: \n{ex.Message}\n");
                 }
+
+                ArrayList UniqueRecords = new ArrayList();
+                ArrayList DuplicateRecords = new ArrayList();
+
+                // Get duplicate rows
+                foreach (DataRow dRow in dt.Rows)
+                {
+                    if (UniqueRecords.Contains(dRow[0]))
+                        DuplicateRecords.Add(dRow);
+                    else
+                        UniqueRecords.Add(dRow[0]);
+                }
+
+                // Remove duplicate rows
+                foreach (DataRow dRow in DuplicateRecords)
+                {
+                    dt.Rows.Remove(dRow);                    
+                }
+
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[3].DataType = typeof(Int64);                
+
                 foreach (DataRow row in dt.Rows)
                 {
                     dtCloned.ImportRow(row);
@@ -364,6 +385,25 @@ namespace BDTur.Forms
                 }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[2].DataType = typeof(Int64);
+
+                ArrayList UniqueRecords = new ArrayList();
+                ArrayList DuplicateRecords = new ArrayList();
+
+                // Get duplicate rows
+                foreach (DataRow dRow in dt.Rows)
+                {
+                    if (UniqueRecords.Contains(dRow[0]))
+                        DuplicateRecords.Add(dRow);
+                    else
+                        UniqueRecords.Add(dRow[0]);
+                }
+
+                // Remove duplicate rows
+                foreach (DataRow dRow in DuplicateRecords)
+                {
+                    dt.Rows.Remove(dRow);
+                }
+
                 foreach (DataRow row in dt.Rows)
                 {
                     dtCloned.ImportRow(row);
@@ -718,10 +758,14 @@ namespace BDTur.Forms
         }
         private void dataGridViewHotel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
             {
                 int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
+
+                Forms.FormDetalhesHotel nextScreen = new Forms.FormDetalhesHotel(id);
+                nextScreen.ShowDialog();
+
             }            
         }
         private void dataGridViewRestaurante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)                  
@@ -764,8 +808,48 @@ namespace BDTur.Forms
                 Console.WriteLine($"id:::: {id} ++++ rowindex::::: {e.RowIndex}");
             }
         }
+        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarCidade nextScreen = new Forms.FormCadastrarCidade();            
+            nextScreen.ShowDialog();
+        }
+        private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarHotel nextScreen = new Forms.FormCadastrarHotel();
+            nextScreen.ShowDialog();
+        }
+        private void restauranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarRestaurante nextScreen = new Forms.FormCadastrarRestaurante();
+            nextScreen.ShowDialog();
+        }
+        private void igrejaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarIgreja nextScreen = new Forms.FormCadastrarIgreja();
+            nextScreen.ShowDialog();
+        }
+        private void museuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarMuseu nextScreen = new Forms.FormCadastrarMuseu();
+            nextScreen.ShowDialog();
+        }
+        private void casaDeShowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarCasaDeShow nextScreen = new Forms.FormCadastrarCasaDeShow();
+            nextScreen.ShowDialog();
+        }
+        private void fundadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormCadastrarFundador nextScreen = new Forms.FormCadastrarFundador();
+            nextScreen.ShowDialog();
+        }
+        private void usariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         #endregion
 
-       
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace BDTur.Forms
 {
     public partial class FormCadastrarRestaurante : Form
     {
+        Classes.DAL adapter = new Classes.DAL();
+
         public FormCadastrarRestaurante()
         {
             InitializeComponent();
@@ -37,23 +40,34 @@ namespace BDTur.Forms
             comboBoxCategoriaRestaurante.Items.Add("Fast food");
             comboBoxCategoriaRestaurante.Items.Add("Food Truck");
             comboBoxCategoriaRestaurante.Items.Add("Buffet");
-
-            labelHotel.Visible = false;
-            comboBoxIdHotelRestaurante.Visible = false;
         }
 
-        private void checkBoxPertenceAHotel_CheckedChanged(object sender, EventArgs e)
+        private void populateCidadesComboBox()
         {
-            if (checkBoxPertenceAHotel.Checked)
+
+            MySqlDataAdapter da = adapter.cidadeAdapter();
+            if (da != null)
             {
-                labelHotel.Visible = true;
-                comboBoxIdHotelRestaurante.Visible = true;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                DataRow dr;
+                dr = dt.NewRow();
+                dr.ItemArray = new object[2] { 0, "Selecione..." };
+                dt.Rows.InsertAt(dr, 0);
+
+
+                //comboBoxCidade.Items.Add("Selecione...");
+                comboBoxEndCidadeRestaurante.ValueMember = "idCidade";
+                comboBoxEndCidadeRestaurante.DisplayMember = "nome";
+                comboBoxEndCidadeRestaurante.DataSource = dt;
+
             }
             else
             {
-                labelHotel.Visible = false;
-                comboBoxIdHotelRestaurante.Visible = false;
+                MessageBox.Show("Falha");
             }
         }
+       
     }
 }
