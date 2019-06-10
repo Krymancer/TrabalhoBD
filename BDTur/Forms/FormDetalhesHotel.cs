@@ -14,8 +14,7 @@ namespace BDTur.Forms
     public partial class FormDetalhesHotel : Form
     {
 
-        Classes.DAL adapter = new Classes.DAL();
-
+        Classes.DAL adapter = new Classes.DAL();     
 
         public FormDetalhesHotel(int id)
         {
@@ -35,6 +34,7 @@ namespace BDTur.Forms
             comboBoxEndTipoHotel.Items.Add("Alameda");
             comboBoxEndTipoHotel.Items.Add("Balneário");
             comboBoxEndTipoHotel.Items.Add("Beco");
+            comboBoxEndTipoHotel.Items.Add("Viela");
 
             populateComboBoxes();
             getDetails(id);           
@@ -117,7 +117,7 @@ namespace BDTur.Forms
             {
                 while (reader.Read())
                 {
-                    textBoxIdHotel.Text = reader.GetString(0);
+                    textBoxIdHotel.Text = reader.GetString(0);                                        
                     try
                     {
                         comboBoxIdRestauranteHotel.SelectedItem = comboBoxIdRestauranteHotel.Items[reader.GetInt32(1)];                        
@@ -149,6 +149,10 @@ namespace BDTur.Forms
             }
         }
 
+        private void generateHotelAndPopulateForm() {
+
+        }
+
         private void checkBoxContemRestaurante_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxContemRestaurante.Checked)
@@ -161,6 +165,11 @@ namespace BDTur.Forms
                 labelRestaurante.Visible = false;
                 comboBoxIdRestauranteHotel.Visible = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

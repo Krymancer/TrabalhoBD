@@ -117,11 +117,41 @@
     <Compile Include="Forms\FormCadastrarRestaurante.Designer.cs">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormDetalhesCasadeShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesCasadeShow.Designer.cs">
+      <DependentUpon>FormDetalhesCasadeShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesFundador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesFundador.Designer.cs">
+      <DependentUpon>FormDetalhesFundador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDetalhesHotel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormDetalhesHotel.Designer.cs">
       <DependentUpon>FormDetalhesHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesIgreja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesIgreja.Designer.cs">
+      <DependentUpon>FormDetalhesIgreja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesMuseu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesMuseu.Designer.cs">
+      <DependentUpon>FormDetalhesMuseu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesRestaurante.Designer.cs">
+      <DependentUpon>FormDetalhesRestaurante.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
@@ -166,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesHotel.resx">
       <DependentUpon>FormDetalhesHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesRestaurante.resx">
+      <DependentUpon>FormDetalhesRestaurante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
