@@ -210,7 +210,7 @@ namespace BDTur.Classes
                                 "`museu`.`numeroSalasMuseu`," +
                                 "`museu`.`valorEntradaMuseu`," +
                                 "`pontoturistico`.`endTipoPontoTuristico`," +
-                                "`pontoturistico`.`endLogradouroPontoTuristico`," +                               
+                                "`pontoturistico`.`endLogradouroPontoTuristico`," +
                                 "`pontoturistico`.`endNumeroPontoTuristico`," +
                                 "`pontoturistico`.`endComplementoPontoTuristico`," +
                                 "`pontoturistico`.`endBairroPontoTuristico`" +
@@ -221,11 +221,12 @@ namespace BDTur.Classes
                             "INNER JOIN pontoturistico " +
                             "ON museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
                             "INNER JOIN fundador " +
-                            "ON fundador.idFundador = fundadopor.Fundador_idFundador " +                           
+                            "ON fundador.idFundador = fundadopor.Fundador_idFundador " +
                             $"WHERE `pontoturistico`.`nomePontoTuristico` LIKE '%{name}%' " +
                             $"AND fundador.nomeFundador LIKE '%{nomeFundador}%' " +
                             $"AND fundador.nacionalidadeFundador LIKE '%{nacionalidadeFundador}%' " +
-                            $"AND museu.dataFundacaoMuseu like '%{fundacao[0]}-{((fundacao[1].Equals("")) ? "%" : fundacao[1])}-{((fundacao[2].Equals("")) ? "%" : fundacao[2])}'";
+                            //$"AND museu.dataFundacaoMuseu like '%{fundacao[0]}-{((fundacao[1].Equals("")) ? "%" : fundacao[1])}-{((fundacao[2].Equals("")) ? "%" : fundacao[2])}'";
+                            $" AND (year(museu.dataFundacaoMuseu) LIKE '%{fundacao[0]}' AND month(museu.dataFundacaoMuseu) LIKE '%{((fundacao[1].Equals("")) ? "%" : fundacao[1])}' AND day(museu.dataFundacaoMuseu) LIKE '{((fundacao[2].Equals("")) ? "%" : fundacao[2])}') ";
             if (cidade != null && cidade != "0")
             {
                 query += $"AND `pontoturistico`.`cidadeIdCidade` = {cidade} ";

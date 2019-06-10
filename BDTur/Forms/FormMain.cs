@@ -411,7 +411,7 @@ namespace BDTur.Forms
 
                 dataGridViewMuseu.DataSource = dtCloned;
 
-                dataGridViewMuseu.Columns[3].DefaultCellStyle.Format = "(##) # ####-####";
+                dataGridViewMuseu.Columns[2].DefaultCellStyle.Format = "(##) # ####-####";
                 dataGridViewMuseu.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dataGridViewMuseu.Columns[5].DefaultCellStyle.Format = "R$ ##,##";
                 
