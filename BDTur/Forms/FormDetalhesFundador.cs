@@ -15,12 +15,13 @@ namespace BDTur.Forms
     public partial class FormDetalhesFundador : Form
     {
         Classes.DAL adapter = new Classes.DAL();
-        DataTable pontosTuristicos = new DataTable();
+        DataTable pontoturisticos = new DataTable();        
         private int id;
 
         public FormDetalhesFundador(int id)
         {
             InitializeComponent();
+            pontoturisticos.Columns.Add("nomePontoTuristico");
             getPontosTuristicosList();
             this.id = id;
 
@@ -34,17 +35,30 @@ namespace BDTur.Forms
 
         private void getPontosTuristicosList()
         {
-            MySqlDataReader dr = adapter.fundadorPontosTuristicosDetailsReader(id);
+            MySqlDataReader readerIgreja = adapter.fundadorIgrejaReader(id);
+            MySqlDataReader readerMuseu = adapter.fundadorMuseuReader(id);
+            int i = 0;
 
-            if (dr.HasRows)
-            {
-                int i = 0;
-                while (dr.Read())
+            if (readerIgreja.HasRows)
+            {                
+                while (readerIgreja.Read())
                 {
                     DataRow dataRow;
-                    dataRow = pontosTuristicos.NewRow();
-                    dataRow.ItemArray = new object[1] { dr.GetString(0) };
-                    pontosTuristicos.Rows.InsertAt(dataRow, i);
+                    dataRow = pontoturisticos.NewRow();
+                    dataRow.ItemArray = new object[1] { readerIgreja.GetString(0) };
+                    pontoturisticos.Rows.InsertAt(dataRow, i);
+                    i++;
+                }
+            }
+
+            if (readerMuseu.HasRows)
+            {                
+                while (readerMuseu.Read())
+                {
+                    DataRow dataRow;
+                    dataRow = pontoturisticos.NewRow();
+                    dataRow.ItemArray = new object[1] { readerMuseu.GetString(0) };
+                    pontoturisticos.Rows.InsertAt(dataRow, i);
                     i++;
                 }
             }
@@ -75,10 +89,15 @@ namespace BDTur.Forms
 
                 }
 
-                listBoxPontosTuristicosFundados.DataSource = pontosTuristicos;
+                listBoxPontosTuristicosFundados.DataSource = pontoturisticos;
             }
 
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

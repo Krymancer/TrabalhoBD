@@ -250,7 +250,7 @@ namespace BDTur.Classes
         }
         #endregion
 
-        public MySqlDataReader   periodoReader()
+        public MySqlDataReader periodoReader()
         {
             MySqlConnection con = createConnection();
             con.Open();
@@ -280,7 +280,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader hotelDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -294,7 +293,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader restauranteDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -307,7 +305,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader igrejaDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -320,8 +317,7 @@ namespace BDTur.Classes
 
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
-        }
-
+        }    
         public MySqlDataReader igrejafundadoresReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -334,7 +330,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader museuDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -348,7 +343,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader museufundadoresReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -361,7 +355,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader casadeshowDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -375,7 +368,6 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
         public MySqlDataReader fundadorDetailsReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -388,18 +380,27 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
-        public MySqlDataReader fundadorPontosTuristicosDetailsReader(int id)
+        public MySqlDataReader fundadorIgrejaReader(int id)
         {
             MySqlConnection con = createConnection();
             con.Open();
-            string query = "SELECT DISTINCT nomePontoTuristico " +
-                "FROM fundador " +
-                "INNER JOIN fundadapor igrejaFundada ON fundador.idFundador = igrejaFundada.fundadorIdFundador " +
-                "INNER JOIN fundadopor museuFundado ON fundador.idFundador = museuFundado.Fundador_idFundador " +
-                "INNER JOIN pontoturistico ON igrejaFundada.Igreja_PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
-                "OR museuFundado.Museu_PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
-                $"WHERE idFundador = {id}";
+            string query = "select distinct* from(select pontoturistico.nomePontoTuristico, fundadorIdFundador from pontoturistico " +
+                           "inner join igreja on igreja.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
+                           "inner join fundadapor on pontoturistico.idPontoTuristico = fundadapor.Igreja_PontoTuristico_idPontoTuristico) as i " +
+                           $"where fundadorIdFundador = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+        public MySqlDataReader fundadorMuseuReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "select distinct * from (select  pontoturistico.nomePontoTuristico,Fundador_idFundador from pontoturistico  " +
+            "inner join museu on museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " + 
+            "inner join fundadopor on pontoturistico.idPontoTuristico = fundadopor.Museu_PontoTuristico_idPontoTuristico) as m " +
+            $"where Fundador_idFundador = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();

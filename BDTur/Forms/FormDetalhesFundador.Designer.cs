@@ -173,7 +173,7 @@
             // 
             // listBoxPontosTuristicosFundados
             // 
-            this.listBoxPontosTuristicosFundados.DisplayMember = "nomeFundador";
+            this.listBoxPontosTuristicosFundados.DisplayMember = "nomePontoTuristico";
             this.listBoxPontosTuristicosFundados.Enabled = false;
             this.listBoxPontosTuristicosFundados.FormattingEnabled = true;
             this.listBoxPontosTuristicosFundados.Location = new System.Drawing.Point(6, 22);
@@ -189,6 +189,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCancelarCadastroHotel
             // 
