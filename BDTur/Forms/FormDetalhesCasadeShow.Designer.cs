@@ -39,6 +39,7 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label2;
             this.textBoxHoraInicioCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxDiaFechamentoCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxDescricaoCasaDeShow = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             this.comboBoxEndTipoCasaDeShow = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
+            this.textBoxIdCasadeShow = new System.Windows.Forms.TextBox();
             label13 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -71,6 +73,7 @@
             label5 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +81,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(9, 133);
+            label13.Location = new System.Drawing.Point(9, 157);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(100, 13);
             label13.TabIndex = 19;
@@ -87,7 +90,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(115, 133);
+            label12.Location = new System.Drawing.Point(115, 157);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(76, 13);
             label12.TabIndex = 16;
@@ -96,7 +99,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 29);
+            label1.Location = new System.Drawing.Point(6, 53);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(125, 13);
             label1.TabIndex = 0;
@@ -105,7 +108,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(9, 79);
+            label3.Location = new System.Drawing.Point(9, 103);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 2;
@@ -177,7 +180,7 @@
             // textBoxHoraInicioCasaDeShow
             // 
             this.textBoxHoraInicioCasaDeShow.Enabled = false;
-            this.textBoxHoraInicioCasaDeShow.Location = new System.Drawing.Point(118, 150);
+            this.textBoxHoraInicioCasaDeShow.Location = new System.Drawing.Point(118, 174);
             this.textBoxHoraInicioCasaDeShow.Name = "textBoxHoraInicioCasaDeShow";
             this.textBoxHoraInicioCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxHoraInicioCasaDeShow.TabIndex = 3;
@@ -185,7 +188,7 @@
             // textBoxDiaFechamentoCasaDeShow
             // 
             this.textBoxDiaFechamentoCasaDeShow.Enabled = false;
-            this.textBoxDiaFechamentoCasaDeShow.Location = new System.Drawing.Point(9, 150);
+            this.textBoxDiaFechamentoCasaDeShow.Location = new System.Drawing.Point(9, 174);
             this.textBoxDiaFechamentoCasaDeShow.Name = "textBoxDiaFechamentoCasaDeShow";
             this.textBoxDiaFechamentoCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxDiaFechamentoCasaDeShow.TabIndex = 2;
@@ -193,7 +196,7 @@
             // textBoxDescricaoCasaDeShow
             // 
             this.textBoxDescricaoCasaDeShow.Enabled = false;
-            this.textBoxDescricaoCasaDeShow.Location = new System.Drawing.Point(9, 199);
+            this.textBoxDescricaoCasaDeShow.Location = new System.Drawing.Point(9, 223);
             this.textBoxDescricaoCasaDeShow.Multiline = true;
             this.textBoxDescricaoCasaDeShow.Name = "textBoxDescricaoCasaDeShow";
             this.textBoxDescricaoCasaDeShow.Size = new System.Drawing.Size(220, 91);
@@ -202,7 +205,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 183);
+            this.label11.Location = new System.Drawing.Point(9, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 12;
@@ -211,13 +214,15 @@
             // textBoxNomeCasaDeShow
             // 
             this.textBoxNomeCasaDeShow.Enabled = false;
-            this.textBoxNomeCasaDeShow.Location = new System.Drawing.Point(9, 45);
+            this.textBoxNomeCasaDeShow.Location = new System.Drawing.Point(9, 69);
             this.textBoxNomeCasaDeShow.Name = "textBoxNomeCasaDeShow";
             this.textBoxNomeCasaDeShow.Size = new System.Drawing.Size(223, 20);
             this.textBoxNomeCasaDeShow.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxIdCasadeShow);
+            this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.textBoxHoraInicioCasaDeShow);
             this.groupBox1.Controls.Add(this.textBoxDiaFechamentoCasaDeShow);
             this.groupBox1.Controls.Add(label13);
@@ -230,7 +235,7 @@
             this.groupBox1.Controls.Add(label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 312);
+            this.groupBox1.Size = new System.Drawing.Size(261, 334);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
@@ -238,7 +243,7 @@
             // maskedTextBoxContatoCasaDeShow
             // 
             this.maskedTextBoxContatoCasaDeShow.Enabled = false;
-            this.maskedTextBoxContatoCasaDeShow.Location = new System.Drawing.Point(12, 96);
+            this.maskedTextBoxContatoCasaDeShow.Location = new System.Drawing.Point(12, 120);
             this.maskedTextBoxContatoCasaDeShow.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoCasaDeShow.Name = "maskedTextBoxContatoCasaDeShow";
             this.maskedTextBoxContatoCasaDeShow.Size = new System.Drawing.Size(92, 20);
@@ -379,6 +384,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCadastrarHotel
             // 
@@ -388,6 +394,23 @@
             this.buttonCadastrarHotel.TabIndex = 20;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
+            // 
+            // textBoxIdCasadeShow
+            // 
+            this.textBoxIdCasadeShow.Enabled = false;
+            this.textBoxIdCasadeShow.Location = new System.Drawing.Point(9, 32);
+            this.textBoxIdCasadeShow.Name = "textBoxIdCasadeShow";
+            this.textBoxIdCasadeShow.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdCasadeShow.TabIndex = 20;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(9, 16);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(21, 13);
+            label2.TabIndex = 21;
+            label2.Text = "ID:";
             // 
             // FormDetalhesCasadeShow
             // 
@@ -432,5 +455,6 @@
         private System.Windows.Forms.ComboBox comboBoxEndTipoCasaDeShow;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonCadastrarHotel;
+        private System.Windows.Forms.TextBox textBoxIdCasadeShow;
     }
 }

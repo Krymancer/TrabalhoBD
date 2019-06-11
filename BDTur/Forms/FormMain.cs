@@ -766,46 +766,47 @@ namespace BDTur.Forms
             }            
         }
         private void dataGridViewRestaurante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)                  
-        {
-            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
-            {
-                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+        {            
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewRestaurante.RowCount)
+            {                
+                int id = int.Parse(dataGridViewRestaurante.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesRestaurante nextScreen = new Forms.FormDetalhesRestaurante(id);
                 nextScreen.ShowDialog();
             }
         }
         private void dataGridViewIgreja_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewIgreja.RowCount)
             {
-                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int id = int.Parse(dataGridViewIgreja.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Console.WriteLine("idddd" + id);
                 Forms.FormDetalhesIgreja nextScreen = new Forms.FormDetalhesIgreja(id);
                 nextScreen.ShowDialog();
             }
         }
         private void dataGridViewMuseu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewMuseu.RowCount)
             {
-                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int id = int.Parse(dataGridViewMuseu.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesMuseu nextScreen = new Forms.FormDetalhesMuseu(id);
                 nextScreen.ShowDialog();
             }
         }
         private void dataGridViewCasadeShow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewCasadeShow.RowCount)
             {
-                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int id = int.Parse(dataGridViewCasadeShow.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesCasadeShow nextScreen = new Forms.FormDetalhesCasadeShow(id);
                 nextScreen.ShowDialog();
             }
         }
         private void dataGridViewFundadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.RowIndex < dataGridViewHotel.RowCount)
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewFundadores.RowCount)
             {
-                int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int id = int.Parse(dataGridViewFundadores.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesFundador nextScreen = new Forms.FormDetalhesFundador(id);
                 nextScreen.ShowDialog();
             }

@@ -120,7 +120,7 @@ namespace BDTur.Classes
         public  MySqlDataAdapter igrejaAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string estilo, int periodo)
         {
             string query = "SELECT " +
-                                "`pontoturistico`.`idPontoTuristico`," +
+                                "`igreja`.`idIgreja`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
                                 "`pontoturistico`.`contatoPontoTuristico`," +                            
@@ -155,7 +155,7 @@ namespace BDTur.Classes
         public  MySqlDataAdapter casadeShowAdapater(string name, string cidade, string horario, string fechamento, bool[] restaurante)
         {
             string query = "SELECT " +
-                                "`pontoturistico`.`idPontoTuristico`," +
+                                "`casadeshow`.`idCasadeShow`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`contatoPontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
@@ -203,7 +203,7 @@ namespace BDTur.Classes
         public  MySqlDataAdapter museuAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
         {
             string query = "SELECT " +
-                                "`pontoturistico`.`idPontoTuristico`," +
+                                "`museu`.`idMuseu`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`contatoPontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
@@ -289,6 +289,87 @@ namespace BDTur.Classes
                 "FROM hotel " +
                 "INNER JOIN restaurante ON restaurante.idRestaurante = (hotel.restauranteIdRestaurante OR (hotel.restauranteIdRestaurante IS NULL)) " +
                 $"WHERE hotel.idHotel = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader restauranteDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT * " +
+                "FROM restaurante " +                
+                $"WHERE restaurante.idRestaurante = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader igrejaDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT * " +
+                "FROM pontoturistico " +
+                "INNER JOIN igreja on igreja.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
+                $"WHERE igreja.idIgreja = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader igrejafundadoresReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT idFundador, nomeFundador FROM fundadapor " +
+                            "INNER JOIN fundador ON fundadapor.fundadorIdFundador = fundador.idFundador " +
+                            $"WHERE fundadapor.igrejaIdIgreja = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader museuDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT * " +
+                "FROM pontoturistico " +
+                "INNER JOIN museu on museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
+                $"WHERE museu.idMuseu = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader museufundadoresReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT idFundador, nomeFundador FROM fundadopor " +
+                            "INNER JOIN fundador ON fundadopor.Fundador_idFundador = fundador.idFundador " +
+                            $"WHERE fundadopor.Museu_idMuseu = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader casadeshowDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT * " +
+                "FROM pontoturistico " +
+                "INNER JOIN casadeshow on casadeshow.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
+                $"WHERE casadeshow.idCasadeShow = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();

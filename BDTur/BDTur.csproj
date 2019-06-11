@@ -111,6 +111,12 @@
     <Compile Include="Forms\FormCadastrarMuseu.Designer.cs">
       <DependentUpon>FormCadastrarMuseu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCadastrarQuartoHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarQuartoHotel.Designer.cs">
+      <DependentUpon>FormCadastrarQuartoHotel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCadastrarRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastrarMuseu.resx">
       <DependentUpon>FormCadastrarMuseu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarQuartoHotel.resx">
+      <DependentUpon>FormCadastrarQuartoHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>

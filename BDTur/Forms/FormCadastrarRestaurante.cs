@@ -68,6 +68,5 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha");
             }
         }
-       
     }
 }

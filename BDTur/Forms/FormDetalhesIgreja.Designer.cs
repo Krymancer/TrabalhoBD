@@ -42,6 +42,7 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label15;
             this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
             this.monthCalendarFundacaoIgreja = new System.Windows.Forms.MonthCalendar();
             this.textBoxDescricaoIgreja = new System.Windows.Forms.TextBox();
@@ -64,6 +65,7 @@
             this.textBoxEndLogradouroIgreja = new System.Windows.Forms.TextBox();
             this.comboBoxEndTipoIgreja = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxIdIgreja = new System.Windows.Forms.TextBox();
             label12 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
@@ -78,6 +80,7 @@
             label5 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,7 +89,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(110, 80);
+            label12.Location = new System.Drawing.Point(110, 104);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(35, 13);
             label12.TabIndex = 16;
@@ -95,7 +98,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(9, 133);
+            label2.Location = new System.Drawing.Point(9, 157);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(96, 13);
             label2.TabIndex = 14;
@@ -104,7 +107,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(12, 319);
+            label11.Location = new System.Drawing.Point(9, 337);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(58, 13);
             label11.TabIndex = 12;
@@ -113,7 +116,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 29);
+            label1.Location = new System.Drawing.Point(6, 53);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(79, 13);
             label1.TabIndex = 0;
@@ -122,7 +125,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(9, 79);
+            label3.Location = new System.Drawing.Point(9, 95);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 2;
@@ -212,7 +215,7 @@
             // textBoxEstiloIgreja
             // 
             this.textBoxEstiloIgreja.Enabled = false;
-            this.textBoxEstiloIgreja.Location = new System.Drawing.Point(110, 96);
+            this.textBoxEstiloIgreja.Location = new System.Drawing.Point(110, 120);
             this.textBoxEstiloIgreja.Name = "textBoxEstiloIgreja";
             this.textBoxEstiloIgreja.Size = new System.Drawing.Size(122, 20);
             this.textBoxEstiloIgreja.TabIndex = 2;
@@ -220,29 +223,31 @@
             // monthCalendarFundacaoIgreja
             // 
             this.monthCalendarFundacaoIgreja.Enabled = false;
-            this.monthCalendarFundacaoIgreja.Location = new System.Drawing.Point(12, 149);
+            this.monthCalendarFundacaoIgreja.Location = new System.Drawing.Point(12, 173);
             this.monthCalendarFundacaoIgreja.Name = "monthCalendarFundacaoIgreja";
             this.monthCalendarFundacaoIgreja.TabIndex = 3;
             // 
             // textBoxDescricaoIgreja
             // 
             this.textBoxDescricaoIgreja.Enabled = false;
-            this.textBoxDescricaoIgreja.Location = new System.Drawing.Point(12, 335);
+            this.textBoxDescricaoIgreja.Location = new System.Drawing.Point(12, 353);
             this.textBoxDescricaoIgreja.Multiline = true;
             this.textBoxDescricaoIgreja.Name = "textBoxDescricaoIgreja";
-            this.textBoxDescricaoIgreja.Size = new System.Drawing.Size(220, 91);
+            this.textBoxDescricaoIgreja.Size = new System.Drawing.Size(220, 90);
             this.textBoxDescricaoIgreja.TabIndex = 4;
             // 
             // textBoxNomeIgreja
             // 
             this.textBoxNomeIgreja.Enabled = false;
-            this.textBoxNomeIgreja.Location = new System.Drawing.Point(9, 45);
+            this.textBoxNomeIgreja.Location = new System.Drawing.Point(9, 69);
             this.textBoxNomeIgreja.Name = "textBoxNomeIgreja";
             this.textBoxNomeIgreja.Size = new System.Drawing.Size(223, 20);
             this.textBoxNomeIgreja.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxIdIgreja);
+            this.groupBox1.Controls.Add(label15);
             this.groupBox1.Controls.Add(this.textBoxEstiloIgreja);
             this.groupBox1.Controls.Add(this.monthCalendarFundacaoIgreja);
             this.groupBox1.Controls.Add(label12);
@@ -255,7 +260,7 @@
             this.groupBox1.Controls.Add(label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 429);
+            this.groupBox1.Size = new System.Drawing.Size(261, 457);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
@@ -263,7 +268,7 @@
             // maskedTextBoxContatoIgreja
             // 
             this.maskedTextBoxContatoIgreja.Enabled = false;
-            this.maskedTextBoxContatoIgreja.Location = new System.Drawing.Point(12, 96);
+            this.maskedTextBoxContatoIgreja.Location = new System.Drawing.Point(12, 120);
             this.maskedTextBoxContatoIgreja.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoIgreja.Name = "maskedTextBoxContatoIgreja";
             this.maskedTextBoxContatoIgreja.Size = new System.Drawing.Size(92, 20);
@@ -298,6 +303,7 @@
             this.buttonRemoveFundador.TabIndex = 21;
             this.buttonRemoveFundador.Text = "<";
             this.buttonRemoveFundador.UseVisualStyleBackColor = true;
+            this.buttonRemoveFundador.Click += new System.EventHandler(this.buttonRemoveFundador_Click);
             // 
             // buttonAddFundador
             // 
@@ -308,6 +314,7 @@
             this.buttonAddFundador.TabIndex = 20;
             this.buttonAddFundador.Text = ">";
             this.buttonAddFundador.UseVisualStyleBackColor = true;
+            this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
             // 
             // groupBox3
             // 
@@ -435,6 +442,24 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxIdIgreja
+            // 
+            this.textBoxIdIgreja.Enabled = false;
+            this.textBoxIdIgreja.Location = new System.Drawing.Point(9, 32);
+            this.textBoxIdIgreja.Name = "textBoxIdIgreja";
+            this.textBoxIdIgreja.Size = new System.Drawing.Size(122, 20);
+            this.textBoxIdIgreja.TabIndex = 17;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(9, 16);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(21, 13);
+            label15.TabIndex = 18;
+            label15.Text = "ID:";
             // 
             // FormDetalhesIgreja
             // 
@@ -483,5 +508,6 @@
         private System.Windows.Forms.TextBox textBoxEndLogradouroIgreja;
         private System.Windows.Forms.ComboBox comboBoxEndTipoIgreja;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxIdIgreja;
     }
 }

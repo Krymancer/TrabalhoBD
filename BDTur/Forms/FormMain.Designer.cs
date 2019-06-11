@@ -108,6 +108,7 @@
             this.fundadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             labelCidade = new System.Windows.Forms.Label();
             labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -962,6 +963,7 @@
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cidadeToolStripMenuItem,
             this.hotelToolStripMenuItem,
+            this.quartoDeHotelToolStripMenuItem,
             this.restauranteToolStripMenuItem,
             this.pontoTuristicoToolStripMenuItem,
             this.fundadorToolStripMenuItem,
@@ -973,21 +975,21 @@
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
             // hotelToolStripMenuItem
             // 
             this.hotelToolStripMenuItem.Name = "hotelToolStripMenuItem";
-            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hotelToolStripMenuItem.Text = "Hotel";
             this.hotelToolStripMenuItem.Click += new System.EventHandler(this.hotelToolStripMenuItem_Click);
             // 
             // restauranteToolStripMenuItem
             // 
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
-            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
             this.restauranteToolStripMenuItem.Click += new System.EventHandler(this.restauranteToolStripMenuItem_Click);
             // 
@@ -998,7 +1000,7 @@
             this.museuToolStripMenuItem,
             this.casaDeShowToolStripMenuItem});
             this.pontoTuristicoToolStripMenuItem.Name = "pontoTuristicoToolStripMenuItem";
-            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pontoTuristicoToolStripMenuItem.Text = "Ponto Turistico";
             // 
             // igrejaToolStripMenuItem
@@ -1025,14 +1027,14 @@
             // fundadorToolStripMenuItem
             // 
             this.fundadorToolStripMenuItem.Name = "fundadorToolStripMenuItem";
-            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fundadorToolStripMenuItem.Text = "Fundador";
             this.fundadorToolStripMenuItem.Click += new System.EventHandler(this.fundadorToolStripMenuItem_Click);
             // 
             // usariosToolStripMenuItem
             // 
             this.usariosToolStripMenuItem.Name = "usariosToolStripMenuItem";
-            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usariosToolStripMenuItem.Text = " Usuários";
             this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
             // 
@@ -1041,6 +1043,12 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem1.Text = " ";
+            // 
+            // quartoDeHotelToolStripMenuItem
+            // 
+            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
+            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // FormMain
             // 
@@ -1181,5 +1189,6 @@
         private System.Windows.Forms.Label labelDiaFundacaoMuseu;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem fundadorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quartoDeHotelToolStripMenuItem;
     }
 }
