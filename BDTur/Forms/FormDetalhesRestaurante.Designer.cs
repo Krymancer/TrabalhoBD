@@ -56,9 +56,9 @@
             this.buttonCancelarCadastroRestaurante = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxIdRestaurante = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
-            this.textBoxIdRestaurante = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -183,6 +183,15 @@
             label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 2;
             label3.Text = "Contato:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(6, 29);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(21, 13);
+            label13.TabIndex = 16;
+            label13.Text = "ID:";
             // 
             // maskedTextBoxPrecoMedioRestaurante
             // 
@@ -343,6 +352,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
+            // textBoxIdRestaurante
+            // 
+            this.textBoxIdRestaurante.Enabled = false;
+            this.textBoxIdRestaurante.Location = new System.Drawing.Point(6, 45);
+            this.textBoxIdRestaurante.Name = "textBoxIdRestaurante";
+            this.textBoxIdRestaurante.Size = new System.Drawing.Size(92, 20);
+            this.textBoxIdRestaurante.TabIndex = 15;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(375, 298);
@@ -362,23 +379,6 @@
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
             // 
-            // textBoxIdRestaurante
-            // 
-            this.textBoxIdRestaurante.Enabled = false;
-            this.textBoxIdRestaurante.Location = new System.Drawing.Point(6, 45);
-            this.textBoxIdRestaurante.Name = "textBoxIdRestaurante";
-            this.textBoxIdRestaurante.Size = new System.Drawing.Size(92, 20);
-            this.textBoxIdRestaurante.TabIndex = 15;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(6, 29);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(21, 13);
-            label13.TabIndex = 16;
-            label13.Text = "ID:";
-            // 
             // FormDetalhesRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +390,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDetalhesRestaurante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Restaurante";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

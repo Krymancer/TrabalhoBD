@@ -375,5 +375,35 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
+
+        public MySqlDataReader fundadorDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT nomeFundador, atividadeProfissionalFundador, nacionalidadeFundador, nascimentoFundador, morteFundador " +
+                "FROM fundador " +
+                $"WHERE idFundador = {id}" ;
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public MySqlDataReader fundadorPontosTuristicosDetailsReader(int id)
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT DISTINCT nomePontoTuristico " +
+                "FROM fundador " +
+                "INNER JOIN fundadapor igrejaFundada ON fundador.idFundador = igrejaFundada.fundadorIdFundador " +
+                "INNER JOIN fundadopor museuFundado ON fundador.idFundador = museuFundado.Fundador_idFundador " +
+                "INNER JOIN pontoturistico ON igrejaFundada.Igreja_PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                "OR museuFundado.Museu_PontoTuristico_idPontoTuristico = pontoturistico.idPontoTuristico " +
+                $"WHERE idFundador = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
     }
 }

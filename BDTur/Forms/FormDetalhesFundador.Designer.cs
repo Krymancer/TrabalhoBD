@@ -119,6 +119,7 @@
             // 
             // textBoxNacionalidadeFundador
             // 
+            this.textBoxNacionalidadeFundador.Enabled = false;
             this.textBoxNacionalidadeFundador.Location = new System.Drawing.Point(123, 95);
             this.textBoxNacionalidadeFundador.Name = "textBoxNacionalidadeFundador";
             this.textBoxNacionalidadeFundador.Size = new System.Drawing.Size(100, 20);
@@ -126,6 +127,7 @@
             // 
             // maskedTextBoxDataMorteFundador
             // 
+            this.maskedTextBoxDataMorteFundador.Enabled = false;
             this.maskedTextBoxDataMorteFundador.Location = new System.Drawing.Point(123, 150);
             this.maskedTextBoxDataMorteFundador.Mask = "00/00/0000";
             this.maskedTextBoxDataMorteFundador.Name = "maskedTextBoxDataMorteFundador";
@@ -135,6 +137,7 @@
             // 
             // maskedTextBoxDataNascimentoFundador
             // 
+            this.maskedTextBoxDataNascimentoFundador.Enabled = false;
             this.maskedTextBoxDataNascimentoFundador.Location = new System.Drawing.Point(12, 150);
             this.maskedTextBoxDataNascimentoFundador.Mask = "00/00/0000";
             this.maskedTextBoxDataNascimentoFundador.Name = "maskedTextBoxDataNascimentoFundador";
@@ -144,6 +147,7 @@
             // 
             // textBoxAtividadeProfissionalFundador
             // 
+            this.textBoxAtividadeProfissionalFundador.Enabled = false;
             this.textBoxAtividadeProfissionalFundador.Location = new System.Drawing.Point(12, 96);
             this.textBoxAtividadeProfissionalFundador.Name = "textBoxAtividadeProfissionalFundador";
             this.textBoxAtividadeProfissionalFundador.Size = new System.Drawing.Size(100, 20);
@@ -151,6 +155,7 @@
             // 
             // textBoxNomeFundador
             // 
+            this.textBoxNomeFundador.Enabled = false;
             this.textBoxNomeFundador.Location = new System.Drawing.Point(9, 45);
             this.textBoxNomeFundador.Name = "textBoxNomeFundador";
             this.textBoxNomeFundador.Size = new System.Drawing.Size(223, 20);
@@ -215,7 +220,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDetalhesFundador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Fundador";
+            this.Load += new System.EventHandler(this.FormDetalhesFundador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
