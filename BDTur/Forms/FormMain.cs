@@ -348,7 +348,7 @@ namespace BDTur.Forms
                 }
                 dataGridViewCasadeShow.DataSource = dtCloned;
 
-                dataGridViewCasadeShow.Columns[3].DefaultCellStyle.Format = "(##) # ####-####";
+                dataGridViewCasadeShow.Columns[2].DefaultCellStyle.Format = "(##) # ####-####";
                 dataGridViewCasadeShow.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
                 
                 dataGridViewCasadeShow.Columns[0].HeaderText = "ID";
