@@ -202,6 +202,24 @@
             label3.TabIndex = 2;
             label3.Text = "Contato:";
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(201, 19);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(127, 13);
+            label14.TabIndex = 17;
+            label14.Text = "Fundadores Seleciondos:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(6, 19);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(123, 13);
+            label15.TabIndex = 16;
+            label15.Text = "Fundadores Disponivéis:";
+            // 
             // buttonCancelarCadastroMuseu
             // 
             this.buttonCancelarCadastroMuseu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -246,7 +264,7 @@
             // 
             // comboBoxEndCidadeMuseu
             // 
-            this.comboBoxEndCidadeMuseu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeMuseu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeMuseu.FormattingEnabled = true;
             this.comboBoxEndCidadeMuseu.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeMuseu.Name = "comboBoxEndCidadeMuseu";
@@ -291,7 +309,7 @@
             // 
             // comboBoxEndTipoMuseu
             // 
-            this.comboBoxEndTipoMuseu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoMuseu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoMuseu.FormattingEnabled = true;
             this.comboBoxEndTipoMuseu.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoMuseu.Name = "comboBoxEndTipoMuseu";
@@ -415,24 +433,6 @@
             this.buttonAddFundador.Text = ">";
             this.buttonAddFundador.UseVisualStyleBackColor = true;
             this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(201, 19);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(127, 13);
-            label14.TabIndex = 17;
-            label14.Text = "Fundadores Seleciondos:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(6, 19);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(123, 13);
-            label15.TabIndex = 16;
-            label15.Text = "Fundadores Disponivéis:";
             // 
             // FormCadastrarMuseu
             // 

@@ -841,6 +841,7 @@
             // comboBoxCidade
             // 
             this.comboBoxCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCidade.FormattingEnabled = true;
             this.comboBoxCidade.Items.AddRange(new object[] {
             "Selecione..."});

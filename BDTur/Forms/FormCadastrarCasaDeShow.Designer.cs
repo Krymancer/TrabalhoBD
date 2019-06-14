@@ -220,7 +220,7 @@
             // 
             // comboBoxIdRestauranteCasaDeShow
             // 
-            this.comboBoxIdRestauranteCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxIdRestauranteCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdRestauranteCasaDeShow.FormattingEnabled = true;
             this.comboBoxIdRestauranteCasaDeShow.Location = new System.Drawing.Point(142, 199);
             this.comboBoxIdRestauranteCasaDeShow.Name = "comboBoxIdRestauranteCasaDeShow";
@@ -249,7 +249,7 @@
             // 
             // comboBoxEndCidadeCasaDeShow
             // 
-            this.comboBoxEndCidadeCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeCasaDeShow.FormattingEnabled = true;
             this.comboBoxEndCidadeCasaDeShow.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeCasaDeShow.Name = "comboBoxEndCidadeCasaDeShow";
@@ -294,7 +294,7 @@
             // 
             // comboBoxEndTipoCasaDeShow
             // 
-            this.comboBoxEndTipoCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoCasaDeShow.FormattingEnabled = true;
             this.comboBoxEndTipoCasaDeShow.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoCasaDeShow.Name = "comboBoxEndTipoCasaDeShow";

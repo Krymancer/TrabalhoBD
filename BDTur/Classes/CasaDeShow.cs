@@ -17,11 +17,11 @@ namespace BDTur.Classes
         public CasaDeShow(int idCasadeShow, string diaFechamentoCasadeShow, string horaInicioCasadeShow, int pontoTuristicoIdPontoTuristico, int restauranteIdRestaurante, int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
             : base(idPontoTuristico, tipoPontoTuristico, nomePontoTuristico, contatoPontoTuristico, descricaoPontoTuristico, endTipoPontoTuristico, endLogradouroPontoTuristico, endNumeroPontoTuristico, endComplementoPontoTuristico, endBairroPontoTuristico, endCepPontoTuristico, cidadeIdCidade)
         {
-            this.idCasadeShow = idCasadeShow;
-            this.diaFechamentoCasadeShow = diaFechamentoCasadeShow;
-            this.horaInicioCasadeShow = horaInicioCasadeShow;
-            this.pontoTuristicoIdPontoTuristico = pontoTuristicoIdPontoTuristico;
-            this.restauranteIdRestaurante = restauranteIdRestaurante;
+            IdCasadeShow = idCasadeShow;
+            DiaFechamentoCasadeShow = diaFechamentoCasadeShow;
+            HoraInicioCasadeShow = horaInicioCasadeShow;
+            PontoTuristicoIdPontoTuristico = pontoTuristicoIdPontoTuristico;
+            RestauranteIdRestaurante = restauranteIdRestaurante;
         }
 
         public int IdCasadeShow { get; set; }

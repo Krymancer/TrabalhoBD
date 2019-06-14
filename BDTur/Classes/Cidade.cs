@@ -15,10 +15,10 @@ namespace BDTur.Classes
 
         public Cidade(int idCidade, string nome, string estado, int populacao)
         {
-            this.idCidade = idCidade;
-            this.nome = nome;
-            this.estado = estado;
-            this.populacao = populacao;
+            IdCidade = idCidade;
+            Nome = nome;
+            Estado = estado;
+            Populacao = populacao;
         }
 
         public int IdCidade { get; set; }

@@ -228,7 +228,7 @@
             // 
             // comboBoxIdRestauranteHotel
             // 
-            this.comboBoxIdRestauranteHotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxIdRestauranteHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdRestauranteHotel.FormattingEnabled = true;
             this.comboBoxIdRestauranteHotel.Location = new System.Drawing.Point(170, 214);
             this.comboBoxIdRestauranteHotel.Name = "comboBoxIdRestauranteHotel";
@@ -237,7 +237,7 @@
             // 
             // comboBoxEndCidadeHotel
             // 
-            this.comboBoxEndCidadeHotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeHotel.FormattingEnabled = true;
             this.comboBoxEndCidadeHotel.Location = new System.Drawing.Point(15, 214);
             this.comboBoxEndCidadeHotel.Name = "comboBoxEndCidadeHotel";
@@ -302,7 +302,7 @@
             // 
             // comboBoxEndTipoHotel
             // 
-            this.comboBoxEndTipoHotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoHotel.FormattingEnabled = true;
             this.comboBoxEndTipoHotel.Location = new System.Drawing.Point(15, 60);
             this.comboBoxEndTipoHotel.Name = "comboBoxEndTipoHotel";

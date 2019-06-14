@@ -392,7 +392,7 @@
             // 
             // comboBoxEndCidadeIgreja
             // 
-            this.comboBoxEndCidadeIgreja.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeIgreja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeIgreja.Enabled = false;
             this.comboBoxEndCidadeIgreja.FormattingEnabled = true;
             this.comboBoxEndCidadeIgreja.Location = new System.Drawing.Point(9, 199);
@@ -443,7 +443,7 @@
             // 
             // comboBoxEndTipoIgreja
             // 
-            this.comboBoxEndTipoIgreja.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoIgreja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoIgreja.Enabled = false;
             this.comboBoxEndTipoIgreja.FormattingEnabled = true;
             this.comboBoxEndTipoIgreja.Location = new System.Drawing.Point(9, 45);

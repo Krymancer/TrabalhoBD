@@ -19,18 +19,18 @@ namespace BDTur.Classes
         public Museu(int idMuseu, DateTime dataFundacaoMuseu, float valorEntradaMuseu, string numeroSalasMuseu, List<Fundador> listFundadorMuseu, int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade) 
             : base (idPontoTuristico, tipoPontoTuristico, nomePontoTuristico, contatoPontoTuristico, descricaoPontoTuristico, endTipoPontoTuristico, endLogradouroPontoTuristico, endNumeroPontoTuristico, endComplementoPontoTuristico, endBairroPontoTuristico, endCepPontoTuristico, cidadeIdCidade)
         {
-            this.idMuseu = idMuseu;
-            this.dataFundacaoMuseu = dataFundacaoMuseu;
-            this.valorEntradaMuseu = valorEntradaMuseu;
-            this.numeroSalasMuseu = numeroSalasMuseu;
-            this.pontoTuristicoIdPontoTuristico = idPontoTuristico;
-            this.listFundadorMuseu = listFundadorMuseu;
+            IdMuseu = idMuseu;
+            DataFundacaoMuseu = dataFundacaoMuseu;
+            ValorEntradaMuseu = valorEntradaMuseu;
+            NumeroSalasMuseu = numeroSalasMuseu;
+            PontoTuristicoIdPontoTuristico = idPontoTuristico;
+            ListFundadorMuseu = listFundadorMuseu;
         }
 
         public int IdMuseu { get; set; }
         public DateTime DataFundacaoMuseu { get; set; }
         public float ValorEntradaMuseu { get; set; }
-        public string MumeroSalasMuseu { get; set; }
+        public string NumeroSalasMuseu { get; set; }
         public int PontoTuristicoIdPontoTuristico { set;  get; }
         public List<Fundador> ListFundadorMuseu { set; get; }
     }

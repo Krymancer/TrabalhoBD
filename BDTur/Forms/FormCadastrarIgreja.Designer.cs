@@ -45,11 +45,6 @@
             this.buttonCancelarCadastroIgreja = new System.Windows.Forms.Button();
             this.buttonCadastrarIgreja = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
-            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
-            this.buttonRemoveFundador = new System.Windows.Forms.Button();
-            this.buttonAddFundador = new System.Windows.Forms.Button();
             this.comboBoxEndCidadeIgreja = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxEndCepIgreja = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEndBairroIgreja = new System.Windows.Forms.TextBox();
@@ -57,6 +52,11 @@
             this.textBoxEndNumeroIgreja = new System.Windows.Forms.TextBox();
             this.textBoxEndLogradouroIgreja = new System.Windows.Forms.TextBox();
             this.comboBoxEndTipoIgreja = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
+            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
+            this.buttonRemoveFundador = new System.Windows.Forms.Button();
+            this.buttonAddFundador = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
             this.monthCalendarFundacaoIgreja = new System.Windows.Forms.MonthCalendar();
@@ -250,6 +250,60 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
+            // comboBoxEndCidadeIgreja
+            // 
+            this.comboBoxEndCidadeIgreja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEndCidadeIgreja.FormattingEnabled = true;
+            this.comboBoxEndCidadeIgreja.Location = new System.Drawing.Point(9, 199);
+            this.comboBoxEndCidadeIgreja.Name = "comboBoxEndCidadeIgreja";
+            this.comboBoxEndCidadeIgreja.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEndCidadeIgreja.TabIndex = 11;
+            // 
+            // maskedTextBoxEndCepIgreja
+            // 
+            this.maskedTextBoxEndCepIgreja.Location = new System.Drawing.Point(227, 150);
+            this.maskedTextBoxEndCepIgreja.Mask = "00000-999";
+            this.maskedTextBoxEndCepIgreja.Name = "maskedTextBoxEndCepIgreja";
+            this.maskedTextBoxEndCepIgreja.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxEndCepIgreja.TabIndex = 10;
+            // 
+            // textBoxEndBairroIgreja
+            // 
+            this.textBoxEndBairroIgreja.Location = new System.Drawing.Point(121, 150);
+            this.textBoxEndBairroIgreja.Name = "textBoxEndBairroIgreja";
+            this.textBoxEndBairroIgreja.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEndBairroIgreja.TabIndex = 9;
+            // 
+            // textBoxEndComplementoIgreja
+            // 
+            this.textBoxEndComplementoIgreja.Location = new System.Drawing.Point(9, 150);
+            this.textBoxEndComplementoIgreja.Name = "textBoxEndComplementoIgreja";
+            this.textBoxEndComplementoIgreja.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEndComplementoIgreja.TabIndex = 8;
+            // 
+            // textBoxEndNumeroIgreja
+            // 
+            this.textBoxEndNumeroIgreja.Location = new System.Drawing.Point(227, 96);
+            this.textBoxEndNumeroIgreja.Name = "textBoxEndNumeroIgreja";
+            this.textBoxEndNumeroIgreja.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEndNumeroIgreja.TabIndex = 7;
+            // 
+            // textBoxEndLogradouroIgreja
+            // 
+            this.textBoxEndLogradouroIgreja.Location = new System.Drawing.Point(9, 96);
+            this.textBoxEndLogradouroIgreja.Name = "textBoxEndLogradouroIgreja";
+            this.textBoxEndLogradouroIgreja.Size = new System.Drawing.Size(212, 20);
+            this.textBoxEndLogradouroIgreja.TabIndex = 6;
+            // 
+            // comboBoxEndTipoIgreja
+            // 
+            this.comboBoxEndTipoIgreja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEndTipoIgreja.FormattingEnabled = true;
+            this.comboBoxEndTipoIgreja.Location = new System.Drawing.Point(9, 45);
+            this.comboBoxEndTipoIgreja.Name = "comboBoxEndTipoIgreja";
+            this.comboBoxEndTipoIgreja.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEndTipoIgreja.TabIndex = 5;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBoxFundadoresSelecionados);
@@ -302,60 +356,6 @@
             this.buttonAddFundador.Text = ">";
             this.buttonAddFundador.UseVisualStyleBackColor = true;
             this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
-            // 
-            // comboBoxEndCidadeIgreja
-            // 
-            this.comboBoxEndCidadeIgreja.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxEndCidadeIgreja.FormattingEnabled = true;
-            this.comboBoxEndCidadeIgreja.Location = new System.Drawing.Point(9, 199);
-            this.comboBoxEndCidadeIgreja.Name = "comboBoxEndCidadeIgreja";
-            this.comboBoxEndCidadeIgreja.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndCidadeIgreja.TabIndex = 11;
-            // 
-            // maskedTextBoxEndCepIgreja
-            // 
-            this.maskedTextBoxEndCepIgreja.Location = new System.Drawing.Point(227, 150);
-            this.maskedTextBoxEndCepIgreja.Mask = "00000-999";
-            this.maskedTextBoxEndCepIgreja.Name = "maskedTextBoxEndCepIgreja";
-            this.maskedTextBoxEndCepIgreja.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndCepIgreja.TabIndex = 10;
-            // 
-            // textBoxEndBairroIgreja
-            // 
-            this.textBoxEndBairroIgreja.Location = new System.Drawing.Point(121, 150);
-            this.textBoxEndBairroIgreja.Name = "textBoxEndBairroIgreja";
-            this.textBoxEndBairroIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroIgreja.TabIndex = 9;
-            // 
-            // textBoxEndComplementoIgreja
-            // 
-            this.textBoxEndComplementoIgreja.Location = new System.Drawing.Point(9, 150);
-            this.textBoxEndComplementoIgreja.Name = "textBoxEndComplementoIgreja";
-            this.textBoxEndComplementoIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndComplementoIgreja.TabIndex = 8;
-            // 
-            // textBoxEndNumeroIgreja
-            // 
-            this.textBoxEndNumeroIgreja.Location = new System.Drawing.Point(227, 96);
-            this.textBoxEndNumeroIgreja.Name = "textBoxEndNumeroIgreja";
-            this.textBoxEndNumeroIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndNumeroIgreja.TabIndex = 7;
-            // 
-            // textBoxEndLogradouroIgreja
-            // 
-            this.textBoxEndLogradouroIgreja.Location = new System.Drawing.Point(9, 96);
-            this.textBoxEndLogradouroIgreja.Name = "textBoxEndLogradouroIgreja";
-            this.textBoxEndLogradouroIgreja.Size = new System.Drawing.Size(212, 20);
-            this.textBoxEndLogradouroIgreja.TabIndex = 6;
-            // 
-            // comboBoxEndTipoIgreja
-            // 
-            this.comboBoxEndTipoIgreja.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxEndTipoIgreja.FormattingEnabled = true;
-            this.comboBoxEndTipoIgreja.Location = new System.Drawing.Point(9, 45);
-            this.comboBoxEndTipoIgreja.Name = "comboBoxEndTipoIgreja";
-            this.comboBoxEndTipoIgreja.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndTipoIgreja.TabIndex = 5;
             // 
             // groupBox1
             // 

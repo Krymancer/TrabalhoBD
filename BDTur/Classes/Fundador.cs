@@ -18,13 +18,13 @@ namespace BDTur.Classes
 
         public Fundador(int idFundador, string nomeFundador, string atividadeProfissionalFundador, DateTime nascimentoFundador, DateTime morteFundador, string nacionalidadeFundador, List<PontoTuristico> listPontoTuristicoFundado)
         {
-            this.idFundador = idFundador;
-            this.nomeFundador = nomeFundador;
-            this.atividadeProfissionalFundador = atividadeProfissionalFundador;
-            this.nascimentoFundador = nascimentoFundador;
-            this.morteFundador = morteFundador;
-            this.nacionalidadeFundador = nacionalidadeFundador;
-            this.listPontoTuristicoFundado = listPontoTuristicoFundado;
+            IdFundador = idFundador;
+            NomeFundador = nomeFundador;
+            AtividadeProfissionalFundador = atividadeProfissionalFundador;
+            NascimentoFundador = nascimentoFundador;
+            MorteFundador = morteFundador;
+            NacionalidadeFundador = nacionalidadeFundador;
+            ListPontoTuristicoFundado = listPontoTuristicoFundado;
         }
 
         public int IdFundador { get; set; }

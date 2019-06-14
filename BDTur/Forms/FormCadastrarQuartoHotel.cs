@@ -16,5 +16,10 @@ namespace BDTur.Forms
         {
             InitializeComponent();
         }
+
+        private void FormCadastrarQuartoHotel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -233,6 +233,7 @@
             // 
             // comboBoxEndCidadeRestaurante
             // 
+            this.comboBoxEndCidadeRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeRestaurante.Enabled = false;
             this.comboBoxEndCidadeRestaurante.FormattingEnabled = true;
             this.comboBoxEndCidadeRestaurante.Location = new System.Drawing.Point(9, 199);
