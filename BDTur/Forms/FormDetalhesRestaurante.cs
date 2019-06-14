@@ -21,11 +21,15 @@ namespace BDTur.Forms
             InitializeComponent();
             populateComboBoxes();
 
-            comboBoxCategoriaRestaurante.Items.Add("1 Estrela");
-            comboBoxCategoriaRestaurante.Items.Add("2 Estrelas");
-            comboBoxCategoriaRestaurante.Items.Add("3 Estrelas");
-            comboBoxCategoriaRestaurante.Items.Add("4 Estrelas");
-            comboBoxCategoriaRestaurante.Items.Add("5 Estrelas");
+            comboBoxCategoriaRestaurante.Items.Add("Simples");
+            comboBoxCategoriaRestaurante.Items.Add("Rápido e Casual");
+            comboBoxCategoriaRestaurante.Items.Add("Estilo Familiar");
+            comboBoxCategoriaRestaurante.Items.Add("Luxo");
+            comboBoxCategoriaRestaurante.Items.Add("Café ou Bistrô");
+            comboBoxCategoriaRestaurante.Items.Add("Jantar fino");
+            comboBoxCategoriaRestaurante.Items.Add("Fast food");
+            comboBoxCategoriaRestaurante.Items.Add("Food Truck");
+            comboBoxCategoriaRestaurante.Items.Add("Buffet");
 
             comboBoxEndTipoRestaurante.Items.Add("Rua");
             comboBoxEndTipoRestaurante.Items.Add("Avenida");
@@ -109,6 +113,15 @@ namespace BDTur.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxEndNumeroRestaurante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -46,12 +46,6 @@
             this.dataGridViewRestaurante = new System.Windows.Forms.DataGridView();
             this.groupBoxEspecialidadeRestaurante = new System.Windows.Forms.GroupBox();
             this.textBoxEspecialidadeRestaurante = new System.Windows.Forms.TextBox();
-            this.groupBoxClassificacaoRestaurante = new System.Windows.Forms.GroupBox();
-            this.checkBox1StarRestaurante = new System.Windows.Forms.CheckBox();
-            this.checkBox5StarRestaurante = new System.Windows.Forms.CheckBox();
-            this.checkBox2StarRestaurante = new System.Windows.Forms.CheckBox();
-            this.checkBox4StarRestaurante = new System.Windows.Forms.CheckBox();
-            this.checkBox3StarRestaurante = new System.Windows.Forms.CheckBox();
             this.tabPageIgrejas = new System.Windows.Forms.TabPage();
             this.groupBoxEstiloIgreja = new System.Windows.Forms.GroupBox();
             this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
@@ -100,6 +94,7 @@
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restauranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pontoTuristicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.igrejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +103,6 @@
             this.fundadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             labelCidade = new System.Windows.Forms.Label();
             labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -119,7 +113,6 @@
             this.tabPageRestaurantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).BeginInit();
             this.groupBoxEspecialidadeRestaurante.SuspendLayout();
-            this.groupBoxClassificacaoRestaurante.SuspendLayout();
             this.tabPageIgrejas.SuspendLayout();
             this.groupBoxEstiloIgreja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIgreja)).BeginInit();
@@ -332,7 +325,6 @@
             this.tabPageRestaurantes.BackColor = System.Drawing.Color.Transparent;
             this.tabPageRestaurantes.Controls.Add(this.dataGridViewRestaurante);
             this.tabPageRestaurantes.Controls.Add(this.groupBoxEspecialidadeRestaurante);
-            this.tabPageRestaurantes.Controls.Add(this.groupBoxClassificacaoRestaurante);
             this.tabPageRestaurantes.Location = new System.Drawing.Point(4, 22);
             this.tabPageRestaurantes.Name = "tabPageRestaurantes";
             this.tabPageRestaurantes.Padding = new System.Windows.Forms.Padding(3);
@@ -362,7 +354,7 @@
             // 
             this.groupBoxEspecialidadeRestaurante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxEspecialidadeRestaurante.Controls.Add(this.textBoxEspecialidadeRestaurante);
-            this.groupBoxEspecialidadeRestaurante.Location = new System.Drawing.Point(783, 148);
+            this.groupBoxEspecialidadeRestaurante.Location = new System.Drawing.Point(782, 6);
             this.groupBoxEspecialidadeRestaurante.Name = "groupBoxEspecialidadeRestaurante";
             this.groupBoxEspecialidadeRestaurante.Size = new System.Drawing.Size(120, 49);
             this.groupBoxEspecialidadeRestaurante.TabIndex = 57;
@@ -377,86 +369,6 @@
             this.textBoxEspecialidadeRestaurante.Size = new System.Drawing.Size(109, 20);
             this.textBoxEspecialidadeRestaurante.TabIndex = 6;
             this.textBoxEspecialidadeRestaurante.TextChanged += new System.EventHandler(this.textBoxEspecialidadeRestaurante_TextChanged);
-            // 
-            // groupBoxClassificacaoRestaurante
-            // 
-            this.groupBoxClassificacaoRestaurante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClassificacaoRestaurante.Controls.Add(this.checkBox1StarRestaurante);
-            this.groupBoxClassificacaoRestaurante.Controls.Add(this.checkBox5StarRestaurante);
-            this.groupBoxClassificacaoRestaurante.Controls.Add(this.checkBox2StarRestaurante);
-            this.groupBoxClassificacaoRestaurante.Controls.Add(this.checkBox4StarRestaurante);
-            this.groupBoxClassificacaoRestaurante.Controls.Add(this.checkBox3StarRestaurante);
-            this.groupBoxClassificacaoRestaurante.Location = new System.Drawing.Point(783, 6);
-            this.groupBoxClassificacaoRestaurante.Name = "groupBoxClassificacaoRestaurante";
-            this.groupBoxClassificacaoRestaurante.Size = new System.Drawing.Size(120, 136);
-            this.groupBoxClassificacaoRestaurante.TabIndex = 26;
-            this.groupBoxClassificacaoRestaurante.TabStop = false;
-            this.groupBoxClassificacaoRestaurante.Text = "Classficação";
-            // 
-            // checkBox1StarRestaurante
-            // 
-            this.checkBox1StarRestaurante.AutoSize = true;
-            this.checkBox1StarRestaurante.Checked = true;
-            this.checkBox1StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1StarRestaurante.Location = new System.Drawing.Point(10, 111);
-            this.checkBox1StarRestaurante.Name = "checkBox1StarRestaurante";
-            this.checkBox1StarRestaurante.Size = new System.Drawing.Size(67, 17);
-            this.checkBox1StarRestaurante.TabIndex = 4;
-            this.checkBox1StarRestaurante.Text = "1 Estrela";
-            this.checkBox1StarRestaurante.UseVisualStyleBackColor = true;
-            this.checkBox1StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox1StarRestaurante_CheckedChanged);
-            // 
-            // checkBox5StarRestaurante
-            // 
-            this.checkBox5StarRestaurante.AutoSize = true;
-            this.checkBox5StarRestaurante.Checked = true;
-            this.checkBox5StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5StarRestaurante.Location = new System.Drawing.Point(10, 19);
-            this.checkBox5StarRestaurante.Name = "checkBox5StarRestaurante";
-            this.checkBox5StarRestaurante.Size = new System.Drawing.Size(72, 17);
-            this.checkBox5StarRestaurante.TabIndex = 0;
-            this.checkBox5StarRestaurante.Text = "5 Estrelas";
-            this.checkBox5StarRestaurante.UseVisualStyleBackColor = true;
-            this.checkBox5StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox5StarRestaurante_CheckedChanged);
-            // 
-            // checkBox2StarRestaurante
-            // 
-            this.checkBox2StarRestaurante.AutoSize = true;
-            this.checkBox2StarRestaurante.Checked = true;
-            this.checkBox2StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2StarRestaurante.Location = new System.Drawing.Point(10, 88);
-            this.checkBox2StarRestaurante.Name = "checkBox2StarRestaurante";
-            this.checkBox2StarRestaurante.Size = new System.Drawing.Size(72, 17);
-            this.checkBox2StarRestaurante.TabIndex = 3;
-            this.checkBox2StarRestaurante.Text = "2 Estrelas";
-            this.checkBox2StarRestaurante.UseVisualStyleBackColor = true;
-            this.checkBox2StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox2StarRestaurante_CheckedChanged);
-            // 
-            // checkBox4StarRestaurante
-            // 
-            this.checkBox4StarRestaurante.AutoSize = true;
-            this.checkBox4StarRestaurante.Checked = true;
-            this.checkBox4StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4StarRestaurante.Location = new System.Drawing.Point(10, 42);
-            this.checkBox4StarRestaurante.Name = "checkBox4StarRestaurante";
-            this.checkBox4StarRestaurante.Size = new System.Drawing.Size(72, 17);
-            this.checkBox4StarRestaurante.TabIndex = 1;
-            this.checkBox4StarRestaurante.Text = "4 Estrelas";
-            this.checkBox4StarRestaurante.UseVisualStyleBackColor = true;
-            this.checkBox4StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox4StarRestaurante_CheckedChanged);
-            // 
-            // checkBox3StarRestaurante
-            // 
-            this.checkBox3StarRestaurante.AutoSize = true;
-            this.checkBox3StarRestaurante.Checked = true;
-            this.checkBox3StarRestaurante.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3StarRestaurante.Location = new System.Drawing.Point(10, 65);
-            this.checkBox3StarRestaurante.Name = "checkBox3StarRestaurante";
-            this.checkBox3StarRestaurante.Size = new System.Drawing.Size(72, 17);
-            this.checkBox3StarRestaurante.TabIndex = 2;
-            this.checkBox3StarRestaurante.Text = "3 Estrelas";
-            this.checkBox3StarRestaurante.UseVisualStyleBackColor = true;
-            this.checkBox3StarRestaurante.CheckedChanged += new System.EventHandler(this.checkBox3StarRestaurante_CheckedChanged);
             // 
             // tabPageIgrejas
             // 
@@ -975,21 +887,27 @@
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
             // hotelToolStripMenuItem
             // 
             this.hotelToolStripMenuItem.Name = "hotelToolStripMenuItem";
-            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.hotelToolStripMenuItem.Text = "Hotel";
             this.hotelToolStripMenuItem.Click += new System.EventHandler(this.hotelToolStripMenuItem_Click);
+            // 
+            // quartoDeHotelToolStripMenuItem
+            // 
+            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
+            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // restauranteToolStripMenuItem
             // 
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
-            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
             this.restauranteToolStripMenuItem.Click += new System.EventHandler(this.restauranteToolStripMenuItem_Click);
             // 
@@ -1000,7 +918,7 @@
             this.museuToolStripMenuItem,
             this.casaDeShowToolStripMenuItem});
             this.pontoTuristicoToolStripMenuItem.Name = "pontoTuristicoToolStripMenuItem";
-            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.pontoTuristicoToolStripMenuItem.Text = "Ponto Turistico";
             // 
             // igrejaToolStripMenuItem
@@ -1027,14 +945,14 @@
             // fundadorToolStripMenuItem
             // 
             this.fundadorToolStripMenuItem.Name = "fundadorToolStripMenuItem";
-            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.fundadorToolStripMenuItem.Text = "Fundador";
             this.fundadorToolStripMenuItem.Click += new System.EventHandler(this.fundadorToolStripMenuItem_Click);
             // 
             // usariosToolStripMenuItem
             // 
             this.usariosToolStripMenuItem.Name = "usariosToolStripMenuItem";
-            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.usariosToolStripMenuItem.Text = " Usuários";
             this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
             // 
@@ -1043,12 +961,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem1.Text = " ";
-            // 
-            // quartoDeHotelToolStripMenuItem
-            // 
-            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
-            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // FormMain
             // 
@@ -1076,8 +988,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestaurante)).EndInit();
             this.groupBoxEspecialidadeRestaurante.ResumeLayout(false);
             this.groupBoxEspecialidadeRestaurante.PerformLayout();
-            this.groupBoxClassificacaoRestaurante.ResumeLayout(false);
-            this.groupBoxClassificacaoRestaurante.PerformLayout();
             this.tabPageIgrejas.ResumeLayout(false);
             this.groupBoxEstiloIgreja.ResumeLayout(false);
             this.groupBoxEstiloIgreja.PerformLayout();
@@ -1125,11 +1035,6 @@
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.ComboBox comboBoxCidade;
         private System.Windows.Forms.TabPage tabPageRestaurantes;
-        private System.Windows.Forms.CheckBox checkBox1StarRestaurante;
-        private System.Windows.Forms.CheckBox checkBox2StarRestaurante;
-        private System.Windows.Forms.CheckBox checkBox3StarRestaurante;
-        private System.Windows.Forms.CheckBox checkBox4StarRestaurante;
-        private System.Windows.Forms.CheckBox checkBox5StarRestaurante;
         private System.Windows.Forms.TabPage tabPageIgrejas;
         private System.Windows.Forms.TabPage tabPageMuseus;
         private System.Windows.Forms.TabPage tabPageCasasdeShow;
@@ -1140,7 +1045,6 @@
         private System.Windows.Forms.CheckBox checkBox2StarHotel;
         private System.Windows.Forms.CheckBox checkBox4StarHotel;
         private System.Windows.Forms.CheckBox checkBox3StarHotel;
-        private System.Windows.Forms.GroupBox groupBoxClassificacaoRestaurante;
         private System.Windows.Forms.ComboBox comboBoxPeriodoIgreja;
         private System.Windows.Forms.GroupBox groupBoxPeriodoIgreja;
         private System.Windows.Forms.GroupBox groupBoxFundadorIgreja;

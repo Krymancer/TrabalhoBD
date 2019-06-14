@@ -213,6 +213,7 @@
             // 
             // comboBoxCategoriaRestaurante
             // 
+            this.comboBoxCategoriaRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoriaRestaurante.Enabled = false;
             this.comboBoxCategoriaRestaurante.FormattingEnabled = true;
             this.comboBoxCategoriaRestaurante.Items.AddRange(new object[] {
@@ -271,6 +272,7 @@
             this.textBoxEndNumeroRestaurante.Name = "textBoxEndNumeroRestaurante";
             this.textBoxEndNumeroRestaurante.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroRestaurante.TabIndex = 7;
+            this.textBoxEndNumeroRestaurante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroRestaurante_KeyPress);
             // 
             // textBoxEndLogradouroRestaurante
             // 
@@ -282,6 +284,7 @@
             // 
             // comboBoxEndTipoRestaurante
             // 
+            this.comboBoxEndTipoRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoRestaurante.Enabled = false;
             this.comboBoxEndTipoRestaurante.FormattingEnabled = true;
             this.comboBoxEndTipoRestaurante.Location = new System.Drawing.Point(9, 45);

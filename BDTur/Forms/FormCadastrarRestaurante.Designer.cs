@@ -51,7 +51,7 @@
             this.textBoxEndLogradouroRestaurante = new System.Windows.Forms.TextBox();
             this.comboBoxEndTipoRestaurante = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPreco = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEspecialidadeRestaurante = new System.Windows.Forms.TextBox();
             this.comboBoxCategoriaRestaurante = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoRestaurante = new System.Windows.Forms.MaskedTextBox();
@@ -198,6 +198,7 @@
             this.buttonCadastrarRestaurante.TabIndex = 14;
             this.buttonCadastrarRestaurante.Text = "Cadastrar";
             this.buttonCadastrarRestaurante.UseVisualStyleBackColor = true;
+            this.buttonCadastrarRestaurante.Click += new System.EventHandler(this.buttonCadastrarRestaurante_Click);
             // 
             // groupBox2
             // 
@@ -224,6 +225,7 @@
             // 
             // comboBoxEndCidadeRestaurante
             // 
+            this.comboBoxEndCidadeRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeRestaurante.FormattingEnabled = true;
             this.comboBoxEndCidadeRestaurante.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeRestaurante.Name = "comboBoxEndCidadeRestaurante";
@@ -258,6 +260,7 @@
             this.textBoxEndNumeroRestaurante.Name = "textBoxEndNumeroRestaurante";
             this.textBoxEndNumeroRestaurante.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroRestaurante.TabIndex = 7;
+            this.textBoxEndNumeroRestaurante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroRestaurante_KeyPress);
             // 
             // textBoxEndLogradouroRestaurante
             // 
@@ -268,6 +271,7 @@
             // 
             // comboBoxEndTipoRestaurante
             // 
+            this.comboBoxEndTipoRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoRestaurante.FormattingEnabled = true;
             this.comboBoxEndTipoRestaurante.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoRestaurante.Name = "comboBoxEndTipoRestaurante";
@@ -276,7 +280,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
+            this.groupBox1.Controls.Add(this.maskedTextBoxPreco);
             this.groupBox1.Controls.Add(label12);
             this.groupBox1.Controls.Add(this.textBoxEspecialidadeRestaurante);
             this.groupBox1.Controls.Add(label11);
@@ -293,14 +297,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // maskedTextBox2
+            // maskedTextBoxPreco
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(12, 149);
-            this.maskedTextBox2.Mask = "$ ";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 3;
-            this.maskedTextBox2.ValidatingType = typeof(int);
+            this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 149);
+            this.maskedTextBoxPreco.Mask = "$000,00";
+            this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
+            this.maskedTextBoxPreco.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskedTextBoxPreco.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxPreco.TabIndex = 3;
+            this.maskedTextBoxPreco.ValidatingType = typeof(int);
             // 
             // textBoxEspecialidadeRestaurante
             // 
@@ -311,9 +316,8 @@
             // 
             // comboBoxCategoriaRestaurante
             // 
+            this.comboBoxCategoriaRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoriaRestaurante.FormattingEnabled = true;
-            this.comboBoxCategoriaRestaurante.Items.AddRange(new object[] {
-            "sasasas"});
             this.comboBoxCategoriaRestaurante.Location = new System.Drawing.Point(9, 94);
             this.comboBoxCategoriaRestaurante.Name = "comboBoxCategoriaRestaurante";
             this.comboBoxCategoriaRestaurante.Size = new System.Drawing.Size(121, 21);
@@ -375,6 +379,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoRestaurante;
         private System.Windows.Forms.TextBox textBoxNomeHotel;
         private System.Windows.Forms.TextBox textBoxEspecialidadeRestaurante;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPreco;
     }
 }

@@ -498,71 +498,7 @@ namespace BDTur.Forms
         {
             refreshDataGridViews();
         }
-        private void checkBox5StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox5StarRestaurante.CheckState == CheckState.Checked)
-            {
-                CategoriaRestaurante[4] = 5;
-            }
-            if (checkBox5StarRestaurante.CheckState == CheckState.Unchecked)
-            {
-                CategoriaRestaurante[4] = 0;
-            }
-
-            refreshDataGridViews();
-        }
-        private void checkBox4StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox4StarRestaurante.CheckState == CheckState.Checked)
-            {
-                CategoriaRestaurante[3] = 4;
-            }
-            if (checkBox4StarRestaurante.CheckState == CheckState.Unchecked)
-            {
-                CategoriaRestaurante[3] = 0;
-            }
-
-            refreshDataGridViews();
-        }
-        private void checkBox3StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3StarRestaurante.CheckState == CheckState.Checked)
-            {
-                CategoriaRestaurante[2] = 3;
-            }
-            if (checkBox3StarRestaurante.CheckState == CheckState.Unchecked)
-            {
-                CategoriaRestaurante[2] = 0;
-            }
-
-            refreshDataGridViews();
-        }
-        private void checkBox2StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox2StarRestaurante.CheckState == CheckState.Checked)
-            {
-                CategoriaRestaurante[1] = 2;
-            }
-            if (checkBox2StarRestaurante.CheckState == CheckState.Unchecked)
-            {
-                CategoriaRestaurante[1] = 0;
-            }
-
-            refreshDataGridViews();
-        }
-        private void checkBox1StarRestaurante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1StarRestaurante.CheckState == CheckState.Checked)
-            {
-                CategoriaRestaurante[0] = 1;
-            }
-            if (checkBox1StarRestaurante.CheckState == CheckState.Unchecked)
-            {
-                CategoriaRestaurante[0] = 0;
-            }
-
-            refreshDataGridViews();
-        }
+        
         private void checkBox5StarHotel_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox5StarHotel.CheckState == CheckState.Checked)

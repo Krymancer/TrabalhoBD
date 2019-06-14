@@ -111,8 +111,7 @@ namespace BDTur.Classes
             if (cidade != null && cidade != "0")
             {
                 query += $"AND `restaurante`.`cidadeIdCidade` = {cidade} ";
-            }
-            query += $"AND  (`restaurante`.`categoriaRestaurante` = {categoria[0]} OR `restaurante`.`categoriaRestaurante` = {categoria[1]} OR `restaurante`.`categoriaRestaurante` = {categoria[2]} OR `restaurante`.`categoriaRestaurante` = {categoria[3]} OR `restaurante`.`categoriaRestaurante` = {categoria[4]}) ";
+            }          
             query += $"AND `restaurante`.`especialidadeRestaurante` LIKE '%{especialidade}%'";
 
             return fetchResultFromQuery(query);
@@ -405,6 +404,71 @@ namespace BDTur.Classes
 
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
+        }
+
+        public bool adicionarRestaurante(Classes.Restaurante restaurante)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `equipe431447`.`restaurante` " +
+                                                    "(`idRestaurante`, " +
+                                                    "`nomeRestaurante`, " +
+                                                    "`categoriaRestaurante`, " +
+                                                    "`especialidadeRestaurante`, " +
+                                                    "`precoMedioRestaurante`, " +
+                                                    "`contatoRestaurante`, " +
+                                                    "`endTipoRestaurante`, " +
+                                                    "`endLogradouroRestaurante`, " +
+                                                    "`endNumeroRestaurante`, " +
+                                                    "`endComplementoRestaurante`, " +
+                                                    "`endBairroRestaurante`, " +
+                                                    "`endCepRestaurante`, " +
+                                                    "`cidadeIdCidade`, " +
+                                                    "`cidadeNome`, " +
+                                                    "`cidadeEstado`) " +
+                                                    "VALUES " +
+                                                    "(0, " +
+                                                    "?nomeRestaurante, " +
+                                                    "?categoriaRestaurante, " +
+                                                    "?especialidadeRestaurante, " +
+                                                    "?precoMedioRestaurante, " +
+                                                    "?contatoRestaurante, " +
+                                                    "?endTipoRestaurante, " +
+                                                    "?endLogradouroRestaurante, " +
+                                                    "?endNumeroRestaurante, " +
+                                                    "?endComplementoRestaurante, " +
+                                                    "?endBairroRestaurante, " +
+                                                    "?endCepRestaurante, " +
+                                                    "?cidadeIdCidade, " +
+                                                    $"(select nome from cidade where idCidade = {restaurante.CidadeIdCidade}), " +
+                                                    $"(select estado from cidade where idCidade = {restaurante.CidadeIdCidade}))" , con);
+                cmd.Parameters.Add(new MySqlParameter("nomeRestaurante", restaurante.NomeRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("categoriaRestaurante", restaurante.CategoriaRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("especialidadeRestaurante", restaurante.EspecialidadeRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("precoMedioRestaurante", restaurante.PrecoMedioRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("contatoRestaurante", restaurante.ContatoRestauranteo));
+                cmd.Parameters.Add(new MySqlParameter("endTipoRestaurante", restaurante.EndTipoRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("endLogradouroRestaurante", restaurante.EndLogradouroRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("endNumeroRestaurante", restaurante.EndNumeroRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("endComplementoRestaurante", restaurante.EndComplementoRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("endBairroRestaurante", restaurante.EndBairroRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("endCepRestaurante", restaurante.EndCepRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", restaurante.CidadeIdCidade));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
     }
 }

@@ -16,6 +16,7 @@ namespace BDTur.Forms
         Classes.DAL adapter = new Classes.DAL();
         DataTable fundadores = new DataTable();
         DataTable selecionados = new DataTable();
+        bool editar = false;
         public FormDetalhesMuseu(int id)
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace BDTur.Forms
 
             addDataTablesColumns();
             getFundadoresList();
-            getIgrejaFundadores(id);
+            getMuseuFundadores(id);
             populateListView();
 
             getDetails(id);
@@ -103,12 +104,7 @@ namespace BDTur.Forms
 
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void addDataTablesColumns()
         {
@@ -143,7 +139,7 @@ namespace BDTur.Forms
 
         }
 
-        private void getIgrejaFundadores(int id)
+        private void getMuseuFundadores(int id)
         {
             MySqlDataReader reader = adapter.museufundadoresReader(id);
 
@@ -195,6 +191,21 @@ namespace BDTur.Forms
                     break;
                 }
             }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+             //AtualizarDados();   
+            }
+            groupBoxDados.Controls.Cast<Control>().ToList()
+            .ForEach(c => c.Enabled = true);
+            groupBoxEndereço.Controls.Cast<Control>().ToList()
+            .ForEach(c => c.Enabled = true);
+            groupBoxFundador.Controls.Cast<Control>().ToList()
+            .ForEach(c => c.Enabled = true);            
+            editar = !editar;          
         }
     }
 }
