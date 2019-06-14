@@ -224,6 +224,7 @@
             // 
             // comboBoxEndCidadeRestaurante
             // 
+            this.comboBoxEndCidadeRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeRestaurante.FormattingEnabled = true;
             this.comboBoxEndCidadeRestaurante.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeRestaurante.Name = "comboBoxEndCidadeRestaurante";
@@ -268,6 +269,7 @@
             // 
             // comboBoxEndTipoRestaurante
             // 
+            this.comboBoxEndTipoRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoRestaurante.FormattingEnabled = true;
             this.comboBoxEndTipoRestaurante.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoRestaurante.Name = "comboBoxEndTipoRestaurante";

@@ -12,7 +12,7 @@ namespace BDTur.Classes
         private string nomeRestaurante ;
         private int categoriaRestaurante;
         private string especialidadeRestaurante;
-        private float precoMedioRestaurante;
+        private double precoMedioRestaurante;
         private string contatoRestauranteo;
         private string endTipoRestaurante;
         private string endLogradouroRestaurante;
@@ -22,28 +22,28 @@ namespace BDTur.Classes
         private string endCepRestaurante;
         private int cidadeIdCidade;
 
-        public Restaurante(int idRestaurante, string nomeRestaurante, int categoriaRestaurante, string especialidadeRestaurante, float precoMedioRestaurante, string contatoRestauranteo, string endTipoRestaurante, string endLogradouroRestaurante, string endNumeroRestaurante, string endComplementoRestaurante, string endBairroRestaurante, string endCepRestaurante, int cidadeIdCidade)
+        public Restaurante(int idRestaurante, string nomeRestaurante, int categoriaRestaurante, string especialidadeRestaurante, double precoMedioRestaurante, string contatoRestaurante, string endTipoRestaurante, string endLogradouroRestaurante, string endNumeroRestaurante, string endComplementoRestaurante, string endBairroRestaurante, string endCepRestaurante, int cidadeIdCidade)
         {
-            this.idRestaurante = idRestaurante;
-            this.nomeRestaurante = nomeRestaurante;
-            this.categoriaRestaurante = categoriaRestaurante;
-            this.especialidadeRestaurante = especialidadeRestaurante;
-            this.precoMedioRestaurante = precoMedioRestaurante;
-            this.contatoRestauranteo = contatoRestauranteo;
-            this.endTipoRestaurante = endTipoRestaurante;
-            this.endLogradouroRestaurante = endLogradouroRestaurante;
-            this.endNumeroRestaurante = endNumeroRestaurante;
-            this.endComplementoRestaurante = endComplementoRestaurante;
-            this.endBairroRestaurante = endBairroRestaurante;
-            this.endCepRestaurante = endCepRestaurante;
-            this.cidadeIdCidade = cidadeIdCidade;
+            IdRestaurante = idRestaurante;
+            NomeRestaurante = nomeRestaurante;
+            CategoriaRestaurante = categoriaRestaurante;
+            EspecialidadeRestaurante = especialidadeRestaurante;
+            PrecoMedioRestaurante = precoMedioRestaurante;
+            ContatoRestauranteo = contatoRestaurante;
+            EndTipoRestaurante = endTipoRestaurante;
+            EndLogradouroRestaurante = endLogradouroRestaurante;
+            EndNumeroRestaurante = endNumeroRestaurante;
+            EndComplementoRestaurante = endComplementoRestaurante;
+            EndBairroRestaurante = endBairroRestaurante;
+            EndCepRestaurante = endCepRestaurante;
+            CidadeIdCidade = cidadeIdCidade;
         }
 
         public int IdRestaurante { get; set; }
         public string NomeRestaurante { get; set; }
         public int CategoriaRestaurante { get; set; }
         public string EspecialidadeRestaurante { get; set; }
-        public float PrecoMedioRestaurante { get; set; }
+        public double PrecoMedioRestaurante { get; set; }
         public string ContatoRestauranteo { get; set; }
         public string EndTipoRestaurante { get; set; }
         public string EndLogradouroRestaurante { get; set; }

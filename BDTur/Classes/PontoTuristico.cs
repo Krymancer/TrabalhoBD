@@ -25,18 +25,18 @@ namespace BDTur.Classes
 
         public PontoTuristico(int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
         {
-            this.idPontoTuristico = idPontoTuristico;
-            this.nomePontoTuristico = nomePontoTuristico;
-            this.contatoPontoTuristico = contatoPontoTuristico;
-            this.descricaoPontoTuristico = descricaoPontoTuristico;
-            this.tipoPontoTuristico = tipoPontoTuristico;
-            this.endTipoPontoTuristico = endTipoPontoTuristico;
-            this.endLogradouroPontoTuristico = endLogradouroPontoTuristico;
-            this.endNumeroPontoTuristico = endNumeroPontoTuristico;
-            this.endComplementoPontoTuristico = endComplementoPontoTuristico;
-            this.endBairroPontoTuristico = endBairroPontoTuristico;
-            this.endCepPontoTuristico = endCepPontoTuristico;
-            this.cidadeIdCidade = cidadeIdCidade;
+            IdPontoTuristico = idPontoTuristico;
+            NomePontoTuristico = nomePontoTuristico;
+            ContatoPontoTuristico = contatoPontoTuristico;
+            DescricaoPontoTuristico = descricaoPontoTuristico;
+            TipoPontoTuristico = tipoPontoTuristico;
+            EndTipoPontoTuristico = endTipoPontoTuristico;
+            EndLogradouroPontoTuristico = endLogradouroPontoTuristico;
+            EndNumeroPontoTuristico = endNumeroPontoTuristico;
+            EndComplementoPontoTuristico = endComplementoPontoTuristico;
+            EndBairroPontoTuristico = endBairroPontoTuristico;
+            EndCepPontoTuristico = endCepPontoTuristico;
+            CidadeIdCidade = cidadeIdCidade;
         }
 
         public int IdPontoTuristico { get; set; }

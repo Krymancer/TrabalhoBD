@@ -15,10 +15,10 @@ namespace BDTur.Classes
 
         public HotelQuarto(int numQuarto, int hotelIdHotel, int tipoQuarto, float diariaQuarto)
         {
-            this.numQuarto = numQuarto;
-            this.hotelIdHotel = hotelIdHotel;
-            this.tipoQuarto = tipoQuarto;
-            this.diariaQuarto = diariaQuarto;
+            NumQuarto = numQuarto;
+            HotelIdHotel = hotelIdHotel;
+            TipoQuarto = tipoQuarto;
+            DiariaQuarto = diariaQuarto;
         }
 
         public int NumQuarto { get; set; }

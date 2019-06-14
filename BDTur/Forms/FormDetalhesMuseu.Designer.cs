@@ -413,7 +413,7 @@
             // 
             // comboBoxEndCidadeMuseu
             // 
-            this.comboBoxEndCidadeMuseu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeMuseu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeMuseu.Enabled = false;
             this.comboBoxEndCidadeMuseu.FormattingEnabled = true;
             this.comboBoxEndCidadeMuseu.Location = new System.Drawing.Point(9, 199);
@@ -464,7 +464,7 @@
             // 
             // comboBoxEndTipoMuseu
             // 
-            this.comboBoxEndTipoMuseu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoMuseu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoMuseu.Enabled = false;
             this.comboBoxEndTipoMuseu.FormattingEnabled = true;
             this.comboBoxEndTipoMuseu.Location = new System.Drawing.Point(9, 45);

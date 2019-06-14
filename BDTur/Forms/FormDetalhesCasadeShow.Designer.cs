@@ -46,6 +46,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxNomeCasaDeShow = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxIdCasadeShow = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoCasaDeShow = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxIdRestauranteCasaDeShow = new System.Windows.Forms.ComboBox();
             this.buttonCancelarCadastroCasaDeShow = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.comboBoxEndTipoCasaDeShow = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
-            this.textBoxIdCasadeShow = new System.Windows.Forms.TextBox();
             label13 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -177,6 +177,15 @@
             label6.TabIndex = 5;
             label6.Text = "Número:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(9, 16);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(21, 13);
+            label2.TabIndex = 21;
+            label2.Text = "ID:";
+            // 
             // textBoxHoraInicioCasaDeShow
             // 
             this.textBoxHoraInicioCasaDeShow.Enabled = false;
@@ -240,6 +249,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
+            // textBoxIdCasadeShow
+            // 
+            this.textBoxIdCasadeShow.Enabled = false;
+            this.textBoxIdCasadeShow.Location = new System.Drawing.Point(9, 32);
+            this.textBoxIdCasadeShow.Name = "textBoxIdCasadeShow";
+            this.textBoxIdCasadeShow.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdCasadeShow.TabIndex = 20;
+            // 
             // maskedTextBoxContatoCasaDeShow
             // 
             this.maskedTextBoxContatoCasaDeShow.Enabled = false;
@@ -251,7 +268,7 @@
             // 
             // comboBoxIdRestauranteCasaDeShow
             // 
-            this.comboBoxIdRestauranteCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxIdRestauranteCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdRestauranteCasaDeShow.Enabled = false;
             this.comboBoxIdRestauranteCasaDeShow.FormattingEnabled = true;
             this.comboBoxIdRestauranteCasaDeShow.Location = new System.Drawing.Point(142, 199);
@@ -317,7 +334,7 @@
             // 
             // comboBoxEndCidadeCasaDeShow
             // 
-            this.comboBoxEndCidadeCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndCidadeCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndCidadeCasaDeShow.Enabled = false;
             this.comboBoxEndCidadeCasaDeShow.FormattingEnabled = true;
             this.comboBoxEndCidadeCasaDeShow.Location = new System.Drawing.Point(9, 199);
@@ -368,7 +385,7 @@
             // 
             // comboBoxEndTipoCasaDeShow
             // 
-            this.comboBoxEndTipoCasaDeShow.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEndTipoCasaDeShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndTipoCasaDeShow.Enabled = false;
             this.comboBoxEndTipoCasaDeShow.FormattingEnabled = true;
             this.comboBoxEndTipoCasaDeShow.Location = new System.Drawing.Point(9, 45);
@@ -394,23 +411,6 @@
             this.buttonCadastrarHotel.TabIndex = 20;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
-            // 
-            // textBoxIdCasadeShow
-            // 
-            this.textBoxIdCasadeShow.Enabled = false;
-            this.textBoxIdCasadeShow.Location = new System.Drawing.Point(9, 32);
-            this.textBoxIdCasadeShow.Name = "textBoxIdCasadeShow";
-            this.textBoxIdCasadeShow.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIdCasadeShow.TabIndex = 20;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(9, 16);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(21, 13);
-            label2.TabIndex = 21;
-            label2.Text = "ID:";
             // 
             // FormDetalhesCasadeShow
             // 

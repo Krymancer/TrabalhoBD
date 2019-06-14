@@ -23,18 +23,18 @@ namespace BDTur.Classes
 
         public Hotel(int idHotel, int cidadeIdCidade, int restauranteIdRestaurante, string nomeHotel, int categoriaHotel, string contatoHotel, int endTipoHotel, string endLogradouroHotel, string endNumeroHotel, string endComplementoHotel, string endBairroHotel, string endCepHotel)
         {
-            this.idHotel = idHotel;
-            this.cidadeIdCidade = cidadeIdCidade;
-            this.restauranteIdRestaurante = restauranteIdRestaurante;
-            this.nomeHotel = nomeHotel;
-            this.categoriaHotel = categoriaHotel;
-            this.contatoHotel = contatoHotel;
-            this.endTipoHotel = endTipoHotel;
-            this.endLogradouroHotel = endLogradouroHotel;
-            this.endNumeroHotel = endNumeroHotel;
-            this.endComplementoHotel = endComplementoHotel;
-            this.endBairroHotel = endBairroHotel;
-            this.endCepHotel = endCepHotel;
+            IdHotel = idHotel;
+            CidadeIdCidade = cidadeIdCidade;
+            RestauranteIdRestaurante = restauranteIdRestaurante;
+            NomeHotel = nomeHotel;
+            CategoriaHotel = categoriaHotel;
+            ContatoHotel = contatoHotel;
+            EndTipoHotel = endTipoHotel;
+            EndLogradouroHotel = endLogradouroHotel;
+            EndNumeroHotel = endNumeroHotel;
+            EndComplementoHotel = endComplementoHotel;
+            EndBairroHotel = endBairroHotel;
+            EndCepHotel = endCepHotel;
         }
 
         public int IdHotel { get; set; }
