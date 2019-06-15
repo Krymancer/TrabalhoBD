@@ -74,7 +74,8 @@ namespace BDTur.Forms
         private void buttonCadastrarRestaurante_Click(object sender, EventArgs e)
         {
             Classes.Restaurante r;
-            try { 
+            try
+            {
                 string restNome = textBoxNomeHotel.Text;
                 string restCategoria = comboBoxCategoriaRestaurante.SelectedItem.ToString();
                 string restEspecialidade = textBoxEspecialidadeRestaurante.Text;
@@ -92,7 +93,8 @@ namespace BDTur.Forms
                 {
                     restComp = textBoxEndComplementoRestaurante.Text;
                 }
-                catch (NullReferenceException ex) {
+                catch (NullReferenceException)
+                {
                     restComp = "";
                 }
                 string restEndBairro = textBoxEndBairroRestaurante.Text;
@@ -100,24 +102,30 @@ namespace BDTur.Forms
                 string restEndCep = maskedTextBoxEndCepRestaurante.Text;
                 maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
                 int restCid = int.Parse(comboBoxEndCidadeRestaurante.SelectedValue.ToString());
-            //Console.WriteLine($"nome: {restNome} \n restContato: {restContato} \n restCid = {restCid} \n restCat = {restCategoria} \n restPreço: {restPreco} {restPreco/100}");
+                if (restCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                
                 r = new Classes.Restaurante(0, restNome, restCategoria, restEspecialidade, restPreco, restContato, restEndTipo, restEndLog, restEndNum, restComp, restEndBairro, restEndCep, restCid);
                 if (adapter.adicionarRestaurante(r))
                 {
                     MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-            }catch(NullReferenceException ex)
+            }
+            catch (NullReferenceException)
             {
-                //Console.WriteLine("deu merda ai");
+                //Erro ao resgatar valores dos componentes
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidSelectValue) {
+                //Tratar se usuario não tenha selecionado uma cidade valida
                 MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void textBoxEndNumeroRestaurante_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -125,5 +133,13 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+    }
+
+    //Implementação de uma Exeção customizada 
+    public class InvalidSelectValue : Exception
+    {
+        public InvalidSelectValue() : base() { }
+        public InvalidSelectValue(string message) : base(message) { }
+        public InvalidSelectValue(string message, System.Exception inner) : base(message, inner) { }
     }
 }

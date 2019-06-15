@@ -9,12 +9,16 @@ namespace BDTur.Classes
 {
     class DAL
     {
+        /// <summary>
+        /// Retorna uma conexão com o Banco de dados.
+        /// </summary>
         private MySqlConnection createConnection()
         {
             Classes.Connection connection = new Classes.Connection(Program.databaseUser, Program.databasePassword);
             MySqlConnection con = connection.GetConnection();
             return con;
         }
+
         /// <summary>
         /// Retorna o resultado de uma consulta paa o banco de dados em um DataAdapter.
         /// </summary>
@@ -38,8 +42,9 @@ namespace BDTur.Classes
                 return null;
             }
         }
+
         #region Adapters para os DataGridViews
-        public  MySqlDataAdapter cidadeAdapter()
+        public MySqlDataAdapter cidadeAdapter()
         {
             string query = "SELECT `cidade`.`i" +
                 "dCidade`," +
@@ -47,7 +52,7 @@ namespace BDTur.Classes
                              "`cidade`.`populacao` FROM `equipe431447`.`cidade` ORDER BY `nome`;";
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter hotelAdapter(string name,string cidade,int[] categoria, bool[] restaurante)
+        public MySqlDataAdapter hotelAdapter(string name, string cidade, int[] categoria, bool[] restaurante)
         {
 
             string query = "SELECT " +
@@ -66,7 +71,7 @@ namespace BDTur.Classes
 
             if (cidade != null && cidade != "0")
             {
-                query += $"AND `hotel`.`cidadeIdCidade` = {cidade} "; 
+                query += $"AND `hotel`.`cidadeIdCidade` = {cidade} ";
             }
             query += $"AND  (`hotel`.`categoriaHotel` = {categoria[0]} OR `hotel`.`categoriaHotel` = {categoria[1]} OR `hotel`.`categoriaHotel` = {categoria[2]} OR `hotel`.`categoriaHotel` = {categoria[3]} OR `hotel`.`categoriaHotel` = {categoria[4]}) ";
 
@@ -90,7 +95,7 @@ namespace BDTur.Classes
             return fetchResultFromQuery(query);
 
         }
-        public  MySqlDataAdapter restauranteAdapter(string name, string cidade, int[] categoria, string especialidade)
+        public MySqlDataAdapter restauranteAdapter(string name, string cidade, int[] categoria, string especialidade)
         {
             string query = "SELECT " +
                                 "`restaurante`.`idRestaurante`," +
@@ -111,22 +116,22 @@ namespace BDTur.Classes
             if (cidade != null && cidade != "0")
             {
                 query += $"AND `restaurante`.`cidadeIdCidade` = {cidade} ";
-            }          
+            }
             query += $"AND `restaurante`.`especialidadeRestaurante` LIKE '%{especialidade}%'";
 
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter igrejaAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string estilo, int periodo)
+        public MySqlDataAdapter igrejaAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string estilo, int periodo)
         {
             string query = "SELECT " +
                                 "`igreja`.`idIgreja`," +
                                 "`pontoturistico`.`nomePontoTuristico`," +
                                 "`pontoturistico`.`descricaoPontoTuristico`," +
-                                "`pontoturistico`.`contatoPontoTuristico`," +                            
+                                "`pontoturistico`.`contatoPontoTuristico`," +
                                 "`igreja`.`dataIgreja`," +
                                 "`igreja`.`estiloIgreja`,  " +
                                 "`pontoturistico`.`endTipoPontoTuristico`," +
-                                "`pontoturistico`.`endLogradouroPontoTuristico`," +                                
+                                "`pontoturistico`.`endLogradouroPontoTuristico`," +
                                 "`pontoturistico`.`endNumeroPontoTuristico`," +
                                 "`pontoturistico`.`endComplementoPontoTuristico`," +
                                 "`pontoturistico`.`endBairroPontoTuristico`" +
@@ -146,12 +151,13 @@ namespace BDTur.Classes
             {
                 query += $"AND `pontoturistico`.`cidadeIdCidade` = {cidade} ";
             }
-            if (periodo > 0) {
-                query += $"AND (year(igreja.dataIgreja) > {periodo-1}01 AND year(igreja.dataIgreja) <= {periodo}00 )";
+            if (periodo > 0)
+            {
+                query += $"AND (year(igreja.dataIgreja) > {periodo - 1}01 AND year(igreja.dataIgreja) <= {periodo}00 )";
             }
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter casadeShowAdapater(string name, string cidade, string horario, string fechamento, bool[] restaurante)
+        public MySqlDataAdapter casadeShowAdapater(string name, string cidade, string horario, string fechamento, bool[] restaurante)
         {
             string query = "SELECT " +
                                 "`casadeshow`.`idCasadeShow`," +
@@ -196,10 +202,10 @@ namespace BDTur.Classes
             if (!fechamento.Equals("Selecione..."))
             {
                 query += $"AND casadeshow.diaFechamentoCasadeShow = '{fechamento}' ";
-            }            
+            }
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter museuAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
+        public MySqlDataAdapter museuAdapater(string name, string cidade, string nomeFundador, string nacionalidadeFundador, string[] fundacao)
         {
             string query = "SELECT " +
                                 "`museu`.`idMuseu`," +
@@ -232,7 +238,7 @@ namespace BDTur.Classes
             }
             return fetchResultFromQuery(query);
         }
-        public  MySqlDataAdapter fundadorAdapter(string name, string atuacao, string naturalidade)
+        public MySqlDataAdapter fundadorAdapter(string name, string atuacao, string naturalidade)
         {
             string query = "SELECT `fundador`.`idFundador`," +
                                 "`fundador`.`nomeFundador`," +
@@ -249,6 +255,7 @@ namespace BDTur.Classes
         }
         #endregion
 
+        #region DataReaders para consultas especificas
         public MySqlDataReader periodoReader()
         {
             MySqlConnection con = createConnection();
@@ -297,7 +304,7 @@ namespace BDTur.Classes
             MySqlConnection con = createConnection();
             con.Open();
             string query = "SELECT * " +
-                "FROM restaurante " +                
+                "FROM restaurante " +
                 $"WHERE restaurante.idRestaurante = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
@@ -316,7 +323,7 @@ namespace BDTur.Classes
 
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
-        }    
+        }
         public MySqlDataReader igrejafundadoresReader(int id)
         {
             MySqlConnection con = createConnection();
@@ -373,7 +380,7 @@ namespace BDTur.Classes
             con.Open();
             string query = "SELECT nomeFundador, atividadeProfissionalFundador, nacionalidadeFundador, nascimentoFundador, morteFundador " +
                 "FROM fundador " +
-                $"WHERE idFundador = {id}" ;
+                $"WHERE idFundador = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -397,7 +404,7 @@ namespace BDTur.Classes
             MySqlConnection con = createConnection();
             con.Open();
             string query = "select distinct * from (select  pontoturistico.nomePontoTuristico,Fundador_idFundador from pontoturistico  " +
-            "inner join museu on museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " + 
+            "inner join museu on museu.pontoTuristicoIdPontoTuristico = pontoturistico.idPontoTuristico " +
             "inner join fundadopor on pontoturistico.idPontoTuristico = fundadopor.Museu_PontoTuristico_idPontoTuristico) as m " +
             $"where Fundador_idFundador = {id}";
             MySqlCommand cmd = new MySqlCommand(query, con);
@@ -405,7 +412,9 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
-
+        #endregion
+    
+        #region Inserts
         public bool adicionarRestaurante(Classes.Restaurante restaurante)
         {
             try
@@ -443,7 +452,7 @@ namespace BDTur.Classes
                                                     "?endCepRestaurante, " +
                                                     "?cidadeIdCidade, " +
                                                     $"(select nome from cidade where idCidade = {restaurante.CidadeIdCidade}), " +
-                                                    $"(select estado from cidade where idCidade = {restaurante.CidadeIdCidade}))" , con);
+                                                    $"(select estado from cidade where idCidade = {restaurante.CidadeIdCidade}))", con);
                 cmd.Parameters.Add(new MySqlParameter("nomeRestaurante", restaurante.NomeRestaurante));
                 cmd.Parameters.Add(new MySqlParameter("categoriaRestaurante", restaurante.CategoriaRestaurante));
                 cmd.Parameters.Add(new MySqlParameter("especialidadeRestaurante", restaurante.EspecialidadeRestaurante));
@@ -456,6 +465,40 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endBairroRestaurante", restaurante.EndBairroRestaurante));
                 cmd.Parameters.Add(new MySqlParameter("endCepRestaurante", restaurante.EndCepRestaurante));
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", restaurante.CidadeIdCidade));
+
+                //Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarCidade(Classes.Cidade cidade)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `equipe431447`.`cidade` " +
+                                                    "(`idCidade`, " +
+                                                    "`nome`, " +
+                                                    "`estado`, " +
+                                                    "`populacao`)" +
+                                                    "VALUES " +
+                                                    "(0, " +
+                                                    "?nome, " +
+                                                    "?estado, " +
+                                                    "?populacao)", con);
+                cmd.Parameters.Add(new MySqlParameter("nome", cidade.Nome));
+                cmd.Parameters.Add(new MySqlParameter("estado", cidade.Estado));
+                cmd.Parameters.Add(new MySqlParameter("populacao", cidade.Populacao));
                 Console.WriteLine(cmd.CommandText);
 
                 MySqlDataReader reader;
@@ -470,5 +513,573 @@ namespace BDTur.Classes
                 return false;
             }
         }
+        public bool adicionarHotel(Classes.Hotel hotel)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `equipe431447`.`hotel` " +
+                                                    "(`idHotel`, " +
+                                                    "`restauranteIdRestaurante`, " +
+                                                    "`nomeHotel`, " +
+                                                    "`categoriaHotel`, " +
+                                                    "`contatoHotel`, " +
+                                                    "`endTipoHotel`, " +
+                                                    "`endLogradouroHotel`, " +
+                                                    "`endNumeroHotel`, " +
+                                                    "`endComplementoHotel`, " +
+                                                    "`endBairroHotel`, " +
+                                                    "`endCepHotel`, " +
+                                                    "`cidadeIdCidade`, " +
+                                                    "`cidadeNome`, " +
+                                                    "`cidadeEstado`)" +
+                                                    "VALUES" +
+                                                    "(0, " +
+                                                    "?restauranteIdRestaurante, " +
+                                                    "?nomeHotel, " +
+                                                    "?categoriaHotel, " +
+                                                    "?contatoHotel, " +
+                                                    "?endTipoHotel, " +
+                                                    "?endLogradouroHotel, " +
+                                                    "?endNumeroHotel, " +
+                                                    "?endComplementoHotel, " +
+                                                    "?endBairroHotel, " +
+                                                    "?endCepHotel, " +
+                                                    "?cidadeIdCidade, " +
+                                                    $"(select nome from cidade where idCidade = {hotel.CidadeIdCidade})," +
+                                                    $"(select estado from cidade where idCidade = {hotel.CidadeIdCidade}))", con);
+
+                cmd.Parameters.Add(new MySqlParameter("restauranteIdRestaurante", hotel.RestauranteIdRestaurante));
+                cmd.Parameters.Add(new MySqlParameter("nomeHotel", hotel.NomeHotel));
+                cmd.Parameters.Add(new MySqlParameter("categoriaHotel", hotel.CategoriaHotel));
+                cmd.Parameters.Add(new MySqlParameter("contatoHotel", hotel.ContatoHotel));
+                cmd.Parameters.Add(new MySqlParameter("endTipoHotel", hotel.EndTipoHotel));
+                cmd.Parameters.Add(new MySqlParameter("endLogradouroHotel", hotel.EndLogradouroHotel));
+                cmd.Parameters.Add(new MySqlParameter("endNumeroHotel", hotel.EndNumeroHotel));
+                cmd.Parameters.Add(new MySqlParameter("endComplementoHotel", hotel.EndComplementoHotel));
+                cmd.Parameters.Add(new MySqlParameter("endBairroHotel", hotel.EndBairroHotel));
+                cmd.Parameters.Add(new MySqlParameter("endCepHotel", hotel.EndCepHotel));
+                cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", hotel.CidadeIdCidade));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            
+
+
+        }
+        public bool adicionarUsuario(Classes.Usuario user)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `equipe431447`.`usuario` " +
+                                                    "(`idUsuario`, " +
+                                                    "`username`, " +
+                                                    "`password`, " +
+                                                    "`tipoUsuario`) " +
+                                                    "VALUES " +
+                                                    "(0, " +
+                                                    "?username, " +
+                                                    "?password, " +
+                                                    "?tipoUsuario) ", con);
+                cmd.Parameters.Add(new MySqlParameter("username", user.Username));
+                cmd.Parameters.Add(new MySqlParameter("password", user.Password));
+                cmd.Parameters.Add(new MySqlParameter("tipoUsuario", user.AcessLevel));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarHotelQuarto(Classes.HotelQuarto hq)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                string query = "INSERT INTO `equipe431447`.`hotelquarto`" +
+                                "(`numQuarto`," +
+                                "`hotelIdHotel`," +
+                                "`tipoQuarto`," +
+                                "`diariaQuarto`)" +
+                                "VALUES" +
+                                "(?numQuarto," +
+                                "?hotelIdHotel," +
+                                "?tipoQuarto," +
+                                "?diariaQuarto)";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("numQuarto", hq.NumQuarto));
+                cmd.Parameters.Add(new MySqlParameter("hotelIdHotel", hq.HotelIdHotel));
+                cmd.Parameters.Add(new MySqlParameter("tipoQuarto", hq.TipoQuarto));
+                cmd.Parameters.Add(new MySqlParameter("diariaQuarto", hq.DiariaQuarto));
+
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarIgreja(Classes.Igreja igreja)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                // BuildMyString.com generated code. Please enjoy your string responsibly.
+
+                string query = "BEGIN;" +
+                                "INSERT INTO `equipe431447`.`pontoturistico`" +
+                                "(`idPontoTuristico`," +
+                                "`tipoPontoTuristico`," +
+                                "`nomePontoTuristico`," +
+                                "`contatoPontoTuristico`," +
+                                "`descricaoPontoTuristico`," +
+                                "`endLogradouroPontoTuristico`," +
+                                "`endTipoPontoTuristico`," +
+                                "`endNumeroPontoTuristico`," +
+                                "`endComplementoPontoTuristico`," +
+                                "`endBairroPontoTuristico`," +
+                                "`endCepPontoTuristico`," +
+                                "`cidadeIdCidade`," +
+                                "`cidadeNome`," +
+                                "`cidadeEstado`)" +
+                                "VALUES" +
+                                "(0," +
+                                "?tipoPontoTuristico," +
+                                "?nomePontoTuristico," +
+                                "?contatoPontoTuristico," +
+                                "?descricaoPontoTuristico," +
+                                "?endLogradouroPontoTuristico," +
+                                "?endTipoPontoTuristico," +
+                                "?endNumeroPontoTuristico," +
+                                "?endComplementoPontoTuristico," +
+                                "?endBairroPontoTuristico," +
+                                "?endCepPontoTuristico," +
+                                "?cidadeIdCidade," +
+                                $"(select nome from cidade where idCidade = {igreja.CidadeIdCidade})," +
+                                $"(select estado from cidade where idCidade = {igreja.CidadeIdCidade})); " +
+                                "INSERT INTO `equipe431447`.`igreja`" +
+                                "(`idIgreja`," +
+                                "`dataIgreja`," +
+                                "`estiloIgreja`," +
+                                "`pontoTuristicoIdPontoTuristico`)" +
+                                "VALUES" +
+                                "(0," +
+                                "?dataIgreja," +
+                                "?estiloIgreja," +
+                                "LAST_INSERT_ID()); " +
+                                "COMMIT;";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("tipoPontoTuristico", igreja.TipoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("nomePontoTuristico", igreja.NomePontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("contatoPontoTuristico", igreja.ContatoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("descricaoPontoTuristico", igreja.DescricaoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endLogradouroPontoTuristico", igreja.EndLogradouroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endTipoPontoTuristico", igreja.EndTipoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", igreja.EndNumeroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", igreja.EndComplementoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", igreja.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", igreja.CidadeIdCidade));
+                cmd.Parameters.Add(new MySqlParameter("dataIgreja", igreja.DataIgreja));
+                cmd.Parameters.Add(new MySqlParameter("estiloIgreja", igreja.EstiloIgreja));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarMuseu(Classes.Museu museu)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                // BuildMyString.com generated code. Please enjoy your string responsibly.
+
+                // BuildMyString.com generated code. Please enjoy your string responsibly.
+
+                string query = "BEGIN;" +
+                                "INSERT INTO `equipe431447`.`pontoturistico`" +
+                                "(`idPontoTuristico`," +
+                                "`tipoPontoTuristico`," +
+                                "`nomePontoTuristico`," +
+                                "`contatoPontoTuristico`," +
+                                "`descricaoPontoTuristico`," +
+                                "`endLogradouroPontoTuristico`," +
+                                "`endTipoPontoTuristico`," +
+                                "`endNumeroPontoTuristico`," +
+                                "`endComplementoPontoTuristico`," +
+                                "`endBairroPontoTuristico`," +
+                                "`endCepPontoTuristico`," +
+                                "`cidadeIdCidade`," +
+                                "`cidadeNome`," +
+                                "`cidadeEstado`)" +
+                                "VALUES" +
+                                "(0," +
+                                "?tipoPontoTuristico," +
+                                "?nomePontoTuristico," +
+                                "?contatoPontoTuristico," +
+                                "?descricaoPontoTuristico," +
+                                "?endLogradouroPontoTuristico," +
+                                "?endTipoPontoTuristico," +
+                                "?endNumeroPontoTuristico," +
+                                "?endComplementoPontoTuristico," +
+                                "?endBairroPontoTuristico," +
+                                "?endCepPontoTuristico," +
+                                "?cidadeIdCidade," +
+                                $"(select nome from cidade where idCidade = {museu.CidadeIdCidade})," +
+                                $"(select estado from cidade where idCidade = {museu.CidadeIdCidade})); " +
+                                "INSERT INTO `equipe431447`.`museu`" +
+                                "(`idMuseu`," +
+                                "`dataFundacaoMuseu`," +
+                                "`valorEntradaMuseu`," +
+                                "`numeroSalasMuseu`," +
+                                "`pontoTuristicoIdPontoTuristico`)" +
+                                "VALUES" +
+                                "(0," +
+                                "?dataFundacaoMuseu," +
+                                "?valorEntradaMuseu," +
+                                "?numeroSalasMuseu," +
+                                "LAST_INSERT_ID());" +
+                                "COMMIT;";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("tipoPontoTuristico", museu.TipoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("nomePontoTuristico", museu.NomePontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("contatoPontoTuristico", museu.ContatoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("descricaoPontoTuristico", museu.DescricaoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endLogradouroPontoTuristico", museu.EndLogradouroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endTipoPontoTuristico", museu.EndTipoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", museu.EndNumeroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", museu.EndComplementoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", museu.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", museu.CidadeIdCidade));
+                cmd.Parameters.Add(new MySqlParameter("dataFundacaoMuseu", museu.DataFundacaoMuseu));
+                cmd.Parameters.Add(new MySqlParameter("valorEntradaMuseu", museu.ValorEntradaMuseu));
+                cmd.Parameters.Add(new MySqlParameter("numeroSalasMuseu", museu.NumeroSalasMuseu));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarFundador(Classes.Fundador fund)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                string query = "INSERT INTO `equipe431447`.`fundador`" +
+                                "(`idFundador`," +
+                                "`nomeFundador`," +
+                                "`atividadeProfissionalFundador`," +
+                                "`nascimentoFundador`," +
+                                "`morteFundador`," +
+                                "`nacionalidadeFundador`)" +
+                                "VALUES" +
+                                "(0," +
+                                "?nomeFundador," +
+                                "?atividadeProfissionalFundador," +
+                                "?nascimentoFundador," +
+                                "?morteFundador," +
+                                "?nacionalidadeFundador);";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("nomeFundador", fund.NomeFundador));
+                cmd.Parameters.Add(new MySqlParameter("atividadeProfissionalFundador", fund.AtividadeProfissionalFundador));
+                cmd.Parameters.Add(new MySqlParameter("nascimentoFundador", fund.NascimentoFundador));
+                cmd.Parameters.Add(new MySqlParameter("morteFundador", fund.MorteFundador));
+                cmd.Parameters.Add(new MySqlParameter("nacionalidadeFundador" +
+                    "", fund.NacionalidadeFundador));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarFundadapor(Classes.Igreja igreja, Classes.Fundador fundador)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                string query = "INSERT INTO `equipe431447`.`fundadapor`" +
+                                "(`igrejaIdIgreja`," +
+                                "`Igreja_PontoTuristico_idPontoTuristico`," +
+                                "`fundadorIdFundador`)" +
+                                "VALUES" +
+                                "(?igrejaIdIgreja," +
+                                "?Igreja_PontoTuristico_idPontoTuristico," +
+                                "?fundadorIdFundador);";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("igrejaIdIgreja", igreja.IdIgreja));
+                cmd.Parameters.Add(new MySqlParameter("Igreja_PontoTuristico_idPontoTuristico", igreja.IdIgreja));
+                cmd.Parameters.Add(new MySqlParameter("fundadorIdFundador", fundador.IdFundador));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool adicionarFundadopor(Classes.Museu museu, Classes.Fundador fundador)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                string query = "INSERT INTO `equipe431447`.`fundadopor`" +
+                                "(`Museu_idMuseu`," +
+                                "`Museu_PontoTuristico_idPontoTuristico`," +
+                                "`Fundador_idFundador`)" +
+                                "VALUES" +
+                                "(?Museu_idMuseu," +
+                                "?Museu_PontoTuristico_idPontoTuristico," +
+                                "?Fundador_idFundador);";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.Add(new MySqlParameter("Museu_idMuseu", museu.IdMuseu));
+                cmd.Parameters.Add(new MySqlParameter("Museu_PontoTuristico_idPontoTuristico", museu.IdMuseu));
+                cmd.Parameters.Add(new MySqlParameter("Fundador_idFundador", fundador.IdFundador));
+                Console.WriteLine(cmd.CommandText);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        #endregion
+
+        #region Deletes
+        public bool removerCidade(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM `equipe431447`.`cidade` WHERE cidade.idCidade = ?id;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerRestaurante(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM `equipe431447`.`restaurante` WHERE restaurante.idRestaurante = ?id;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerHotel(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM `equipe431447`.`hotel` WHERE hotel.idHotel = ?id;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerUsuario(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM `equipe431447`.`usuario` WHERE usuario.idUsuario = ?id;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerIgreja(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("BEGIN;" +
+                    "DELETE FROM `equipe431447`.`igreja` WHERE igreja.idIgreja = ?id;" +
+                    "DELETE FROM `equipe431447`.`pontoturistico` WHERE pontoturistico.idPontoTuristico = ?id;" +
+                    "COMMIT;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerMuseu(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("BEGIN;" +
+                    "DELETE FROM `equipe431447`.`museu` WHERE museu.idMuseu = ?id;" +
+                    "DELETE FROM `equipe431447`.`pontoturistico` WHERE pontoturistico.idPontoTuristico = ?id;" +
+                    "COMMIT;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        public bool removerFundador(int id)
+        {
+            try
+            {
+                MySqlConnection con = createConnection();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM `equipe431447`.`fundador` WHERE fundador.idFundador = ?id;", con);
+                cmd.Parameters.Add(new MySqlParameter("id", id));
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { }
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+        #endregion
+
+        #region Updates
+
+        //TODO
+
+
+
+        #endregion
+
     }
 }

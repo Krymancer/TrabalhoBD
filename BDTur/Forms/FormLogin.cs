@@ -28,7 +28,7 @@ namespace BDTur.Forms
             MySqlConnection c = connection.GetConnection();
             try
             {
-                c.Open();
+                c.Open(); //Tentativa de realizar uma conexão com os dados fornecidos
                 Forms.FormUserLogin nextScreen = new Forms.FormUserLogin();
                 this.Visible = false;
                 nextScreen.ShowDialog();
@@ -37,7 +37,7 @@ namespace BDTur.Forms
             catch (MySqlException ex)
             {
 
-                if(ex.Code == 0x0)
+                if(ex.Code == 0x0) //Se o try retornar uma exeção tratamos ela
                 MessageBox.Show("Ocorreu um erro \n Usuário ou Senha incoretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 MessageBox.Show("Ocorreu um erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);

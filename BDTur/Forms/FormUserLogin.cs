@@ -19,7 +19,7 @@ namespace BDTur.Forms
         }
 
         /*
-         * TODO: Validade User 
+         * TODO:
          * Verify wich kind o user it is
          */
         private void btnLogin_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace BDTur.Forms
             try
             {
                 Classes.Usuario user = new Classes.Usuario(0, textBoxUser.Text, textBoxPassword.Text, 0);
-                if (user.autenticate())
+                if (user.Autenticate())
                 {
                     Forms.FormMain nextScreen = new Forms.FormMain();
                     this.Visible = false;
@@ -36,16 +36,18 @@ namespace BDTur.Forms
                 }
                 else
                 {
-                    //MessageBox.Show("Ocorreu um erro \n Usuário ou Senha incoretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //Usuario não foi atenticado
                     throw new InvalidLoginException("invalid combination of user and password");
                 }
             }
             catch (MySqlException ex)
             {
+                //Tratamento de Exeções do MySQL
                 MessageBox.Show("Ocorreu um erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex);
             }
             catch (InvalidLoginException) {
+                //Callback caso usuario não tenha sido atenticado
                 MessageBox.Show("Usuário ou Senha invalidos\n Tente Novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -56,6 +58,8 @@ namespace BDTur.Forms
         }
     }
 
+
+    //Implementação de uma Exceção customizada C#
     public class InvalidLoginException : Exception {
         public InvalidLoginException() : base() { }
         public InvalidLoginException(string message) : base(message) { }

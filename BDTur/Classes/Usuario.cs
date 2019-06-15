@@ -8,21 +8,23 @@ namespace BDTur.Classes
 
         Connection userCon =  new Connection(Program.databaseUser,Program.databasePassword); 
 
-        int idUser   { get; set; }
-        string username { get; set; }
-        string password { get; set; }
-        int acessLevel  { get; set; }
+        public int IdUser   { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public int AcessLevel  { get; set; }
 
         public Usuario(int idUser, string username, string password, int acessLevel)
         {
-            this.idUser = idUser;
-            this.username = username;
-            this.password = password;
-            this.acessLevel = acessLevel;
+            this.IdUser = idUser;
+            this.Username = username;
+            this.Password = password;
+            this.AcessLevel = acessLevel;
         }
 
-
-        public bool autenticate()
+        /// <summary>
+        /// Atentica um usuario
+        /// </summary>   
+        public bool Autenticate()
         {
             MySqlConnection con = userCon.GetConnection();
             con.Open();
@@ -32,15 +34,15 @@ namespace BDTur.Classes
                            "`usuario`.`tipoUsuario`" +
                            "FROM `equipe431447`.`usuario` where username=?username and password=?password ;";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.Add(new MySqlParameter("username", this.username));
-            cmd.Parameters.Add(new MySqlParameter("password", this.password));
+            cmd.Parameters.Add(new MySqlParameter("username", this.Username));
+            cmd.Parameters.Add(new MySqlParameter("password", this.Password));
 
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows == true)
             {
                 reader.Read();
-                this.idUser = reader.GetInt32(0);
-                this.acessLevel = reader.GetInt32(3);
+                this.IdUser = reader.GetInt32(0);
+                this.AcessLevel = reader.GetInt32(3);
                 //Console.WriteLine(reader);
                 return true;
             }

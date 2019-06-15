@@ -23,6 +23,7 @@ namespace BDTur.Classes
             EstiloIgreja = estiloIgreja;
             PontoTuristicoIdPontoTuristico = idPontoTuristico;
             ListFundadorIgreja = listFundadorIgreja;
+            TipoPontoTuristico = "Igreja";
         }
 
         public int IdIgreja { get; set; }

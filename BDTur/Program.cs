@@ -19,9 +19,9 @@ namespace BDTur
         [STAThread]
         static void Main()
         {
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.FormLogin());
             Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Forms.FormLogin());            
         }
     }
 }

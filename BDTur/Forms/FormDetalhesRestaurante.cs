@@ -86,7 +86,7 @@ namespace BDTur.Forms
                 {
                     textBoxIdRestaurante.Text = reader.GetString(0);
                     textBoxNomeRestaurante.Text = reader.GetString(1);
-                    comboBoxCategoriaRestaurante.SelectedItem = comboBoxCategoriaRestaurante.Items[reader.GetInt32(2) - 1];
+                    comboBoxCategoriaRestaurante.SelectedItem = comboBoxCategoriaRestaurante.Items[comboBoxCategoriaRestaurante.Items.IndexOf(reader.GetString(2))];
                     textBoxEspecialidadeRestaurante.Text = reader.GetString(3);
                     maskedTextBoxContatoRestaurante.Text = reader.GetString(4);
                     maskedTextBoxContatoRestaurante.Text = reader.GetString(5);
@@ -121,6 +121,18 @@ namespace BDTur.Forms
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void buttonCadastrarHotel_Click(object sender, EventArgs e)
+        {
+            if (adapter.removerRestaurante(int.Parse(textBoxIdRestaurante.Text)))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

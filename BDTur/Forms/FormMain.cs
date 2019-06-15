@@ -761,6 +761,7 @@ namespace BDTur.Forms
         {
             Forms.FormCadastrarRestaurante nextScreen = new Forms.FormCadastrarRestaurante();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void igrejaToolStripMenuItem_Click(object sender, EventArgs e)
         {
