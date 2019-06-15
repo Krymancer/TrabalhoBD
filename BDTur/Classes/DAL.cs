@@ -44,6 +44,13 @@ namespace BDTur.Classes
         }
 
         #region Adapters para os DataGridViews
+        public MySqlDataAdapter usuarioAdapter()
+        {
+            string query = "SELECT  idUsuario, username, password, tipoUsuario " +
+                "FROM usuario";
+
+            return fetchResultFromQuery(query);
+        }
         public MySqlDataAdapter cidadeAdapter()
         {
             string query = "SELECT `cidade`.`i" +

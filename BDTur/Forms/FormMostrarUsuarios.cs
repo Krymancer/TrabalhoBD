@@ -21,9 +21,9 @@ namespace BDTur.Forms
             InitializeComponent();
         }
 
-        private void populateUsuarioDataGridView(string name, string cidade, int[] categoria, bool[] restaurante)
+        private void populateUsuarioDataGridView()
         {   /*EXEMPLO DE CÓDIGO PARA POPULAR DATAGRID USUARIO
-            MySqlDataAdapter da = adapter.hotelAdapter(name, cidade, categoria, restaurante);
+            MySqlDataAdapter da = adapter.usuarioAdapter();
             if (da != null)
             {
                 DataTable dt = new DataTable();
@@ -34,7 +34,7 @@ namespace BDTur.Forms
                 catch (MySqlException ex)
                 {
                     MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Console.WriteLine($"Hotel Erro: \n{ex.Message}\n");
+                    Console.WriteLine($"Usuario Erro: \n{ex.Message}\n");
                 }
                 DataTable dtCloned = dt.Clone();
                 dtCloned.Columns[3].DataType = typeof(Int64);
