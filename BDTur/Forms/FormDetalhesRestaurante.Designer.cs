@@ -57,7 +57,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxIdRestaurante = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -364,15 +364,15 @@
             this.textBoxIdRestaurante.Size = new System.Drawing.Size(92, 20);
             this.textBoxIdRestaurante.TabIndex = 15;
             // 
-            // button1
+            // buttonEditar
             // 
-            this.button1.Location = new System.Drawing.Point(375, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEditar.Location = new System.Drawing.Point(375, 298);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 21;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonCadastrarHotel
             // 
@@ -389,7 +389,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 335);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCadastrarHotel);
             this.Controls.Add(this.buttonCancelarCadastroRestaurante);
             this.Controls.Add(this.groupBox2);
@@ -422,7 +422,7 @@
         private System.Windows.Forms.Button buttonCancelarCadastroRestaurante;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonCadastrarHotel;
         private System.Windows.Forms.TextBox textBoxIdRestaurante;
     }

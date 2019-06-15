@@ -110,11 +110,6 @@ namespace BDTur.Forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxEndNumeroRestaurante_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verify that the pressed key isn't CTRL or any non-numeric digit
@@ -129,10 +124,73 @@ namespace BDTur.Forms
             if (adapter.removerRestaurante(int.Parse(textBoxIdRestaurante.Text)))
             {
                 MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private Classes.Restaurante createRestaurante() {
+            Classes.Restaurante r;
+
+            try
+            {
+                string restNome = textBoxNomeRestaurante.Text;
+                string restCategoria = comboBoxCategoriaRestaurante.SelectedItem.ToString();
+                string restEspecialidade = textBoxEspecialidadeRestaurante.Text;
+                maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string restContato = maskedTextBoxContatoRestaurante.Text;
+                maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
+                float restPreco = float.Parse(maskedTextBoxPrecoMedioRestaurante.Text.ToString()) / 100;
+                maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string restEndTipo = comboBoxEndTipoRestaurante.SelectedItem.ToString();
+                string restEndLog = textBoxEndLogradouroRestaurante.Text;
+                string restEndNum = textBoxEndNumeroRestaurante.Text;
+                string restComp;
+                try
+                {
+                    restComp = textBoxEndComplementoRestaurante.Text;
+                }
+                catch (NullReferenceException)
+                {
+                    restComp = "";
+                }
+                string restEndBairro = textBoxEndBairroRestaurante.Text;
+                maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string restEndCep = maskedTextBoxEndCepRestaurante.Text;
+                maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                int restCid = int.Parse(comboBoxEndCidadeRestaurante.SelectedValue.ToString());
+                if (restCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+
+                r = new Classes.Restaurante(0, restNome, restCategoria, restEspecialidade, restPreco, restContato, restEndTipo, restEndLog, restEndNum, restComp, restEndBairro, restEndCep, restCid);
+                if (adapter.atualizarRestaurante(r))
+                {
+                    MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                //Erro ao resgatar valores dos componentes
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidSelectValue)
+            {
+                //Tratar se usuario não tenha selecionado uma cidade valida
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
