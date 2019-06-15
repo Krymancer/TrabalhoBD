@@ -54,8 +54,8 @@
             this.comboBoxEndTipoRestaurante = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoRestaurante = new System.Windows.Forms.MaskedTextBox();
             this.buttonCancelarCadastroRestaurante = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEndereço = new System.Windows.Forms.GroupBox();
+            this.groupBoxDados = new System.Windows.Forms.GroupBox();
             this.textBoxIdRestaurante = new System.Windows.Forms.TextBox();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
@@ -72,8 +72,8 @@
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label13 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxEndereço.SuspendLayout();
+            this.groupBoxDados.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -197,10 +197,11 @@
             // 
             this.maskedTextBoxPrecoMedioRestaurante.Enabled = false;
             this.maskedTextBoxPrecoMedioRestaurante.Location = new System.Drawing.Point(9, 185);
-            this.maskedTextBoxPrecoMedioRestaurante.Mask = "$ ";
+            this.maskedTextBoxPrecoMedioRestaurante.Mask = "$ ###.##";
             this.maskedTextBoxPrecoMedioRestaurante.Name = "maskedTextBoxPrecoMedioRestaurante";
             this.maskedTextBoxPrecoMedioRestaurante.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxPrecoMedioRestaurante.TabIndex = 3;
+            this.maskedTextBoxPrecoMedioRestaurante.Text = "00000";
             this.maskedTextBoxPrecoMedioRestaurante.ValidatingType = typeof(int);
             // 
             // textBoxEspecialidadeRestaurante
@@ -312,49 +313,49 @@
             this.buttonCancelarCadastroRestaurante.Text = "Cancelar";
             this.buttonCancelarCadastroRestaurante.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBoxEndereço
             // 
-            this.groupBox2.Controls.Add(this.comboBoxEndCidadeRestaurante);
-            this.groupBox2.Controls.Add(label10);
-            this.groupBox2.Controls.Add(this.maskedTextBoxEndCepRestaurante);
-            this.groupBox2.Controls.Add(this.textBoxEndBairroRestaurante);
-            this.groupBox2.Controls.Add(this.textBoxEndComplementoRestaurante);
-            this.groupBox2.Controls.Add(this.textBoxEndNumeroRestaurante);
-            this.groupBox2.Controls.Add(label9);
-            this.groupBox2.Controls.Add(this.textBoxEndLogradouroRestaurante);
-            this.groupBox2.Controls.Add(label8);
-            this.groupBox2.Controls.Add(this.comboBoxEndTipoRestaurante);
-            this.groupBox2.Controls.Add(label4);
-            this.groupBox2.Controls.Add(label5);
-            this.groupBox2.Controls.Add(label7);
-            this.groupBox2.Controls.Add(label6);
-            this.groupBox2.Location = new System.Drawing.Point(288, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 263);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereço";
+            this.groupBoxEndereço.Controls.Add(this.comboBoxEndCidadeRestaurante);
+            this.groupBoxEndereço.Controls.Add(label10);
+            this.groupBoxEndereço.Controls.Add(this.maskedTextBoxEndCepRestaurante);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndBairroRestaurante);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndComplementoRestaurante);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndNumeroRestaurante);
+            this.groupBoxEndereço.Controls.Add(label9);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndLogradouroRestaurante);
+            this.groupBoxEndereço.Controls.Add(label8);
+            this.groupBoxEndereço.Controls.Add(this.comboBoxEndTipoRestaurante);
+            this.groupBoxEndereço.Controls.Add(label4);
+            this.groupBoxEndereço.Controls.Add(label5);
+            this.groupBoxEndereço.Controls.Add(label7);
+            this.groupBoxEndereço.Controls.Add(label6);
+            this.groupBoxEndereço.Location = new System.Drawing.Point(288, 12);
+            this.groupBoxEndereço.Name = "groupBoxEndereço";
+            this.groupBoxEndereço.Size = new System.Drawing.Size(360, 263);
+            this.groupBoxEndereço.TabIndex = 19;
+            this.groupBoxEndereço.TabStop = false;
+            this.groupBoxEndereço.Text = "Endereço";
             // 
-            // groupBox1
+            // groupBoxDados
             // 
-            this.groupBox1.Controls.Add(this.textBoxIdRestaurante);
-            this.groupBox1.Controls.Add(label13);
-            this.groupBox1.Controls.Add(this.maskedTextBoxPrecoMedioRestaurante);
-            this.groupBox1.Controls.Add(label12);
-            this.groupBox1.Controls.Add(this.textBoxEspecialidadeRestaurante);
-            this.groupBox1.Controls.Add(label11);
-            this.groupBox1.Controls.Add(this.comboBoxCategoriaRestaurante);
-            this.groupBox1.Controls.Add(this.maskedTextBoxContatoRestaurante);
-            this.groupBox1.Controls.Add(this.textBoxNomeRestaurante);
-            this.groupBox1.Controls.Add(label1);
-            this.groupBox1.Controls.Add(label2);
-            this.groupBox1.Controls.Add(label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 263);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados";
+            this.groupBoxDados.Controls.Add(this.textBoxIdRestaurante);
+            this.groupBoxDados.Controls.Add(label13);
+            this.groupBoxDados.Controls.Add(this.maskedTextBoxPrecoMedioRestaurante);
+            this.groupBoxDados.Controls.Add(label12);
+            this.groupBoxDados.Controls.Add(this.textBoxEspecialidadeRestaurante);
+            this.groupBoxDados.Controls.Add(label11);
+            this.groupBoxDados.Controls.Add(this.comboBoxCategoriaRestaurante);
+            this.groupBoxDados.Controls.Add(this.maskedTextBoxContatoRestaurante);
+            this.groupBoxDados.Controls.Add(this.textBoxNomeRestaurante);
+            this.groupBoxDados.Controls.Add(label1);
+            this.groupBoxDados.Controls.Add(label2);
+            this.groupBoxDados.Controls.Add(label3);
+            this.groupBoxDados.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxDados.Name = "groupBoxDados";
+            this.groupBoxDados.Size = new System.Drawing.Size(261, 263);
+            this.groupBoxDados.TabIndex = 17;
+            this.groupBoxDados.TabStop = false;
+            this.groupBoxDados.Text = "Dados";
             // 
             // textBoxIdRestaurante
             // 
@@ -392,15 +393,15 @@
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCadastrarHotel);
             this.Controls.Add(this.buttonCancelarCadastroRestaurante);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxEndereço);
+            this.Controls.Add(this.groupBoxDados);
             this.Name = "FormDetalhesRestaurante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Restaurante";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxEndereço.ResumeLayout(false);
+            this.groupBoxEndereço.PerformLayout();
+            this.groupBoxDados.ResumeLayout(false);
+            this.groupBoxDados.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -420,8 +421,8 @@
         private System.Windows.Forms.ComboBox comboBoxEndTipoRestaurante;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoRestaurante;
         private System.Windows.Forms.Button buttonCancelarCadastroRestaurante;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEndereço;
+        private System.Windows.Forms.GroupBox groupBoxDados;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonCadastrarHotel;
         private System.Windows.Forms.TextBox textBoxIdRestaurante;

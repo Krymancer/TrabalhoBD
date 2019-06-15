@@ -699,6 +699,7 @@ namespace BDTur.Forms
                 int id = int.Parse(dataGridViewHotel.Rows[e.RowIndex].Cells[0].Value.ToString());                
                 Forms.FormDetalhesHotel nextScreen = new Forms.FormDetalhesHotel(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }            
         }
         private void dataGridViewRestaurante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)                  
@@ -708,16 +709,17 @@ namespace BDTur.Forms
                 int id = int.Parse(dataGridViewRestaurante.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesRestaurante nextScreen = new Forms.FormDetalhesRestaurante(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }
         }
         private void dataGridViewIgreja_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1 && e.RowIndex < dataGridViewIgreja.RowCount)
             {
-                int id = int.Parse(dataGridViewIgreja.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Console.WriteLine("idddd" + id);
+                int id = int.Parse(dataGridViewIgreja.Rows[e.RowIndex].Cells[0].Value.ToString());                
                 Forms.FormDetalhesIgreja nextScreen = new Forms.FormDetalhesIgreja(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }
         }
         private void dataGridViewMuseu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -727,6 +729,7 @@ namespace BDTur.Forms
                 int id = int.Parse(dataGridViewMuseu.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesMuseu nextScreen = new Forms.FormDetalhesMuseu(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }
         }
         private void dataGridViewCasadeShow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -736,6 +739,7 @@ namespace BDTur.Forms
                 int id = int.Parse(dataGridViewCasadeShow.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesCasadeShow nextScreen = new Forms.FormDetalhesCasadeShow(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }
         }
         private void dataGridViewFundadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -745,17 +749,21 @@ namespace BDTur.Forms
                 int id = int.Parse(dataGridViewFundadores.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Forms.FormDetalhesFundador nextScreen = new Forms.FormDetalhesFundador(id);
                 nextScreen.ShowDialog();
+                refreshDataGridViews();
             }
         }
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.FormCadastrarCidade nextScreen = new Forms.FormCadastrarCidade();            
             nextScreen.ShowDialog();
+            populateComboBoxes();
+            refreshDataGridViews();
         }
         private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.FormCadastrarHotel nextScreen = new Forms.FormCadastrarHotel();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void restauranteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -767,21 +775,25 @@ namespace BDTur.Forms
         {
             Forms.FormCadastrarIgreja nextScreen = new Forms.FormCadastrarIgreja();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void museuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.FormCadastrarMuseu nextScreen = new Forms.FormCadastrarMuseu();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void casaDeShowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.FormCadastrarCasaDeShow nextScreen = new Forms.FormCadastrarCasaDeShow();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void fundadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.FormCadastrarFundador nextScreen = new Forms.FormCadastrarFundador();
             nextScreen.ShowDialog();
+            refreshDataGridViews();
         }
         private void usariosToolStripMenuItem_Click(object sender, EventArgs e)
         {

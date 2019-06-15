@@ -1095,8 +1095,8 @@ namespace BDTur.Classes
                 "`endBairroRestaurante` = ?endBairroRestaurante," +
                 "`endCepRestaurante` = ?endCepRestaurante," +
                 "`cidadeIdCidade` = ?cidadeIdCidade," +
-                "`cidadeNome` = ?cidadeNome," +
-                "`cidadeEstado` = ?cidadeEstado" +
+                "`cidadeNome` = (select nome from cidade where idCidade = ?cidadeIdCidade)," +
+                "`cidadeEstado` = (select estado from cidade where idCidade = ?cidadeIdCidade)" +
                 "WHERE `idRestaurante` = ?id;";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
@@ -1114,6 +1114,7 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", restaurante.CidadeIdCidade));
                 cmd.Parameters.Add(new MySqlParameter("id", restaurante.IdRestaurante));
                 MySqlDataReader reader;
+                Console.WriteLine(cmd.CommandText);
                 reader = cmd.ExecuteReader();
                 while (reader.Read()) { }
                 con.Close();

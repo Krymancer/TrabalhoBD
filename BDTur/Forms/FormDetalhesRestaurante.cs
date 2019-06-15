@@ -15,6 +15,7 @@ namespace BDTur.Forms
     {
 
         Classes.DAL adapter = new Classes.DAL();
+        bool editar = false;
 
         public FormDetalhesRestaurante(int id)
         {
@@ -88,8 +89,9 @@ namespace BDTur.Forms
                     textBoxNomeRestaurante.Text = reader.GetString(1);
                     comboBoxCategoriaRestaurante.SelectedItem = comboBoxCategoriaRestaurante.Items[comboBoxCategoriaRestaurante.Items.IndexOf(reader.GetString(2))];
                     textBoxEspecialidadeRestaurante.Text = reader.GetString(3);
-                    maskedTextBoxContatoRestaurante.Text = reader.GetString(4);
-                    maskedTextBoxContatoRestaurante.Text = reader.GetString(5);
+                    string preco = reader.GetFloat(4).ToString().PadLeft(5);
+                    maskedTextBoxPrecoMedioRestaurante.Text = preco;
+                    maskedTextBoxContatoRestaurante.Text = reader.GetString(5); 
                     int index = comboBoxEndTipoRestaurante.Items.IndexOf(reader.GetString(6));
                     comboBoxEndTipoRestaurante.SelectedItem = comboBoxEndTipoRestaurante.Items[index];
                     textBoxEndLogradouroRestaurante.Text = reader.GetString(7);
@@ -134,64 +136,92 @@ namespace BDTur.Forms
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private Classes.Restaurante createRestaurante() {
-            Classes.Restaurante r;
-
-            try
+            if (!editar)
             {
-                string restNome = textBoxNomeRestaurante.Text;
-                string restCategoria = comboBoxCategoriaRestaurante.SelectedItem.ToString();
-                string restEspecialidade = textBoxEspecialidadeRestaurante.Text;
-                maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                string restContato = maskedTextBoxContatoRestaurante.Text;
-                maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-                maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
-                float restPreco = float.Parse(maskedTextBoxPrecoMedioRestaurante.Text.ToString()) / 100;
-                maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-                string restEndTipo = comboBoxEndTipoRestaurante.SelectedItem.ToString();
-                string restEndLog = textBoxEndLogradouroRestaurante.Text;
-                string restEndNum = textBoxEndNumeroRestaurante.Text;
-                string restComp;
+                groupBoxDados.Controls.Cast<Control>().ToList()
+                .ForEach(x => {  x.Enabled = true;  });
+                groupBoxEndereço.Controls.Cast<Control>().ToList()
+                .ForEach(x => {  x.Enabled = true; });
+                textBoxIdRestaurante.Enabled = false;
+                buttonEditar.Text = "Salvar";
+                editar = !editar; 
+            }
+            else
+            {
+                Classes.Restaurante r;
+
                 try
                 {
-                    restComp = textBoxEndComplementoRestaurante.Text;
+                    int restID = int.Parse(textBoxIdRestaurante.Text);
+                    string restNome = textBoxNomeRestaurante.Text;
+                    string restCategoria = comboBoxCategoriaRestaurante.SelectedItem.ToString();
+                    string restEspecialidade = textBoxEspecialidadeRestaurante.Text;
+                    maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string restContato = maskedTextBoxContatoRestaurante.Text;
+                    maskedTextBoxContatoRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
+                    float restPreco = 0;
+                    try
+                    {
+                        restPreco = float.Parse(maskedTextBoxPrecoMedioRestaurante.Text.ToString()) / 100;
+                    }
+                    catch (FormatException)
+                    {                        
+                        //MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw new NullReferenceException("PREÇO");
+                    }
+                    maskedTextBoxPrecoMedioRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    string restEndTipo = comboBoxEndTipoRestaurante.SelectedItem.ToString();
+                    string restEndLog = textBoxEndLogradouroRestaurante.Text;
+                    string restEndNum = textBoxEndNumeroRestaurante.Text;
+                    string restComp;
+                    try
+                    {
+                        restComp = textBoxEndComplementoRestaurante.Text;
+                    }
+                    catch (NullReferenceException)
+                    {
+                        restComp = "";
+                    }
+                    string restEndBairro = textBoxEndBairroRestaurante.Text;
+                    maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string restEndCep = maskedTextBoxEndCepRestaurante.Text;
+                    maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    int restCid = int.Parse(comboBoxEndCidadeRestaurante.SelectedValue.ToString());
+                    if (restCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+
+                    r = new Classes.Restaurante(restID, restNome, restCategoria, restEspecialidade, restPreco, restContato, restEndTipo, restEndLog, restEndNum, restComp, restEndBairro, restEndCep, restCid);
+                    if (adapter.atualizarRestaurante(r))
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.Close();
+                        editar = !editar;
+                        groupBoxDados.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        groupBoxEndereço.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        buttonEditar.Text = "Editar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);                        
+                    }
+
                 }
                 catch (NullReferenceException)
                 {
-                    restComp = "";
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                 }
-                string restEndBairro = textBoxEndBairroRestaurante.Text;
-                maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                string restEndCep = maskedTextBoxEndCepRestaurante.Text;
-                maskedTextBoxEndCepRestaurante.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-                int restCid = int.Parse(comboBoxEndCidadeRestaurante.SelectedValue.ToString());
-                if (restCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
-
-                r = new Classes.Restaurante(0, restNome, restCategoria, restEspecialidade, restPreco, restContato, restEndTipo, restEndLog, restEndNum, restComp, restEndBairro, restEndCep, restCid);
-                if (adapter.atualizarRestaurante(r))
+                catch (InvalidSelectValue)
                 {
-                    MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
+                }                                                   
+                
+            }
 
-            }
-            catch (NullReferenceException)
-            {
-                //Erro ao resgatar valores dos componentes
-                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (InvalidSelectValue)
-            {
-                //Tratar se usuario não tenha selecionado uma cidade valida
-                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
+
     }
 }
