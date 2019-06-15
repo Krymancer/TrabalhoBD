@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace BDTur.Forms
 {
-    public partial class FormMostrarUsuarios : Form
+    public partial class FormUsuario : Form
     {
         Classes.DAL adapter = new Classes.DAL();
         int[] NivelAcessoUsuario = new int[] { 1, 2, 3 };
 
-        public FormMostrarUsuarios()
+        public FormUsuario()
         {
             InitializeComponent();
         }

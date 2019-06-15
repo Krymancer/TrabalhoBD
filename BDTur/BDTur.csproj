@@ -123,11 +123,23 @@
     <Compile Include="Forms\FormCadastrarRestaurante.Designer.cs">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCidades.Designer.cs">
+      <DependentUpon>FormCidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDetalhesCasadeShow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormDetalhesCasadeShow.Designer.cs">
       <DependentUpon>FormDetalhesCasadeShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesCidade.Designer.cs">
+      <DependentUpon>FormDetalhesCidade.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormDetalhesFundador.cs">
       <SubType>Form</SubType>
@@ -171,11 +183,11 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormMostrarUsuarios.cs">
+    <Compile Include="Forms\FormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormMostrarUsuarios.Designer.cs">
-      <DependentUpon>FormMostrarUsuarios.cs</DependentUpon>
+    <Compile Include="Forms\FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormUserLogin.cs">
       <SubType>Form</SubType>
@@ -209,8 +221,14 @@
     <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCidades.resx">
+      <DependentUpon>FormCidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesCasadeShow.resx">
       <DependentUpon>FormDetalhesCasadeShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesCidade.resx">
+      <DependentUpon>FormDetalhesCidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesFundador.resx">
       <DependentUpon>FormDetalhesFundador.cs</DependentUpon>
@@ -233,8 +251,8 @@
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormMostrarUsuarios.resx">
-      <DependentUpon>FormMostrarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUserLogin.resx">
       <DependentUpon>FormUserLogin.cs</DependentUpon>
