@@ -171,6 +171,12 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormMostrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMostrarUsuarios.Designer.cs">
+      <DependentUpon>FormMostrarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormUserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMostrarUsuarios.resx">
+      <DependentUpon>FormMostrarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUserLogin.resx">
       <DependentUpon>FormUserLogin.cs</DependentUpon>

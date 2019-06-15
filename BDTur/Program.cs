@@ -21,7 +21,7 @@ namespace BDTur
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.FormLogin());            
+            Application.Run(new Forms.FormMostrarUsuarios()/*new Forms.FormLogin()*/);            
         }
     }
 }
