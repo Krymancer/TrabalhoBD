@@ -1666,7 +1666,8 @@ namespace BDTur.Classes
                                 "UPDATE `equipe431447`.`casadeshow`" +
                                 "SET" +
                                 "`diaFechamentoCasadeShow` =   ?diaFechamentoCasadeShow  ," +
-                                "`horaInicioCasadeShow` =   ?horaInicioCasadeShow " +                                
+                                "`horaInicioCasadeShow` =   ?horaInicioCasadeShow, " +
+                                $"`restauranteIdRestaurante` = {cs.RestauranteIdRestaurante} " +
                                 "WHERE `idCasadeShow` =  ?idCasadeShow;" +
                                 "COMMIT;";
                 MySqlCommand cmd = new MySqlCommand(query, con);
