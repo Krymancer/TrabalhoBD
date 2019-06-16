@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label14;
-            System.Windows.Forms.Label label15;
             System.Windows.Forms.Label label13;
             System.Windows.Forms.Label label12;
             System.Windows.Forms.Label label2;
@@ -45,10 +43,7 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label16;
             this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
-            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
-            this.buttonAddFundador = new System.Windows.Forms.Button();
             this.groupBoxFundador = new System.Windows.Forms.GroupBox();
-            this.buttonRemoveFundador = new System.Windows.Forms.Button();
             this.textBoxNumeroDeSalasMuseu = new System.Windows.Forms.TextBox();
             this.maskedTextBoxValorEntradaMuseu = new System.Windows.Forms.MaskedTextBox();
             this.monthCalendarFundacaoMuseu = new System.Windows.Forms.MonthCalendar();
@@ -68,8 +63,6 @@
             this.textBoxEndLogradouroMuseu = new System.Windows.Forms.TextBox();
             this.comboBoxEndTipoMuseu = new System.Windows.Forms.ComboBox();
             this.buttonEditar = new System.Windows.Forms.Button();
-            label14 = new System.Windows.Forms.Label();
-            label15 = new System.Windows.Forms.Label();
             label13 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -88,24 +81,6 @@
             this.groupBoxDados.SuspendLayout();
             this.groupBoxEndereço.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(201, 19);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(127, 13);
-            label14.TabIndex = 17;
-            label14.Text = "Fundadores Seleciondos:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(6, 19);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(123, 13);
-            label15.TabIndex = 16;
-            label15.Text = "Fundadores Disponivéis:";
             // 
             // label13
             // 
@@ -238,55 +213,20 @@
             this.listBoxFundadoresSelecionados.DisplayMember = "nomeFundador";
             this.listBoxFundadoresSelecionados.Enabled = false;
             this.listBoxFundadoresSelecionados.FormattingEnabled = true;
-            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(193, 35);
+            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(9, 22);
             this.listBoxFundadoresSelecionados.Name = "listBoxFundadoresSelecionados";
-            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(336, 147);
             this.listBoxFundadoresSelecionados.TabIndex = 23;
-            // 
-            // listBoxFundadoresDisponiveis
-            // 
-            this.listBoxFundadoresDisponiveis.DisplayMember = "nomeFundador";
-            this.listBoxFundadoresDisponiveis.Enabled = false;
-            this.listBoxFundadoresDisponiveis.FormattingEnabled = true;
-            this.listBoxFundadoresDisponiveis.Location = new System.Drawing.Point(6, 35);
-            this.listBoxFundadoresDisponiveis.Name = "listBoxFundadoresDisponiveis";
-            this.listBoxFundadoresDisponiveis.Size = new System.Drawing.Size(152, 134);
-            this.listBoxFundadoresDisponiveis.TabIndex = 22;
-            // 
-            // buttonAddFundador
-            // 
-            this.buttonAddFundador.Location = new System.Drawing.Point(164, 73);
-            this.buttonAddFundador.Name = "buttonAddFundador";
-            this.buttonAddFundador.Size = new System.Drawing.Size(25, 23);
-            this.buttonAddFundador.TabIndex = 20;
-            this.buttonAddFundador.Text = ">";
-            this.buttonAddFundador.UseVisualStyleBackColor = true;
-            this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
             // 
             // groupBoxFundador
             // 
             this.groupBoxFundador.Controls.Add(this.listBoxFundadoresSelecionados);
-            this.groupBoxFundador.Controls.Add(this.listBoxFundadoresDisponiveis);
-            this.groupBoxFundador.Controls.Add(this.buttonRemoveFundador);
-            this.groupBoxFundador.Controls.Add(this.buttonAddFundador);
-            this.groupBoxFundador.Controls.Add(label14);
-            this.groupBoxFundador.Controls.Add(label15);
             this.groupBoxFundador.Location = new System.Drawing.Point(288, 255);
             this.groupBoxFundador.Name = "groupBoxFundador";
             this.groupBoxFundador.Size = new System.Drawing.Size(345, 181);
             this.groupBoxFundador.TabIndex = 26;
             this.groupBoxFundador.TabStop = false;
-            this.groupBoxFundador.Text = "Fundador";
-            // 
-            // buttonRemoveFundador
-            // 
-            this.buttonRemoveFundador.Location = new System.Drawing.Point(164, 102);
-            this.buttonRemoveFundador.Name = "buttonRemoveFundador";
-            this.buttonRemoveFundador.Size = new System.Drawing.Size(25, 23);
-            this.buttonRemoveFundador.TabIndex = 21;
-            this.buttonRemoveFundador.Text = "<";
-            this.buttonRemoveFundador.UseVisualStyleBackColor = true;
-            this.buttonRemoveFundador.Click += new System.EventHandler(this.buttonRemoveFundador_Click);
+            this.groupBoxFundador.Text = "Fundadores";
             // 
             // textBoxNumeroDeSalasMuseu
             // 
@@ -300,7 +240,7 @@
             // 
             this.maskedTextBoxValorEntradaMuseu.Enabled = false;
             this.maskedTextBoxValorEntradaMuseu.Location = new System.Drawing.Point(113, 120);
-            this.maskedTextBoxValorEntradaMuseu.Mask = "$";
+            this.maskedTextBoxValorEntradaMuseu.Mask = "$ ###,##";
             this.maskedTextBoxValorEntradaMuseu.Name = "maskedTextBoxValorEntradaMuseu";
             this.maskedTextBoxValorEntradaMuseu.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxValorEntradaMuseu.TabIndex = 18;
@@ -499,7 +439,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Museu";
             this.groupBoxFundador.ResumeLayout(false);
-            this.groupBoxFundador.PerformLayout();
             this.groupBoxDados.ResumeLayout(false);
             this.groupBoxDados.PerformLayout();
             this.groupBoxEndereço.ResumeLayout(false);
@@ -511,10 +450,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBoxFundadoresSelecionados;
-        private System.Windows.Forms.ListBox listBoxFundadoresDisponiveis;
-        private System.Windows.Forms.Button buttonAddFundador;
         private System.Windows.Forms.GroupBox groupBoxFundador;
-        private System.Windows.Forms.Button buttonRemoveFundador;
         private System.Windows.Forms.TextBox textBoxNumeroDeSalasMuseu;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorEntradaMuseu;
         private System.Windows.Forms.MonthCalendar monthCalendarFundacaoMuseu;

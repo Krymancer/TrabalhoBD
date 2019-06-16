@@ -116,7 +116,7 @@ namespace BDTur.Forms
 
         private void populateListView()
         {
-            listBoxFundadoresDisponiveis.DataSource = fundadores;
+            //listBoxFundadoresDisponiveis.DataSource = fundadores;
             listBoxFundadoresSelecionados.DataSource = selecionados;
         }
 
@@ -163,49 +163,87 @@ namespace BDTur.Forms
             }
         }
 
-        private void buttonAddFundador_Click(object sender, EventArgs e)
-        {
-            string a = listBoxFundadoresDisponiveis.GetItemText(listBoxFundadoresDisponiveis.SelectedItem);
-
-            foreach (DataRow dr in fundadores.Rows)
-            {
-                if (dr["nomeFundador"].Equals(a))
-                {
-                    selecionados.ImportRow(dr);
-                    fundadores.Rows.Remove(dr);
-                    break;
-                }
-            }
-        }
-
-        private void buttonRemoveFundador_Click(object sender, EventArgs e)
-        {
-            string a = listBoxFundadoresSelecionados.GetItemText(listBoxFundadoresSelecionados.SelectedItem);
-
-            foreach (DataRow dr in selecionados.Rows)
-            {
-                if (dr["nomeFundador"].Equals(a))
-                {
-                    fundadores.ImportRow(dr);
-                    selecionados.Rows.Remove(dr);
-                    break;
-                }
-            }
-        }
-
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (editar)
+            if (!editar)
             {
-             //AtualizarDados();   
+                groupBoxDados.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                groupBoxDados.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                textBoxIdMuseu.Enabled = false;
+                
+                buttonEditar.Text = "Salvar";
+                editar = !editar;
             }
-            groupBoxDados.Controls.Cast<Control>().ToList()
-            .ForEach(c => c.Enabled = true);
-            groupBoxEndereço.Controls.Cast<Control>().ToList()
-            .ForEach(c => c.Enabled = true);
-            groupBoxFundador.Controls.Cast<Control>().ToList()
-            .ForEach(c => c.Enabled = true);            
-            editar = !editar;          
+            else
+            {
+                bool sucess = true;
+                try
+                {
+                    string museuNome = textBoxNomeMuseu.Text;
+                    maskedTextBoxValorEntradaMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    float museuPreco = float.Parse(maskedTextBoxValorEntradaMuseu.Text) / 100;
+                    maskedTextBoxValorEntradaMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    string museuNumSalas = textBoxNumeroDeSalasMuseu.Text;
+                    DateTime museuFund = monthCalendarFundacaoMuseu.SelectionStart;
+                    maskedTextBoxContatoMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string contato = maskedTextBoxContatoMuseu.Text;
+                    maskedTextBoxContatoMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    string descricao = textBoxDescricaoMuseu.Text;
+
+                    string endTip = comboBoxEndTipoMuseu.SelectedItem.ToString();
+                    string endLog = textBoxEndLogradouroMuseu.Text;
+                    string endNum = textBoxEndNumeroMuseu.Text;
+                    string endComp;
+                    try
+                    {
+                        endComp = textBoxEndComplementoMuseu.Text;
+                    }
+                    catch (NullReferenceException)
+                    {
+                        endComp = "";
+                    }
+                    string endBairro = textBoxEndBairroMuseu.Text;
+                    maskedTextBoxEndCepMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string endCep = maskedTextBoxEndCepMuseu.Text;
+                    maskedTextBoxEndCepMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    int cidade = int.Parse(comboBoxEndCidadeMuseu.SelectedValue.ToString());
+                    if (cidade == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                    int id = int.Parse(textBoxIdMuseu.Text);
+                    Classes.Museu m = new Classes.Museu(id, museuFund, museuPreco, museuNumSalas, null, 0, "Museu", museuNome, contato, descricao, endTip, endLog, endNum, endComp, endBairro, endCep, cidade);
+                    if (!adapter.atualizarMuseu(m))
+                    {
+                        sucess = false;
+                        //MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    if (sucess)
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (NullReferenceException)
+                {
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (InvalidSelectValue)
+                {
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void textBoxEndNumeroMuseu_KeyPress(object sender, KeyPressEventArgs e)

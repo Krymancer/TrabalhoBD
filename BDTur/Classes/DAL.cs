@@ -1434,7 +1434,7 @@ namespace BDTur.Classes
                                 "UPDATE `equipe431447`.`igreja`" +
                                 "SET" +
                                 "`dataIgreja` =   ?dataIgreja," +
-                                "`estiloIgreja` =   ?estiloIgreja, " +                                
+                                "`estiloIgreja` =   ?estiloIgreja  " +                                
                                 "WHERE `idIgreja` =   ?idIgreja;" +
                                 "COMMIT;";               
 
@@ -1488,15 +1488,15 @@ namespace BDTur.Classes
                                 "`endComplementoPontoTuristico` =   ?endComplementoPontoTuristico  ," +
                                 "`endBairroPontoTuristico` =   ?endBairroPontoTuristico  ," +
                                 "`endCepPontoTuristico` =   ?endCepPontoTuristico  ," +
-                                $"`cidadeIdCidade` =   ?cidadeIdCidade  ," +
+                                "`cidadeIdCidade` =   ?cidadeIdCidade  ," +
                                 $"`cidadeNome` =   (select nome from cidade where idCidade = {museu.CidadeIdCidade})  ," +
-                                "`cidadeEstado` =   (select estado from cidade where idCidade = {museu.CidadeIdCidade})  " +
+                                $"`cidadeEstado` =   (select estado from cidade where idCidade = {museu.CidadeIdCidade})  " +
                                 "WHERE `idPontoTuristico` =   ?idPontoTuristico;" +
-                                "UPDATE `equipe431447`.`museu`" +
-                                "SET" +
+                                "UPDATE `equipe431447`.`museu` " +
+                                "SET " +
                                 "`dataFundacaoMuseu` =   ?dataFundacaoMuseu," +
                                 "`valorEntradaMuseu` =   ?valorEntradaMuseu," +
-                                "`numeroSalasMuseu` =   ?numeroSalasMuseu, " +                                
+                                "`numeroSalasMuseu` =   ?numeroSalasMuseu " +                                
                                 "WHERE `idMuseu` =   ?idMuseu;" +
                                 "COMMIT;";
                 MySqlCommand cmd = new MySqlCommand(query, con);

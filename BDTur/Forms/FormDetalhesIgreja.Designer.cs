@@ -33,8 +33,6 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label14;
-            System.Windows.Forms.Label label13;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label8;
@@ -51,9 +49,6 @@
             this.textBoxIdIgreja = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoIgreja = new System.Windows.Forms.MaskedTextBox();
             this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
-            this.listBoxFundadoresDisponiveis = new System.Windows.Forms.ListBox();
-            this.buttonRemoveFundador = new System.Windows.Forms.Button();
-            this.buttonAddFundador = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonCancelarCadastroIgreja = new System.Windows.Forms.Button();
             this.buttonCadastrarIgreja = new System.Windows.Forms.Button();
@@ -71,8 +66,6 @@
             label11 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            label14 = new System.Windows.Forms.Label();
-            label13 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -130,24 +123,6 @@
             label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 2;
             label3.Text = "Contato:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(201, 19);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(127, 13);
-            label14.TabIndex = 17;
-            label14.Text = "Fundadores Seleciondos:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(6, 19);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(123, 13);
-            label13.TabIndex = 16;
-            label13.Text = "Fundadores Disponivéis:";
             // 
             // label10
             // 
@@ -296,57 +271,20 @@
             this.listBoxFundadoresSelecionados.DisplayMember = "nomeFundador";
             this.listBoxFundadoresSelecionados.Enabled = false;
             this.listBoxFundadoresSelecionados.FormattingEnabled = true;
-            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(192, 35);
+            this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(9, 22);
             this.listBoxFundadoresSelecionados.Name = "listBoxFundadoresSelecionados";
-            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(152, 134);
+            this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(335, 147);
             this.listBoxFundadoresSelecionados.TabIndex = 23;
-            // 
-            // listBoxFundadoresDisponiveis
-            // 
-            this.listBoxFundadoresDisponiveis.DisplayMember = "nomeFundador";
-            this.listBoxFundadoresDisponiveis.Enabled = false;
-            this.listBoxFundadoresDisponiveis.FormattingEnabled = true;
-            this.listBoxFundadoresDisponiveis.Location = new System.Drawing.Point(6, 35);
-            this.listBoxFundadoresDisponiveis.Name = "listBoxFundadoresDisponiveis";
-            this.listBoxFundadoresDisponiveis.Size = new System.Drawing.Size(152, 134);
-            this.listBoxFundadoresDisponiveis.TabIndex = 22;
-            // 
-            // buttonRemoveFundador
-            // 
-            this.buttonRemoveFundador.Enabled = false;
-            this.buttonRemoveFundador.Location = new System.Drawing.Point(164, 102);
-            this.buttonRemoveFundador.Name = "buttonRemoveFundador";
-            this.buttonRemoveFundador.Size = new System.Drawing.Size(25, 23);
-            this.buttonRemoveFundador.TabIndex = 21;
-            this.buttonRemoveFundador.Text = "<";
-            this.buttonRemoveFundador.UseVisualStyleBackColor = true;
-            this.buttonRemoveFundador.Click += new System.EventHandler(this.buttonRemoveFundador_Click);
-            // 
-            // buttonAddFundador
-            // 
-            this.buttonAddFundador.Enabled = false;
-            this.buttonAddFundador.Location = new System.Drawing.Point(164, 73);
-            this.buttonAddFundador.Name = "buttonAddFundador";
-            this.buttonAddFundador.Size = new System.Drawing.Size(25, 23);
-            this.buttonAddFundador.TabIndex = 20;
-            this.buttonAddFundador.Text = ">";
-            this.buttonAddFundador.UseVisualStyleBackColor = true;
-            this.buttonAddFundador.Click += new System.EventHandler(this.buttonAddFundador_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBoxFundadoresSelecionados);
-            this.groupBox3.Controls.Add(this.listBoxFundadoresDisponiveis);
-            this.groupBox3.Controls.Add(this.buttonRemoveFundador);
-            this.groupBox3.Controls.Add(this.buttonAddFundador);
-            this.groupBox3.Controls.Add(label14);
-            this.groupBox3.Controls.Add(label13);
             this.groupBox3.Location = new System.Drawing.Point(288, 252);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(360, 181);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Fundador";
+            this.groupBox3.Text = "Fundadores";
             // 
             // buttonCancelarCadastroIgreja
             // 
@@ -480,7 +418,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -496,9 +433,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoIgreja;
         private System.Windows.Forms.ListBox listBoxFundadoresSelecionados;
-        private System.Windows.Forms.ListBox listBoxFundadoresDisponiveis;
-        private System.Windows.Forms.Button buttonRemoveFundador;
-        private System.Windows.Forms.Button buttonAddFundador;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonCancelarCadastroIgreja;
         private System.Windows.Forms.Button buttonCadastrarIgreja;
