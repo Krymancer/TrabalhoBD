@@ -127,6 +127,8 @@
             this.textBoxNumeroQuarto.Name = "textBoxNumeroQuarto";
             this.textBoxNumeroQuarto.Size = new System.Drawing.Size(117, 20);
             this.textBoxNumeroQuarto.TabIndex = 0;
+            this.textBoxNumeroQuarto.Text = " ";
+            this.textBoxNumeroQuarto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumeroQuarto_KeyPress);
             // 
             // FormCadastrarQuartoHotel
             // 

@@ -290,6 +290,7 @@
             this.textBoxEndNumeroHotel.Name = "textBoxEndNumeroHotel";
             this.textBoxEndNumeroHotel.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroHotel.TabIndex = 5;
+            this.textBoxEndNumeroHotel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroHotel_KeyPress);
             // 
             // textBoxEndLogradouroHotel
             // 

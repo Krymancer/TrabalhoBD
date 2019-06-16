@@ -285,6 +285,7 @@
             this.textBoxEndNumeroCasaDeShow.Name = "textBoxEndNumeroCasaDeShow";
             this.textBoxEndNumeroCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroCasaDeShow.TabIndex = 7;
+            this.textBoxEndNumeroCasaDeShow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroCasaDeShow_KeyPress);
             // 
             // textBoxEndLogradouroCasaDeShow
             // 

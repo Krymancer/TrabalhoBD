@@ -193,6 +193,7 @@
             this.textBoxHoraInicioCasaDeShow.Name = "textBoxHoraInicioCasaDeShow";
             this.textBoxHoraInicioCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxHoraInicioCasaDeShow.TabIndex = 3;
+            this.textBoxHoraInicioCasaDeShow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHoraInicioCasaDeShow_KeyPress);
             // 
             // textBoxDiaFechamentoCasaDeShow
             // 
@@ -374,6 +375,8 @@
             this.textBoxEndNumeroCasaDeShow.Name = "textBoxEndNumeroCasaDeShow";
             this.textBoxEndNumeroCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroCasaDeShow.TabIndex = 7;
+            this.textBoxEndNumeroCasaDeShow.Text = " ";
+            this.textBoxEndNumeroCasaDeShow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroCasaDeShow_KeyPress);
             // 
             // textBoxEndLogradouroCasaDeShow
             // 

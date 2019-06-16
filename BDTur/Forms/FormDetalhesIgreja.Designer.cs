@@ -432,6 +432,7 @@
             this.textBoxEndNumeroIgreja.Name = "textBoxEndNumeroIgreja";
             this.textBoxEndNumeroIgreja.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroIgreja.TabIndex = 7;
+            this.textBoxEndNumeroIgreja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroIgreja_KeyPress);
             // 
             // textBoxEndLogradouroIgreja
             // 

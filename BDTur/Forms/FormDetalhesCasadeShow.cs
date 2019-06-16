@@ -151,5 +151,21 @@ namespace BDTur.Forms
         {
 
         }
+
+        private void textBoxEndNumeroCasaDeShow_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxHoraInicioCasaDeShow_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != ':'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

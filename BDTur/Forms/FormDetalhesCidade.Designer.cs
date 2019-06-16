@@ -123,6 +123,7 @@
             this.textBoxPopulacaoCidade.Name = "textBoxPopulacaoCidade";
             this.textBoxPopulacaoCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxPopulacaoCidade.TabIndex = 2;
+            this.textBoxPopulacaoCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPopulacaoCidade_KeyPress);
             // 
             // textBoxNomeCidade
             // 

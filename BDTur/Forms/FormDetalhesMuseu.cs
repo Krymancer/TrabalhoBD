@@ -207,5 +207,13 @@ namespace BDTur.Forms
             .ForEach(c => c.Enabled = true);            
             editar = !editar;          
         }
+
+        private void textBoxEndNumeroMuseu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

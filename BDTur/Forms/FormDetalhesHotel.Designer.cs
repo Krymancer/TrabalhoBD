@@ -54,13 +54,13 @@
             this.comboBoxCategoriaHotel = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoHotel = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBoxQuartos = new System.Windows.Forms.ListBox();
             this.textBoxIdHotel = new System.Windows.Forms.TextBox();
             this.textBoxNomeHotel = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddQuartos = new System.Windows.Forms.Button();
-            this.listBoxQuartos = new System.Windows.Forms.ListBox();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -258,6 +258,7 @@
             this.textBoxEndNumeroHotel.Name = "textBoxEndNumeroHotel";
             this.textBoxEndNumeroHotel.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroHotel.TabIndex = 5;
+            this.textBoxEndNumeroHotel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroHotel_KeyPress);
             // 
             // textBoxEndLogradouroHotel
             // 
@@ -288,7 +289,7 @@
             // 
             // comboBoxCategoriaHotel
             // 
-            this.comboBoxCategoriaHotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxCategoriaHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoriaHotel.Enabled = false;
             this.comboBoxCategoriaHotel.FormattingEnabled = true;
             this.comboBoxCategoriaHotel.Items.AddRange(new object[] {
@@ -328,6 +329,14 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
+            // 
+            // listBoxQuartos
+            // 
+            this.listBoxQuartos.FormattingEnabled = true;
+            this.listBoxQuartos.Location = new System.Drawing.Point(9, 170);
+            this.listBoxQuartos.Name = "listBoxQuartos";
+            this.listBoxQuartos.Size = new System.Drawing.Size(222, 95);
+            this.listBoxQuartos.TabIndex = 20;
             // 
             // textBoxIdHotel
             // 
@@ -400,14 +409,6 @@
             this.buttonAddQuartos.TabIndex = 19;
             this.buttonAddQuartos.Text = "Adicionar Quartos";
             this.buttonAddQuartos.UseVisualStyleBackColor = true;
-            // 
-            // listBoxQuartos
-            // 
-            this.listBoxQuartos.FormattingEnabled = true;
-            this.listBoxQuartos.Location = new System.Drawing.Point(9, 170);
-            this.listBoxQuartos.Name = "listBoxQuartos";
-            this.listBoxQuartos.Size = new System.Drawing.Size(222, 95);
-            this.listBoxQuartos.TabIndex = 20;
             // 
             // FormDetalhesHotel
             // 

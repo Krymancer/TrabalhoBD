@@ -274,6 +274,7 @@
             this.textBoxEndNumeroRestaurante.Name = "textBoxEndNumeroRestaurante";
             this.textBoxEndNumeroRestaurante.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroRestaurante.TabIndex = 7;
+            this.textBoxEndNumeroRestaurante.Text = " ";
             this.textBoxEndNumeroRestaurante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroRestaurante_KeyPress);
             // 
             // textBoxEndLogradouroRestaurante

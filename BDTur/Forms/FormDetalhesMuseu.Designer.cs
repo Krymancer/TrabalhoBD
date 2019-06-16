@@ -453,6 +453,7 @@
             this.textBoxEndNumeroMuseu.Name = "textBoxEndNumeroMuseu";
             this.textBoxEndNumeroMuseu.Size = new System.Drawing.Size(100, 20);
             this.textBoxEndNumeroMuseu.TabIndex = 6;
+            this.textBoxEndNumeroMuseu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroMuseu_KeyPress);
             // 
             // textBoxEndLogradouroMuseu
             // 
