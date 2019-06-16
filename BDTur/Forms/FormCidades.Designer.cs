@@ -48,7 +48,7 @@
             this.groupBoxCidade.Controls.Add(this.dataGridViewCidade);
             this.groupBoxCidade.Location = new System.Drawing.Point(12, 12);
             this.groupBoxCidade.Name = "groupBoxCidade";
-            this.groupBoxCidade.Size = new System.Drawing.Size(760, 335);
+            this.groupBoxCidade.Size = new System.Drawing.Size(586, 335);
             this.groupBoxCidade.TabIndex = 30;
             this.groupBoxCidade.TabStop = false;
             this.groupBoxCidade.Text = "Cidades";
@@ -59,9 +59,9 @@
             this.groupBoxFiltro.Controls.Add(this.labelEstado);
             this.groupBoxFiltro.Controls.Add(this.textBoxCidade);
             this.groupBoxFiltro.Controls.Add(this.labelCidade);
-            this.groupBoxFiltro.Location = new System.Drawing.Point(628, 19);
+            this.groupBoxFiltro.Location = new System.Drawing.Point(455, 19);
             this.groupBoxFiltro.Name = "groupBoxFiltro";
-            this.groupBoxFiltro.Size = new System.Drawing.Size(125, 309);
+            this.groupBoxFiltro.Size = new System.Drawing.Size(125, 105);
             this.groupBoxFiltro.TabIndex = 1;
             this.groupBoxFiltro.TabStop = false;
             this.groupBoxFiltro.Text = "Filtro";
@@ -108,13 +108,14 @@
             this.dataGridViewCidade.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewCidade.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewCidade.Name = "dataGridViewCidade";
-            this.dataGridViewCidade.Size = new System.Drawing.Size(609, 309);
+            this.dataGridViewCidade.Size = new System.Drawing.Size(437, 309);
             this.dataGridViewCidade.TabIndex = 0;
             this.dataGridViewCidade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCidade_CellDoubleClick);
             // 
             // buttonVoltar
             // 
-            this.buttonVoltar.Location = new System.Drawing.Point(697, 353);
+            this.buttonVoltar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonVoltar.Location = new System.Drawing.Point(523, 353);
             this.buttonVoltar.Name = "buttonVoltar";
             this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
             this.buttonVoltar.TabIndex = 2;
@@ -126,7 +127,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 383);
+            this.CancelButton = this.buttonVoltar;
+            this.ClientSize = new System.Drawing.Size(604, 383);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.groupBoxCidade);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -49,7 +49,7 @@
             this.dataGridViewUsuario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewUsuario.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
-            this.dataGridViewUsuario.Size = new System.Drawing.Size(609, 309);
+            this.dataGridViewUsuario.Size = new System.Drawing.Size(437, 309);
             this.dataGridViewUsuario.TabIndex = 0;
             this.dataGridViewUsuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuario_CellDoubleClick);
             // 
@@ -59,7 +59,7 @@
             this.groupBoxNivelDeAcessoUsuario.Controls.Add(this.checkBoxNivelUsuario);
             this.groupBoxNivelDeAcessoUsuario.Controls.Add(this.checkBoxNivelAdm);
             this.groupBoxNivelDeAcessoUsuario.Controls.Add(this.checkBoxNivelGerente);
-            this.groupBoxNivelDeAcessoUsuario.Location = new System.Drawing.Point(638, 19);
+            this.groupBoxNivelDeAcessoUsuario.Location = new System.Drawing.Point(455, 19);
             this.groupBoxNivelDeAcessoUsuario.Name = "groupBoxNivelDeAcessoUsuario";
             this.groupBoxNivelDeAcessoUsuario.Size = new System.Drawing.Size(120, 88);
             this.groupBoxNivelDeAcessoUsuario.TabIndex = 28;
@@ -111,14 +111,15 @@
             this.groupBoxUsuarios.Controls.Add(this.dataGridViewUsuario);
             this.groupBoxUsuarios.Location = new System.Drawing.Point(-6, 7);
             this.groupBoxUsuarios.Name = "groupBoxUsuarios";
-            this.groupBoxUsuarios.Size = new System.Drawing.Size(763, 349);
+            this.groupBoxUsuarios.Size = new System.Drawing.Size(581, 349);
             this.groupBoxUsuarios.TabIndex = 29;
             this.groupBoxUsuarios.TabStop = false;
             this.groupBoxUsuarios.Text = "Usuários";
             // 
             // buttonVoltar
             // 
-            this.buttonVoltar.Location = new System.Drawing.Point(682, 375);
+            this.buttonVoltar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonVoltar.Location = new System.Drawing.Point(500, 362);
             this.buttonVoltar.Name = "buttonVoltar";
             this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
             this.buttonVoltar.TabIndex = 30;
@@ -130,7 +131,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 410);
+            this.CancelButton = this.buttonVoltar;
+            this.ClientSize = new System.Drawing.Size(581, 387);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.groupBoxUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
