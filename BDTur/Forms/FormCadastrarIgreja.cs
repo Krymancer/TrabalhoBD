@@ -128,5 +128,76 @@ namespace BDTur.Forms
                 }
             }
         }
+
+        private void buttonCadastrarIgreja_Click(object sender, EventArgs e)
+        {
+            bool sucess = true;
+            try
+            {
+                string igrejaNome = textBoxNomeIgreja.Text;
+                string igrejaEstilo = textBoxEstiloIgreja.Text;
+                DateTime igrejaFund = monthCalendarFundacaoIgreja.SelectionStart;
+                maskedTextBoxContatoIgreja.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string contato = maskedTextBoxContatoIgreja.Text;
+                maskedTextBoxContatoIgreja.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string descricao = textBoxDescricaoIgreja.Text;
+
+                string endTip = comboBoxEndTipoIgreja.SelectedItem.ToString();
+                string endLog = textBoxEndLogradouroIgreja.Text;
+                string endNum = textBoxEndNumeroIgreja.Text;
+                string endComp;
+                try
+                {
+                    endComp = textBoxEndComplementoIgreja.Text;
+                }
+                catch (NullReferenceException)
+                {
+                    endComp = "";
+                }
+                string endBairro = textBoxEndBairroIgreja.Text;
+                maskedTextBoxEndCepIgreja.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string endCep = maskedTextBoxEndCepIgreja.Text;
+                maskedTextBoxEndCepIgreja.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                int cidade = int.Parse(comboBoxEndCidadeIgreja.SelectedValue.ToString());
+                if (cidade == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                Classes.Igreja i = new Classes.Igreja(0,igrejaFund,igrejaEstilo,null,0,"Igreja",igrejaNome,contato,descricao,endTip,endLog,endNum,endComp,endBairro,endCep,cidade);
+                if (!adapter.adicionarIgreja(i))
+                { 
+                    sucess = false;
+                    //MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                MySqlDataReader reader = adapter.lastInsertId();
+                reader.Read();
+                int igrejaId = reader.GetInt32(0);
+
+                foreach (DataRow drow in selecionados.Rows)
+                {
+                    int idFundador = int.Parse(drow[0].ToString());
+                    Classes.Fundador fu = new Classes.Fundador(idFundador,null,null,DateTime.Now, DateTime.Now, null,null);
+                    Classes.Igreja ig = new Classes.Igreja(igrejaId, DateTime.Now,null,null,0,null,null,null,null,null,null,null,null,null,null,0);
+                    if (!adapter.adicionarFundadapor(ig,fu))
+                    { 
+                        sucess = false;
+                        //MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                  
+                }
+
+                if (sucess)
+                {
+                    MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

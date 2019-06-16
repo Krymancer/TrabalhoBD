@@ -454,6 +454,16 @@ namespace BDTur.Classes
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
+        public MySqlDataReader lastInsertId()
+        {
+            MySqlConnection con = createConnection();
+            con.Open();
+            string query = "SELECT LAST_INSERT_ID();";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
         #endregion
 
         #region Inserts
@@ -709,8 +719,8 @@ namespace BDTur.Classes
                                 "`endCepPontoTuristico`," +
                                 "`cidadeIdCidade`," +
                                 "`cidadeNome`," +
-                                "`cidadeEstado`)" +
-                                "VALUES" +
+                                "`cidadeEstado`) " +
+                                "VALUES " +
                                 "(0," +
                                 "?tipoPontoTuristico," +
                                 "?nomePontoTuristico," +
@@ -747,8 +757,9 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", igreja.EndNumeroPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", igreja.EndComplementoPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", igreja.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endCepPontoTuristico", igreja.EndCepPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", igreja.CidadeIdCidade));
-                cmd.Parameters.Add(new MySqlParameter("dataIgreja", igreja.DataIgreja));
+                cmd.Parameters.Add(new MySqlParameter("dataIgreja", (igreja.DataIgreja)));
                 cmd.Parameters.Add(new MySqlParameter("estiloIgreja", igreja.EstiloIgreja));
                 Console.WriteLine(cmd.CommandText);
 
@@ -758,9 +769,10 @@ namespace BDTur.Classes
                 con.Close();
                 return true;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Data);
                 return false;
             }
         }
@@ -828,6 +840,7 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", museu.EndNumeroPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", museu.EndComplementoPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", museu.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endCepPontoTuristico", museu.EndCepPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", museu.CidadeIdCidade));
                 cmd.Parameters.Add(new MySqlParameter("dataFundacaoMuseu", museu.DataFundacaoMuseu));
                 cmd.Parameters.Add(new MySqlParameter("valorEntradaMuseu", museu.ValorEntradaMuseu));

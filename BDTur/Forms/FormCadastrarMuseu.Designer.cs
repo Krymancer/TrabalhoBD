@@ -238,6 +238,7 @@
             this.buttonCadastrarMuseu.TabIndex = 24;
             this.buttonCadastrarMuseu.Text = "Cadastrar";
             this.buttonCadastrarMuseu.UseVisualStyleBackColor = true;
+            this.buttonCadastrarMuseu.Click += new System.EventHandler(this.buttonCadastrarMuseu_Click);
             // 
             // groupBox2
             // 
@@ -347,7 +348,7 @@
             // maskedTextBoxValorEntradaMuseu
             // 
             this.maskedTextBoxValorEntradaMuseu.Location = new System.Drawing.Point(113, 96);
-            this.maskedTextBoxValorEntradaMuseu.Mask = "$";
+            this.maskedTextBoxValorEntradaMuseu.Mask = "$###.##";
             this.maskedTextBoxValorEntradaMuseu.Name = "maskedTextBoxValorEntradaMuseu";
             this.maskedTextBoxValorEntradaMuseu.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxValorEntradaMuseu.TabIndex = 18;
@@ -355,6 +356,7 @@
             // monthCalendarFundacaoMuseu
             // 
             this.monthCalendarFundacaoMuseu.Location = new System.Drawing.Point(12, 190);
+            this.monthCalendarFundacaoMuseu.MaxSelectionCount = 1;
             this.monthCalendarFundacaoMuseu.Name = "monthCalendarFundacaoMuseu";
             this.monthCalendarFundacaoMuseu.TabIndex = 17;
             // 

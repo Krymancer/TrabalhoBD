@@ -130,5 +130,79 @@ namespace BDTur.Forms
                 }
             }
         }
+
+        private void buttonCadastrarMuseu_Click(object sender, EventArgs e)
+        {
+            bool sucess = true;
+            try
+            {
+                string museuNome = textBoxNomeMuseu.Text;
+                maskedTextBoxValorEntradaMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                float museuPreco = float.Parse(maskedTextBoxValorEntradaMuseu.Text)/100;
+                maskedTextBoxValorEntradaMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string museuNumSalas = textBoxNumeroDeSalasMuseu.Text;
+                DateTime museuFund = monthCalendarFundacaoMuseu.SelectionStart;
+                maskedTextBoxContatoMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string contato = maskedTextBoxContatoMuseu.Text;
+                maskedTextBoxContatoMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string descricao = textBoxDescricaoMuseu.Text;
+
+                string endTip = comboBoxEndTipoMuseu.SelectedItem.ToString();
+                string endLog = textBoxEndLogradouroMuseu.Text;
+                string endNum = textBoxEndNumeroMuseu.Text;
+                string endComp;
+                try
+                {
+                    endComp = textBoxEndComplementoMuseu.Text;
+                }
+                catch (NullReferenceException)
+                {
+                    endComp = "";
+                }
+                string endBairro = textBoxEndBairroMuseu.Text;
+                maskedTextBoxEndCepMuseu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string endCep = maskedTextBoxEndCepMuseu.Text;
+                maskedTextBoxEndCepMuseu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                int cidade = int.Parse(comboBoxEndCidadeMuseu.SelectedValue.ToString());
+                if (cidade == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                Classes.Museu m = new Classes.Museu(0, museuFund, museuPreco,museuNumSalas, null, 0, "Museu", museuNome, contato, descricao, endTip, endLog, endNum, endComp, endBairro, endCep, cidade);
+                if (!adapter.adicionarMuseu(m))
+                {
+                    sucess = false;
+                    //MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                MySqlDataReader reader = adapter.lastInsertId();
+                reader.Read();
+                int museuId = reader.GetInt32(0);
+
+                foreach (DataRow drow in selecionados.Rows)
+                {
+                    int idFundador = int.Parse(drow[0].ToString());
+                    Classes.Fundador fu = new Classes.Fundador(idFundador, null, null, DateTime.Now, DateTime.Now, null, null);
+                    Classes.Museu mu = new Classes.Museu(museuId, DateTime.Now, 0,null, null, 0, null, null, null, null, null, null, null, null, null, null, 0);
+                    if (!adapter.adicionarFundadopor(mu, fu))
+                    {
+                        sucess = false;
+                        //MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                if (sucess)
+                {
+                    MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

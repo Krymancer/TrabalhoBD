@@ -226,6 +226,7 @@
             this.buttonCadastrarIgreja.TabIndex = 13;
             this.buttonCadastrarIgreja.Text = "Cadastrar";
             this.buttonCadastrarIgreja.UseVisualStyleBackColor = true;
+            this.buttonCadastrarIgreja.Click += new System.EventHandler(this.buttonCadastrarIgreja_Click);
             // 
             // groupBox2
             // 
@@ -386,6 +387,7 @@
             // monthCalendarFundacaoIgreja
             // 
             this.monthCalendarFundacaoIgreja.Location = new System.Drawing.Point(12, 149);
+            this.monthCalendarFundacaoIgreja.MaxSelectionCount = 1;
             this.monthCalendarFundacaoIgreja.Name = "monthCalendarFundacaoIgreja";
             this.monthCalendarFundacaoIgreja.TabIndex = 3;
             // 
