@@ -85,6 +85,15 @@
             label3.TabIndex = 2;
             label3.Text = "Atividade profissional:";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(120, 79);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(78, 13);
+            label11.TabIndex = 12;
+            label11.Text = "Nacionalidade:";
+            // 
             // buttonCancelarCadastroFundador
             // 
             this.buttonCancelarCadastroFundador.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -103,6 +112,7 @@
             this.buttonCadastrarFundador.TabIndex = 5;
             this.buttonCadastrarFundador.Text = "Cadastrar";
             this.buttonCadastrarFundador.UseVisualStyleBackColor = true;
+            this.buttonCadastrarFundador.Click += new System.EventHandler(this.buttonCadastrarFundador_Click);
             // 
             // groupBox1
             // 
@@ -154,15 +164,6 @@
             this.textBoxAtividadeProfissionalFundador.Name = "textBoxAtividadeProfissionalFundador";
             this.textBoxAtividadeProfissionalFundador.Size = new System.Drawing.Size(100, 20);
             this.textBoxAtividadeProfissionalFundador.TabIndex = 1;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(120, 79);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(78, 13);
-            label11.TabIndex = 12;
-            label11.Text = "Nacionalidade:";
             // 
             // textBoxNomeFundador
             // 

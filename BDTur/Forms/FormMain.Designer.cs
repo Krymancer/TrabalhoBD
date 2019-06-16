@@ -104,7 +104,6 @@
             this.cidadesToolStripMenuItemCidade = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItemUser = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             labelCidade = new System.Windows.Forms.Label();
             labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -878,7 +877,6 @@
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cidadeToolStripMenuItem,
             this.hotelToolStripMenuItem,
-            this.quartoDeHotelToolStripMenuItem,
             this.restauranteToolStripMenuItem,
             this.pontoTuristicoToolStripMenuItem,
             this.fundadorToolStripMenuItem,
@@ -975,12 +973,6 @@
             this.usariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usariosToolStripMenuItem.Text = "Usuários";
             this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
-            // 
-            // quartoDeHotelToolStripMenuItem
-            // 
-            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
-            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // FormMain
             // 
@@ -1114,7 +1106,6 @@
         private System.Windows.Forms.ToolStripMenuItem fundadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cidadesToolStripMenuItemCidade;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItemUser;
-        private System.Windows.Forms.ToolStripMenuItem quartoDeHotelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usariosToolStripMenuItem;
     }
 }
