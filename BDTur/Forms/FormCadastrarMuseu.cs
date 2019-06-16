@@ -179,7 +179,7 @@ namespace BDTur.Forms
                 foreach (DataRow drow in selecionados.Rows)
                 {
                     int idFundador = int.Parse(drow[0].ToString());
-                    Classes.Fundador fu = new Classes.Fundador(idFundador, null, null, DateTime.Now, DateTime.Now, null, null);
+                    Classes.Fundador fu = new Classes.Fundador(idFundador, null, null, DateTime.Now,false, DateTime.Now, null, null);
                     Classes.Museu mu = new Classes.Museu(museuId, DateTime.Now, 0,null, null, 0, null, null, null, null, null, null, null, null, null, null, 0);
                     if (!adapter.adicionarFundadopor(mu, fu))
                     {

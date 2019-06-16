@@ -30,8 +30,20 @@ namespace BDTur.Forms
                 string fundNasc = (maskedTextBoxDataNascimentoFundador.Text);
                 string fundMort = (maskedTextBoxDataMorteFundador.Text);
                 DateTime fundNascDate = DateTime.ParseExact(fundNasc, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
-                DateTime fundMortDate = DateTime.ParseExact(fundMort, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
-                Classes.Fundador f = new Classes.Fundador(0,fundNome,fundPorf,fundNascDate,fundMortDate,fundNacio,null);
+                DateTime fundMortDate;
+                bool hasDead = false;
+                try
+                {
+                    fundMortDate = DateTime.ParseExact(fundMort, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
+                    hasDead = true;
+                }
+                catch (FormatException)
+                {
+                    fundMortDate = DateTime.Now;
+                    hasDead = false;
+
+                }
+                Classes.Fundador f = new Classes.Fundador(0,fundNome,fundPorf,fundNascDate,hasDead,fundMortDate,fundNacio,null);
                 if (adapter.adicionarFundador(f))
                 {
                     MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,6 +55,10 @@ namespace BDTur.Forms
                 }
             }
             catch (NullReferenceException)
+            {
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
             {
                 MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace BDTur.Forms
         Classes.DAL adapter = new Classes.DAL();
         DataTable pontoturisticos = new DataTable();        
         private int id;
+        bool editar = false;
 
         public FormDetalhesFundador(int id)
         {
@@ -97,7 +99,67 @@ namespace BDTur.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!editar)
+            {
+                groupBox1.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });                
+                button1.Text = "Salvar";
+                editar = !editar;
+            }
+            else
+            {
+                try
+                {
+                    string fundNome = textBoxNomeFundador.Text;
+                    string fundPorf = textBoxAtividadeProfissionalFundador.Text;
+                    string fundNacio = textBoxNacionalidadeFundador.Text;
+                    string fundNasc = (maskedTextBoxDataNascimentoFundador.Text);
+                    string fundMort = (maskedTextBoxDataMorteFundador.Text);
+                    DateTime fundNascDate = DateTime.ParseExact(fundNasc, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
+                    DateTime fundMortDate;
+                    bool hasDead = false;
+                    try
+                    {
+                        fundMortDate = DateTime.ParseExact(fundMort, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
+                        hasDead = true;
+                    }
+                    catch (FormatException)
+                    {
+                        fundMortDate = DateTime.Now;
+                        hasDead = false;
 
+                    }
+                        Classes.Fundador f = new Classes.Fundador(id, fundNome, fundPorf, fundNascDate,hasDead, fundMortDate, fundNacio, null);
+                    if (adapter.atualizarFundador(f))
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.Close();
+                        editar = !editar;
+                        groupBox1.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        button1.Text = "Editar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (NullReferenceException)
+                {
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (InvalidSelectValue)
+                {
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonCadastrarHotel_Click(object sender, EventArgs e)

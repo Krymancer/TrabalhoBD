@@ -61,7 +61,7 @@ namespace BDTur.Forms
                     {
                         textBoxEndComplementoCasaDeShow.Text = reader.GetString(8);
                     }
-                    catch (System.Data.SqlTypes.SqlNullValueException e)
+                    catch (System.Data.SqlTypes.SqlNullValueException)
                     {
                         textBoxEndComplementoCasaDeShow.Text = "";
                     }
@@ -73,7 +73,7 @@ namespace BDTur.Forms
                         comboBoxIdRestauranteCasaDeShow.SelectedItem = comboBoxIdRestauranteCasaDeShow.Items[reader.GetInt32(18)];
                         checkBoxContemRestaurante.Checked = true;
                     }
-                    catch (System.Data.SqlTypes.SqlNullValueException e)
+                    catch (System.Data.SqlTypes.SqlNullValueException)
                     {
                         checkBoxContemRestaurante.Checked = false;
                     }

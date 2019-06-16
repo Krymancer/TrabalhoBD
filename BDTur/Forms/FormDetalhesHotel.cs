@@ -118,7 +118,7 @@ namespace BDTur.Forms
                         comboBoxIdRestauranteHotel.SelectedItem = comboBoxIdRestauranteHotel.Items[reader.GetInt32(1)];                        
                         checkBoxContemRestaurante.Checked = true;
                     }
-                    catch(System.Data.SqlTypes.SqlNullValueException e){
+                    catch(System.Data.SqlTypes.SqlNullValueException){
                        checkBoxContemRestaurante.Checked = false;
                     }
                     textBoxNomeHotel.Text = reader.GetString(2);
@@ -132,7 +132,7 @@ namespace BDTur.Forms
                     {
                         textBoxEndComplementoHotel.Text = reader.GetString(8);
                     }
-                    catch (System.Data.SqlTypes.SqlNullValueException e)
+                    catch (System.Data.SqlTypes.SqlNullValueException)
                     {
                         textBoxEndComplementoHotel.Text = "";
                     }
@@ -189,7 +189,6 @@ namespace BDTur.Forms
         {
 
         }
-
         private void textBoxEndNumeroHotel_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

@@ -14,6 +14,7 @@ namespace BDTur.Forms
     public partial class FormDetalhesCidade : Form
     {
         Classes.DAL adapter = new Classes.DAL();
+        bool editar = false;
 
         public FormDetalhesCidade(int id)
         {
@@ -39,7 +40,50 @@ namespace BDTur.Forms
 
         private void buttonEditarCidade_Click(object sender, EventArgs e)
         {
+            if (!editar)
+            {
+                groupBox1.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                textBoxIdCidade.Enabled = false;
+                buttonEditarCidade.Text = "Salvar";
+                editar = !editar;
+            }
+            else
+            {
+                try
+                {
+                    string cidadenome = textBoxNomeCidade.Text;
+                    string cidadeestado = textBoxEstadoCidade.Text;
+                    string populacao = textBoxPopulacaoCidade.Text;                    
 
+                    int id = int.Parse(textBoxIdCidade.Text);
+                    Classes.Cidade c = new Classes.Cidade(id, cidadenome, cidadeestado, populacao);
+                    if (adapter.atualizarCidade(c))
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.Close();
+                        editar = !editar;
+                        groupBox1.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        buttonEditarCidade.Text = "Editar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (NullReferenceException)
+                {
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (InvalidSelectValue)
+                {
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonExcluirCidade_Click(object sender, EventArgs e)

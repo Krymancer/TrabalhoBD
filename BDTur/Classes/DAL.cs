@@ -1299,7 +1299,7 @@ namespace BDTur.Classes
                                 "SET" +
                                 "`nome` = ?nome," +
                                 "`estado` = ?estado," +
-                                "`populacao` = ?populacao" +
+                                "`populacao` = ?populacao " +
                                 "WHERE `idCidade` = ?id;";
 
 
@@ -1343,7 +1343,7 @@ namespace BDTur.Classes
                                 "`endCepHotel` = ?endCepHotel," +
                                 "`cidadeIdCidade` = ?cidadeIdCidade," +
                                 $"(select nome from cidade where idCidade = {hotel.CidadeIdCidade})," +
-                                $"(select estado from cidade where idCidade = {hotel.CidadeIdCidade}))" +
+                                $"(select estado from cidade where idCidade = {hotel.CidadeIdCidade})) " +
                                 "WHERE `idHotel` = ?id;";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
@@ -1384,10 +1384,8 @@ namespace BDTur.Classes
                                 "SET" +
                                 "`numQuarto` =   ?numQuarto," +
                                 "`tipoQuarto` =   ?tipoQuarto," +
-                                "`diariaQuarto` =   ?diariaQuarto" +
+                                "`diariaQuarto` =   ?diariaQuarto " +
                                 "WHERE `hotelIdHotel` =   ?hotelIdHotel;";
-
-
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.Add(new MySqlParameter("numQuarto", hq.NumQuarto));
@@ -1434,8 +1432,8 @@ namespace BDTur.Classes
                                 "WHERE `idPontoTuristico` =   ?idPontoTuristico;" +
                                 "UPDATE `equipe431447`.`igreja`" +
                                 "SET" +
-                                "`dataIgreja` =   ?dataIgreja  ," +
-                                "`estiloIgreja` =   ?estiloIgreja  ," +                                
+                                "`dataIgreja` =   ?dataIgreja," +
+                                "`estiloIgreja` =   ?estiloIgreja, " +                                
                                 "WHERE `idIgreja` =   ?idIgreja;" +
                                 "COMMIT;";               
 
@@ -1495,9 +1493,9 @@ namespace BDTur.Classes
                                 "WHERE `idPontoTuristico` =   ?idPontoTuristico;" +
                                 "UPDATE `equipe431447`.`museu`" +
                                 "SET" +
-                                "`dataFundacaoMuseu` =   ?dataFundacaoMuseu  ," +
-                                "`valorEntradaMuseu` =   ?valorEntradaMuseu  ," +
-                                "`numeroSalasMuseu` =   ?numeroSalasMuseu  ," +                                
+                                "`dataFundacaoMuseu` =   ?dataFundacaoMuseu," +
+                                "`valorEntradaMuseu` =   ?valorEntradaMuseu," +
+                                "`numeroSalasMuseu` =   ?numeroSalasMuseu, " +                                
                                 "WHERE `idMuseu` =   ?idMuseu;" +
                                 "COMMIT;";
                 MySqlCommand cmd = new MySqlCommand(query, con);
@@ -1538,28 +1536,29 @@ namespace BDTur.Classes
             {
                 MySqlConnection con = createConnection();
                 con.Open();
-                string query = "INSERT INTO `equipe431447`.`fundador`" +
-                                "(`idFundador`," +
-                                "`nomeFundador`," +
-                                "`atividadeProfissionalFundador`," +
-                                "`nascimentoFundador`," +
-                                "`morteFundador`," +
-                                "`nacionalidadeFundador`)" +
-                                "VALUES" +
-                                "(0," +
-                                "?nomeFundador," +
-                                "?atividadeProfissionalFundador," +
-                                "?nascimentoFundador," +
-                                "?morteFundador," +
-                                "?nacionalidadeFundador);";
+                string query = "UPDATE `equipe431447`.`fundador` " +
+                                "SET " +
+                                "`nomeFundador` = ?nomeFundador, " +
+                                "`atividadeProfissionalFundador` = ?atividadeProfissionalFundador, " +
+                                "`nascimentoFundador` = ?nascimentoFundador, " +
+                                $"`morteFundador` = ?morteFundador, " +
+                                "`nacionalidadeFundador` = ?nacionalidadeFundador " +
+                                "WHERE `idFundador` = ?idFundador;";
 
-                MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.Add(new MySqlParameter("nomeFundador", fund.NomeFundador));
                 cmd.Parameters.Add(new MySqlParameter("atividadeProfissionalFundador", fund.AtividadeProfissionalFundador));
                 cmd.Parameters.Add(new MySqlParameter("nascimentoFundador", fund.NascimentoFundador));
-                cmd.Parameters.Add(new MySqlParameter("morteFundador", fund.MorteFundador));
-                cmd.Parameters.Add(new MySqlParameter("nacionalidadeFundador" +
-                    "", fund.NacionalidadeFundador));
+                if (fund.Morto)
+                {
+                    cmd.Parameters.Add(new MySqlParameter("morteFundador", fund.MorteFundador));
+                }
+                else
+                {
+                    cmd.Parameters.Add(new MySqlParameter("morteFundador", "NULL"));
+                }
+                cmd.Parameters.Add(new MySqlParameter("nacionalidadeFundador", fund.NacionalidadeFundador));
+                cmd.Parameters.Add(new MySqlParameter("idFundador", fund.IdFundador));
                 Console.WriteLine(cmd.CommandText);
 
                 MySqlDataReader reader;
@@ -1580,14 +1579,14 @@ namespace BDTur.Classes
             {
                 MySqlConnection con = createConnection();
                 con.Open();
-                string query = "INSERT INTO `equipe431447`.`fundadapor`" +
-                                "(`igrejaIdIgreja`," +
-                                "`Igreja_PontoTuristico_idPontoTuristico`," +
-                                "`fundadorIdFundador`)" +
-                                "VALUES" +
-                                "(?igrejaIdIgreja," +
-                                "?Igreja_PontoTuristico_idPontoTuristico," +
-                                "?fundadorIdFundador);";
+
+                string query = "UPDATE `equipe431447`.`fundadapor` " +
+                                "SET " +
+                                "`igrejaIdIgreja` = ?igrejaIdIgreja, " +
+                                "`Igreja_PontoTuristico_idPontoTuristico` = ?Igreja_PontoTuristico_idPontoTuristico, " +
+                                "`fundadorIdFundador` = ?fundadorIdFundador " +
+                                "WHERE `igrejaIdIgreja` = ?igrejaIdIgreja;";
+
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.Add(new MySqlParameter("igrejaIdIgreja", igreja.IdIgreja));
@@ -1613,14 +1612,13 @@ namespace BDTur.Classes
             {
                 MySqlConnection con = createConnection();
                 con.Open();
-                string query = "INSERT INTO `equipe431447`.`fundadopor`" +
-                                "(`Museu_idMuseu`," +
-                                "`Museu_PontoTuristico_idPontoTuristico`," +
-                                "`Fundador_idFundador`)" +
-                                "VALUES" +
-                                "(?Museu_idMuseu," +
-                                "?Museu_PontoTuristico_idPontoTuristico," +
-                                "?Fundador_idFundador);";
+
+                string query = "UPDATE `equipe431447`.`fundadopor` " +
+                                "SET " +
+                                "`Museu_idMuseu` = ?Museu_idMuseu, " +
+                                "`Museu_PontoTuristico_idPontoTuristico` = ?Museu_PontoTuristico_idPontoTuristico, " +
+                                "`Fundador_idFundador` = ?Fundador_idFundador " +
+                                "WHERE `Museu_idMuseu` = ?Museu_idMuseu;";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.Add(new MySqlParameter("Museu_idMuseu", museu.IdMuseu));
