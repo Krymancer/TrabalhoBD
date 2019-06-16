@@ -217,6 +217,7 @@
             this.buttonCancelarCadastroIgreja.TabIndex = 14;
             this.buttonCancelarCadastroIgreja.Text = "Cancelar";
             this.buttonCancelarCadastroIgreja.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroIgreja.Click += new System.EventHandler(this.buttonCancelarCadastroIgreja_Click);
             // 
             // buttonCadastrarIgreja
             // 
@@ -419,6 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroIgreja;
             this.ClientSize = new System.Drawing.Size(665, 483);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonCancelarCadastroIgreja);

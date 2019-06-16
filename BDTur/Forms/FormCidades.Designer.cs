@@ -70,7 +70,7 @@
             this.textBoxEstado.Location = new System.Drawing.Point(9, 71);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEstado.TabIndex = 35;
+            this.textBoxEstado.TabIndex = 1;
             this.textBoxEstado.TextChanged += new System.EventHandler(this.textBoxEstado_TextChanged);
             // 
             // labelEstado
@@ -80,14 +80,14 @@
             this.labelEstado.Name = "labelEstado";
             this.labelEstado.Size = new System.Drawing.Size(43, 13);
             this.labelEstado.TabIndex = 34;
-            this.labelEstado.Text = "Estado:";            
+            this.labelEstado.Text = "Estado:";
             // 
             // textBoxCidade
             // 
             this.textBoxCidade.Location = new System.Drawing.Point(9, 32);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCidade.TabIndex = 33;
+            this.textBoxCidade.TabIndex = 0;
             this.textBoxCidade.TextChanged += new System.EventHandler(this.textBoxCidade_TextChanged);
             // 
             // labelCidade
@@ -116,9 +116,10 @@
             this.buttonVoltar.Location = new System.Drawing.Point(697, 353);
             this.buttonVoltar.Name = "buttonVoltar";
             this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
-            this.buttonVoltar.TabIndex = 31;
+            this.buttonVoltar.TabIndex = 2;
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // FormCidades
             // 

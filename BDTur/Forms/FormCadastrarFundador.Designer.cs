@@ -103,6 +103,7 @@
             this.buttonCancelarCadastroFundador.TabIndex = 6;
             this.buttonCancelarCadastroFundador.Text = "Cancelar";
             this.buttonCancelarCadastroFundador.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroFundador.Click += new System.EventHandler(this.buttonCancelarCadastroFundador_Click);
             // 
             // buttonCadastrarFundador
             // 

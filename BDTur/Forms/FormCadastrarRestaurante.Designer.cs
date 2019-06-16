@@ -189,6 +189,7 @@
             this.buttonCancelarCadastroRestaurante.TabIndex = 15;
             this.buttonCancelarCadastroRestaurante.Text = "Cancelar";
             this.buttonCancelarCadastroRestaurante.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroRestaurante.Click += new System.EventHandler(this.buttonCancelarCadastroRestaurante_Click);
             // 
             // buttonCadastrarRestaurante
             // 

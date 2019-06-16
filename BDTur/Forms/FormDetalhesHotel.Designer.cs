@@ -184,6 +184,7 @@
             this.buttonCancelarCadastroHotel.TabIndex = 17;
             this.buttonCancelarCadastroHotel.Text = "Cancelar";
             this.buttonCancelarCadastroHotel.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroHotel.Click += new System.EventHandler(this.buttonCancelarCadastroHotel_Click);
             // 
             // comboBoxIdRestauranteHotel
             // 
@@ -193,7 +194,7 @@
             this.comboBoxIdRestauranteHotel.Location = new System.Drawing.Point(173, 197);
             this.comboBoxIdRestauranteHotel.Name = "comboBoxIdRestauranteHotel";
             this.comboBoxIdRestauranteHotel.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxIdRestauranteHotel.TabIndex = 11;
+            this.comboBoxIdRestauranteHotel.TabIndex = 13;
             // 
             // comboBoxEndCidadeHotel
             // 
@@ -203,7 +204,7 @@
             this.comboBoxEndCidadeHotel.Location = new System.Drawing.Point(18, 197);
             this.comboBoxEndCidadeHotel.Name = "comboBoxEndCidadeHotel";
             this.comboBoxEndCidadeHotel.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndCidadeHotel.TabIndex = 9;
+            this.comboBoxEndCidadeHotel.TabIndex = 11;
             // 
             // labelRestaurante
             // 
@@ -221,7 +222,7 @@
             this.checkBoxContemRestaurante.Location = new System.Drawing.Point(18, 232);
             this.checkBoxContemRestaurante.Name = "checkBoxContemRestaurante";
             this.checkBoxContemRestaurante.Size = new System.Drawing.Size(144, 17);
-            this.checkBoxContemRestaurante.TabIndex = 10;
+            this.checkBoxContemRestaurante.TabIndex = 12;
             this.checkBoxContemRestaurante.Text = "Contém um restaurante ?";
             this.checkBoxContemRestaurante.UseVisualStyleBackColor = true;
             this.checkBoxContemRestaurante.CheckedChanged += new System.EventHandler(this.checkBoxContemRestaurante_CheckedChanged);
@@ -233,7 +234,7 @@
             this.maskedTextBoxEndCepHotel.Mask = "00000-999";
             this.maskedTextBoxEndCepHotel.Name = "maskedTextBoxEndCepHotel";
             this.maskedTextBoxEndCepHotel.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndCepHotel.TabIndex = 8;
+            this.maskedTextBoxEndCepHotel.TabIndex = 10;
             // 
             // textBoxEndBairroHotel
             // 
@@ -241,7 +242,7 @@
             this.textBoxEndBairroHotel.Location = new System.Drawing.Point(130, 148);
             this.textBoxEndBairroHotel.Name = "textBoxEndBairroHotel";
             this.textBoxEndBairroHotel.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroHotel.TabIndex = 7;
+            this.textBoxEndBairroHotel.TabIndex = 9;
             // 
             // textBoxEndComplementoHotel
             // 
@@ -249,7 +250,7 @@
             this.textBoxEndComplementoHotel.Location = new System.Drawing.Point(18, 148);
             this.textBoxEndComplementoHotel.Name = "textBoxEndComplementoHotel";
             this.textBoxEndComplementoHotel.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndComplementoHotel.TabIndex = 6;
+            this.textBoxEndComplementoHotel.TabIndex = 8;
             // 
             // textBoxEndNumeroHotel
             // 
@@ -257,7 +258,7 @@
             this.textBoxEndNumeroHotel.Location = new System.Drawing.Point(236, 94);
             this.textBoxEndNumeroHotel.Name = "textBoxEndNumeroHotel";
             this.textBoxEndNumeroHotel.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndNumeroHotel.TabIndex = 5;
+            this.textBoxEndNumeroHotel.TabIndex = 7;
             this.textBoxEndNumeroHotel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroHotel_KeyPress);
             // 
             // textBoxEndLogradouroHotel
@@ -266,7 +267,7 @@
             this.textBoxEndLogradouroHotel.Location = new System.Drawing.Point(18, 94);
             this.textBoxEndLogradouroHotel.Name = "textBoxEndLogradouroHotel";
             this.textBoxEndLogradouroHotel.Size = new System.Drawing.Size(212, 20);
-            this.textBoxEndLogradouroHotel.TabIndex = 4;
+            this.textBoxEndLogradouroHotel.TabIndex = 6;
             // 
             // comboBoxEndTipoHotel
             // 
@@ -276,7 +277,7 @@
             this.comboBoxEndTipoHotel.Location = new System.Drawing.Point(18, 43);
             this.comboBoxEndTipoHotel.Name = "comboBoxEndTipoHotel";
             this.comboBoxEndTipoHotel.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndTipoHotel.TabIndex = 3;
+            this.comboBoxEndTipoHotel.TabIndex = 5;
             // 
             // buttonCadastrarHotel
             // 
@@ -311,7 +312,7 @@
             this.maskedTextBoxContatoHotel.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoHotel.Name = "maskedTextBoxContatoHotel";
             this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(121, 20);
-            this.maskedTextBoxContatoHotel.TabIndex = 2;
+            this.maskedTextBoxContatoHotel.TabIndex = 3;
             // 
             // groupBoxDados
             // 
@@ -342,7 +343,7 @@
             this.dataGridViewHotelQuarto.Location = new System.Drawing.Point(9, 122);
             this.dataGridViewHotelQuarto.Name = "dataGridViewHotelQuarto";
             this.dataGridViewHotelQuarto.Size = new System.Drawing.Size(372, 152);
-            this.dataGridViewHotelQuarto.TabIndex = 20;
+            this.dataGridViewHotelQuarto.TabIndex = 4;
             // 
             // textBoxIdHotel
             // 
@@ -350,7 +351,7 @@
             this.textBoxIdHotel.Location = new System.Drawing.Point(9, 44);
             this.textBoxIdHotel.Name = "textBoxIdHotel";
             this.textBoxIdHotel.Size = new System.Drawing.Size(179, 20);
-            this.textBoxIdHotel.TabIndex = 18;
+            this.textBoxIdHotel.TabIndex = 0;
             // 
             // textBoxNomeHotel
             // 
@@ -358,7 +359,7 @@
             this.textBoxNomeHotel.Location = new System.Drawing.Point(9, 84);
             this.textBoxNomeHotel.Name = "textBoxNomeHotel";
             this.textBoxNomeHotel.Size = new System.Drawing.Size(179, 20);
-            this.textBoxNomeHotel.TabIndex = 0;
+            this.textBoxNomeHotel.TabIndex = 2;
             // 
             // groupBoxEndereço
             // 
@@ -391,7 +392,7 @@
             this.button1.Location = new System.Drawing.Point(490, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 15;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -401,7 +402,7 @@
             this.buttonAddQuartos.Location = new System.Drawing.Point(358, 298);
             this.buttonAddQuartos.Name = "buttonAddQuartos";
             this.buttonAddQuartos.Size = new System.Drawing.Size(106, 23);
-            this.buttonAddQuartos.TabIndex = 19;
+            this.buttonAddQuartos.TabIndex = 14;
             this.buttonAddQuartos.Text = "Adicionar Quartos";
             this.buttonAddQuartos.UseVisualStyleBackColor = true;
             this.buttonAddQuartos.Click += new System.EventHandler(this.buttonAddQuartos_Click);
@@ -410,6 +411,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroHotel;
             this.ClientSize = new System.Drawing.Size(777, 328);
             this.Controls.Add(this.buttonAddQuartos);
             this.Controls.Add(this.button1);
@@ -418,6 +420,7 @@
             this.Controls.Add(this.groupBoxDados);
             this.Controls.Add(this.groupBoxEndereço);
             this.Name = "FormDetalhesHotel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Hotel";
             this.groupBoxDados.ResumeLayout(false);
             this.groupBoxDados.PerformLayout();

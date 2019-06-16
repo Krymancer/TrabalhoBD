@@ -327,6 +327,7 @@
             this.buttonCancelarCadastroHotel.TabIndex = 13;
             this.buttonCancelarCadastroHotel.Text = "Cancelar";
             this.buttonCancelarCadastroHotel.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroHotel.Click += new System.EventHandler(this.buttonCancelarCadastroHotel_Click);
             // 
             // FormCadastrarHotel
             // 

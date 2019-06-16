@@ -126,6 +126,7 @@
             this.buttonCancelarCidade.TabIndex = 4;
             this.buttonCancelarCidade.Text = "Cancelar";
             this.buttonCancelarCidade.UseVisualStyleBackColor = true;
+            this.buttonCancelarCidade.Click += new System.EventHandler(this.buttonCancelarCidade_Click);
             // 
             // FormCadastrarCidade
             // 

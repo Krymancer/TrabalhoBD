@@ -234,7 +234,7 @@
             this.textBoxNumeroDeSalasMuseu.Location = new System.Drawing.Point(9, 174);
             this.textBoxNumeroDeSalasMuseu.Name = "textBoxNumeroDeSalasMuseu";
             this.textBoxNumeroDeSalasMuseu.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNumeroDeSalasMuseu.TabIndex = 20;
+            this.textBoxNumeroDeSalasMuseu.TabIndex = 4;
             // 
             // maskedTextBoxValorEntradaMuseu
             // 
@@ -243,14 +243,14 @@
             this.maskedTextBoxValorEntradaMuseu.Mask = "$ ###,##";
             this.maskedTextBoxValorEntradaMuseu.Name = "maskedTextBoxValorEntradaMuseu";
             this.maskedTextBoxValorEntradaMuseu.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxValorEntradaMuseu.TabIndex = 18;
+            this.maskedTextBoxValorEntradaMuseu.TabIndex = 3;
             // 
             // monthCalendarFundacaoMuseu
             // 
             this.monthCalendarFundacaoMuseu.Enabled = false;
             this.monthCalendarFundacaoMuseu.Location = new System.Drawing.Point(12, 214);
             this.monthCalendarFundacaoMuseu.Name = "monthCalendarFundacaoMuseu";
-            this.monthCalendarFundacaoMuseu.TabIndex = 17;
+            this.monthCalendarFundacaoMuseu.TabIndex = 5;
             // 
             // textBoxDescricaoMuseu
             // 
@@ -259,7 +259,7 @@
             this.textBoxDescricaoMuseu.Multiline = true;
             this.textBoxDescricaoMuseu.Name = "textBoxDescricaoMuseu";
             this.textBoxDescricaoMuseu.Size = new System.Drawing.Size(220, 91);
-            this.textBoxDescricaoMuseu.TabIndex = 13;
+            this.textBoxDescricaoMuseu.TabIndex = 6;
             // 
             // maskedTextBoxContatoMuseu
             // 
@@ -268,7 +268,7 @@
             this.maskedTextBoxContatoMuseu.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoMuseu.Name = "maskedTextBoxContatoMuseu";
             this.maskedTextBoxContatoMuseu.Size = new System.Drawing.Size(92, 20);
-            this.maskedTextBoxContatoMuseu.TabIndex = 10;
+            this.maskedTextBoxContatoMuseu.TabIndex = 2;
             // 
             // textBoxNomeMuseu
             // 
@@ -276,7 +276,7 @@
             this.textBoxNomeMuseu.Location = new System.Drawing.Point(9, 69);
             this.textBoxNomeMuseu.Name = "textBoxNomeMuseu";
             this.textBoxNomeMuseu.Size = new System.Drawing.Size(223, 20);
-            this.textBoxNomeMuseu.TabIndex = 9;
+            this.textBoxNomeMuseu.TabIndex = 1;
             // 
             // groupBoxDados
             // 
@@ -307,7 +307,7 @@
             this.textBoxIdMuseu.Location = new System.Drawing.Point(9, 32);
             this.textBoxIdMuseu.Name = "textBoxIdMuseu";
             this.textBoxIdMuseu.Size = new System.Drawing.Size(95, 20);
-            this.textBoxIdMuseu.TabIndex = 22;
+            this.textBoxIdMuseu.TabIndex = 0;
             // 
             // buttonCancelarCadastroMuseu
             // 
@@ -315,16 +315,17 @@
             this.buttonCancelarCadastroMuseu.Location = new System.Drawing.Point(573, 493);
             this.buttonCancelarCadastroMuseu.Name = "buttonCancelarCadastroMuseu";
             this.buttonCancelarCadastroMuseu.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarCadastroMuseu.TabIndex = 30;
+            this.buttonCancelarCadastroMuseu.TabIndex = 17;
             this.buttonCancelarCadastroMuseu.Text = "Cancelar";
             this.buttonCancelarCadastroMuseu.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroMuseu.Click += new System.EventHandler(this.buttonCancelarCadastroMuseu_Click);
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Location = new System.Drawing.Point(480, 493);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluir.TabIndex = 29;
+            this.buttonExcluir.TabIndex = 16;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
@@ -360,7 +361,7 @@
             this.comboBoxEndCidadeMuseu.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeMuseu.Name = "comboBoxEndCidadeMuseu";
             this.comboBoxEndCidadeMuseu.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndCidadeMuseu.TabIndex = 12;
+            this.comboBoxEndCidadeMuseu.TabIndex = 14;
             // 
             // maskedTextBoxEndCepMuseu
             // 
@@ -369,7 +370,7 @@
             this.maskedTextBoxEndCepMuseu.Mask = "00000-999";
             this.maskedTextBoxEndCepMuseu.Name = "maskedTextBoxEndCepMuseu";
             this.maskedTextBoxEndCepMuseu.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndCepMuseu.TabIndex = 10;
+            this.maskedTextBoxEndCepMuseu.TabIndex = 13;
             // 
             // textBoxEndBairroMuseu
             // 
@@ -377,7 +378,7 @@
             this.textBoxEndBairroMuseu.Location = new System.Drawing.Point(121, 150);
             this.textBoxEndBairroMuseu.Name = "textBoxEndBairroMuseu";
             this.textBoxEndBairroMuseu.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroMuseu.TabIndex = 9;
+            this.textBoxEndBairroMuseu.TabIndex = 12;
             // 
             // textBoxEndComplementoMuseu
             // 
@@ -385,7 +386,7 @@
             this.textBoxEndComplementoMuseu.Location = new System.Drawing.Point(9, 150);
             this.textBoxEndComplementoMuseu.Name = "textBoxEndComplementoMuseu";
             this.textBoxEndComplementoMuseu.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndComplementoMuseu.TabIndex = 7;
+            this.textBoxEndComplementoMuseu.TabIndex = 11;
             // 
             // textBoxEndNumeroMuseu
             // 
@@ -393,7 +394,7 @@
             this.textBoxEndNumeroMuseu.Location = new System.Drawing.Point(227, 96);
             this.textBoxEndNumeroMuseu.Name = "textBoxEndNumeroMuseu";
             this.textBoxEndNumeroMuseu.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndNumeroMuseu.TabIndex = 6;
+            this.textBoxEndNumeroMuseu.TabIndex = 10;
             this.textBoxEndNumeroMuseu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroMuseu_KeyPress);
             // 
             // textBoxEndLogradouroMuseu
@@ -402,7 +403,7 @@
             this.textBoxEndLogradouroMuseu.Location = new System.Drawing.Point(9, 96);
             this.textBoxEndLogradouroMuseu.Name = "textBoxEndLogradouroMuseu";
             this.textBoxEndLogradouroMuseu.Size = new System.Drawing.Size(212, 20);
-            this.textBoxEndLogradouroMuseu.TabIndex = 5;
+            this.textBoxEndLogradouroMuseu.TabIndex = 9;
             // 
             // comboBoxEndTipoMuseu
             // 
@@ -412,14 +413,14 @@
             this.comboBoxEndTipoMuseu.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoMuseu.Name = "comboBoxEndTipoMuseu";
             this.comboBoxEndTipoMuseu.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndTipoMuseu.TabIndex = 4;
+            this.comboBoxEndTipoMuseu.TabIndex = 7;
             // 
             // buttonEditar
             // 
             this.buttonEditar.Location = new System.Drawing.Point(385, 493);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 31;
+            this.buttonEditar.TabIndex = 15;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);

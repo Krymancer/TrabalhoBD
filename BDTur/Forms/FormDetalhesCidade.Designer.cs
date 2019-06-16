@@ -106,7 +106,7 @@
             this.textBoxIdCidade.Location = new System.Drawing.Point(9, 32);
             this.textBoxIdCidade.Name = "textBoxIdCidade";
             this.textBoxIdCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIdCidade.TabIndex = 20;
+            this.textBoxIdCidade.TabIndex = 0;
             // 
             // textBoxEstadoCidade
             // 
@@ -114,7 +114,7 @@
             this.textBoxEstadoCidade.Location = new System.Drawing.Point(9, 71);
             this.textBoxEstadoCidade.Name = "textBoxEstadoCidade";
             this.textBoxEstadoCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEstadoCidade.TabIndex = 3;
+            this.textBoxEstadoCidade.TabIndex = 2;
             // 
             // textBoxPopulacaoCidade
             // 
@@ -122,7 +122,7 @@
             this.textBoxPopulacaoCidade.Location = new System.Drawing.Point(115, 72);
             this.textBoxPopulacaoCidade.Name = "textBoxPopulacaoCidade";
             this.textBoxPopulacaoCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPopulacaoCidade.TabIndex = 2;
+            this.textBoxPopulacaoCidade.TabIndex = 3;
             this.textBoxPopulacaoCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPopulacaoCidade_KeyPress);
             // 
             // textBoxNomeCidade
@@ -131,14 +131,14 @@
             this.textBoxNomeCidade.Location = new System.Drawing.Point(115, 32);
             this.textBoxNomeCidade.Name = "textBoxNomeCidade";
             this.textBoxNomeCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomeCidade.TabIndex = 0;
+            this.textBoxNomeCidade.TabIndex = 1;
             // 
             // buttonEditarCidade
             // 
             this.buttonEditarCidade.Location = new System.Drawing.Point(13, 128);
             this.buttonEditarCidade.Name = "buttonEditarCidade";
             this.buttonEditarCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditarCidade.TabIndex = 34;
+            this.buttonEditarCidade.TabIndex = 4;
             this.buttonEditarCidade.Text = "Editar";
             this.buttonEditarCidade.UseVisualStyleBackColor = true;
             this.buttonEditarCidade.Click += new System.EventHandler(this.buttonEditarCidade_Click);
@@ -148,7 +148,7 @@
             this.buttonExcluirCidade.Location = new System.Drawing.Point(106, 128);
             this.buttonExcluirCidade.Name = "buttonExcluirCidade";
             this.buttonExcluirCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirCidade.TabIndex = 33;
+            this.buttonExcluirCidade.TabIndex = 5;
             this.buttonExcluirCidade.Text = "Excluir";
             this.buttonExcluirCidade.UseVisualStyleBackColor = true;
             this.buttonExcluirCidade.Click += new System.EventHandler(this.buttonExcluirCidade_Click);
@@ -159,9 +159,10 @@
             this.buttonCancelarCidade.Location = new System.Drawing.Point(198, 128);
             this.buttonCancelarCidade.Name = "buttonCancelarCidade";
             this.buttonCancelarCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarCidade.TabIndex = 35;
+            this.buttonCancelarCidade.TabIndex = 6;
             this.buttonCancelarCidade.Text = "Cancelar";
             this.buttonCancelarCidade.UseVisualStyleBackColor = true;
+            this.buttonCancelarCidade.Click += new System.EventHandler(this.buttonCancelarCidade_Click);
             // 
             // FormDetalhesCidade
             // 

@@ -229,5 +229,9 @@ namespace BDTur.Forms
 
         }
 
+        private void buttonCancelarCadastroRestaurante_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

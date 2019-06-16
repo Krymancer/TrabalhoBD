@@ -190,5 +190,10 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCancelarCadastroHotel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

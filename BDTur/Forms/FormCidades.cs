@@ -80,5 +80,10 @@ namespace BDTur.Forms
             string estado = textBoxEstado.Text;
             populateDataGridView(nome, estado);
         }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

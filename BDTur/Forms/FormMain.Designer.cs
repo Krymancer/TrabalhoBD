@@ -100,10 +100,10 @@
             this.museuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fundadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripGerenciar = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadesToolStripMenuItemCidade = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItemUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             labelCidade = new System.Windows.Forms.Label();
             labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -888,21 +888,21 @@
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
             // hotelToolStripMenuItem
             // 
             this.hotelToolStripMenuItem.Name = "hotelToolStripMenuItem";
-            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.hotelToolStripMenuItem.Text = "Hotel";
             this.hotelToolStripMenuItem.Click += new System.EventHandler(this.hotelToolStripMenuItem_Click);
             // 
             // restauranteToolStripMenuItem
             // 
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
-            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
             this.restauranteToolStripMenuItem.Click += new System.EventHandler(this.restauranteToolStripMenuItem_Click);
             // 
@@ -913,7 +913,7 @@
             this.museuToolStripMenuItem,
             this.casaDeShowToolStripMenuItem});
             this.pontoTuristicoToolStripMenuItem.Name = "pontoTuristicoToolStripMenuItem";
-            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.pontoTuristicoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.pontoTuristicoToolStripMenuItem.Text = "Ponto Turistico";
             // 
             // igrejaToolStripMenuItem
@@ -940,9 +940,16 @@
             // fundadorToolStripMenuItem
             // 
             this.fundadorToolStripMenuItem.Name = "fundadorToolStripMenuItem";
-            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.fundadorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.fundadorToolStripMenuItem.Text = "Fundador";
             this.fundadorToolStripMenuItem.Click += new System.EventHandler(this.fundadorToolStripMenuItem_Click);
+            // 
+            // usariosToolStripMenuItem
+            // 
+            this.usariosToolStripMenuItem.Name = "usariosToolStripMenuItem";
+            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.usariosToolStripMenuItem.Text = "Usuários";
+            this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
             // 
             // toolStripGerenciar
             // 
@@ -956,23 +963,16 @@
             // cidadesToolStripMenuItemCidade
             // 
             this.cidadesToolStripMenuItemCidade.Name = "cidadesToolStripMenuItemCidade";
-            this.cidadesToolStripMenuItemCidade.Size = new System.Drawing.Size(180, 22);
+            this.cidadesToolStripMenuItemCidade.Size = new System.Drawing.Size(119, 22);
             this.cidadesToolStripMenuItemCidade.Text = "Cidades";
             this.cidadesToolStripMenuItemCidade.Click += new System.EventHandler(this.cidadesToolStripMenuItemCidade_Click);
             // 
             // usuáriosToolStripMenuItemUser
             // 
             this.usuáriosToolStripMenuItemUser.Name = "usuáriosToolStripMenuItemUser";
-            this.usuáriosToolStripMenuItemUser.Size = new System.Drawing.Size(180, 22);
+            this.usuáriosToolStripMenuItemUser.Size = new System.Drawing.Size(119, 22);
             this.usuáriosToolStripMenuItemUser.Text = "Usuários";
             this.usuáriosToolStripMenuItemUser.Click += new System.EventHandler(this.usuáriosToolStripMenuItemUser_Click);
-            // 
-            // usariosToolStripMenuItem
-            // 
-            this.usariosToolStripMenuItem.Name = "usariosToolStripMenuItem";
-            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usariosToolStripMenuItem.Text = "Usuários";
-            this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -987,6 +987,7 @@
             this.Controls.Add(labelCidade);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BDTur";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl.ResumeLayout(false);

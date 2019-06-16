@@ -202,14 +202,14 @@
             this.textBoxEstiloIgreja.Location = new System.Drawing.Point(110, 120);
             this.textBoxEstiloIgreja.Name = "textBoxEstiloIgreja";
             this.textBoxEstiloIgreja.Size = new System.Drawing.Size(122, 20);
-            this.textBoxEstiloIgreja.TabIndex = 2;
+            this.textBoxEstiloIgreja.TabIndex = 3;
             // 
             // monthCalendarFundacaoIgreja
             // 
             this.monthCalendarFundacaoIgreja.Enabled = false;
             this.monthCalendarFundacaoIgreja.Location = new System.Drawing.Point(12, 173);
             this.monthCalendarFundacaoIgreja.Name = "monthCalendarFundacaoIgreja";
-            this.monthCalendarFundacaoIgreja.TabIndex = 3;
+            this.monthCalendarFundacaoIgreja.TabIndex = 4;
             // 
             // textBoxDescricaoIgreja
             // 
@@ -218,7 +218,7 @@
             this.textBoxDescricaoIgreja.Multiline = true;
             this.textBoxDescricaoIgreja.Name = "textBoxDescricaoIgreja";
             this.textBoxDescricaoIgreja.Size = new System.Drawing.Size(220, 90);
-            this.textBoxDescricaoIgreja.TabIndex = 4;
+            this.textBoxDescricaoIgreja.TabIndex = 5;
             // 
             // textBoxNomeIgreja
             // 
@@ -226,7 +226,7 @@
             this.textBoxNomeIgreja.Location = new System.Drawing.Point(9, 69);
             this.textBoxNomeIgreja.Name = "textBoxNomeIgreja";
             this.textBoxNomeIgreja.Size = new System.Drawing.Size(223, 20);
-            this.textBoxNomeIgreja.TabIndex = 0;
+            this.textBoxNomeIgreja.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -255,7 +255,7 @@
             this.textBoxIdIgreja.Location = new System.Drawing.Point(9, 32);
             this.textBoxIdIgreja.Name = "textBoxIdIgreja";
             this.textBoxIdIgreja.Size = new System.Drawing.Size(122, 20);
-            this.textBoxIdIgreja.TabIndex = 17;
+            this.textBoxIdIgreja.TabIndex = 0;
             // 
             // maskedTextBoxContatoIgreja
             // 
@@ -264,7 +264,7 @@
             this.maskedTextBoxContatoIgreja.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoIgreja.Name = "maskedTextBoxContatoIgreja";
             this.maskedTextBoxContatoIgreja.Size = new System.Drawing.Size(92, 20);
-            this.maskedTextBoxContatoIgreja.TabIndex = 1;
+            this.maskedTextBoxContatoIgreja.TabIndex = 2;
             // 
             // listBoxFundadoresSelecionados
             // 
@@ -274,7 +274,7 @@
             this.listBoxFundadoresSelecionados.Location = new System.Drawing.Point(9, 22);
             this.listBoxFundadoresSelecionados.Name = "listBoxFundadoresSelecionados";
             this.listBoxFundadoresSelecionados.Size = new System.Drawing.Size(335, 147);
-            this.listBoxFundadoresSelecionados.TabIndex = 23;
+            this.listBoxFundadoresSelecionados.TabIndex = 13;
             // 
             // groupBox3
             // 
@@ -292,16 +292,17 @@
             this.buttonCancelarCadastroIgreja.Location = new System.Drawing.Point(573, 445);
             this.buttonCancelarCadastroIgreja.Name = "buttonCancelarCadastroIgreja";
             this.buttonCancelarCadastroIgreja.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarCadastroIgreja.TabIndex = 21;
+            this.buttonCancelarCadastroIgreja.TabIndex = 16;
             this.buttonCancelarCadastroIgreja.Text = "Cancelar";
             this.buttonCancelarCadastroIgreja.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroIgreja.Click += new System.EventHandler(this.buttonCancelarCadastroIgreja_Click);
             // 
             // buttonCadastrarIgreja
             // 
             this.buttonCadastrarIgreja.Location = new System.Drawing.Point(480, 445);
             this.buttonCadastrarIgreja.Name = "buttonCadastrarIgreja";
             this.buttonCadastrarIgreja.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrarIgreja.TabIndex = 20;
+            this.buttonCadastrarIgreja.TabIndex = 15;
             this.buttonCadastrarIgreja.Text = "Excluir";
             this.buttonCadastrarIgreja.UseVisualStyleBackColor = true;
             this.buttonCadastrarIgreja.Click += new System.EventHandler(this.buttonCadastrarIgreja_Click);
@@ -337,7 +338,7 @@
             this.comboBoxEndCidadeIgreja.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeIgreja.Name = "comboBoxEndCidadeIgreja";
             this.comboBoxEndCidadeIgreja.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndCidadeIgreja.TabIndex = 11;
+            this.comboBoxEndCidadeIgreja.TabIndex = 12;
             // 
             // maskedTextBoxEndCepIgreja
             // 
@@ -346,7 +347,7 @@
             this.maskedTextBoxEndCepIgreja.Mask = "00000-999";
             this.maskedTextBoxEndCepIgreja.Name = "maskedTextBoxEndCepIgreja";
             this.maskedTextBoxEndCepIgreja.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndCepIgreja.TabIndex = 10;
+            this.maskedTextBoxEndCepIgreja.TabIndex = 11;
             // 
             // textBoxEndBairroIgreja
             // 
@@ -354,7 +355,7 @@
             this.textBoxEndBairroIgreja.Location = new System.Drawing.Point(121, 150);
             this.textBoxEndBairroIgreja.Name = "textBoxEndBairroIgreja";
             this.textBoxEndBairroIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroIgreja.TabIndex = 9;
+            this.textBoxEndBairroIgreja.TabIndex = 10;
             // 
             // textBoxEndComplementoIgreja
             // 
@@ -362,7 +363,7 @@
             this.textBoxEndComplementoIgreja.Location = new System.Drawing.Point(9, 150);
             this.textBoxEndComplementoIgreja.Name = "textBoxEndComplementoIgreja";
             this.textBoxEndComplementoIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndComplementoIgreja.TabIndex = 8;
+            this.textBoxEndComplementoIgreja.TabIndex = 9;
             // 
             // textBoxEndNumeroIgreja
             // 
@@ -370,7 +371,7 @@
             this.textBoxEndNumeroIgreja.Location = new System.Drawing.Point(227, 96);
             this.textBoxEndNumeroIgreja.Name = "textBoxEndNumeroIgreja";
             this.textBoxEndNumeroIgreja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndNumeroIgreja.TabIndex = 7;
+            this.textBoxEndNumeroIgreja.TabIndex = 8;
             this.textBoxEndNumeroIgreja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroIgreja_KeyPress);
             // 
             // textBoxEndLogradouroIgreja
@@ -379,7 +380,7 @@
             this.textBoxEndLogradouroIgreja.Location = new System.Drawing.Point(9, 96);
             this.textBoxEndLogradouroIgreja.Name = "textBoxEndLogradouroIgreja";
             this.textBoxEndLogradouroIgreja.Size = new System.Drawing.Size(212, 20);
-            this.textBoxEndLogradouroIgreja.TabIndex = 6;
+            this.textBoxEndLogradouroIgreja.TabIndex = 7;
             // 
             // comboBoxEndTipoIgreja
             // 
@@ -389,14 +390,14 @@
             this.comboBoxEndTipoIgreja.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoIgreja.Name = "comboBoxEndTipoIgreja";
             this.comboBoxEndTipoIgreja.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndTipoIgreja.TabIndex = 5;
+            this.comboBoxEndTipoIgreja.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(390, 445);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -405,6 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroIgreja;
             this.ClientSize = new System.Drawing.Size(664, 478);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);

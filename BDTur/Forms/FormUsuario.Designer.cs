@@ -76,6 +76,7 @@
             this.checkBoxNivelUsuario.TabIndex = 2;
             this.checkBoxNivelUsuario.Text = "Usuário";
             this.checkBoxNivelUsuario.UseVisualStyleBackColor = true;
+            this.checkBoxNivelUsuario.CheckedChanged += new System.EventHandler(this.checkBoxNivelUsuario_CheckedChanged);
             // 
             // checkBoxNivelAdm
             // 
@@ -101,6 +102,7 @@
             this.checkBoxNivelGerente.TabIndex = 1;
             this.checkBoxNivelGerente.Text = "Gerente";
             this.checkBoxNivelGerente.UseVisualStyleBackColor = true;
+            this.checkBoxNivelGerente.CheckedChanged += new System.EventHandler(this.checkBoxNivelGerente_CheckedChanged);
             // 
             // groupBoxUsuarios
             // 
@@ -121,6 +123,7 @@
             this.buttonVoltar.TabIndex = 30;
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // FormUsuario
             // 

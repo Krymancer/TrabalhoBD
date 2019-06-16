@@ -45,6 +45,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxNomeCasaDeShow = new System.Windows.Forms.TextBox();
             this.groupBoxDados = new System.Windows.Forms.GroupBox();
+            this.comboBoxDiaFechamento = new System.Windows.Forms.ComboBox();
             this.textBoxIdCasadeShow = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoCasaDeShow = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxIdRestauranteCasaDeShow = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.comboBoxEndTipoCasaDeShow = new System.Windows.Forms.ComboBox();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
-            this.comboBoxDiaFechamento = new System.Windows.Forms.ComboBox();
             label13 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -242,6 +242,16 @@
             this.groupBoxDados.TabStop = false;
             this.groupBoxDados.Text = "Dados";
             // 
+            // comboBoxDiaFechamento
+            // 
+            this.comboBoxDiaFechamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDiaFechamento.Enabled = false;
+            this.comboBoxDiaFechamento.FormattingEnabled = true;
+            this.comboBoxDiaFechamento.Location = new System.Drawing.Point(12, 175);
+            this.comboBoxDiaFechamento.Name = "comboBoxDiaFechamento";
+            this.comboBoxDiaFechamento.Size = new System.Drawing.Size(92, 21);
+            this.comboBoxDiaFechamento.TabIndex = 22;
+            // 
             // textBoxIdCasadeShow
             // 
             this.textBoxIdCasadeShow.Enabled = false;
@@ -278,6 +288,7 @@
             this.buttonCancelarCadastroCasaDeShow.TabIndex = 29;
             this.buttonCancelarCadastroCasaDeShow.Text = "Cancelar";
             this.buttonCancelarCadastroCasaDeShow.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroCasaDeShow.Click += new System.EventHandler(this.buttonCancelarCadastroCasaDeShow_Click);
             // 
             // groupBoxEndereco
             // 
@@ -408,20 +419,11 @@
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
             this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
             // 
-            // comboBoxDiaFechamento
-            // 
-            this.comboBoxDiaFechamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDiaFechamento.Enabled = false;
-            this.comboBoxDiaFechamento.FormattingEnabled = true;
-            this.comboBoxDiaFechamento.Location = new System.Drawing.Point(12, 175);
-            this.comboBoxDiaFechamento.Name = "comboBoxDiaFechamento";
-            this.comboBoxDiaFechamento.Size = new System.Drawing.Size(92, 21);
-            this.comboBoxDiaFechamento.TabIndex = 22;
-            // 
             // FormDetalhesCasadeShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroCasaDeShow;
             this.ClientSize = new System.Drawing.Size(650, 379);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCadastrarHotel);
@@ -429,7 +431,8 @@
             this.Controls.Add(this.buttonCancelarCadastroCasaDeShow);
             this.Controls.Add(this.groupBoxEndereco);
             this.Name = "FormDetalhesCasadeShow";
-            this.Text = "FormDetalhesCasadeShow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalhes Casa de Show";
             this.groupBoxDados.ResumeLayout(false);
             this.groupBoxDados.PerformLayout();
             this.groupBoxEndereco.ResumeLayout(false);

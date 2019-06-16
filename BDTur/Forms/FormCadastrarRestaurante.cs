@@ -133,6 +133,11 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCancelarCadastroRestaurante_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
     //Implementação de uma Exeção customizada 

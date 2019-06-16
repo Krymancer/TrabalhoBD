@@ -179,6 +179,11 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonCancelarCadastroHotel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

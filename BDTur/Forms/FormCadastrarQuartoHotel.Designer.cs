@@ -76,16 +76,17 @@
             this.buttonCancelarQuarto.Location = new System.Drawing.Point(185, 169);
             this.buttonCancelarQuarto.Name = "buttonCancelarQuarto";
             this.buttonCancelarQuarto.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarQuarto.TabIndex = 6;
+            this.buttonCancelarQuarto.TabIndex = 4;
             this.buttonCancelarQuarto.Text = "Cancelar";
             this.buttonCancelarQuarto.UseVisualStyleBackColor = true;
+            this.buttonCancelarQuarto.Click += new System.EventHandler(this.buttonCancelarQuarto_Click);
             // 
             // buttonCadastrarQuarto
             // 
             this.buttonCadastrarQuarto.Location = new System.Drawing.Point(104, 169);
             this.buttonCadastrarQuarto.Name = "buttonCadastrarQuarto";
             this.buttonCadastrarQuarto.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrarQuarto.TabIndex = 5;
+            this.buttonCadastrarQuarto.TabIndex = 3;
             this.buttonCadastrarQuarto.Text = "Cadastrar";
             this.buttonCadastrarQuarto.UseVisualStyleBackColor = true;
             this.buttonCadastrarQuarto.Click += new System.EventHandler(this.buttonCadastrarQuarto_Click);
@@ -111,7 +112,7 @@
             this.maskedTextBoxDiariaQuarto.Mask = "$#####.##";
             this.maskedTextBoxDiariaQuarto.Name = "maskedTextBoxDiariaQuarto";
             this.maskedTextBoxDiariaQuarto.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxDiariaQuarto.TabIndex = 25;
+            this.maskedTextBoxDiariaQuarto.TabIndex = 2;
             this.maskedTextBoxDiariaQuarto.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // comboBoxTipoQuarto
@@ -121,7 +122,7 @@
             this.comboBoxTipoQuarto.Location = new System.Drawing.Point(9, 101);
             this.comboBoxTipoQuarto.Name = "comboBoxTipoQuarto";
             this.comboBoxTipoQuarto.Size = new System.Drawing.Size(98, 21);
-            this.comboBoxTipoQuarto.TabIndex = 24;
+            this.comboBoxTipoQuarto.TabIndex = 1;
             // 
             // textBoxNumeroQuarto
             // 

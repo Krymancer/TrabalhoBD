@@ -200,7 +200,7 @@
             this.maskedTextBoxPrecoMedioRestaurante.Mask = "$ ###.##";
             this.maskedTextBoxPrecoMedioRestaurante.Name = "maskedTextBoxPrecoMedioRestaurante";
             this.maskedTextBoxPrecoMedioRestaurante.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxPrecoMedioRestaurante.TabIndex = 3;
+            this.maskedTextBoxPrecoMedioRestaurante.TabIndex = 4;
             this.maskedTextBoxPrecoMedioRestaurante.Text = "00000";
             this.maskedTextBoxPrecoMedioRestaurante.ValidatingType = typeof(int);
             // 
@@ -210,7 +210,7 @@
             this.textBoxEspecialidadeRestaurante.Location = new System.Drawing.Point(136, 130);
             this.textBoxEspecialidadeRestaurante.Name = "textBoxEspecialidadeRestaurante";
             this.textBoxEspecialidadeRestaurante.Size = new System.Drawing.Size(92, 20);
-            this.textBoxEspecialidadeRestaurante.TabIndex = 2;
+            this.textBoxEspecialidadeRestaurante.TabIndex = 3;
             // 
             // comboBoxCategoriaRestaurante
             // 
@@ -222,7 +222,7 @@
             this.comboBoxCategoriaRestaurante.Location = new System.Drawing.Point(6, 130);
             this.comboBoxCategoriaRestaurante.Name = "comboBoxCategoriaRestaurante";
             this.comboBoxCategoriaRestaurante.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCategoriaRestaurante.TabIndex = 1;
+            this.comboBoxCategoriaRestaurante.TabIndex = 2;
             // 
             // textBoxNomeRestaurante
             // 
@@ -230,7 +230,7 @@
             this.textBoxNomeRestaurante.Location = new System.Drawing.Point(6, 81);
             this.textBoxNomeRestaurante.Name = "textBoxNomeRestaurante";
             this.textBoxNomeRestaurante.Size = new System.Drawing.Size(223, 20);
-            this.textBoxNomeRestaurante.TabIndex = 0;
+            this.textBoxNomeRestaurante.TabIndex = 1;
             // 
             // comboBoxEndCidadeRestaurante
             // 
@@ -240,7 +240,7 @@
             this.comboBoxEndCidadeRestaurante.Location = new System.Drawing.Point(9, 199);
             this.comboBoxEndCidadeRestaurante.Name = "comboBoxEndCidadeRestaurante";
             this.comboBoxEndCidadeRestaurante.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndCidadeRestaurante.TabIndex = 11;
+            this.comboBoxEndCidadeRestaurante.TabIndex = 12;
             // 
             // maskedTextBoxEndCepRestaurante
             // 
@@ -249,7 +249,7 @@
             this.maskedTextBoxEndCepRestaurante.Mask = "00000-999";
             this.maskedTextBoxEndCepRestaurante.Name = "maskedTextBoxEndCepRestaurante";
             this.maskedTextBoxEndCepRestaurante.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndCepRestaurante.TabIndex = 10;
+            this.maskedTextBoxEndCepRestaurante.TabIndex = 11;
             // 
             // textBoxEndBairroRestaurante
             // 
@@ -257,7 +257,7 @@
             this.textBoxEndBairroRestaurante.Location = new System.Drawing.Point(121, 150);
             this.textBoxEndBairroRestaurante.Name = "textBoxEndBairroRestaurante";
             this.textBoxEndBairroRestaurante.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndBairroRestaurante.TabIndex = 9;
+            this.textBoxEndBairroRestaurante.TabIndex = 10;
             // 
             // textBoxEndComplementoRestaurante
             // 
@@ -265,7 +265,7 @@
             this.textBoxEndComplementoRestaurante.Location = new System.Drawing.Point(9, 150);
             this.textBoxEndComplementoRestaurante.Name = "textBoxEndComplementoRestaurante";
             this.textBoxEndComplementoRestaurante.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndComplementoRestaurante.TabIndex = 8;
+            this.textBoxEndComplementoRestaurante.TabIndex = 9;
             // 
             // textBoxEndNumeroRestaurante
             // 
@@ -273,7 +273,7 @@
             this.textBoxEndNumeroRestaurante.Location = new System.Drawing.Point(227, 96);
             this.textBoxEndNumeroRestaurante.Name = "textBoxEndNumeroRestaurante";
             this.textBoxEndNumeroRestaurante.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEndNumeroRestaurante.TabIndex = 7;
+            this.textBoxEndNumeroRestaurante.TabIndex = 8;
             this.textBoxEndNumeroRestaurante.Text = " ";
             this.textBoxEndNumeroRestaurante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndNumeroRestaurante_KeyPress);
             // 
@@ -283,7 +283,7 @@
             this.textBoxEndLogradouroRestaurante.Location = new System.Drawing.Point(9, 96);
             this.textBoxEndLogradouroRestaurante.Name = "textBoxEndLogradouroRestaurante";
             this.textBoxEndLogradouroRestaurante.Size = new System.Drawing.Size(212, 20);
-            this.textBoxEndLogradouroRestaurante.TabIndex = 6;
+            this.textBoxEndLogradouroRestaurante.TabIndex = 7;
             // 
             // comboBoxEndTipoRestaurante
             // 
@@ -293,7 +293,7 @@
             this.comboBoxEndTipoRestaurante.Location = new System.Drawing.Point(9, 45);
             this.comboBoxEndTipoRestaurante.Name = "comboBoxEndTipoRestaurante";
             this.comboBoxEndTipoRestaurante.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEndTipoRestaurante.TabIndex = 5;
+            this.comboBoxEndTipoRestaurante.TabIndex = 6;
             // 
             // maskedTextBoxContatoRestaurante
             // 
@@ -302,7 +302,7 @@
             this.maskedTextBoxContatoRestaurante.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoRestaurante.Name = "maskedTextBoxContatoRestaurante";
             this.maskedTextBoxContatoRestaurante.Size = new System.Drawing.Size(92, 20);
-            this.maskedTextBoxContatoRestaurante.TabIndex = 4;
+            this.maskedTextBoxContatoRestaurante.TabIndex = 5;
             // 
             // buttonCancelarCadastroRestaurante
             // 
@@ -310,9 +310,10 @@
             this.buttonCancelarCadastroRestaurante.Location = new System.Drawing.Point(573, 298);
             this.buttonCancelarCadastroRestaurante.Name = "buttonCancelarCadastroRestaurante";
             this.buttonCancelarCadastroRestaurante.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarCadastroRestaurante.TabIndex = 18;
+            this.buttonCancelarCadastroRestaurante.TabIndex = 15;
             this.buttonCancelarCadastroRestaurante.Text = "Cancelar";
             this.buttonCancelarCadastroRestaurante.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroRestaurante.Click += new System.EventHandler(this.buttonCancelarCadastroRestaurante_Click);
             // 
             // groupBoxEndereço
             // 
@@ -364,14 +365,14 @@
             this.textBoxIdRestaurante.Location = new System.Drawing.Point(6, 45);
             this.textBoxIdRestaurante.Name = "textBoxIdRestaurante";
             this.textBoxIdRestaurante.Size = new System.Drawing.Size(92, 20);
-            this.textBoxIdRestaurante.TabIndex = 15;
+            this.textBoxIdRestaurante.TabIndex = 0;
             // 
             // buttonEditar
             // 
             this.buttonEditar.Location = new System.Drawing.Point(375, 298);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 21;
+            this.buttonEditar.TabIndex = 13;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
@@ -381,7 +382,7 @@
             this.buttonCadastrarHotel.Location = new System.Drawing.Point(475, 298);
             this.buttonCadastrarHotel.Name = "buttonCadastrarHotel";
             this.buttonCadastrarHotel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrarHotel.TabIndex = 20;
+            this.buttonCadastrarHotel.TabIndex = 14;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
             this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
@@ -390,6 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroRestaurante;
             this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCadastrarHotel);

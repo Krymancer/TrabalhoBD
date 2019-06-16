@@ -186,7 +186,7 @@
             this.button1.Location = new System.Drawing.Point(178, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 35;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -197,16 +197,17 @@
             this.buttonCancelarCadastroHotel.Location = new System.Drawing.Point(379, 216);
             this.buttonCancelarCadastroHotel.Name = "buttonCancelarCadastroHotel";
             this.buttonCancelarCadastroHotel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarCadastroHotel.TabIndex = 34;
+            this.buttonCancelarCadastroHotel.TabIndex = 8;
             this.buttonCancelarCadastroHotel.Text = "Cancelar";
             this.buttonCancelarCadastroHotel.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroHotel.Click += new System.EventHandler(this.buttonCancelarCadastroHotel_Click);
             // 
             // buttonCadastrarHotel
             // 
             this.buttonCadastrarHotel.Location = new System.Drawing.Point(278, 216);
             this.buttonCadastrarHotel.Name = "buttonCadastrarHotel";
             this.buttonCadastrarHotel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrarHotel.TabIndex = 33;
+            this.buttonCadastrarHotel.TabIndex = 7;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
             this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
@@ -215,6 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelarCadastroHotel;
             this.ClientSize = new System.Drawing.Size(469, 250);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelarCadastroHotel);

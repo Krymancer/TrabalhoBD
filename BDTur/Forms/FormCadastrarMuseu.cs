@@ -212,5 +212,10 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCancelarCadastroMuseu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

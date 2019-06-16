@@ -96,6 +96,7 @@
             // 
             // buttonCancelar
             // 
+            this.buttonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancelar.Location = new System.Drawing.Point(202, 142);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
@@ -135,6 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(288, 179);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.label4);
@@ -147,7 +149,8 @@
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonExcluir);
             this.Name = "FormDetalhesUsuario";
-            this.Text = "FormDetalhesUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalhes Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -283,5 +283,10 @@ namespace BDTur.Forms
                 MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonCancelarCadastroIgreja_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

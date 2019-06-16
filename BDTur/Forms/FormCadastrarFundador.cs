@@ -63,5 +63,10 @@ namespace BDTur.Forms
                 MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonCancelarCadastroFundador_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

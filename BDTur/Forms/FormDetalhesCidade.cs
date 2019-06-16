@@ -106,5 +106,10 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCancelarCidade_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

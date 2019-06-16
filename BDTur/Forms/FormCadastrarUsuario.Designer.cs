@@ -43,7 +43,7 @@
             this.button1.Location = new System.Drawing.Point(124, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -53,7 +53,7 @@
             this.button2.Location = new System.Drawing.Point(205, 121);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -81,7 +81,7 @@
             this.textBoxUsername.Location = new System.Drawing.Point(59, 24);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(100, 20);
-            this.textBoxUsername.TabIndex = 4;
+            this.textBoxUsername.TabIndex = 0;
             // 
             // textBoxPasswd
             // 
@@ -89,7 +89,7 @@
             this.textBoxPasswd.Name = "textBoxPasswd";
             this.textBoxPasswd.PasswordChar = '●';
             this.textBoxPasswd.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPasswd.TabIndex = 5;
+            this.textBoxPasswd.TabIndex = 1;
             // 
             // label3
             // 
@@ -107,12 +107,13 @@
             this.comboBoxAcessLevel.Location = new System.Drawing.Point(182, 52);
             this.comboBoxAcessLevel.Name = "comboBoxAcessLevel";
             this.comboBoxAcessLevel.Size = new System.Drawing.Size(109, 21);
-            this.comboBoxAcessLevel.TabIndex = 7;
+            this.comboBoxAcessLevel.TabIndex = 2;
             // 
             // FormCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(303, 156);
             this.Controls.Add(this.comboBoxAcessLevel);
             this.Controls.Add(this.label3);
@@ -123,6 +124,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormCadastrarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();

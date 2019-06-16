@@ -58,7 +58,16 @@ namespace BDTur.Forms
 
         private void checkBoxNivelAdm_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBoxNivelAdm.CheckState == CheckState.Checked)
+            {
+                NivelAcessoUsuario[0] = 1;
+            }
+            if (checkBoxNivelAdm.CheckState == CheckState.Unchecked)
+            {
+                NivelAcessoUsuario[0] = 0;
+            }
 
+            populateUsuarioDataGridView();
         }
 
         private void dataGridViewUsuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -70,6 +79,39 @@ namespace BDTur.Forms
                 nextScreen.ShowDialog();
                 populateUsuarioDataGridView();
             }
+        }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void checkBoxNivelGerente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNivelGerente.CheckState == CheckState.Checked)
+            {
+                NivelAcessoUsuario[1] = 2;
+            }
+            if (checkBoxNivelGerente.CheckState == CheckState.Unchecked)
+            {
+                NivelAcessoUsuario[1] = 0;
+            }
+
+            populateUsuarioDataGridView();
+        }
+
+        private void checkBoxNivelUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNivelUsuario.CheckState == CheckState.Checked)
+            {
+                NivelAcessoUsuario[2] = 3;
+            }
+            if (checkBoxNivelUsuario.CheckState == CheckState.Unchecked)
+            {
+                NivelAcessoUsuario[2] = 0;
+            }
+
+            populateUsuarioDataGridView();
         }
     }
 }
