@@ -1331,7 +1331,7 @@ namespace BDTur.Classes
 
                 string query = " UPDATE `equipe431447`.`hotel`" +
                                 "SET" +
-                                "`restauranteIdRestaurante` = ?restauranteIdRestaurante," +
+                               $"`restauranteIdRestaurante` = {hotel.RestauranteIdRestaurante}," +
                                 "`nomeHotel` = ?nomeHotel," +
                                 "`categoriaHotel` = ?categoriaHotel," +
                                 "`contatoHotel` = ?contatoHotel," +
@@ -1342,13 +1342,13 @@ namespace BDTur.Classes
                                 "`endBairroHotel` = ?endBairroHotel," +
                                 "`endCepHotel` = ?endCepHotel," +
                                 "`cidadeIdCidade` = ?cidadeIdCidade," +
-                                $"(select nome from cidade where idCidade = {hotel.CidadeIdCidade})," +
-                                $"(select estado from cidade where idCidade = {hotel.CidadeIdCidade})) " +
+                                $"`cidadeNome` = (select nome from cidade where idCidade = {hotel.CidadeIdCidade})," +
+                                $"`cidadeEstado` = (select estado from cidade where idCidade = {hotel.CidadeIdCidade}) " +
                                 "WHERE `idHotel` = ?id;";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
 
-                cmd.Parameters.Add(new MySqlParameter("restauranteIdRestaurante", hotel.RestauranteIdRestaurante));
+                //cmd.Parameters.Add(new MySqlParameter("restauranteIdRestaurante", hotel.RestauranteIdRestaurante));
                 cmd.Parameters.Add(new MySqlParameter("nomeHotel", hotel.NomeHotel));
                 cmd.Parameters.Add(new MySqlParameter("categoriaHotel", hotel.CategoriaHotel));
                 cmd.Parameters.Add(new MySqlParameter("contatoHotel", hotel.ContatoHotel));
@@ -1359,6 +1359,7 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endBairroHotel", hotel.EndBairroHotel));
                 cmd.Parameters.Add(new MySqlParameter("endCepHotel", hotel.EndCepHotel));
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", hotel.CidadeIdCidade));
+                cmd.Parameters.Add(new MySqlParameter("id", hotel.IdHotel));
                 Console.WriteLine(cmd.CommandText);
 
                 MySqlDataReader reader;

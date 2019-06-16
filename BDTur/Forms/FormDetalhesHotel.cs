@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BDTur.Forms
@@ -8,7 +9,8 @@ namespace BDTur.Forms
     public partial class FormDetalhesHotel : Form
     {
 
-        Classes.DAL adapter = new Classes.DAL();     
+        Classes.DAL adapter = new Classes.DAL();
+        bool editar = false;
 
         public FormDetalhesHotel(int id)
         {
@@ -187,7 +189,83 @@ namespace BDTur.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!editar)
+            {               
+                groupBoxDados.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                groupBoxEndereço.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                textBoxIdHotel.Enabled = false;
+                button1.Text = "Salvar";
+                editar = !editar;
+            }
+            else
+            {
+                try
+                {
+                    string hRid;
+                    if (checkBoxContemRestaurante.Checked)
+                    {
+                        hRid = comboBoxIdRestauranteHotel.SelectedValue.ToString();
+                    }
+                    else
+                    {
+                        hRid = "NULL";
+                    }
 
+                    string hNome = textBoxNomeHotel.Text;
+                    string hCategoria = comboBoxCategoriaHotel.SelectedItem.ToString();
+                    maskedTextBoxContatoHotel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string hContato = maskedTextBoxContatoHotel.Text;
+                    maskedTextBoxContatoHotel.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    string hEndTipo = comboBoxEndTipoHotel.SelectedItem.ToString();
+                    string hEndLog = textBoxEndLogradouroHotel.Text;
+                    string hEndNum = textBoxEndNumeroHotel.Text;
+                    string hEndComp;
+                    try
+                    {
+                        hEndComp = textBoxEndComplementoHotel.Text;
+                    }
+                    catch (NullReferenceException)
+                    {
+                        hEndComp = "NULL";
+                    }
+                    string hEndBairro = textBoxEndBairroHotel.Text;
+                    maskedTextBoxEndCepHotel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string hEndCep = maskedTextBoxEndCepHotel.Text;
+                    maskedTextBoxEndCepHotel.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    int hCid = int.Parse(comboBoxEndCidadeHotel.SelectedValue.ToString());
+                    if (hCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                    int id = int.Parse(textBoxIdHotel.Text);
+                    Classes.Hotel h = new Classes.Hotel(id, hCid, hRid, hNome, hCategoria, hContato, hEndTipo, hEndLog, hEndNum, hEndComp, hEndBairro, hEndBairro);                    
+                    if (adapter.atualizarHotel(h))
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.Close();
+                        editar = !editar;
+                        groupBoxDados.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        groupBoxEndereço.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        button1.Text = "Editar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (NullReferenceException)
+                {
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (InvalidSelectValue)
+                {
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
         private void textBoxEndNumeroHotel_KeyPress(object sender, KeyPressEventArgs e)
         {

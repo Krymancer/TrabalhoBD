@@ -53,11 +53,11 @@
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
             this.comboBoxCategoriaHotel = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoHotel = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDados = new System.Windows.Forms.GroupBox();
             this.dataGridViewHotelQuarto = new System.Windows.Forms.DataGridView();
             this.textBoxIdHotel = new System.Windows.Forms.TextBox();
             this.textBoxNomeHotel = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEndereço = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddQuartos = new System.Windows.Forms.Button();
@@ -72,9 +72,9 @@
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotelQuarto)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxEndereço.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -314,23 +314,23 @@
             this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(121, 20);
             this.maskedTextBoxContatoHotel.TabIndex = 2;
             // 
-            // groupBox1
+            // groupBoxDados
             // 
-            this.groupBox1.Controls.Add(this.dataGridViewHotelQuarto);
-            this.groupBox1.Controls.Add(this.textBoxIdHotel);
-            this.groupBox1.Controls.Add(label11);
-            this.groupBox1.Controls.Add(this.comboBoxCategoriaHotel);
-            this.groupBox1.Controls.Add(this.maskedTextBoxContatoHotel);
-            this.groupBox1.Controls.Add(this.textBoxNomeHotel);
-            this.groupBox1.Controls.Add(label1);
-            this.groupBox1.Controls.Add(label2);
-            this.groupBox1.Controls.Add(label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 280);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados";
+            this.groupBoxDados.Controls.Add(this.dataGridViewHotelQuarto);
+            this.groupBoxDados.Controls.Add(this.textBoxIdHotel);
+            this.groupBoxDados.Controls.Add(label11);
+            this.groupBoxDados.Controls.Add(this.comboBoxCategoriaHotel);
+            this.groupBoxDados.Controls.Add(this.maskedTextBoxContatoHotel);
+            this.groupBoxDados.Controls.Add(this.textBoxNomeHotel);
+            this.groupBoxDados.Controls.Add(label1);
+            this.groupBoxDados.Controls.Add(label2);
+            this.groupBoxDados.Controls.Add(label3);
+            this.groupBoxDados.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxDados.Name = "groupBoxDados";
+            this.groupBoxDados.Size = new System.Drawing.Size(387, 280);
+            this.groupBoxDados.TabIndex = 14;
+            this.groupBoxDados.TabStop = false;
+            this.groupBoxDados.Text = "Dados";
             // 
             // dataGridViewHotelQuarto
             // 
@@ -361,32 +361,32 @@
             this.textBoxNomeHotel.Size = new System.Drawing.Size(179, 20);
             this.textBoxNomeHotel.TabIndex = 0;
             // 
-            // groupBox2
+            // groupBoxEndereço
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.comboBoxIdRestauranteHotel);
-            this.groupBox2.Controls.Add(this.comboBoxEndCidadeHotel);
-            this.groupBox2.Controls.Add(this.labelRestaurante);
-            this.groupBox2.Controls.Add(label10);
-            this.groupBox2.Controls.Add(this.checkBoxContemRestaurante);
-            this.groupBox2.Controls.Add(this.maskedTextBoxEndCepHotel);
-            this.groupBox2.Controls.Add(this.textBoxEndBairroHotel);
-            this.groupBox2.Controls.Add(this.textBoxEndComplementoHotel);
-            this.groupBox2.Controls.Add(this.textBoxEndNumeroHotel);
-            this.groupBox2.Controls.Add(label9);
-            this.groupBox2.Controls.Add(this.textBoxEndLogradouroHotel);
-            this.groupBox2.Controls.Add(label8);
-            this.groupBox2.Controls.Add(this.comboBoxEndTipoHotel);
-            this.groupBox2.Controls.Add(label4);
-            this.groupBox2.Controls.Add(label5);
-            this.groupBox2.Controls.Add(label7);
-            this.groupBox2.Controls.Add(label6);
-            this.groupBox2.Location = new System.Drawing.Point(405, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 280);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereço";
+            this.groupBoxEndereço.Controls.Add(this.button2);
+            this.groupBoxEndereço.Controls.Add(this.comboBoxIdRestauranteHotel);
+            this.groupBoxEndereço.Controls.Add(this.comboBoxEndCidadeHotel);
+            this.groupBoxEndereço.Controls.Add(this.labelRestaurante);
+            this.groupBoxEndereço.Controls.Add(label10);
+            this.groupBoxEndereço.Controls.Add(this.checkBoxContemRestaurante);
+            this.groupBoxEndereço.Controls.Add(this.maskedTextBoxEndCepHotel);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndBairroHotel);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndComplementoHotel);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndNumeroHotel);
+            this.groupBoxEndereço.Controls.Add(label9);
+            this.groupBoxEndereço.Controls.Add(this.textBoxEndLogradouroHotel);
+            this.groupBoxEndereço.Controls.Add(label8);
+            this.groupBoxEndereço.Controls.Add(this.comboBoxEndTipoHotel);
+            this.groupBoxEndereço.Controls.Add(label4);
+            this.groupBoxEndereço.Controls.Add(label5);
+            this.groupBoxEndereço.Controls.Add(label7);
+            this.groupBoxEndereço.Controls.Add(label6);
+            this.groupBoxEndereço.Location = new System.Drawing.Point(405, 12);
+            this.groupBoxEndereço.Name = "groupBoxEndereço";
+            this.groupBoxEndereço.Size = new System.Drawing.Size(360, 280);
+            this.groupBoxEndereço.TabIndex = 15;
+            this.groupBoxEndereço.TabStop = false;
+            this.groupBoxEndereço.Text = "Endereço";
             // 
             // button2
             // 
@@ -427,15 +427,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelarCadastroHotel);
             this.Controls.Add(this.buttonCadastrarHotel);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxDados);
+            this.Controls.Add(this.groupBoxEndereço);
             this.Name = "FormDetalhesHotel";
             this.Text = "Detalhes Hotel";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxDados.ResumeLayout(false);
+            this.groupBoxDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotelQuarto)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxEndereço.ResumeLayout(false);
+            this.groupBoxEndereço.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -456,9 +456,9 @@
         private System.Windows.Forms.Button buttonCadastrarHotel;
         private System.Windows.Forms.ComboBox comboBoxCategoriaHotel;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoHotel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxDados;
         private System.Windows.Forms.TextBox textBoxNomeHotel;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxEndereço;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxIdHotel;
         private System.Windows.Forms.Button button2;
