@@ -19,10 +19,11 @@ namespace BDTur.Forms
         public FormUsuario()
         {
             InitializeComponent();
+            populateUsuarioDataGridView();
         }
 
         private void populateUsuarioDataGridView()
-        {   /*EXEMPLO DE CÓDIGO PARA POPULAR DATAGRID USUARIO
+        {   
             MySqlDataAdapter da = adapter.usuarioAdapter();
             if (da != null)
             {
@@ -37,17 +38,12 @@ namespace BDTur.Forms
                     Console.WriteLine($"Usuario Erro: \n{ex.Message}\n");
                 }
                 DataTable dtCloned = dt.Clone();
-                dtCloned.Columns[3].DataType = typeof(Int64);
                 foreach (DataRow row in dt.Rows)
                 {
                     dtCloned.ImportRow(row);
                 }
 
-                dataGridViewUsuario.DataSource = dtCloned;
-
-                dataGridViewUsuario.Columns[3].DefaultCellStyle.Format = "(##) # ####-####";
-
-            
+                dataGridViewUsuario.DataSource = dtCloned;            
                 dataGridViewUsuario.Columns[0].HeaderText = "ID";
                 dataGridViewUsuario.Columns[1].HeaderText = "Login";
                 dataGridViewUsuario.Columns[2].HeaderText = "Senha";
@@ -57,7 +53,23 @@ namespace BDTur.Forms
             else
             {
                 MessageBox.Show("Falha");
-            }*/
+            }
+        }
+
+        private void checkBoxNivelAdm_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewUsuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1 && e.RowIndex < dataGridViewUsuario.RowCount)
+            {
+                int id = int.Parse(dataGridViewUsuario.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Forms.FormDetalhesUsuario nextScreen = new Forms.FormDetalhesUsuario(id);
+                nextScreen.ShowDialog();
+                populateUsuarioDataGridView();
+            }
         }
     }
 }

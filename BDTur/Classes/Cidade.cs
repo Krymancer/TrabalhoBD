@@ -13,7 +13,7 @@ namespace BDTur.Classes
         private string estado;
         private int populacao;
 
-        public Cidade(int idCidade, string nome, string estado, int populacao)
+        public Cidade(int idCidade, string nome, string estado, string populacao)
         {
             IdCidade = idCidade;
             Nome = nome;
@@ -24,7 +24,7 @@ namespace BDTur.Classes
         public int IdCidade { get; set; }
         public string Nome { get; set; }
         public string Estado { get; set; }
-        public int Populacao { get; set; }
+        public string Populacao { get; set; }
 
     }
 }

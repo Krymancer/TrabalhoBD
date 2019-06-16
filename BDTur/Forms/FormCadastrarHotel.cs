@@ -18,6 +18,7 @@ namespace BDTur.Forms
         public FormCadastrarHotel()
         {
             InitializeComponent();
+            populateComboBoxes();
         }
 
         private void FormCadastrarHotel_Load(object sender, EventArgs e)
@@ -123,6 +124,62 @@ namespace BDTur.Forms
 
         private void buttonCadastrarHotel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string hRid;
+                if (checkBoxContemRestaurante.Checked)
+                {
+                    hRid = comboBoxIdRestauranteHotel.SelectedValue.ToString();
+                }
+                else
+                {
+                    hRid = "NULL";
+                }
+
+                string hNome = textBoxNomeHotel.Text;
+                string hCategoria = comboBoxCategoriaHotel.SelectedItem.ToString();
+                maskedTextBoxContatoHotel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string hContato = maskedTextBoxContatoHotel.Text;
+                maskedTextBoxContatoHotel.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string hEndTipo = comboBoxEndTipoHotel.SelectedItem.ToString();
+                string hEndLog = textBoxEndLogradouroHotel.Text;
+                string hEndNum = textBoxEndNumeroHotel.Text;
+                string hEndComp;
+                try
+                {
+                    hEndComp = textBoxEndComplementoHotel.Text;
+                }
+                catch (NullReferenceException)
+                {
+                    hEndComp = "NULL";
+                }
+                string hEndBairro = textBoxEndBairroHotel.Text;
+                maskedTextBoxEndCepHotel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string hEndCep = maskedTextBoxEndCepHotel.Text;
+                maskedTextBoxEndCepHotel.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                int hCid = int.Parse(comboBoxEndCidadeHotel.SelectedValue.ToString());
+                if (hCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+                Classes.Hotel h = new Classes.Hotel(0,hCid,hRid,hNome,hCategoria,hContato,hEndTipo,hEndLog,hEndNum,hEndComp,hEndBairro,hEndBairro);
+                if (adapter.adicionarHotel(h))
+                {
+                    MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (NullReferenceException)
+            {
+                //Erro ao resgatar valores dos componentes
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidSelectValue)
+            {
+                //Tratar se usuario não tenha selecionado uma cidade valida
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

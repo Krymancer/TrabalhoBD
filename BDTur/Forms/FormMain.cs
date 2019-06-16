@@ -797,7 +797,8 @@ namespace BDTur.Forms
         }
         private void usariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Forms.FormCadastrarUsuario nextScreen = new Forms.FormCadastrarUsuario();
+            nextScreen.ShowDialog();
         }
         private void textBoxAtuacaoFundador_TextChanged_1(object sender, EventArgs e)
         {
@@ -807,9 +808,21 @@ namespace BDTur.Forms
         {
             refreshDataGridViews();
         }
+       private void cidadesToolStripMenuItemCidade_Click(object sender, EventArgs e)
+        {
+            Forms.FormCidades nextScreen = new Forms.FormCidades();
+            nextScreen.ShowDialog();
+            populateComboBoxes();
+            refreshDataGridViews();
+        }
+        private void usuáriosToolStripMenuItemUser_Click(object sender, EventArgs e)
+        {
+            Forms.FormUsuario nextScreen = new Forms.FormUsuario();
+            nextScreen.ShowDialog();            
+        }
 
         #endregion
 
-
+ 
     }
 }

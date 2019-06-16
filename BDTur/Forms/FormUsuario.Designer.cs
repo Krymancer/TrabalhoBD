@@ -42,11 +42,15 @@
             // 
             // dataGridViewUsuario
             // 
+            this.dataGridViewUsuario.AllowUserToAddRows = false;
+            this.dataGridViewUsuario.AllowUserToDeleteRows = false;
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsuario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewUsuario.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
             this.dataGridViewUsuario.Size = new System.Drawing.Size(609, 309);
             this.dataGridViewUsuario.TabIndex = 0;
+            this.dataGridViewUsuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuario_CellDoubleClick);
             // 
             // groupBoxNivelDeAcessoUsuario
             // 
@@ -84,6 +88,7 @@
             this.checkBoxNivelAdm.TabIndex = 0;
             this.checkBoxNivelAdm.Text = "Admnistrador";
             this.checkBoxNivelAdm.UseVisualStyleBackColor = true;
+            this.checkBoxNivelAdm.CheckedChanged += new System.EventHandler(this.checkBoxNivelAdm_CheckedChanged);
             // 
             // checkBoxNivelGerente
             // 

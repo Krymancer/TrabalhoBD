@@ -302,6 +302,7 @@
             this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 149);
             this.maskedTextBoxPreco.Mask = "$000,00";
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
+            this.maskedTextBoxPreco.PromptChar = '0';
             this.maskedTextBoxPreco.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxPreco.TabIndex = 3;

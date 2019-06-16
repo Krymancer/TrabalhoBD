@@ -121,7 +121,7 @@ namespace BDTur.Forms
                        checkBoxContemRestaurante.Checked = false;
                     }
                     textBoxNomeHotel.Text = reader.GetString(2);
-                    comboBoxCategoriaHotel.SelectedItem = comboBoxCategoriaHotel.Items[reader.GetInt32(3)-1];
+                    comboBoxCategoriaHotel.SelectedItem = comboBoxCategoriaHotel.Items[int.Parse(reader.GetString(3)[0]+"")-1];
                     maskedTextBoxContatoHotel.Text = reader.GetString(4);
                     int index = comboBoxEndTipoHotel.Items.IndexOf(reader.GetString(5));                    
                     comboBoxEndTipoHotel.SelectedItem = comboBoxEndTipoHotel.Items[index];

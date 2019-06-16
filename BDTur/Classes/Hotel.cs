@@ -21,7 +21,7 @@ namespace BDTur.Classes
         private string endBairroHotel;
         private string endCepHotel;
 
-        public Hotel(int idHotel, int cidadeIdCidade, int restauranteIdRestaurante, string nomeHotel, int categoriaHotel, string contatoHotel, int endTipoHotel, string endLogradouroHotel, string endNumeroHotel, string endComplementoHotel, string endBairroHotel, string endCepHotel)
+        public Hotel(int idHotel, int cidadeIdCidade, string restauranteIdRestaurante, string nomeHotel, string categoriaHotel, string contatoHotel, string endTipoHotel, string endLogradouroHotel, string endNumeroHotel, string endComplementoHotel, string endBairroHotel, string endCepHotel)
         {
             IdHotel = idHotel;
             CidadeIdCidade = cidadeIdCidade;
@@ -39,11 +39,11 @@ namespace BDTur.Classes
 
         public int IdHotel { get; set; }
         public int CidadeIdCidade { get; set; }
-        public int RestauranteIdRestaurante { get; set; }
+        public string RestauranteIdRestaurante { get; set; }
         public string NomeHotel { get; set; }
-        public int CategoriaHotel { get; set; }
+        public string CategoriaHotel { get; set; }
         public string ContatoHotel { get; set; }
-        public int EndTipoHotel { get; set; }
+        public string EndTipoHotel { get; set; }
         public string EndLogradouroHotel { get; set; }
         public string EndNumeroHotel { get; set; }
         public string EndComplementoHotel { get; set; }

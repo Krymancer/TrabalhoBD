@@ -24,6 +24,16 @@ namespace BDTur.Forms
 
         private void FormCadastrarCasaDeShow_Load(object sender, EventArgs e)
         {
+            comboBoxEndTipoCasaDeShow.Items.Add("Rua");
+            comboBoxEndTipoCasaDeShow.Items.Add("Avenida");
+            comboBoxEndTipoCasaDeShow.Items.Add("Travessa");
+            comboBoxEndTipoCasaDeShow.Items.Add("Praça");
+            comboBoxEndTipoCasaDeShow.Items.Add("Estação");
+            comboBoxEndTipoCasaDeShow.Items.Add("Alameda");
+            comboBoxEndTipoCasaDeShow.Items.Add("Balneário");
+            comboBoxEndTipoCasaDeShow.Items.Add("Beco");
+            comboBoxEndTipoCasaDeShow.Items.Add("Viela");
+
             labelRestaurante.Visible = false;
             comboBoxIdRestauranteCasaDeShow.Visible = false;
         }
@@ -105,5 +115,70 @@ namespace BDTur.Forms
                 comboBoxIdRestauranteCasaDeShow.Visible = false;
             }
         }
+
+        private void buttonCadastrarCasaDeShow_Click(object sender, EventArgs e)
+        {
+
+            try{ 
+                string csNome = textBoxNomeCasaDeShow.Text;
+                maskedTextBoxContatoCasaDeShow.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string csContato = maskedTextBoxContatoCasaDeShow.Text;
+                maskedTextBoxContatoCasaDeShow.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                string csDesc = textBoxDescricaoCasaDeShow.Text;
+                string csEndLog = textBoxEndLogradouroCasaDeShow.Text;
+                string csEndTip = comboBoxEndTipoCasaDeShow.SelectedItem.ToString();
+                string csEndNum = textBoxEndNumeroCasaDeShow.Text;
+                string csEndComp;
+                try
+                {
+                    csEndComp = textBoxEndComplementoCasaDeShow.Text;
+                }
+                catch (NullReferenceException)
+                {
+                    csEndComp = "NULL";
+                }
+                string csEndBairro = textBoxEndBairroCasaDeShow.Text;
+                maskedTextBoxEndCepCasaDeShow.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string csEndCep = maskedTextBoxEndCepCasaDeShow.Text;
+                maskedTextBoxEndCepCasaDeShow.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                int csCid = int.Parse(comboBoxEndCidadeCasaDeShow.SelectedValue.ToString());
+                string csRid;
+
+                if (checkBoxContemRestaurante.Checked)
+                {
+                    csRid = comboBoxIdRestauranteCasaDeShow.SelectedValue.ToString();                    
+                }
+                else
+                {
+                    csRid = "NULL";
+                }
+
+                string csDiaFechamento = textBoxDiaFechamentoCasaDeShow.Text;
+                string cshorarioInicio = textBoxHoraInicioCasaDeShow.Text;
+                if (csCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+
+                Classes.CasaDeShow c = new Classes.CasaDeShow(0, csDiaFechamento, cshorarioInicio, 0, csRid, 0, "Casa de Show", csNome, csContato, csDesc, csEndTip, csEndLog, csEndNum, csEndComp, csEndBairro, csContato, csCid);
+                if (adapter.adicionarCasadeShow(c))
+                {
+                    MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                //Erro ao resgatar valores dos componentes
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidSelectValue) {
+                //Tratar se usuario não tenha selecionado uma cidade valida
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }

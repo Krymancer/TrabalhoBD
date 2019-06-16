@@ -183,10 +183,8 @@
             // 
             // comboBoxCategoriaHotel
             // 
-            this.comboBoxCategoriaHotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxCategoriaHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoriaHotel.FormattingEnabled = true;
-            this.comboBoxCategoriaHotel.Items.AddRange(new object[] {
-            "sasasas"});
             this.comboBoxCategoriaHotel.Location = new System.Drawing.Point(6, 110);
             this.comboBoxCategoriaHotel.Name = "comboBoxCategoriaHotel";
             this.comboBoxCategoriaHotel.Size = new System.Drawing.Size(121, 21);

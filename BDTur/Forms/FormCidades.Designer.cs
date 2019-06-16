@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBoxCidade = new System.Windows.Forms.GroupBox();
-            this.dataGridViewCidade = new System.Windows.Forms.DataGridView();
-            this.buttonVoltar = new System.Windows.Forms.Button();
-            this.labelCidade = new System.Windows.Forms.Label();
-            this.textBoxCidade = new System.Windows.Forms.TextBox();
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.textBoxEstado = new System.Windows.Forms.TextBox();
             this.labelEstado = new System.Windows.Forms.Label();
-            this.textBoxId = new System.Windows.Forms.TextBox();
-            this.labelId = new System.Windows.Forms.Label();
-            this.textBoxPopulacao = new System.Windows.Forms.TextBox();
-            this.labelPopulacao = new System.Windows.Forms.Label();
+            this.textBoxCidade = new System.Windows.Forms.TextBox();
+            this.labelCidade = new System.Windows.Forms.Label();
+            this.dataGridViewCidade = new System.Windows.Forms.DataGridView();
+            this.buttonVoltar = new System.Windows.Forms.Button();
             this.groupBoxCidade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).BeginInit();
             this.groupBoxFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCidade
@@ -56,45 +52,8 @@
             this.groupBoxCidade.TabStop = false;
             this.groupBoxCidade.Text = "Cidades";
             // 
-            // dataGridViewCidade
-            // 
-            this.dataGridViewCidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCidade.Location = new System.Drawing.Point(12, 19);
-            this.dataGridViewCidade.Name = "dataGridViewCidade";
-            this.dataGridViewCidade.Size = new System.Drawing.Size(609, 309);
-            this.dataGridViewCidade.TabIndex = 0;
-            // 
-            // buttonVoltar
-            // 
-            this.buttonVoltar.Location = new System.Drawing.Point(697, 353);
-            this.buttonVoltar.Name = "buttonVoltar";
-            this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
-            this.buttonVoltar.TabIndex = 31;
-            this.buttonVoltar.Text = "Voltar";
-            this.buttonVoltar.UseVisualStyleBackColor = true;
-            // 
-            // labelCidade
-            // 
-            this.labelCidade.AutoSize = true;
-            this.labelCidade.Location = new System.Drawing.Point(10, 61);
-            this.labelCidade.Name = "labelCidade";
-            this.labelCidade.Size = new System.Drawing.Size(43, 13);
-            this.labelCidade.TabIndex = 32;
-            this.labelCidade.Text = "Cidade:";
-            // 
-            // textBoxCidade
-            // 
-            this.textBoxCidade.Location = new System.Drawing.Point(13, 77);
-            this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCidade.TabIndex = 33;
-            // 
             // groupBoxFiltro
             // 
-            this.groupBoxFiltro.Controls.Add(this.textBoxPopulacao);
-            this.groupBoxFiltro.Controls.Add(this.labelPopulacao);
-            this.groupBoxFiltro.Controls.Add(this.textBoxId);
-            this.groupBoxFiltro.Controls.Add(this.labelId);
             this.groupBoxFiltro.Controls.Add(this.textBoxEstado);
             this.groupBoxFiltro.Controls.Add(this.labelEstado);
             this.groupBoxFiltro.Controls.Add(this.textBoxCidade);
@@ -108,51 +67,58 @@
             // 
             // textBoxEstado
             // 
-            this.textBoxEstado.Location = new System.Drawing.Point(13, 116);
+            this.textBoxEstado.Location = new System.Drawing.Point(9, 71);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.Size = new System.Drawing.Size(100, 20);
             this.textBoxEstado.TabIndex = 35;
+            this.textBoxEstado.TextChanged += new System.EventHandler(this.textBoxEstado_TextChanged);
             // 
             // labelEstado
             // 
             this.labelEstado.AutoSize = true;
-            this.labelEstado.Location = new System.Drawing.Point(10, 100);
+            this.labelEstado.Location = new System.Drawing.Point(6, 55);
             this.labelEstado.Name = "labelEstado";
             this.labelEstado.Size = new System.Drawing.Size(43, 13);
             this.labelEstado.TabIndex = 34;
-            this.labelEstado.Text = "Estado:";
+            this.labelEstado.Text = "Estado:";            
             // 
-            // textBoxId
+            // textBoxCidade
             // 
-            this.textBoxId.Location = new System.Drawing.Point(13, 38);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 37;
+            this.textBoxCidade.Location = new System.Drawing.Point(9, 32);
+            this.textBoxCidade.Name = "textBoxCidade";
+            this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCidade.TabIndex = 33;
+            this.textBoxCidade.TextChanged += new System.EventHandler(this.textBoxCidade_TextChanged);
             // 
-            // labelId
+            // labelCidade
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(10, 22);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(21, 13);
-            this.labelId.TabIndex = 36;
-            this.labelId.Text = "ID:";
+            this.labelCidade.AutoSize = true;
+            this.labelCidade.Location = new System.Drawing.Point(6, 16);
+            this.labelCidade.Name = "labelCidade";
+            this.labelCidade.Size = new System.Drawing.Size(43, 13);
+            this.labelCidade.TabIndex = 32;
+            this.labelCidade.Text = "Cidade:";
             // 
-            // textBoxPopulacao
+            // dataGridViewCidade
             // 
-            this.textBoxPopulacao.Location = new System.Drawing.Point(13, 155);
-            this.textBoxPopulacao.Name = "textBoxPopulacao";
-            this.textBoxPopulacao.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPopulacao.TabIndex = 39;
+            this.dataGridViewCidade.AllowUserToAddRows = false;
+            this.dataGridViewCidade.AllowUserToDeleteRows = false;
+            this.dataGridViewCidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCidade.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewCidade.Location = new System.Drawing.Point(12, 19);
+            this.dataGridViewCidade.Name = "dataGridViewCidade";
+            this.dataGridViewCidade.Size = new System.Drawing.Size(609, 309);
+            this.dataGridViewCidade.TabIndex = 0;
+            this.dataGridViewCidade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCidade_CellDoubleClick);
             // 
-            // labelPopulacao
+            // buttonVoltar
             // 
-            this.labelPopulacao.AutoSize = true;
-            this.labelPopulacao.Location = new System.Drawing.Point(10, 139);
-            this.labelPopulacao.Name = "labelPopulacao";
-            this.labelPopulacao.Size = new System.Drawing.Size(61, 13);
-            this.labelPopulacao.TabIndex = 38;
-            this.labelPopulacao.Text = "População:";
+            this.buttonVoltar.Location = new System.Drawing.Point(697, 353);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
+            this.buttonVoltar.TabIndex = 31;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = true;
             // 
             // FormCidades
             // 
@@ -167,9 +133,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cidades";
             this.groupBoxCidade.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).EndInit();
             this.groupBoxFiltro.ResumeLayout(false);
             this.groupBoxFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,9 +150,5 @@
         private System.Windows.Forms.GroupBox groupBoxFiltro;
         private System.Windows.Forms.TextBox textBoxEstado;
         private System.Windows.Forms.Label labelEstado;
-        private System.Windows.Forms.TextBox textBoxPopulacao;
-        private System.Windows.Forms.Label labelPopulacao;
-        private System.Windows.Forms.TextBox textBoxId;
-        private System.Windows.Forms.Label labelId;
     }
 }

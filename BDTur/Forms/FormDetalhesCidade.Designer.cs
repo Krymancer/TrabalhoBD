@@ -47,6 +47,42 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // labelIdCidade
+            // 
+            labelIdCidade.AutoSize = true;
+            labelIdCidade.Location = new System.Drawing.Point(9, 16);
+            labelIdCidade.Name = "labelIdCidade";
+            labelIdCidade.Size = new System.Drawing.Size(21, 13);
+            labelIdCidade.TabIndex = 21;
+            labelIdCidade.Text = "ID:";
+            // 
+            // labelPopulacaoCidade
+            // 
+            labelPopulacaoCidade.AutoSize = true;
+            labelPopulacaoCidade.Location = new System.Drawing.Point(115, 55);
+            labelPopulacaoCidade.Name = "labelPopulacaoCidade";
+            labelPopulacaoCidade.Size = new System.Drawing.Size(61, 13);
+            labelPopulacaoCidade.TabIndex = 19;
+            labelPopulacaoCidade.Text = "População:";
+            // 
+            // labelNomeCidade
+            // 
+            labelNomeCidade.AutoSize = true;
+            labelNomeCidade.Location = new System.Drawing.Point(112, 16);
+            labelNomeCidade.Name = "labelNomeCidade";
+            labelNomeCidade.Size = new System.Drawing.Size(89, 13);
+            labelNomeCidade.TabIndex = 0;
+            labelNomeCidade.Text = "Nome da Cidade:";
+            // 
+            // labelEstadoCidade
+            // 
+            labelEstadoCidade.AutoSize = true;
+            labelEstadoCidade.Location = new System.Drawing.Point(9, 55);
+            labelEstadoCidade.Name = "labelEstadoCidade";
+            labelEstadoCidade.Size = new System.Drawing.Size(43, 13);
+            labelEstadoCidade.TabIndex = 2;
+            labelEstadoCidade.Text = "Estado:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxIdCidade);
@@ -72,15 +108,6 @@
             this.textBoxIdCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxIdCidade.TabIndex = 20;
             // 
-            // labelIdCidade
-            // 
-            labelIdCidade.AutoSize = true;
-            labelIdCidade.Location = new System.Drawing.Point(9, 16);
-            labelIdCidade.Name = "labelIdCidade";
-            labelIdCidade.Size = new System.Drawing.Size(21, 13);
-            labelIdCidade.TabIndex = 21;
-            labelIdCidade.Text = "ID:";
-            // 
             // textBoxEstadoCidade
             // 
             this.textBoxEstadoCidade.Enabled = false;
@@ -97,15 +124,6 @@
             this.textBoxPopulacaoCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxPopulacaoCidade.TabIndex = 2;
             // 
-            // labelPopulacaoCidade
-            // 
-            labelPopulacaoCidade.AutoSize = true;
-            labelPopulacaoCidade.Location = new System.Drawing.Point(115, 55);
-            labelPopulacaoCidade.Name = "labelPopulacaoCidade";
-            labelPopulacaoCidade.Size = new System.Drawing.Size(61, 13);
-            labelPopulacaoCidade.TabIndex = 19;
-            labelPopulacaoCidade.Text = "População:";
-            // 
             // textBoxNomeCidade
             // 
             this.textBoxNomeCidade.Enabled = false;
@@ -113,24 +131,6 @@
             this.textBoxNomeCidade.Name = "textBoxNomeCidade";
             this.textBoxNomeCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxNomeCidade.TabIndex = 0;
-            // 
-            // labelNomeCidade
-            // 
-            labelNomeCidade.AutoSize = true;
-            labelNomeCidade.Location = new System.Drawing.Point(112, 16);
-            labelNomeCidade.Name = "labelNomeCidade";
-            labelNomeCidade.Size = new System.Drawing.Size(89, 13);
-            labelNomeCidade.TabIndex = 0;
-            labelNomeCidade.Text = "Nome da Cidade:";
-            // 
-            // labelEstadoCidade
-            // 
-            labelEstadoCidade.AutoSize = true;
-            labelEstadoCidade.Location = new System.Drawing.Point(9, 55);
-            labelEstadoCidade.Name = "labelEstadoCidade";
-            labelEstadoCidade.Size = new System.Drawing.Size(43, 13);
-            labelEstadoCidade.TabIndex = 2;
-            labelEstadoCidade.Text = "Estado:";
             // 
             // buttonEditarCidade
             // 
@@ -140,6 +140,7 @@
             this.buttonEditarCidade.TabIndex = 34;
             this.buttonEditarCidade.Text = "Editar";
             this.buttonEditarCidade.UseVisualStyleBackColor = true;
+            this.buttonEditarCidade.Click += new System.EventHandler(this.buttonEditarCidade_Click);
             // 
             // buttonExcluirCidade
             // 
@@ -149,6 +150,7 @@
             this.buttonExcluirCidade.TabIndex = 33;
             this.buttonExcluirCidade.Text = "Excluir";
             this.buttonExcluirCidade.UseVisualStyleBackColor = true;
+            this.buttonExcluirCidade.Click += new System.EventHandler(this.buttonExcluirCidade_Click);
             // 
             // buttonCancelarCidade
             // 

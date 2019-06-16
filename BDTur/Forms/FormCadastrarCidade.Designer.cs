@@ -114,6 +114,7 @@
             this.buttonCadastrarCidade.TabIndex = 3;
             this.buttonCadastrarCidade.Text = "Cadastrar";
             this.buttonCadastrarCidade.UseVisualStyleBackColor = true;
+            this.buttonCadastrarCidade.Click += new System.EventHandler(this.buttonCadastrarCidade_Click);
             // 
             // buttonCancelarCidade
             // 

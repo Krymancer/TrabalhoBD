@@ -94,15 +94,17 @@
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restauranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pontoTuristicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.igrejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.museuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casaDeShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fundadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripGerenciar = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadesToolStripMenuItemCidade = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuáriosToolStripMenuItemUser = new System.Windows.Forms.ToolStripMenuItem();
             this.usariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.quartoDeHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             labelCidade = new System.Windows.Forms.Label();
             labelNome = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -864,7 +866,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.toolStripGerenciar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(919, 24);
@@ -898,12 +900,6 @@
             this.hotelToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.hotelToolStripMenuItem.Text = "Hotel";
             this.hotelToolStripMenuItem.Click += new System.EventHandler(this.hotelToolStripMenuItem_Click);
-            // 
-            // quartoDeHotelToolStripMenuItem
-            // 
-            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
-            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // restauranteToolStripMenuItem
             // 
@@ -950,18 +946,41 @@
             this.fundadorToolStripMenuItem.Text = "Fundador";
             this.fundadorToolStripMenuItem.Click += new System.EventHandler(this.fundadorToolStripMenuItem_Click);
             // 
+            // toolStripGerenciar
+            // 
+            this.toolStripGerenciar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cidadesToolStripMenuItemCidade,
+            this.usuáriosToolStripMenuItemUser});
+            this.toolStripGerenciar.Name = "toolStripGerenciar";
+            this.toolStripGerenciar.Size = new System.Drawing.Size(72, 20);
+            this.toolStripGerenciar.Text = " Gerenciar";
+            // 
+            // cidadesToolStripMenuItemCidade
+            // 
+            this.cidadesToolStripMenuItemCidade.Name = "cidadesToolStripMenuItemCidade";
+            this.cidadesToolStripMenuItemCidade.Size = new System.Drawing.Size(180, 22);
+            this.cidadesToolStripMenuItemCidade.Text = "Cidades";
+            this.cidadesToolStripMenuItemCidade.Click += new System.EventHandler(this.cidadesToolStripMenuItemCidade_Click);
+            // 
+            // usuáriosToolStripMenuItemUser
+            // 
+            this.usuáriosToolStripMenuItemUser.Name = "usuáriosToolStripMenuItemUser";
+            this.usuáriosToolStripMenuItemUser.Size = new System.Drawing.Size(180, 22);
+            this.usuáriosToolStripMenuItemUser.Text = "Usuários";
+            this.usuáriosToolStripMenuItemUser.Click += new System.EventHandler(this.usuáriosToolStripMenuItemUser_Click);
+            // 
             // usariosToolStripMenuItem
             // 
             this.usariosToolStripMenuItem.Name = "usariosToolStripMenuItem";
-            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.usariosToolStripMenuItem.Text = " Usuários";
+            this.usariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usariosToolStripMenuItem.Text = "Usuários";
             this.usariosToolStripMenuItem.Click += new System.EventHandler(this.usariosToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // quartoDeHotelToolStripMenuItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(22, 20);
-            this.toolStripMenuItem1.Text = " ";
+            this.quartoDeHotelToolStripMenuItem.Name = "quartoDeHotelToolStripMenuItem";
+            this.quartoDeHotelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quartoDeHotelToolStripMenuItem.Text = "Quarto de Hotel";
             // 
             // FormMain
             // 
@@ -1031,7 +1050,6 @@
         private System.Windows.Forms.ToolStripMenuItem igrejaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem museuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem casaDeShowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usariosToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPageHoteis;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.ComboBox comboBoxCidade;
@@ -1072,7 +1090,7 @@
         private System.Windows.Forms.GroupBox groupBoxFuncionamentoCasadeShow;
         private System.Windows.Forms.TextBox textBoxHorarioFuncionamentoCasadeShow;
         private System.Windows.Forms.Label labelHorarioFuncionamentoCasadeShow;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripGerenciar;
         private System.Windows.Forms.TextBox textBoxAtuacaoFundador;
         private System.Windows.Forms.DataGridView dataGridViewRestaurante;
         private System.Windows.Forms.DataGridView dataGridViewIgreja;
@@ -1094,6 +1112,9 @@
         private System.Windows.Forms.Label labelDiaFundacaoMuseu;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem fundadorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cidadesToolStripMenuItemCidade;
+        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItemUser;
         private System.Windows.Forms.ToolStripMenuItem quartoDeHotelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usariosToolStripMenuItem;
     }
 }

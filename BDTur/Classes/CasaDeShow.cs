@@ -14,7 +14,7 @@ namespace BDTur.Classes
         private int pontoTuristicoIdPontoTuristico;
         private int restauranteIdRestaurante;
 
-        public CasaDeShow(int idCasadeShow, string diaFechamentoCasadeShow, string horaInicioCasadeShow, int pontoTuristicoIdPontoTuristico, int restauranteIdRestaurante, int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
+        public CasaDeShow(int idCasadeShow, string diaFechamentoCasadeShow, string horaInicioCasadeShow, int pontoTuristicoIdPontoTuristico, string restauranteIdRestaurante, int idPontoTuristico, string tipoPontoTuristico, string nomePontoTuristico, string contatoPontoTuristico, string descricaoPontoTuristico, string endTipoPontoTuristico, string endLogradouroPontoTuristico, string endNumeroPontoTuristico, string endComplementoPontoTuristico, string endBairroPontoTuristico, string endCepPontoTuristico, int cidadeIdCidade)
             : base(idPontoTuristico, tipoPontoTuristico, nomePontoTuristico, contatoPontoTuristico, descricaoPontoTuristico, endTipoPontoTuristico, endLogradouroPontoTuristico, endNumeroPontoTuristico, endComplementoPontoTuristico, endBairroPontoTuristico, endCepPontoTuristico, cidadeIdCidade)
         {
             IdCasadeShow = idCasadeShow;
@@ -28,6 +28,6 @@ namespace BDTur.Classes
         public string DiaFechamentoCasadeShow { get; set; }
         public string HoraInicioCasadeShow { get; set; }
         public int PontoTuristicoIdPontoTuristico { get; set; }
-        public int RestauranteIdRestaurante { get; set; }
+        public string RestauranteIdRestaurante { get; set; }
     }
 }

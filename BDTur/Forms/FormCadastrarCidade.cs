@@ -12,9 +12,36 @@ namespace BDTur.Forms
 {
     public partial class FormCadastrarCidade : Form
     {
+        Classes.DAL adapter = new Classes.DAL();
+
+
         public FormCadastrarCidade()
         {
             InitializeComponent();
+        }
+
+        private void buttonCadastrarCidade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cidadenome = textBoxNomeCidade.Text;
+                string cidadeestado = textBoxEstadoCidade.Text;
+                string populacao = textBoxPopulacaoCidade.Text;
+                Classes.Cidade c = new Classes.Cidade(0, cidadenome, cidadeestado, populacao);
+                if (adapter.adicionarCidade(c))
+                {
+                    MessageBox.Show("Adicionado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -191,6 +191,7 @@
             this.buttonCadastrarCasaDeShow.TabIndex = 14;
             this.buttonCadastrarCasaDeShow.Text = "Cadastrar";
             this.buttonCadastrarCasaDeShow.UseVisualStyleBackColor = true;
+            this.buttonCadastrarCasaDeShow.Click += new System.EventHandler(this.buttonCadastrarCasaDeShow_Click);
             // 
             // groupBox2
             // 

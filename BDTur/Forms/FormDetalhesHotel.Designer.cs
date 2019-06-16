@@ -59,6 +59,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddQuartos = new System.Windows.Forms.Button();
+            this.listBoxQuartos = new System.Windows.Forms.ListBox();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -311,6 +313,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBoxQuartos);
             this.groupBox1.Controls.Add(this.textBoxIdHotel);
             this.groupBox1.Controls.Add(label11);
             this.groupBox1.Controls.Add(this.comboBoxCategoriaHotel);
@@ -389,11 +392,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonAddQuartos
+            // 
+            this.buttonAddQuartos.Location = new System.Drawing.Point(240, 298);
+            this.buttonAddQuartos.Name = "buttonAddQuartos";
+            this.buttonAddQuartos.Size = new System.Drawing.Size(106, 23);
+            this.buttonAddQuartos.TabIndex = 19;
+            this.buttonAddQuartos.Text = "Adicionar Quartos";
+            this.buttonAddQuartos.UseVisualStyleBackColor = true;
+            // 
+            // listBoxQuartos
+            // 
+            this.listBoxQuartos.FormattingEnabled = true;
+            this.listBoxQuartos.Location = new System.Drawing.Point(9, 170);
+            this.listBoxQuartos.Name = "listBoxQuartos";
+            this.listBoxQuartos.Size = new System.Drawing.Size(222, 95);
+            this.listBoxQuartos.TabIndex = 20;
+            // 
             // FormDetalhesHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 328);
+            this.Controls.Add(this.buttonAddQuartos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelarCadastroHotel);
             this.Controls.Add(this.buttonCadastrarHotel);
@@ -431,5 +452,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxIdHotel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBoxQuartos;
+        private System.Windows.Forms.Button buttonAddQuartos;
     }
 }

@@ -123,6 +123,12 @@
     <Compile Include="Forms\FormCadastrarRestaurante.Designer.cs">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadastrarUsuario.Designer.cs">
+      <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     </Compile>
     <Compile Include="Forms\FormDetalhesRestaurante.Designer.cs">
       <DependentUpon>FormDetalhesRestaurante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetalhesUsuario.Designer.cs">
+      <DependentUpon>FormDetalhesUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
@@ -221,6 +233,9 @@
     <EmbeddedResource Include="Forms\FormCadastrarRestaurante.resx">
       <DependentUpon>FormCadastrarRestaurante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadastrarUsuario.resx">
+      <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCidades.resx">
       <DependentUpon>FormCidades.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetalhesRestaurante.resx">
       <DependentUpon>FormDetalhesRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetalhesUsuario.resx">
+      <DependentUpon>FormDetalhesUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
