@@ -34,6 +34,15 @@ namespace BDTur.Forms
             comboBoxEndTipoCasaDeShow.Items.Add("Beco");
             comboBoxEndTipoCasaDeShow.Items.Add("Viela");
 
+            comboBoxDiaFechamento.Items.Add("domingo");
+            comboBoxDiaFechamento.Items.Add("segunda");
+            comboBoxDiaFechamento.Items.Add("terça");
+            comboBoxDiaFechamento.Items.Add("quarta");
+            comboBoxDiaFechamento.Items.Add("quinta");
+            comboBoxDiaFechamento.Items.Add("sexta");
+            comboBoxDiaFechamento.Items.Add("sabado");
+            
+
             labelRestaurante.Visible = false;
             comboBoxIdRestauranteCasaDeShow.Visible = false;
         }
@@ -153,7 +162,7 @@ namespace BDTur.Forms
                     csRid = "NULL";
                 }
 
-                string csDiaFechamento = textBoxDiaFechamentoCasaDeShow.Text;
+                string csDiaFechamento = comboBoxDiaFechamento.SelectedItem.ToString(); ;
                 string cshorarioInicio = textBoxHoraInicioCasaDeShow.Text;
                 if (csCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
 
@@ -182,7 +191,7 @@ namespace BDTur.Forms
 
         private void textBoxEndNumeroCasaDeShow_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

@@ -41,16 +41,15 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label2;
             this.textBoxHoraInicioCasaDeShow = new System.Windows.Forms.TextBox();
-            this.textBoxDiaFechamentoCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxDescricaoCasaDeShow = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxNomeCasaDeShow = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDados = new System.Windows.Forms.GroupBox();
             this.textBoxIdCasadeShow = new System.Windows.Forms.TextBox();
             this.maskedTextBoxContatoCasaDeShow = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxIdRestauranteCasaDeShow = new System.Windows.Forms.ComboBox();
             this.buttonCancelarCadastroCasaDeShow = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEndereco = new System.Windows.Forms.GroupBox();
             this.labelRestaurante = new System.Windows.Forms.Label();
             this.checkBoxContemRestaurante = new System.Windows.Forms.CheckBox();
             this.comboBoxEndCidadeCasaDeShow = new System.Windows.Forms.ComboBox();
@@ -60,8 +59,9 @@
             this.textBoxEndNumeroCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxEndLogradouroCasaDeShow = new System.Windows.Forms.TextBox();
             this.comboBoxEndTipoCasaDeShow = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCadastrarHotel = new System.Windows.Forms.Button();
+            this.comboBoxDiaFechamento = new System.Windows.Forms.ComboBox();
             label13 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -74,8 +74,8 @@
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxDados.SuspendLayout();
+            this.groupBoxEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // label13
@@ -195,14 +195,6 @@
             this.textBoxHoraInicioCasaDeShow.TabIndex = 3;
             this.textBoxHoraInicioCasaDeShow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHoraInicioCasaDeShow_KeyPress);
             // 
-            // textBoxDiaFechamentoCasaDeShow
-            // 
-            this.textBoxDiaFechamentoCasaDeShow.Enabled = false;
-            this.textBoxDiaFechamentoCasaDeShow.Location = new System.Drawing.Point(9, 174);
-            this.textBoxDiaFechamentoCasaDeShow.Name = "textBoxDiaFechamentoCasaDeShow";
-            this.textBoxDiaFechamentoCasaDeShow.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDiaFechamentoCasaDeShow.TabIndex = 2;
-            // 
             // textBoxDescricaoCasaDeShow
             // 
             this.textBoxDescricaoCasaDeShow.Enabled = false;
@@ -229,26 +221,26 @@
             this.textBoxNomeCasaDeShow.Size = new System.Drawing.Size(223, 20);
             this.textBoxNomeCasaDeShow.TabIndex = 0;
             // 
-            // groupBox1
+            // groupBoxDados
             // 
-            this.groupBox1.Controls.Add(this.textBoxIdCasadeShow);
-            this.groupBox1.Controls.Add(label2);
-            this.groupBox1.Controls.Add(this.textBoxHoraInicioCasaDeShow);
-            this.groupBox1.Controls.Add(this.textBoxDiaFechamentoCasaDeShow);
-            this.groupBox1.Controls.Add(label13);
-            this.groupBox1.Controls.Add(label12);
-            this.groupBox1.Controls.Add(this.textBoxDescricaoCasaDeShow);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.maskedTextBoxContatoCasaDeShow);
-            this.groupBox1.Controls.Add(this.textBoxNomeCasaDeShow);
-            this.groupBox1.Controls.Add(label1);
-            this.groupBox1.Controls.Add(label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 334);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados";
+            this.groupBoxDados.Controls.Add(this.comboBoxDiaFechamento);
+            this.groupBoxDados.Controls.Add(this.textBoxIdCasadeShow);
+            this.groupBoxDados.Controls.Add(label2);
+            this.groupBoxDados.Controls.Add(this.textBoxHoraInicioCasaDeShow);
+            this.groupBoxDados.Controls.Add(label13);
+            this.groupBoxDados.Controls.Add(label12);
+            this.groupBoxDados.Controls.Add(this.textBoxDescricaoCasaDeShow);
+            this.groupBoxDados.Controls.Add(this.label11);
+            this.groupBoxDados.Controls.Add(this.maskedTextBoxContatoCasaDeShow);
+            this.groupBoxDados.Controls.Add(this.textBoxNomeCasaDeShow);
+            this.groupBoxDados.Controls.Add(label1);
+            this.groupBoxDados.Controls.Add(label3);
+            this.groupBoxDados.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxDados.Name = "groupBoxDados";
+            this.groupBoxDados.Size = new System.Drawing.Size(261, 334);
+            this.groupBoxDados.TabIndex = 30;
+            this.groupBoxDados.TabStop = false;
+            this.groupBoxDados.Text = "Dados";
             // 
             // textBoxIdCasadeShow
             // 
@@ -287,31 +279,31 @@
             this.buttonCancelarCadastroCasaDeShow.Text = "Cancelar";
             this.buttonCancelarCadastroCasaDeShow.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBoxEndereco
             // 
-            this.groupBox2.Controls.Add(this.comboBoxIdRestauranteCasaDeShow);
-            this.groupBox2.Controls.Add(this.labelRestaurante);
-            this.groupBox2.Controls.Add(this.checkBoxContemRestaurante);
-            this.groupBox2.Controls.Add(this.comboBoxEndCidadeCasaDeShow);
-            this.groupBox2.Controls.Add(label10);
-            this.groupBox2.Controls.Add(this.maskedTextBoxEndCepCasaDeShow);
-            this.groupBox2.Controls.Add(this.textBoxEndBairroCasaDeShow);
-            this.groupBox2.Controls.Add(this.textBoxEndComplementoCasaDeShow);
-            this.groupBox2.Controls.Add(this.textBoxEndNumeroCasaDeShow);
-            this.groupBox2.Controls.Add(label9);
-            this.groupBox2.Controls.Add(this.textBoxEndLogradouroCasaDeShow);
-            this.groupBox2.Controls.Add(label8);
-            this.groupBox2.Controls.Add(this.comboBoxEndTipoCasaDeShow);
-            this.groupBox2.Controls.Add(label4);
-            this.groupBox2.Controls.Add(label5);
-            this.groupBox2.Controls.Add(label7);
-            this.groupBox2.Controls.Add(label6);
-            this.groupBox2.Location = new System.Drawing.Point(288, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 312);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereço";
+            this.groupBoxEndereco.Controls.Add(this.comboBoxIdRestauranteCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(this.labelRestaurante);
+            this.groupBoxEndereco.Controls.Add(this.checkBoxContemRestaurante);
+            this.groupBoxEndereco.Controls.Add(this.comboBoxEndCidadeCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(label10);
+            this.groupBoxEndereco.Controls.Add(this.maskedTextBoxEndCepCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEndBairroCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEndComplementoCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEndNumeroCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(label9);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEndLogradouroCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(label8);
+            this.groupBoxEndereco.Controls.Add(this.comboBoxEndTipoCasaDeShow);
+            this.groupBoxEndereco.Controls.Add(label4);
+            this.groupBoxEndereco.Controls.Add(label5);
+            this.groupBoxEndereco.Controls.Add(label7);
+            this.groupBoxEndereco.Controls.Add(label6);
+            this.groupBoxEndereco.Location = new System.Drawing.Point(288, 12);
+            this.groupBoxEndereco.Name = "groupBoxEndereco";
+            this.groupBoxEndereco.Size = new System.Drawing.Size(347, 312);
+            this.groupBoxEndereco.TabIndex = 31;
+            this.groupBoxEndereco.TabStop = false;
+            this.groupBoxEndereco.Text = "Endereço";
             // 
             // labelRestaurante
             // 
@@ -396,15 +388,15 @@
             this.comboBoxEndTipoCasaDeShow.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEndTipoCasaDeShow.TabIndex = 5;
             // 
-            // button1
+            // buttonEditar
             // 
-            this.button1.Location = new System.Drawing.Point(366, 341);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEditar.Location = new System.Drawing.Point(366, 341);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 21;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCadastrarHotel
             // 
@@ -416,22 +408,32 @@
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
             this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
             // 
+            // comboBoxDiaFechamento
+            // 
+            this.comboBoxDiaFechamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDiaFechamento.Enabled = false;
+            this.comboBoxDiaFechamento.FormattingEnabled = true;
+            this.comboBoxDiaFechamento.Location = new System.Drawing.Point(12, 175);
+            this.comboBoxDiaFechamento.Name = "comboBoxDiaFechamento";
+            this.comboBoxDiaFechamento.Size = new System.Drawing.Size(92, 21);
+            this.comboBoxDiaFechamento.TabIndex = 22;
+            // 
             // FormDetalhesCasadeShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 379);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCadastrarHotel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxDados);
             this.Controls.Add(this.buttonCancelarCadastroCasaDeShow);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxEndereco);
             this.Name = "FormDetalhesCasadeShow";
             this.Text = "FormDetalhesCasadeShow";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxDados.ResumeLayout(false);
+            this.groupBoxDados.PerformLayout();
+            this.groupBoxEndereco.ResumeLayout(false);
+            this.groupBoxEndereco.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -439,15 +441,14 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxHoraInicioCasaDeShow;
-        private System.Windows.Forms.TextBox textBoxDiaFechamentoCasaDeShow;
         private System.Windows.Forms.TextBox textBoxDescricaoCasaDeShow;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxNomeCasaDeShow;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxDados;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoCasaDeShow;
         private System.Windows.Forms.ComboBox comboBoxIdRestauranteCasaDeShow;
         private System.Windows.Forms.Button buttonCancelarCadastroCasaDeShow;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxEndereco;
         private System.Windows.Forms.Label labelRestaurante;
         private System.Windows.Forms.CheckBox checkBoxContemRestaurante;
         private System.Windows.Forms.ComboBox comboBoxEndCidadeCasaDeShow;
@@ -457,8 +458,9 @@
         private System.Windows.Forms.TextBox textBoxEndNumeroCasaDeShow;
         private System.Windows.Forms.TextBox textBoxEndLogradouroCasaDeShow;
         private System.Windows.Forms.ComboBox comboBoxEndTipoCasaDeShow;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonCadastrarHotel;
         private System.Windows.Forms.TextBox textBoxIdCasadeShow;
+        private System.Windows.Forms.ComboBox comboBoxDiaFechamento;
     }
 }

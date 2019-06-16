@@ -54,11 +54,11 @@
             this.comboBoxEndTipoCasaDeShow = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxHoraInicioCasaDeShow = new System.Windows.Forms.TextBox();
-            this.textBoxDiaFechamentoCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxDescricaoCasaDeShow = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.maskedTextBoxContatoCasaDeShow = new System.Windows.Forms.MaskedTextBox();
             this.textBoxNomeCasaDeShow = new System.Windows.Forms.TextBox();
+            this.comboBoxDiaFechamento = new System.Windows.Forms.ComboBox();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -305,8 +305,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxDiaFechamento);
             this.groupBox1.Controls.Add(this.textBoxHoraInicioCasaDeShow);
-            this.groupBox1.Controls.Add(this.textBoxDiaFechamentoCasaDeShow);
             this.groupBox1.Controls.Add(label13);
             this.groupBox1.Controls.Add(label12);
             this.groupBox1.Controls.Add(this.textBoxDescricaoCasaDeShow);
@@ -328,13 +328,6 @@
             this.textBoxHoraInicioCasaDeShow.Name = "textBoxHoraInicioCasaDeShow";
             this.textBoxHoraInicioCasaDeShow.Size = new System.Drawing.Size(100, 20);
             this.textBoxHoraInicioCasaDeShow.TabIndex = 3;
-            // 
-            // textBoxDiaFechamentoCasaDeShow
-            // 
-            this.textBoxDiaFechamentoCasaDeShow.Location = new System.Drawing.Point(9, 150);
-            this.textBoxDiaFechamentoCasaDeShow.Name = "textBoxDiaFechamentoCasaDeShow";
-            this.textBoxDiaFechamentoCasaDeShow.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDiaFechamentoCasaDeShow.TabIndex = 2;
             // 
             // textBoxDescricaoCasaDeShow
             // 
@@ -367,6 +360,15 @@
             this.textBoxNomeCasaDeShow.Name = "textBoxNomeCasaDeShow";
             this.textBoxNomeCasaDeShow.Size = new System.Drawing.Size(223, 20);
             this.textBoxNomeCasaDeShow.TabIndex = 0;
+            // 
+            // comboBoxDiaFechamento
+            // 
+            this.comboBoxDiaFechamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDiaFechamento.FormattingEnabled = true;
+            this.comboBoxDiaFechamento.Location = new System.Drawing.Point(12, 150);
+            this.comboBoxDiaFechamento.Name = "comboBoxDiaFechamento";
+            this.comboBoxDiaFechamento.Size = new System.Drawing.Size(97, 21);
+            this.comboBoxDiaFechamento.TabIndex = 20;
             // 
             // FormCadastrarCasaDeShow
             // 
@@ -405,7 +407,6 @@
         private System.Windows.Forms.TextBox textBoxEndLogradouroCasaDeShow;
         private System.Windows.Forms.ComboBox comboBoxEndTipoCasaDeShow;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxDiaFechamentoCasaDeShow;
         private System.Windows.Forms.TextBox textBoxDescricaoCasaDeShow;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContatoCasaDeShow;
@@ -414,5 +415,6 @@
         private System.Windows.Forms.CheckBox checkBoxContemRestaurante;
         private System.Windows.Forms.Label labelRestaurante;
         private System.Windows.Forms.TextBox textBoxHoraInicioCasaDeShow;
+        private System.Windows.Forms.ComboBox comboBoxDiaFechamento;
     }
 }

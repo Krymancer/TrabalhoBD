@@ -14,6 +14,7 @@ namespace BDTur.Forms
     public partial class FormDetalhesCasadeShow : Form
     {
         Classes.DAL adapter = new Classes.DAL();
+        bool editar = false;
 
         public FormDetalhesCasadeShow(int id)
         {
@@ -29,6 +30,14 @@ namespace BDTur.Forms
             comboBoxEndTipoCasaDeShow.Items.Add("Balneário");
             comboBoxEndTipoCasaDeShow.Items.Add("Beco");
             comboBoxEndTipoCasaDeShow.Items.Add("Viela");
+
+            comboBoxDiaFechamento.Items.Add("domingo");
+            comboBoxDiaFechamento.Items.Add("segunda");
+            comboBoxDiaFechamento.Items.Add("terça");
+            comboBoxDiaFechamento.Items.Add("quarta");
+            comboBoxDiaFechamento.Items.Add("quinta");
+            comboBoxDiaFechamento.Items.Add("sexta");
+            comboBoxDiaFechamento.Items.Add("sabado");
 
             getDetails(id);
         }
@@ -68,8 +77,11 @@ namespace BDTur.Forms
                     {
                         checkBoxContemRestaurante.Checked = false;
                     }
-                    textBoxDiaFechamentoCasaDeShow.Text = reader.GetString(12);
-                    textBoxHoraInicioCasaDeShow.Text = reader.GetString(13);
+                    int indexDia = comboBoxDiaFechamento.Items.IndexOf(reader.GetString(15));
+                    Console.WriteLine(indexDia + " " + reader.GetString(15));
+                    comboBoxDiaFechamento.SelectedItem = comboBoxDiaFechamento.Items[indexDia];
+                    //textBoxDiaFechamentoCasaDeShow.Text = reader.GetString(12);
+                    textBoxHoraInicioCasaDeShow.Text = reader.GetString(16);
 
                 }
             }
@@ -145,16 +157,94 @@ namespace BDTur.Forms
             }
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!editar)
+            {
+                groupBoxDados.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                groupBoxEndereco.Controls.Cast<Control>().ToList()
+                .ForEach(x => { x.Enabled = true; });
+                textBoxIdCasadeShow.Enabled = false;
+                buttonEditar.Text = "Salvar";
+                editar = !editar;
+            }
+            else
+            {
+                try
+                {
+                    string csNome = textBoxNomeCasaDeShow.Text;
+                    maskedTextBoxContatoCasaDeShow.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string csContato = maskedTextBoxContatoCasaDeShow.Text;
+                    maskedTextBoxContatoCasaDeShow.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    string csDesc = textBoxDescricaoCasaDeShow.Text;
+                    string csEndLog = textBoxEndLogradouroCasaDeShow.Text;
+                    string csEndTip = comboBoxEndTipoCasaDeShow.SelectedItem.ToString();
+                    string csEndNum = textBoxEndNumeroCasaDeShow.Text;
+                    string csEndComp;
+                    try
+                    {
+                        csEndComp = textBoxEndComplementoCasaDeShow.Text;
+                    }
+                    catch (NullReferenceException)
+                    {
+                        csEndComp = "NULL";
+                    }
+                    string csEndBairro = textBoxEndBairroCasaDeShow.Text;
+                    maskedTextBoxEndCepCasaDeShow.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    string csEndCep = maskedTextBoxEndCepCasaDeShow.Text;
+                    maskedTextBoxEndCepCasaDeShow.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                    int csCid = int.Parse(comboBoxEndCidadeCasaDeShow.SelectedValue.ToString());
+                    string csRid;
 
+                    if (checkBoxContemRestaurante.Checked)
+                    {
+                        csRid = comboBoxIdRestauranteCasaDeShow.SelectedValue.ToString();
+                    }
+                    else
+                    {
+                        csRid = "NULL";
+                    }
+
+                    string csDiaFechamento = comboBoxDiaFechamento.SelectedItem.ToString();
+                    string cshorarioInicio = textBoxHoraInicioCasaDeShow.Text;
+                    if (csCid == 0) throw new InvalidSelectValue("CidadeID must be different of 0");
+
+                    int id = int.Parse(textBoxIdCasadeShow.Text);
+                    Classes.CasaDeShow c = new Classes.CasaDeShow(id, csDiaFechamento, cshorarioInicio, 0, csRid, 0, "Casa de Show", csNome, csContato, csDesc, csEndTip, csEndLog, csEndNum, csEndComp, csEndBairro, csContato, csCid);
+                    if (adapter.atualizarCasadeShow(c))
+                    {
+                        MessageBox.Show("Atualizado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.Close();
+                        editar = !editar;
+                        groupBoxDados.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        groupBoxEndereco.Controls.Cast<Control>().ToList()
+                        .ForEach(x => { if (x.GetType() != typeof(Label)) x.Enabled = false; });
+                        buttonEditar.Text = "Editar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (NullReferenceException)
+                {
+                    //Erro ao resgatar valores dos componentes
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (InvalidSelectValue)
+                {
+                    //Tratar se usuario não tenha selecionado uma cidade valida
+                    MessageBox.Show("Verifique se os campos estão preenchidos corretamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void textBoxEndNumeroCasaDeShow_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -162,7 +252,7 @@ namespace BDTur.Forms
 
         private void textBoxHoraInicioCasaDeShow_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != ':'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ':'))
             {
                 e.Handled = true;
             }

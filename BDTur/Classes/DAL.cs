@@ -1447,8 +1447,9 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endLogradouroPontoTuristico", igreja.EndLogradouroPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endTipoPontoTuristico", igreja.EndTipoPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", igreja.EndNumeroPontoTuristico));
-                cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", igreja.EndComplementoPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", igreja.EndComplementoPontoTuristico));                                
                 cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", igreja.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endCepPontoTuristico", igreja.EndCepPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", igreja.CidadeIdCidade));
                 cmd.Parameters.Add(new MySqlParameter("dataIgreja", igreja.DataIgreja));
                 cmd.Parameters.Add(new MySqlParameter("estiloIgreja", igreja.EstiloIgreja));
@@ -1509,6 +1510,7 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", museu.EndNumeroPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", museu.EndComplementoPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", museu.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endCepPontoTuristico", museu.EndCepPontoTuristico));                
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", museu.CidadeIdCidade));
                 cmd.Parameters.Add(new MySqlParameter("dataFundacaoMuseu", museu.DataFundacaoMuseu));
                 cmd.Parameters.Add(new MySqlParameter("valorEntradaMuseu", museu.ValorEntradaMuseu));
@@ -1658,15 +1660,15 @@ namespace BDTur.Classes
                                 "`endComplementoPontoTuristico` =   ?endComplementoPontoTuristico  ," +
                                 "`endBairroPontoTuristico` =   ?endBairroPontoTuristico  ," +
                                 "`endCepPontoTuristico` =   ?endCepPontoTuristico  ," +
-                                $"`cidadeIdCidade` =   ?cidadeIdCidade  ," +
+                                "`cidadeIdCidade` =   ?cidadeIdCidade  ," +
                                 $"`cidadeNome` =   (select nome from cidade where idCidade = {cs.CidadeIdCidade})  ," +
-                                "`cidadeEstado` =   (select estado from cidade where idCidade = {museu.CidadeIdCidade})  " +
+                                $"`cidadeEstado` =   (select estado from cidade where idCidade = {cs.CidadeIdCidade})  " +
                                 "WHERE `idPontoTuristico` =   ?idPontoTuristico;" +
                                 "UPDATE `equipe431447`.`casadeshow`" +
                                 "SET" +
-                                "`diaFechamentoCasadeShow` =   ?dataFundacaoMuseu  ," +
-                                "`horaInicioCasadeShow` =   ?valorEntradaMuseu  ," +                                
-                                "WHERE `idCasadeShow` =   ?idCasadeShow;" +
+                                "`diaFechamentoCasadeShow` =   ?diaFechamentoCasadeShow  ," +
+                                "`horaInicioCasadeShow` =   ?horaInicioCasadeShow " +                                
+                                "WHERE `idCasadeShow` =  ?idCasadeShow;" +
                                 "COMMIT;";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.Add(new MySqlParameter("tipoPontoTuristico", cs.TipoPontoTuristico));
@@ -1678,6 +1680,7 @@ namespace BDTur.Classes
                 cmd.Parameters.Add(new MySqlParameter("endNumeroPontoTuristico", cs.EndNumeroPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endComplementoPontoTuristico", cs.EndComplementoPontoTuristico));
                 cmd.Parameters.Add(new MySqlParameter("endBairroPontoTuristico", cs.EndBairroPontoTuristico));
+                cmd.Parameters.Add(new MySqlParameter("endCepPontoTuristico", cs.EndCepPontoTuristico));                
                 cmd.Parameters.Add(new MySqlParameter("cidadeIdCidade", cs.CidadeIdCidade));
                 cmd.Parameters.Add(new MySqlParameter("diaFechamentoCasadeShow", cs.DiaFechamentoCasadeShow));                
                 cmd.Parameters.Add(new MySqlParameter("horaInicioCasadeShow", cs.HoraInicioCasadeShow));
