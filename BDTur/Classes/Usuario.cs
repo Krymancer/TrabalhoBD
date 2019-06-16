@@ -43,6 +43,7 @@ namespace BDTur.Classes
                 reader.Read();
                 this.IdUser = reader.GetInt32(0);
                 this.AcessLevel = reader.GetInt32(3);
+                Program.AcessLevel = this.AcessLevel;
                 //Console.WriteLine(reader);
                 return true;
             }

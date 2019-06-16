@@ -12,6 +12,7 @@ namespace BDTur
     {
 
         static public string databaseUser, databasePassword;
+        static public int AcessLevel;
 
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.

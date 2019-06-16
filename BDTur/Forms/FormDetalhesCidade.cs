@@ -20,6 +20,12 @@ namespace BDTur.Forms
         {
             InitializeComponent();
             getDetails(id);
+
+            if (Program.AcessLevel != 1)
+            {
+                buttonEditarCidade.Enabled = false;
+                buttonExcluirCidade.Enabled = false;
+            }
         }
 
         private void getDetails(int id)

@@ -40,6 +40,11 @@ namespace BDTur.Forms
 
             getDetails(id);
 
+            if (Program.AcessLevel != 1)
+            {
+                button1.Enabled = false;
+                buttonCadastrarIgreja.Enabled = false;
+            }
         }
 
         private void populateComboBoxes()

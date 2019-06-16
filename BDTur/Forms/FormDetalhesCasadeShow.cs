@@ -40,6 +40,11 @@ namespace BDTur.Forms
             comboBoxDiaFechamento.Items.Add("sabado");
 
             getDetails(id);
+
+            if (Program.AcessLevel != 1) {
+                buttonEditar.Enabled = false;
+                buttonCadastrarHotel.Enabled = false;
+            }
         }
 
         private void getDetails(int id)

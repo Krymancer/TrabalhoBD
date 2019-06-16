@@ -20,10 +20,21 @@ namespace BDTur.Forms
         bool[] RestauranteHotel = new bool[] { true, true };
         bool[] RestauranteCasaDeShow = new bool[] { true, true };
         string[] MuseuData = new string[] { "", "", "" };
-
-        public FormMain()
+        //int AcessLevel;
+        public FormMain(int acessLevel)
         {
             InitializeComponent();
+            //AcessLevel = acessLevel;
+
+            if (Program.AcessLevel == 2) {
+                cadastrarToolStripMenuItem.Enabled = false;
+            }
+            if (Program.AcessLevel == 3)
+            {
+                cadastrarToolStripMenuItem.Enabled = false;
+                toolStripGerenciar.Enabled = false;
+                
+            }
         }
 
         private void FormMain_Load(object sender, EventArgs e)

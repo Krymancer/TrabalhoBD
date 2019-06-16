@@ -38,6 +38,12 @@ namespace BDTur.Forms
             populateListView();
 
             getDetails(id);
+
+            if (Program.AcessLevel != 1)
+            {
+                buttonEditar.Enabled = false;
+                buttonExcluir.Enabled = false;
+            }
         }
 
         private void populateComboBoxes()

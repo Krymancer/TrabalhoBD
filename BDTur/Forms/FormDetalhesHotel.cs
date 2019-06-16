@@ -34,7 +34,14 @@ namespace BDTur.Forms
 
             populateComboBoxes();
             populateHotelQuartoDataGridView(id);
-            getDetails(id);           
+            getDetails(id);
+
+            if (Program.AcessLevel != 1)
+            {
+                button1.Enabled = false;
+                buttonCadastrarHotel.Enabled = false;
+                buttonAddQuartos.Enabled = false;
+            }
         }
 
         private void populateComboBoxes()

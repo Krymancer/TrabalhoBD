@@ -44,6 +44,12 @@ namespace BDTur.Forms
 
 
             getDetails(id);
+
+            if (Program.AcessLevel != 1)
+            {
+                buttonEditar.Enabled = false;
+                buttonCadastrarHotel.Enabled = false;
+            }
         }
 
         private void populateComboBoxes()

@@ -29,7 +29,7 @@ namespace BDTur.Forms
                 Classes.Usuario user = new Classes.Usuario(0, textBoxUser.Text, textBoxPassword.Text, 0);
                 if (user.Autenticate())
                 {
-                    Forms.FormMain nextScreen = new Forms.FormMain();
+                    Forms.FormMain nextScreen = new Forms.FormMain(user.AcessLevel);
                     this.Visible = false;
                     nextScreen.ShowDialog();
                     this.Close();

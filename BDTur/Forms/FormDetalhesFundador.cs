@@ -27,6 +27,11 @@ namespace BDTur.Forms
             getPontosTuristicosList();
             this.id = id;
 
+            if (Program.AcessLevel != 1)
+            {
+                button1.Enabled = false;
+                buttonCadastrarHotel.Enabled = false;
+            }
         }
 
         private void FormDetalhesFundador_Load(object sender, EventArgs e)
