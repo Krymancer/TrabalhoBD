@@ -40,6 +40,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesCasadeShow));
             this.textBoxHoraInicioCasaDeShow = new System.Windows.Forms.TextBox();
             this.textBoxDescricaoCasaDeShow = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -430,6 +431,7 @@
             this.Controls.Add(this.groupBoxDados);
             this.Controls.Add(this.buttonCancelarCadastroCasaDeShow);
             this.Controls.Add(this.groupBoxEndereco);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesCasadeShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Casa de Show";

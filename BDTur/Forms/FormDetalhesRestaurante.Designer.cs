@@ -41,6 +41,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label13;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesRestaurante));
             this.maskedTextBoxPrecoMedioRestaurante = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEspecialidadeRestaurante = new System.Windows.Forms.TextBox();
             this.comboBoxCategoriaRestaurante = new System.Windows.Forms.ComboBox();
@@ -398,6 +399,7 @@
             this.Controls.Add(this.buttonCancelarCadastroRestaurante);
             this.Controls.Add(this.groupBoxEndereço);
             this.Controls.Add(this.groupBoxDados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesRestaurante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Restaurante";

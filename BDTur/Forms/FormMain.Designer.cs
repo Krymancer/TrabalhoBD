@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.Label labelCidade;
             System.Windows.Forms.Label labelNome;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageHoteis = new System.Windows.Forms.TabPage();
             this.groupBoxRestauranteHotel = new System.Windows.Forms.GroupBox();
@@ -985,6 +986,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.comboBoxCidade);
             this.Controls.Add(labelCidade);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

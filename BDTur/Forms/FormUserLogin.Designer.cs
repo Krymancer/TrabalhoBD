@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.Label labelPassword;
             System.Windows.Forms.Label labelUser;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserLogin));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -105,6 +106,7 @@
             this.Controls.Add(this.textBoxUser);
             this.Controls.Add(labelPassword);
             this.Controls.Add(labelUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUserLogin";

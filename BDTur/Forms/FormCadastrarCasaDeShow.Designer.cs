@@ -39,6 +39,7 @@
             System.Windows.Forms.Label label12;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarCasaDeShow));
             this.buttonCancelarCadastroCasaDeShow = new System.Windows.Forms.Button();
             this.buttonCadastrarCasaDeShow = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -381,6 +382,7 @@
             this.Controls.Add(this.buttonCadastrarCasaDeShow);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastrarCasaDeShow";

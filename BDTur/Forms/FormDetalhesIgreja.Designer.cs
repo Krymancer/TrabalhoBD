@@ -41,6 +41,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label15;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesIgreja));
             this.textBoxEstiloIgreja = new System.Windows.Forms.TextBox();
             this.monthCalendarFundacaoIgreja = new System.Windows.Forms.MonthCalendar();
             this.textBoxDescricaoIgreja = new System.Windows.Forms.TextBox();
@@ -414,6 +415,7 @@
             this.Controls.Add(this.buttonCancelarCadastroIgreja);
             this.Controls.Add(this.buttonCadastrarIgreja);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesIgreja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Igreja";

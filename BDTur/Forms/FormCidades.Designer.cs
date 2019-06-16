@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCidades));
             this.groupBoxCidade = new System.Windows.Forms.GroupBox();
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.textBoxEstado = new System.Windows.Forms.TextBox();
@@ -128,6 +129,7 @@
             this.ClientSize = new System.Drawing.Size(776, 383);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.groupBoxCidade);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCidades";

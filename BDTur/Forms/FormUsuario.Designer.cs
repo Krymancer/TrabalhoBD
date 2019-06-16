@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.dataGridViewUsuario = new System.Windows.Forms.DataGridView();
             this.groupBoxNivelDeAcessoUsuario = new System.Windows.Forms.GroupBox();
             this.checkBoxNivelUsuario = new System.Windows.Forms.CheckBox();
@@ -132,6 +133,7 @@
             this.ClientSize = new System.Drawing.Size(769, 410);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.groupBoxUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUsuario";

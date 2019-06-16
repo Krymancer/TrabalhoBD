@@ -33,6 +33,7 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesFundador));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxNacionalidadeFundador = new System.Windows.Forms.TextBox();
             this.maskedTextBoxDataMorteFundador = new System.Windows.Forms.MaskedTextBox();
@@ -223,6 +224,7 @@
             this.Controls.Add(this.buttonCadastrarHotel);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesFundador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Fundador";

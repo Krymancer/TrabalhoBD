@@ -39,6 +39,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label11;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesHotel));
             this.buttonCancelarCadastroHotel = new System.Windows.Forms.Button();
             this.comboBoxIdRestauranteHotel = new System.Windows.Forms.ComboBox();
             this.comboBoxEndCidadeHotel = new System.Windows.Forms.ComboBox();
@@ -419,6 +420,7 @@
             this.Controls.Add(this.buttonCadastrarHotel);
             this.Controls.Add(this.groupBoxDados);
             this.Controls.Add(this.groupBoxEndereço);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesHotel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Hotel";

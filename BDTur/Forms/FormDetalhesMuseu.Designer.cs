@@ -42,6 +42,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label16;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalhesMuseu));
             this.listBoxFundadoresSelecionados = new System.Windows.Forms.ListBox();
             this.groupBoxFundador = new System.Windows.Forms.GroupBox();
             this.textBoxNumeroDeSalasMuseu = new System.Windows.Forms.TextBox();
@@ -436,6 +437,7 @@
             this.Controls.Add(this.buttonCancelarCadastroMuseu);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.groupBoxEndereço);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDetalhesMuseu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes Museu";

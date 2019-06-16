@@ -31,6 +31,7 @@
             System.Windows.Forms.Label label12;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarCidade));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxEstadoCidade = new System.Windows.Forms.TextBox();
             this.textBoxPopulacaoCidade = new System.Windows.Forms.TextBox();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.buttonCancelarCidade);
             this.Controls.Add(this.buttonCadastrarCidade);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastrarCidade";

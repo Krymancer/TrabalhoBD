@@ -33,6 +33,7 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label11;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarFundador));
             this.buttonCancelarCadastroFundador = new System.Windows.Forms.Button();
             this.buttonCadastrarFundador = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -182,6 +183,7 @@
             this.Controls.Add(this.buttonCancelarCadastroFundador);
             this.Controls.Add(this.buttonCadastrarFundador);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastrarFundador";
