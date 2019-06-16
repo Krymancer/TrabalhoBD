@@ -13,7 +13,7 @@ namespace BDTur.Classes
         private int tipoQuarto;
         private float diariaQuarto;
 
-        public HotelQuarto(int numQuarto, int hotelIdHotel, int tipoQuarto, float diariaQuarto)
+        public HotelQuarto(int numQuarto, int hotelIdHotel, string tipoQuarto, float diariaQuarto)
         {
             NumQuarto = numQuarto;
             HotelIdHotel = hotelIdHotel;
@@ -23,7 +23,7 @@ namespace BDTur.Classes
 
         public int NumQuarto { get; set; }
         public int HotelIdHotel { get; set; }
-        public int TipoQuarto { get; set; }
+        public string TipoQuarto { get; set; }
         public float DiariaQuarto { get; set; }
     }
 }

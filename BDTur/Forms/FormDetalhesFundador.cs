@@ -99,6 +99,19 @@ namespace BDTur.Forms
         {
 
         }
+
+        private void buttonCadastrarHotel_Click(object sender, EventArgs e)
+        {
+            if (adapter.removerFundador(id))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }

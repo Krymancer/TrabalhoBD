@@ -54,7 +54,7 @@
             this.comboBoxCategoriaHotel = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxContatoHotel = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBoxQuartos = new System.Windows.Forms.ListBox();
+            this.dataGridViewHotelQuarto = new System.Windows.Forms.DataGridView();
             this.textBoxIdHotel = new System.Windows.Forms.TextBox();
             this.textBoxNomeHotel = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -73,6 +73,7 @@
             label3 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotelQuarto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 118);
+            label2.Location = new System.Drawing.Point(220, 27);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(55, 13);
             label2.TabIndex = 1;
@@ -160,7 +161,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(137, 117);
+            label3.Location = new System.Drawing.Point(220, 68);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 2;
@@ -178,7 +179,7 @@
             // buttonCancelarCadastroHotel
             // 
             this.buttonCancelarCadastroHotel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancelarCadastroHotel.Location = new System.Drawing.Point(573, 298);
+            this.buttonCancelarCadastroHotel.Location = new System.Drawing.Point(691, 298);
             this.buttonCancelarCadastroHotel.Name = "buttonCancelarCadastroHotel";
             this.buttonCancelarCadastroHotel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelarCadastroHotel.TabIndex = 17;
@@ -280,12 +281,13 @@
             // 
             // buttonCadastrarHotel
             // 
-            this.buttonCadastrarHotel.Location = new System.Drawing.Point(472, 298);
+            this.buttonCadastrarHotel.Location = new System.Drawing.Point(590, 298);
             this.buttonCadastrarHotel.Name = "buttonCadastrarHotel";
             this.buttonCadastrarHotel.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrarHotel.TabIndex = 16;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
+            this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
             // 
             // comboBoxCategoriaHotel
             // 
@@ -298,7 +300,7 @@
             "3 Estrelas",
             "4 Estrelas",
             "5 Estrelas"});
-            this.comboBoxCategoriaHotel.Location = new System.Drawing.Point(9, 133);
+            this.comboBoxCategoriaHotel.Location = new System.Drawing.Point(223, 42);
             this.comboBoxCategoriaHotel.Name = "comboBoxCategoriaHotel";
             this.comboBoxCategoriaHotel.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCategoriaHotel.TabIndex = 1;
@@ -306,15 +308,15 @@
             // maskedTextBoxContatoHotel
             // 
             this.maskedTextBoxContatoHotel.Enabled = false;
-            this.maskedTextBoxContatoHotel.Location = new System.Drawing.Point(140, 134);
+            this.maskedTextBoxContatoHotel.Location = new System.Drawing.Point(223, 85);
             this.maskedTextBoxContatoHotel.Mask = "(99) 00000-0000";
             this.maskedTextBoxContatoHotel.Name = "maskedTextBoxContatoHotel";
-            this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(92, 20);
+            this.maskedTextBoxContatoHotel.Size = new System.Drawing.Size(121, 20);
             this.maskedTextBoxContatoHotel.TabIndex = 2;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBoxQuartos);
+            this.groupBox1.Controls.Add(this.dataGridViewHotelQuarto);
             this.groupBox1.Controls.Add(this.textBoxIdHotel);
             this.groupBox1.Controls.Add(label11);
             this.groupBox1.Controls.Add(this.comboBoxCategoriaHotel);
@@ -325,25 +327,30 @@
             this.groupBox1.Controls.Add(label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 280);
+            this.groupBox1.Size = new System.Drawing.Size(387, 280);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // listBoxQuartos
+            // dataGridViewHotelQuarto
             // 
-            this.listBoxQuartos.FormattingEnabled = true;
-            this.listBoxQuartos.Location = new System.Drawing.Point(9, 170);
-            this.listBoxQuartos.Name = "listBoxQuartos";
-            this.listBoxQuartos.Size = new System.Drawing.Size(222, 95);
-            this.listBoxQuartos.TabIndex = 20;
+            this.dataGridViewHotelQuarto.AllowUserToAddRows = false;
+            this.dataGridViewHotelQuarto.AllowUserToDeleteRows = false;
+            this.dataGridViewHotelQuarto.AllowUserToOrderColumns = true;
+            this.dataGridViewHotelQuarto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHotelQuarto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHotelQuarto.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewHotelQuarto.Location = new System.Drawing.Point(9, 122);
+            this.dataGridViewHotelQuarto.Name = "dataGridViewHotelQuarto";
+            this.dataGridViewHotelQuarto.Size = new System.Drawing.Size(372, 152);
+            this.dataGridViewHotelQuarto.TabIndex = 20;
             // 
             // textBoxIdHotel
             // 
             this.textBoxIdHotel.Enabled = false;
             this.textBoxIdHotel.Location = new System.Drawing.Point(9, 44);
             this.textBoxIdHotel.Name = "textBoxIdHotel";
-            this.textBoxIdHotel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdHotel.Size = new System.Drawing.Size(179, 20);
             this.textBoxIdHotel.TabIndex = 18;
             // 
             // textBoxNomeHotel
@@ -351,7 +358,7 @@
             this.textBoxNomeHotel.Enabled = false;
             this.textBoxNomeHotel.Location = new System.Drawing.Point(9, 84);
             this.textBoxNomeHotel.Name = "textBoxNomeHotel";
-            this.textBoxNomeHotel.Size = new System.Drawing.Size(223, 20);
+            this.textBoxNomeHotel.Size = new System.Drawing.Size(179, 20);
             this.textBoxNomeHotel.TabIndex = 0;
             // 
             // groupBox2
@@ -374,7 +381,7 @@
             this.groupBox2.Controls.Add(label5);
             this.groupBox2.Controls.Add(label7);
             this.groupBox2.Controls.Add(label6);
-            this.groupBox2.Location = new System.Drawing.Point(288, 12);
+            this.groupBox2.Location = new System.Drawing.Point(405, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(360, 280);
             this.groupBox2.TabIndex = 15;
@@ -393,7 +400,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(372, 298);
+            this.button1.Location = new System.Drawing.Point(490, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -403,18 +410,19 @@
             // 
             // buttonAddQuartos
             // 
-            this.buttonAddQuartos.Location = new System.Drawing.Point(240, 298);
+            this.buttonAddQuartos.Location = new System.Drawing.Point(358, 298);
             this.buttonAddQuartos.Name = "buttonAddQuartos";
             this.buttonAddQuartos.Size = new System.Drawing.Size(106, 23);
             this.buttonAddQuartos.TabIndex = 19;
             this.buttonAddQuartos.Text = "Adicionar Quartos";
             this.buttonAddQuartos.UseVisualStyleBackColor = true;
+            this.buttonAddQuartos.Click += new System.EventHandler(this.buttonAddQuartos_Click);
             // 
             // FormDetalhesHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 328);
+            this.ClientSize = new System.Drawing.Size(777, 328);
             this.Controls.Add(this.buttonAddQuartos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelarCadastroHotel);
@@ -425,6 +433,7 @@
             this.Text = "Detalhes Hotel";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotelQuarto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -453,7 +462,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxIdHotel;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBoxQuartos;
         private System.Windows.Forms.Button buttonAddQuartos;
+        private System.Windows.Forms.DataGridView dataGridViewHotelQuarto;
     }
 }

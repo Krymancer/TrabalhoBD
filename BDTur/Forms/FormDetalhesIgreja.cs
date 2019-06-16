@@ -206,5 +206,18 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCadastrarIgreja_Click(object sender, EventArgs e)
+        {
+            if (adapter.removerIgreja(int.Parse(textBoxIdIgreja.Text)))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

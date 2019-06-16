@@ -31,6 +31,7 @@ namespace BDTur.Forms
             comboBoxEndTipoHotel.Items.Add("Viela");
 
             populateComboBoxes();
+            populateHotelQuartoDataGridView(id);
             getDetails(id);           
         }
 
@@ -143,8 +144,31 @@ namespace BDTur.Forms
             }
         }
 
-        private void generateHotelAndPopulateForm() {
+        private void populateHotelQuartoDataGridView(int id) {
+            MySqlDataAdapter da = adapter.hotelQuartoAdapter(id);
+            if (da != null)
+            {
+                DataTable dt = new DataTable();
+                try
+                {
+                    da.Fill(dt);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro \n", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Fundador Erro: \n{ex.Message}\n");
+                }
+                dataGridViewHotelQuarto.DataSource = dt;
 
+                dataGridViewHotelQuarto.Columns[0].HeaderText = "Quantidade";
+                dataGridViewHotelQuarto.Columns[1].HeaderText = "Tipo";
+                dataGridViewHotelQuarto.Columns[2].HeaderText = "Diaria";
+
+            }
+            else
+            {
+                MessageBox.Show("Falha");
+            }
         }
 
         private void checkBoxContemRestaurante_CheckedChanged(object sender, EventArgs e)
@@ -168,9 +192,30 @@ namespace BDTur.Forms
 
         private void textBoxEndNumeroHotel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void buttonAddQuartos_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(textBoxIdHotel.Text);
+            FormCadastrarQuartoHotel nextScreen = new FormCadastrarQuartoHotel(id);
+            nextScreen.ShowDialog();
+            populateHotelQuartoDataGridView(id);
+        }
+
+        private void buttonCadastrarHotel_Click(object sender, EventArgs e)
+        {
+            if (adapter.removerHotel(int.Parse(textBoxIdHotel.Text)))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

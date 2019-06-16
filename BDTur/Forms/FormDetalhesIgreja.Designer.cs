@@ -366,6 +366,7 @@
             this.buttonCadastrarIgreja.TabIndex = 20;
             this.buttonCadastrarIgreja.Text = "Excluir";
             this.buttonCadastrarIgreja.UseVisualStyleBackColor = true;
+            this.buttonCadastrarIgreja.Click += new System.EventHandler(this.buttonCadastrarIgreja_Click);
             // 
             // groupBox2
             // 

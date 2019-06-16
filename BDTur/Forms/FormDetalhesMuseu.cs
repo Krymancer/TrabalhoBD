@@ -215,5 +215,18 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (adapter.removerMuseu(int.Parse(textBoxIdMuseu.Text)))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

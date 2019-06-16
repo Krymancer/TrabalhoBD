@@ -387,6 +387,7 @@
             this.buttonExcluir.TabIndex = 29;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // groupBoxEndereço
             // 

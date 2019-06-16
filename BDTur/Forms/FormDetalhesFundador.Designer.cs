@@ -209,6 +209,7 @@
             this.buttonCadastrarHotel.TabIndex = 33;
             this.buttonCadastrarHotel.Text = "Excluir";
             this.buttonCadastrarHotel.UseVisualStyleBackColor = true;
+            this.buttonCadastrarHotel.Click += new System.EventHandler(this.buttonCadastrarHotel_Click);
             // 
             // FormDetalhesFundador
             // 

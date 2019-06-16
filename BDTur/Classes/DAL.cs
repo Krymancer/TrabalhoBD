@@ -274,6 +274,12 @@ namespace BDTur.Classes
             return fetchResultFromQuery(query);
 
         }
+        public MySqlDataAdapter hotelQuartoAdapter(int id)
+        {
+            string query = $"SELECT numQuarto,tipoQuarto,diariaQuarto from hotelquarto WHERE hotelIdHotel = {id};";
+
+            return fetchResultFromQuery(query);
+        }
         #endregion
 
         #region DataReaders para consultas especificas
@@ -463,7 +469,7 @@ namespace BDTur.Classes
 
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
-        }
+        }        
         #endregion
 
         #region Inserts

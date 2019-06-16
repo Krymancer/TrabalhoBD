@@ -57,9 +57,9 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(6, 29);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(95, 13);
+            label1.Size = new System.Drawing.Size(118, 13);
             label1.TabIndex = 0;
-            label1.Text = "Número do quarto:";
+            label1.Text = "Quantidade de quartos:";
             // 
             // label3
             // 
@@ -88,6 +88,7 @@
             this.buttonCadastrarQuarto.TabIndex = 5;
             this.buttonCadastrarQuarto.Text = "Cadastrar";
             this.buttonCadastrarQuarto.UseVisualStyleBackColor = true;
+            this.buttonCadastrarQuarto.Click += new System.EventHandler(this.buttonCadastrarQuarto_Click);
             // 
             // groupBox1
             // 
@@ -107,10 +108,11 @@
             // maskedTextBoxDiariaQuarto
             // 
             this.maskedTextBoxDiariaQuarto.Location = new System.Drawing.Point(127, 102);
-            this.maskedTextBoxDiariaQuarto.Mask = "$";
+            this.maskedTextBoxDiariaQuarto.Mask = "$#####.##";
             this.maskedTextBoxDiariaQuarto.Name = "maskedTextBoxDiariaQuarto";
             this.maskedTextBoxDiariaQuarto.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxDiariaQuarto.TabIndex = 25;
+            this.maskedTextBoxDiariaQuarto.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // comboBoxTipoQuarto
             // 

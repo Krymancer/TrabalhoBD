@@ -167,5 +167,18 @@ namespace BDTur.Forms
                 e.Handled = true;
             }
         }
+
+        private void buttonCadastrarHotel_Click(object sender, EventArgs e)
+        {            
+            if (adapter.removerCasadeShow(int.Parse(textBoxIdCasadeShow.Text)))
+            {
+                MessageBox.Show("Removido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falha", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
